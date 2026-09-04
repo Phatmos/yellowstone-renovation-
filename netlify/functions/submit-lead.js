@@ -569,10 +569,16 @@ exports.handler = async (event) => {
         event.headers?.["content-type"] || event.headers?.["Content-Type"] || ""
     ).toLowerCase();
     if (contentType.includes("application/x-www-form-urlencoded")) {
+        const location = redirectPath(payload);
         return {
             statusCode: 303,
-            headers: { Location: redirectPath(payload), "Cache-Control": "no-store" },
-            body: "",
+            headers: {
+                Location: location,
+                Refresh: `0; url=${location}`,
+                "Content-Type": "text/html; charset=utf-8",
+                "Cache-Control": "no-store",
+            },
+            body: `<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${location}"><title>Thank you</title></head><body><p>Thank you. Redirecting…</p><p><a href="${location}">Continue</a></p></body></html>`,
         };
     }
 

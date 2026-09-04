@@ -152,6 +152,38 @@ test("uses the Zoho webform when OAuth credentials are not configured", async ()
     assert.equal(fields.get("LEADCF7"), "click-1");
 });
 
+test("native form submissions include a reliable thank-you redirect", async () => {
+    delete process.env.ZOHO_CLIENT_ID;
+    delete process.env.ZOHO_CLIENT_SECRET;
+    delete process.env.ZOHO_REFRESH_TOKEN;
+    delete process.env.SENDGRID_API_KEY;
+    delete process.env.SENDGRID_FROM_EMAIL;
+    process.env.ZOHO_WEBFORM_XNQSJSDP = "test-public-form-id";
+    process.env.ZOHO_WEBFORM_XMIWTLD = "test-public-form-token";
+    global.fetch = async (url) => {
+        if (String(url).includes("crm.zoho.com/crm/WebToLeadForm")) {
+            return response(200, '<div id="wf_thankyoumessage">Thank you</div>');
+        }
+        return response(200, { success: true });
+    };
+
+    const result = await handler({
+        httpMethod: "POST",
+        headers: { "content-type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+            name: "Native Form Test",
+            phone: "8595550106",
+            _next: "https://yellowstonerenovation.com/thank-you/",
+        }).toString(),
+        isBase64Encoded: false,
+    });
+
+    assert.equal(result.statusCode, 303);
+    assert.equal(result.headers.Location, "/thank-you/");
+    assert.equal(result.headers.Refresh, "0; url=/thank-you/");
+    assert.match(result.body, /http-equiv="refresh"/);
+});
+
 test("accepts a phone-only lead", async () => {
     configureZoho();
     const { mock } = createFetchMock();
