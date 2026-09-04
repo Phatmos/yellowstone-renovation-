@@ -10,6 +10,8 @@ function response(status, data = {}) {
         status,
         ok: status >= 200 && status < 300,
         json: async () => data,
+        text: async () =>
+            typeof data === "string" ? data : JSON.stringify(data),
     };
 }
 
@@ -31,7 +33,7 @@ function configureZoho() {
     process.env.ZOHO_FIELD_UTM_SOURCE = "UTM_Source";
     process.env.ZOHO_FIELD_UTM_MEDIUM = "UTM_Medium";
     process.env.ZOHO_FIELD_UTM_CAMPAIGN = "UTM_Campaign";
-    process.env.ZOHO_FIELD_GCLID = "GCLID";
+    process.env.ZOHO_FIELD_GCLID = "Google_Click_ID";
     delete process.env.SENDGRID_API_KEY;
     delete process.env.SENDGRID_FROM_EMAIL;
 }
@@ -111,7 +113,43 @@ test("creates a normal Zoho lead with address and attribution", async () => {
     assert.equal(zohoRecord.Last_Name, "Smith");
     assert.equal(zohoRecord.Project_Type, "Composite Deck");
     assert.equal(zohoRecord.UTM_Source, "google");
-    assert.equal(zohoRecord.GCLID, "abc123");
+    assert.equal(zohoRecord.Google_Click_ID, "abc123");
+});
+
+test("uses the Zoho webform when OAuth credentials are not configured", async () => {
+    delete process.env.ZOHO_CLIENT_ID;
+    delete process.env.ZOHO_CLIENT_SECRET;
+    delete process.env.ZOHO_REFRESH_TOKEN;
+    delete process.env.SENDGRID_API_KEY;
+    delete process.env.SENDGRID_FROM_EMAIL;
+    process.env.ZOHO_WEBFORM_XNQSJSDP = "test-public-form-id";
+    process.env.ZOHO_WEBFORM_XMIWTLD = "test-public-form-token";
+    const calls = [];
+    global.fetch = async (url, options = {}) => {
+        calls.push({ url: String(url), options });
+        if (String(url).includes("crm.zoho.com/crm/WebToLeadForm")) {
+            return response(200, '<div id="wf_thankyoumessage">Thank you</div>');
+        }
+        if (String(url).includes("formsubmit.co")) {
+            return response(200, { success: "false" });
+        }
+        throw new Error(`Unexpected URL: ${url}`);
+    };
+
+    const result = await handler(
+        event(
+            { name: "Webform Test", phone: "8595550105", projectType: "Composite deck" },
+            { referer: "https://yellowstonerenovation.com/decking/?utm_source=google&gclid=click-1" }
+        )
+    );
+
+    assert.equal(result.statusCode, 200);
+    assert.equal(JSON.parse(result.body).crm, "created");
+    const call = calls.find((item) => item.url.includes("WebToLeadForm"));
+    const fields = new URLSearchParams(call.options.body);
+    assert.equal(fields.get("LEADCF1"), "Deck");
+    assert.equal(fields.get("LEADCF6"), "https://yellowstonerenovation.com/decking/?utm_source=google&gclid=click-1");
+    assert.equal(fields.get("LEADCF7"), "click-1");
 });
 
 test("accepts a phone-only lead", async () => {

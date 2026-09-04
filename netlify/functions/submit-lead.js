@@ -1,6 +1,7 @@
 const DEFAULT_BACKUP_EMAIL = "renovationyellowstone@gmail.com";
 const MAX_BODY_BYTES = 200_000;
 const REQUEST_TIMEOUT_MS = 12_000;
+const DEFAULT_ZOHO_WEBFORM_URL = "https://crm.zoho.com/crm/WebToLeadForm";
 
 function jsonResponse(statusCode, body, extraHeaders = {}) {
     return {
@@ -374,6 +375,69 @@ async function upsertZohoLead(lead) {
     return { action: "created", id: result.details?.id };
 }
 
+function zohoWebformProjectType(projectType) {
+    const value = safeString(projectType, 255).toLowerCase();
+    if (!value) return "";
+    if (value.includes("deck") || value.includes("patio") || value.includes("pergola")) return "Deck";
+    if (value.includes("fence")) return "Fence";
+    if (value.includes("siding")) return "Siding";
+    if (value.includes("window")) return "Windows";
+    if (value.includes("door")) return "Doors";
+    if (value.includes("concrete")) return "Concrete";
+    if (value.includes("roof")) return "Roofing";
+    if (value.includes("gutter")) return "Gutters";
+    if (value.includes("repair")) return "Repair";
+    return "Other";
+}
+
+async function submitZohoWebform(lead) {
+    if (!process.env.ZOHO_WEBFORM_XNQSJSDP || !process.env.ZOHO_WEBFORM_XMIWTLD) {
+        throw new Error("Zoho webform is not configured.");
+    }
+    const params = new URLSearchParams({
+        xnQsjsdp: process.env.ZOHO_WEBFORM_XNQSJSDP,
+        xmIwtLD: process.env.ZOHO_WEBFORM_XMIWTLD,
+        actionType: "TGVhZHM=",
+        returnURL: "null",
+        zc_gad: lead.attribution.gclid,
+        "First Name": lead.firstName,
+        "Last Name": lead.lastName || "Website Lead",
+        Email: lead.email,
+        Phone: lead.phone,
+        Street: lead.street,
+        City: lead.city,
+        State: lead.state,
+        "Zip Code": lead.zip,
+        LEADCF1: zohoWebformProjectType(lead.projectType),
+        Description: lead.description,
+        LEADCF6: lead.attribution.pageUrl,
+        LEADCF3: lead.attribution.utmSource,
+        LEADCF4: lead.attribution.utmMedium,
+        LEADCF5: lead.attribution.utmCampaign,
+        LEADCF7: lead.attribution.gclid,
+        "Lead Status": process.env.ZOHO_NEW_LEAD_STATUS || "New Lead",
+        aG9uZXlwb3Q: "",
+    });
+
+    const response = await fetchWithTimeout(
+        process.env.ZOHO_WEBFORM_URL || DEFAULT_ZOHO_WEBFORM_URL,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                Origin: "https://yellowstonerenovation.com",
+                Referer: "https://yellowstonerenovation.com/",
+            },
+            body: params.toString(),
+        }
+    );
+    const body = await response.text();
+    if (!response.ok || !body.includes("wf_thankyoumessage")) {
+        throw new Error(`Zoho webform failed (${response.status}).`);
+    }
+    return { action: "created" };
+}
+
 function backupEmailBody(lead) {
     return [
         `Name: ${[lead.firstName, lead.lastName].filter(Boolean).join(" ")}`,
@@ -391,16 +455,20 @@ async function sendBackupEmail(lead) {
     const text = backupEmailBody(lead);
 
     if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_FROM_EMAIL) {
-        const sgMail = require("@sendgrid/mail");
-        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-        await sgMail.send({
-            to: recipient,
-            from: process.env.SENDGRID_FROM_EMAIL,
-            replyTo: lead.email || process.env.SENDGRID_FROM_EMAIL,
-            subject,
-            text,
-        });
-        return { provider: "sendgrid" };
+        try {
+            const sgMail = require("@sendgrid/mail");
+            sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+            await sgMail.send({
+                to: recipient,
+                from: process.env.SENDGRID_FROM_EMAIL,
+                replyTo: lead.email || process.env.SENDGRID_FROM_EMAIL,
+                subject,
+                text,
+            });
+            return { provider: "sendgrid" };
+        } catch (error) {
+            console.error("SendGrid backup failed; trying fallback", error.message);
+        }
     }
 
     const formSubmitUrl =
@@ -419,7 +487,14 @@ async function sendBackupEmail(lead) {
             details: text,
         }),
     });
-    if (!response.ok) throw new Error(`Backup email failed (${response.status}).`);
+    const responseData = await response.json().catch(() => ({}));
+    if (
+        !response.ok ||
+        responseData.success === false ||
+        String(responseData.success).toLowerCase() === "false"
+    ) {
+        throw new Error(`Backup email failed (${response.status}).`);
+    }
     return { provider: "formsubmit" };
 }
 
@@ -471,7 +546,7 @@ exports.handler = async (event) => {
     const [crmResult, emailResult] = await Promise.allSettled([
         hasZohoCredentials()
             ? upsertZohoLead(lead)
-            : Promise.reject(new Error("Zoho CRM is not configured.")),
+            : submitZohoWebform(lead),
         sendBackupEmail(lead),
     ]);
     const crmSucceeded = crmResult.status === "fulfilled";
@@ -514,4 +589,6 @@ exports._test = {
     normalizePhone,
     parseRequestBody,
     redirectPath,
+    submitZohoWebform,
+    zohoWebformProjectType,
 };
