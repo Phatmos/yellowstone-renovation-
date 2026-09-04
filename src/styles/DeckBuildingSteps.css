@@ -1,0 +1,146 @@
+.deck-steps-section {
+  background: #fff;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.deck-steps-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.deck-steps-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.deck-steps-title .accent {
+  color: #23b26a;
+  margin-right: 10px;
+}
+
+.deck-steps-intro {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 auto 60px;
+  max-width: 850px;
+  text-align: center;
+}
+
+/* === Steps Layout === */
+.deck-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.deck-step {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: transform 0.3s ease;
+}
+
+.deck-step:hover {
+  transform: translateY(-3px);
+}
+
+.deck-step:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.deck-step-image {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-step-image img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* --- Text Block --- */
+.deck-step-content {
+  flex: 1;
+}
+
+.deck-step-number {
+  display: inline-block;
+  background: #f26522;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.deck-step-content h3 {
+  font-size: 1.5rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.deck-step-content p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  max-width: 600px;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .deck-step {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .deck-step {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .deck-step:nth-child(even) {
+    flex-direction: column !important;
+  }
+
+  .deck-step-image img {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .deck-step-content p {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .deck-steps-section {
+    padding: 70px 15px;
+  }
+
+  .deck-steps-title {
+    font-size: 2rem;
+  }
+
+  .deck-step-image img {
+    width: 130px;
+  }
+
+  .deck-step-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .deck-step-content p {
+    font-size: 1rem;
+  }
+}

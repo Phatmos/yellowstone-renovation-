@@ -1,0 +1,707 @@
+/* ===============================
+   HERO DECK SECTION BASE (DESKTOP)
+   =============================== */
+.hero-deck-section {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  color: white;
+  background-size: cover;
+  background-position: center center;
+  overflow: visible;
+  min-height: 850px;
+  padding-bottom: 0;
+}
+.hero-deck-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px);
+  transform: scale(1.08);
+  z-index: 0;
+}
+.hero-deck-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-deck-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* ===============================
+   MAIN CONTAINER
+   =============================== */
+.hero-deck-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0 60px;
+}
+
+/* ===============================
+   CUSTOMER IMAGE
+   =============================== */
+.hero-deck-left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.hero-deck-customer {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 20px;
+  z-index: 3;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===============================
+   RIGHT CONTENT
+   =============================== */
+.hero-deck-right {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 100px;
+}
+
+.hero-deck-right h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-deck-right span {
+  color: #23b26a;
+}
+
+/* ===============================
+   BADGE
+   =============================== */
+.hero-deck-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #23b26a 0%, #1fa760 100%);
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(35, 178, 106, 0.3);
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.hero-deck-badge:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(35, 178, 106, 0.4);
+}
+
+.hero-deck-badge-icon {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1);
+}
+
+/* ===============================
+   SUBTEXT
+   =============================== */
+.hero-deck-subtext {
+  font-size: 1.05rem;
+  max-width: 480px;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+/* ===============================
+   FORM SECTION
+   =============================== */
+.hero-deck-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* ===== FLAG + PHONE FIXED (U.S. ONLY) ===== */
+.hero-deck-phone-input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-deck-flag-select {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.hero-deck-flag-icon {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.hero-deck-country-code {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.hero-deck-phone-input {
+  padding: 12px 16px 12px 75px;
+  border-radius: 6px;
+  border: none;
+  width: 260px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #ccc;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.hero-deck-phone-input:focus {
+  box-shadow: 0 0 0 2px #23b26a;
+  outline: none;
+}
+
+.hero-deck-quote-btn {
+  background: #f26522;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(242, 101, 34, 0.3);
+}
+
+.hero-deck-quote-btn:hover {
+  background: #f26522;
+  box-shadow: 0 6px 15px rgba(242, 101, 34, 0.4);
+}
+
+/* ===============================
+   FEATURES SECTION (DESKTOP)
+   =============================== */
+.hero-deck-features-section {
+  background: #fff;
+  padding: 90px 0 80px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-deck-features-container {
+  width: 90%;
+  max-width: 900px;
+  margin: -200px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-deck-feature-card {
+  background: #fff;
+  border: 1px solid #23b26a;
+  border-radius: 10px;
+  text-align: center;
+  padding: 45px 25px 35px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 340px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.hero-deck-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.hero-deck-feature-icon img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.hero-deck-feature-card h3 {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hero-deck-feature-card p {
+  color: #111;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===============================
+   DESKTOP FIX — LOWER CUSTOMER IMAGE
+   =============================== */
+@media (min-width: 992px) {
+  .hero-deck-customer {
+    transform: translateY(50px);
+    margin-bottom: -70px;
+  }
+
+  .hero-deck-features-section {
+    margin-top: -50px;
+  }
+}
+
+/* ===============================
+   MOBILE LAYOUT
+   =============================== */
+@media (max-width: 992px) {
+  .hero-deck-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 100px 0 0;
+  }
+
+  .hero-deck-right {
+    order: 1;
+    align-items: center;
+  }
+
+  .hero-deck-right h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .hero-deck-badge {
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 1rem;
+  }
+  .orange-btn {
+  background-color: #f26522 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 14px 28px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(242, 101, 34, 0.3) !important;
+}
+
+.orange-btn:hover {
+  background-color: #d85015 !important;
+  box-shadow: 0 6px 15px rgba(242, 101, 34, 0.4) !important;
+}
+
+
+  .hero-deck-subtext {
+    font-size: 0.96rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-width: 350px;
+  }
+
+  .hero-deck-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-deck-phone-input {
+    width: 100%;
+    padding: 12px 16px 12px 80px;
+  }
+
+.orange-quote-btn {
+  background-color: #f26522 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 14px 28px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(242, 101, 34, 0.3) !important;
+}
+
+.orange-quote-btn:hover {
+  background-color: #d85015 !important;
+  box-shadow: 0 6px 15px rgba(242, 101, 34, 0.4) !important;
+}
+  .hero-deck-left {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .hero-deck-customer {
+    width: 85%;
+    max-width: 380px;
+  }
+
+  .hero-deck-features-section {
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  .hero-deck-features-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .hero-deck-feature-card {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .hero-deck-feature-card:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: #23b26a;
+    margin: 35px auto 0;
+  }
+}
+
+/* ===============================
+   POPUP FORM & THANK YOU
+   =============================== */
+.hero-deck-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+
+.hero-deck-popup-content {
+  background: #fff;
+  border: 2px solid #23b26a;
+  border-radius: 10px;
+  max-width: 420px;
+  width: 90%;
+  padding: 30px 25px 25px;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: heroDeckPopupFade 0.3s ease;
+}
+
+.hero-deck-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #477a61;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero-deck-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-deck-popup-form input {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.hero-deck-popup-form button {
+  background: #f26522;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-deck-popup-form button:hover {
+  background: #d85015;
+}
+
+.hero-deck-thankyou-box {
+  text-align: center;
+}
+
+.hero-deck-thankyou-icon {
+  font-size: 3rem;
+  color: #23b26a;
+  margin-bottom: 15px;
+}
+
+.hero-deck-back-home-btn {
+  background: #23b26a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.hero-deck-popup-note {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+}
+
+.hero-deck-popup-error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+@keyframes heroDeckPopupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ===============================
+   MOBILE FIX — CENTER FEATURES BEAUTIFULLY
+   =============================== */
+@media (max-width: 768px) {
+  .hero-deck-features-section {
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+
+  .hero-deck-features-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-deck-feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #23b26a;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .hero-deck-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-deck-feature-icon img {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 18px;
+  }
+
+  .hero-deck-feature-card h3 {
+    font-size: 1.1rem;
+    color: #111;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero-deck-feature-card p {
+    font-size: 0.93rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 0 auto 10px auto;
+    max-width: 320px;
+  }
+
+  /* Divider line between cards */
+  .hero-deck-feature-card:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: #23b26a;
+    margin: 25px auto 0;
+    border-radius: 1px;
+  }
+}
+.hero-modern-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.hero-modern-phone-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.hero-modern-flag-select {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background: #f8f8f8;
+  border-right: 1px solid #ddd;
+}
+
+.hero-modern-flag-icon {
+  width: 20px;
+  height: auto;
+  margin-right: 6px;
+}
+
+.hero-modern-country-code {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.hero-modern-phone-input {
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.hero-modern-quote-btn {
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-modern-quote-btn:hover {
+  opacity: 0.9;
+}
+
+/* === POPUP === */
+.hero-modern-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.hero-modern-popup-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.hero-modern-popup-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hero-modern-popup-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.hero-modern-popup-btn {
+  width: 100%;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-modern-popup-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+}

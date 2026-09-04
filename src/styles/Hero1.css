@@ -1,0 +1,107 @@
+.hero1-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero1-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.hero1-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+/* ====== TEXT STYLES ====== */
+.hero1-top {
+  color: #a9ffa7;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero1-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero1-desc {
+  font-size: 1.1rem;
+  color: #eaeaea;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ====== BUTTON ====== */
+.hero1-btn {
+  background-color: #2b4c2b;
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero1-btn:hover {
+  background-color: #0a923d;
+  transform: scale(1.05);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  .hero1-title {
+    font-size: 2.2rem;
+  }
+
+  .hero1-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero1-section {
+    padding: 70px 0;
+  }
+
+  .hero1-title {
+    font-size: 1.8rem;
+  }
+
+  .hero1-desc {
+    font-size: 0.95rem;
+  }
+
+  .hero1-btn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,148 @@
+/* === FULL-WIDTH BACKGROUND === */
+.remodeling-section {
+  background-color: #f3f3f3; /* ✅ full-width background */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 60px 0;
+}
+
+/* === INNER WRAPPER FOR CENTERING === */
+.remodeling-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.remodeling-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  max-width: 1200px; /* ✅ keeps content centered */
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* LEFT COLUMN */
+.remodeling-left h2 {
+  font-size: 1.8rem;
+  color: #1f1f1f;
+  margin-bottom: 15px;
+}
+
+.remodeling-left h3 {
+  font-size: 1.2rem;
+  color: #2b4c2b;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.remodeling-left p {
+  color: #333;
+  line-height: 1.7;
+  font-size: 0.96rem;
+  margin-bottom: 15px;
+}
+
+/* RIGHT SIDEBAR */
+.remodeling-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-card h4 {
+  font-size: 1.1rem;
+  color: #2b4c2b;
+  margin-bottom: 12px;
+}
+
+.sidebar-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-card li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.sidebar-card img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.highlight {
+  background: #f1f8f1;
+  border-left: 5px solid #2b4c2b;
+}
+
+.btn-green {
+  display: inline-block;
+  background: #2b4c2b;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-green:hover {
+  background: #1f3a1f;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .remodeling-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .remodeling-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sidebar-card {
+    width: 46%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar-card {
+    width: 100%;
+  }
+
+  .remodeling-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .remodeling-left p {
+    font-size: 0.92rem;
+  }
+
+  .remodeling-section {
+    padding: 40px 0;
+  }
+}

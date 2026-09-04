@@ -1,0 +1,100 @@
+/* 💠 Full width dark hero background */
+.nf-hero {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1d, #0e0e0f 70%);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  margin-top: 10px;
+  margin-bottom: 26px;
+  border-radius: 15px;
+}
+
+/* 💠 1200px max content area */
+.nf-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  color: #ffffff;
+}
+
+/* 404 text block */
+.nf-left {
+  flex: 1;
+}
+
+.nf-code {
+  font-size: 6rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #2ef07c, #0a923d);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nf-text {
+  font-size: 1.3rem;
+  margin-bottom: 28px;
+  color: #ddd;
+}
+
+/* 💠 Button — blur + glow + rounded */
+.nf-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  background: rgba(10, 146, 61, 0.28);
+  color: #fff;
+  border: 2px solid rgba(10, 146, 61, 0.6);
+  backdrop-filter: blur(12px);
+  transition: all 0.28s ease;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.4);
+}
+
+.nf-btn:hover {
+  background: rgba(10, 146, 61, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Meme image styling */
+.nf-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nf-img {
+  width: 250px;
+  filter: drop-shadow(0px 12px 28px rgba(0,0,0,0.5));
+  animation: floaty 3s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ✅ Mobile Optimization */
+@media (max-width: 900px) {
+  .nf-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nf-code {
+    font-size: 4.2rem;
+  }
+
+  .nf-img {
+    width: 200px;
+  }
+}

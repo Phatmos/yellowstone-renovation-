@@ -1,0 +1,142 @@
+/* === Modern Success Page === */
+.success-modern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  background: transparent; /* No full-page color */
+  padding: 40px 20px;
+}
+
+/* === Card === */
+.success-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 3rem 2.2rem;
+  text-align: center;
+  color: #111;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+/* === Animated Checkmark === */
+.checkmark {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.checkmark-svg {
+  width: 70px;
+  height: 70px;
+  stroke: #0aaa3d;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  border-radius: 50%;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: #0aaa3d;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke: #0aaa3d;
+  animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.7s forwards;
+}
+
+/* === Typography === */
+.success-card h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0aaa3d;
+  margin-bottom: 0.5rem;
+}
+
+.success-subtitle {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+
+.success-details {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0 1.5rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.success-details strong {
+  color: #0aaa3d;
+}
+
+/* === Button === */
+.success-home-btn {
+  display: inline-block;
+  background: #0aaa3d;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.success-home-btn:hover {
+  background: #007a2b;
+}
+
+/* === Animations === */
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Mobile === */
+@media (max-width: 600px) {
+  .success-card {
+    padding: 2.2rem 1.6rem;
+  }
+
+  .success-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .success-message {
+    font-size: 0.95rem;
+  }
+}

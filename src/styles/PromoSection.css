@@ -1,0 +1,291 @@
+/* =============================
+   ✅ Promo Section (Final Polished Version)
+============================= */
+.promo-section {
+    padding: 80px 0;
+    text-align: center;
+    background: #fff;
+    font-family: "Inter", sans-serif;
+}
+
+.promo-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+/* CONTAINER */
+.promo-container {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0px 18px 40px rgba(0,0,0,0.15);
+}
+
+/* BACKGROUND */
+.promo-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.48);
+    z-index: 0;
+}
+
+/* LEFT CONTENT (Desktop) */
+.promo-left {
+    position: absolute;
+    bottom: 120px;
+    left: 65px;
+    max-width: 520px;
+    text-align: left;
+    z-index: 3;
+    color: #fff;
+}
+
+.promo-tag {
+    background: rgba(255,255,255,0.26);
+    padding: 7px 18px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.promo-heading {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+    line-height: 1.15;
+}
+
+.promo-desc {
+    font-size: 1.25rem;
+    line-height: 1.55;
+    margin-bottom: 26px;
+}
+
+.promo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: #0a923d;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: 0.25s ease;
+}
+.promo-btn:hover { background: #11c255; }
+
+/* PROJECT CARD (Desktop) */
+.promo-project-card {
+    position: absolute;
+    bottom: 70px;
+    right: 60px;
+    width: 380px;
+    height: 260px;
+    background: #111;
+    border-radius: 22px;
+    overflow: hidden;
+    z-index: 3;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.promo-project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promo-project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.25));
+}
+
+/* BADGES */
+.promo-project-top {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    z-index: 4;
+}
+
+.badge {
+    background: rgba(255,255,255,0.95);
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* BOTTOM CARD CONTENT */
+.promo-project-bottom {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    z-index: 4;
+}
+
+.project-title { font-size: 1.05rem; font-weight: 700; }
+.project-price { font-size: 1.05rem; font-weight: 900; color: #00c653; }
+
+/* ✅ DOTS */
+.promo-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+    z-index: 50;
+}
+
+.promo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.45);
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+.promo-dot.active { background-color: #00c056; }
+@media(max-width: 768px) {
+
+    .promo-container {
+        height: 680px;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    /* ✅ Center the left content */
+    .promo-left {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 92%;
+        height: 100px;
+        max-width: 380px;
+        text-align: center;
+        z-index: 20; /* content ABOVE bg */
+    }
+
+    .promo-heading {
+        font-size: 1.85rem;
+        font-weight: 900;
+        line-height: 1.25;
+    }
+
+    .promo-desc {
+        font-size: 0.95rem;
+        margin: 12px auto 20px;
+        max-width: 340px;
+    }
+
+    .promo-btn {
+        padding: 14px 32px;
+        font-size: 1rem;
+        border-radius: 40px;
+        margin-bottom: 20px;
+    }
+
+    /* ✅ CARD LIKE DESKTOP — CENTERED + NO PUSH DOWN */
+    .promo-project-card {
+        position: absolute;
+        align-items: center;
+        bottom: 50px; /* ✅ Higher */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 390px;
+        height: auto;
+        background: #0b1f11;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0px 15px 40px rgba(0,0,0,0.35);
+        z-index: 15; /* ✅ Above BG + Content */
+    }
+
+    /* ✅ Image sizing */
+    .promo-project-card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 22px 22px 0 0;
+    }
+
+    /* ✅ Remove gradient overlay */
+    .promo-project-card::after {
+        display: none;
+    }
+
+    /* ✅ Badges ABOVE text block */
+    .promo-project-top {
+        position: static;
+        display: flex;
+        gap: 6px;
+        padding: 10px 16px 4px;
+    }
+
+    .badge {
+        font-size: 0.72rem;
+        padding: 3px 10px;
+        border-radius: 12px;
+        background: #ffffff26;
+        border: 1px solid #ffffff33;
+        color: #fff;
+    }
+
+    /* ✅ Text block — just like desktop */
+    .promo-project-bottom {
+        padding: 14px 16px 18px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+    }
+
+    .project-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+    }
+
+    .project-price {
+        color: #00c653;
+        font-size: 1.05rem;
+        font-weight: 900;
+    }
+
+    /* ✅ Correct dots placement */
+    .promo-dots {
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 30;
+    }
+}

@@ -1,0 +1,218 @@
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 600px;
+  color: white;
+  background: center/cover no-repeat;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  width: 90%;
+  max-width: 1200px;
+  z-index: 2;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* LEFT SIDE */
+.hero-left {
+  z-index: 2;
+}
+
+.hero-top {
+  color: #bdf7a8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.hero-left h1 {
+  font-size: 2.6rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 550px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 22px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.yellow {
+  background-color: #ffc107;
+  color: black;
+}
+
+.btn.green {
+  background-color: #0aaa3d;
+  color: white;
+}
+
+.btn.outline {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Logos & rating */
+.rating {
+  font-size: 0.9rem;
+  margin: 20px 0 10px;
+}
+
+.logos {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.logos img {
+  height: 35px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* RIGHT SIDE FORM */
+.hero-right {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 35px 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero-right h3 {
+  color: #0aaa3d;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.hero-right p {
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-form input,
+.hero-form select {
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.hero-form button {
+  background-color: #0aaa3d;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-form button:hover {
+  background: #088f33;
+}
+
+/* ✅ Mobile Optimization */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-left {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .hero-desc {
+    margin: 0 auto 25px;
+  }
+
+  .hero-right {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .logos {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-right {
+    padding: 25px 20px;
+    width: 90%;
+  }
+
+  .logos img {
+    height: 30px;
+    padding: 4px 8px;
+  }
+}

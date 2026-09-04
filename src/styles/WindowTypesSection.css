@@ -1,0 +1,101 @@
+/* === WINDOW TYPES === */
+.window-types {
+  padding: 60px 0;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.window-types .container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Title */
+.window-types h2 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 45px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.window-types h2::after {
+  content: "";
+  width: 120px;
+  height: 5px;
+  background: #0a923d;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+/* Grid */
+.window-grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Card */
+.window-item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #dadada;
+  text-decoration: none;
+  color: #111;
+  transition: 0.3s ease-in-out;
+}
+
+.window-item:hover {
+  transform: translateY(-6px);
+  border-color: #0a923d;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Image — FIX cropping ✅ */
+.window-item img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain; /* ✅ prevents cut */
+  margin-bottom: 12px;
+}
+
+/* Title */
+.window-item span {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ==== RESPONSIVE FIXES ==== */
+@media (max-width: 768px) {
+  .window-item img {
+    height: 145px;
+  }
+  .window-types h2 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .window-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .window-item img {
+    height: 120px;
+  }
+  .window-item {
+    padding: 15px;
+  }
+  .window-item span {
+    font-size: 0.92rem;
+  }
+}

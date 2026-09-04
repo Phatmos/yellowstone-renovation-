@@ -1,0 +1,76 @@
+/* ============================
+   Reviews Section — Final Fix
+   ============================ */
+
+.reviews-section {
+  background: linear-gradient(180deg, #f9f9f9 0%, #fff 100%);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: visible;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two per row */
+  gap: 25px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 25px 20px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 320px; /* ensure card width fits grid */
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.review-card img {
+  height: 36px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Force 1 per row on mobile */
+@media (max-width: 767px) {
+  .reviews-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 400px;
+    padding: 0 5px;
+  }
+
+  .review-card {
+    max-width: 100%;
+  }
+}
+
+/* Eliminate any hidden overflow globally */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+}

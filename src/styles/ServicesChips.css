@@ -1,0 +1,241 @@
+ServicesChips.css/* src/styles/ServicesChips.css */
+
+.sc {
+  padding: 52px 0;
+  background: #ffffff;
+}
+
+.sc-wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 18px;
+  text-align: center;
+}
+
+.sc-title {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 900;
+  color: #0b1220;
+  line-height: 1.15;
+}
+
+.sc-green {
+  color: #16a34a;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
+}
+
+.sc-sub {
+  margin: 10px auto 22px;
+  max-width: 760px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.sc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 14px 0 22px;
+}
+
+.sc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #0b1220;
+
+  padding: 9px 14px;
+  border-radius: 12px;
+
+  font-size: 12.5px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.sc-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.sc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #16a34a;
+  color: #ffffff;
+  text-decoration: none;
+
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 14px;
+
+  box-shadow: 0 10px 22px rgba(22, 163, 74, 0.22);
+}
+
+.sc-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.sc-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .sc-title {
+    font-size: 30px;
+  }
+  .sc-chip {
+    white-space: normal;
+  }
+}
+/* ADD THIS at the bottom of src/styles/ServicesChips.css */
+
+/* =========================
+   MODAL (ServicesChips)
+   ========================= */
+
+.sc-modalOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(17,24,39,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 18px;
+  z-index: 9999;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sc-modal{
+  width: min(520px, 100%);
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.28);
+  position: relative;
+  padding: 20px 18px 18px;
+}
+
+.sc-modalClose{
+  position: absolute;
+  right: 12px;
+  top: 12px;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+
+  background: #ffffff;
+  color: #111827;
+  font-size: 20px;
+  line-height: 1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sc-modalHead{ padding: 6px 6px 10px; }
+
+.sc-modalTitle{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.sc-modalTitle span{
+  color: #16a34a;
+  font-weight: 900;
+}
+
+.sc-modalSub{
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.sc-formGrid{
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 6px 0;
+}
+
+.sc-formGrid input,
+.sc-formGrid textarea{
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  outline: none;
+}
+
+.sc-formGrid input::placeholder,
+.sc-formGrid textarea::placeholder{
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.sc-formGrid input:focus,
+.sc-formGrid textarea:focus{
+  border-color: rgba(22,163,74,.55);
+  box-shadow: 0 0 0 3px rgba(22,163,74,.15);
+}
+
+.sc-formGrid textarea{ resize: none; }
+
+.sc-formBtn{
+  margin: 14px 6px 0;
+  width: calc(100% - 12px);
+  background: #16a34a;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 14px;
+  font-weight: 900;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(22,163,74,.22);
+}
+
+.sc-formNote{
+  margin: 10px 6px 0;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 600;
+  line-height: 1.35;
+}

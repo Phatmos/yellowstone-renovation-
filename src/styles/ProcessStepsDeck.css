@@ -1,0 +1,127 @@
+.psd {
+  padding: 72px 16px;
+  background: #fff;
+}
+
+.psd-wrap {
+  max-width: 1150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.psd-title {
+  margin: 0 0 10px;
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0d0f12;
+}
+
+.psd-green {
+  color: #27ae60;
+}
+
+.psd-sub {
+  margin: 0 auto 42px;
+  max-width: 880px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(13, 15, 18, 0.72);
+}
+
+.psd-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.psd-step {
+  width: 260px;
+  padding: 0 10px;
+}
+
+.psd-circle {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #27ae60;
+
+  background:
+    radial-gradient(circle at 30% 30%, rgba(39, 174, 96, 0.18), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(0, 0, 0, 0.06), transparent 60%),
+    #ffffff;
+
+  border: 1px solid rgba(13, 15, 18, 0.12);
+  box-shadow: 0 12px 26px rgba(13, 15, 18, 0.08);
+}
+
+.psd-stepTitle {
+  font-weight: 800;
+  color: #0d0f12;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.psd-num {
+  font-weight: 900;
+}
+
+.psd-stepText {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(13, 15, 18, 0.72);
+}
+
+.psd-foot {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(13, 15, 18, 0.66);
+}
+
+.psd-arrow {
+  width: 54px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+}
+
+.psd-arrow span {
+  display: block;
+  width: 44px;
+  height: 2px;
+  background: rgba(13, 15, 18, 0.14);
+  position: relative;
+}
+
+.psd-arrow span::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid rgba(13, 15, 18, 0.14);
+  border-top: 2px solid rgba(13, 15, 18, 0.14);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .psd-row {
+    flex-wrap: wrap;
+    gap: 28px 16px;
+  }
+
+  .psd-arrow {
+    display: none;
+  }
+
+  .psd-step {
+    width: min(360px, 92vw);
+  }
+}

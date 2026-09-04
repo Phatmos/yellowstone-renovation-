@@ -1,0 +1,330 @@
+.painting-hero {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  padding: 80px 8% 100px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.60) 40%, rgba(0,0,0,0.45) 100%);
+  backdrop-filter: blur(3px);
+}
+/************ CUSTOM SELECT ************/
+.select-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.select-container.open {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.select-label {
+  flex: 1;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+/* Arrow animation */
+.arrow {
+  transition: transform .25s;
+  pointer-events: none;
+}
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/************ ✅ Dropdown menu ************/
+.select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.92);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 10px 0;
+  z-index: 9999; /* ✅ Always top */
+  max-height: 220px;
+  overflow-y: auto;
+  animation: dropdownShow .25s ease;
+}
+
+@keyframes dropdownShow {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/************ Dropdown Item ************/
+.select-item {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #fff;
+  transition: background .22s;
+}
+.select-item:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+.select-item img {
+  width: 20px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/************ MOBILE SAFE ************/
+@media(max-width: 900px) {
+  .select-menu {
+    max-height: 200px;
+  }
+}
+
+.select-item:hover {
+  background: rgba(255,255,255,0.13);
+}
+
+/************ ✅ Fade animation ************/
+.fade-menu {
+  animation: fadeSelect .25s ease;
+}
+@keyframes fadeSelect {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/******* 📱 MOBILE SAFE *******/
+@media(max-width: 900px) {
+  .select-menu {
+    top: 110%;
+    max-height: 180px;
+  }
+}
+
+.hero-body {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+}
+
+.hero-left h1 {
+  color: #fff;
+  font-size: 3.3rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.hero-left p {
+  color: #ffffffd9;
+  font-size: 1.15rem;
+  margin-bottom: 26px;
+}
+
+.estimate-badge {
+  background: #FFD300;
+  padding: 7px 16px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #111;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+/************* CONTACT FORM *************/
+.contact-box {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.field {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.28);
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #fff;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.field input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+/* ✅ Stars + Text Row */
+.trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFD300;
+  text-align: center;
+}
+
+.stars {
+  letter-spacing: 2px;
+}
+
+/* ✅ Review logo row */
+.review-logos {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.review-logos img {
+  height: 32px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: .25s;
+}
+
+.review-logos img:hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* 📱 Center on mobile */
+@media(max-width: 900px) {
+  .trust-row p {
+    font-size: 0.77rem;
+  }
+}
+
+.contact-box button {
+  width: 100%;
+  background: #FFD300;
+  border: none;
+  padding: 14px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #111;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.contact-box button:hover {
+  background: #e6c200;
+  transform: translateY(-2px);
+}
+
+/************ BADGES ************/
+.trust-badges {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.trust-badges img {
+  height: 32px;
+  filter: brightness(0) invert(1);
+  opacity: .9;
+}
+
+/************ SLIDE RIGHT ANIMATION ************/
+.slide-in-right {
+  animation: slideInRight .7s ease forwards;
+  opacity: 0;
+}
+@keyframes slideInRight {
+  from { transform: translateX(120px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/************ AFTER SUBMIT PANEL ************/
+.after-submit {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  padding: 26px 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.18);
+  max-width: 420px;
+  text-align: center;
+  color: #fff;
+}
+.upload-btn {
+  margin-top: 16px;
+  background: #FFD300;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 800;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+.upload-btn:hover {
+  background: #e6c200;
+}
+
+/************ FADE UP ************/
+.fade-in-up {
+  animation: fadeUp .7s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(25px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/************ MOBILE ************/
+@media(max-width: 900px) {
+  .painting-hero {
+    padding: 110px 6% 120px;
+    border-radius: 0;
+  }
+  .hero-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .hero-left h1 {
+    font-size: 2.4rem;
+  }
+  .contact-box,
+  .after-submit {
+    width: 100%;
+  }
+}

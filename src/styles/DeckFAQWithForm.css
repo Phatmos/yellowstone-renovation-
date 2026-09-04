@@ -1,0 +1,221 @@
+/* Section background like screenshot */
+.dfq {
+  padding: 90px 16px;
+  background: #f3f8f4;
+}
+
+.dfq-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dfq-title {
+  margin: 0 0 10px;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 900;
+  color: #0d0f12;
+  letter-spacing: -0.02em;
+}
+
+.dfq-green { color: #27ae60; }
+
+.dfq-sub {
+  margin: 0 auto 34px;
+  max-width: 680px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(13,15,18,0.68);
+}
+
+.dfq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.dfq-item {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(13,15,18,0.10);
+  box-shadow: 0 12px 34px rgba(13,15,18,0.06);
+  overflow: hidden;
+  text-align: left;
+}
+
+.dfq-q {
+  width: 100%;
+  padding: 16px 18px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 800;
+  color: #0d0f12;
+  gap: 16px;
+}
+
+.dfq-qText {
+  font-size: 14.5px;
+  line-height: 1.35;
+}
+
+.dfq-chevron {
+  color: #27ae60;
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+.dfq-a {
+  padding: 0 18px 16px;
+  color: rgba(13,15,18,0.72);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* bottom CTA */
+.dfq-bottom {
+  margin-top: 26px;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.dfq-help {
+  font-weight: 800;
+  color: rgba(13,15,18,0.78);
+}
+
+.dfq-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dfq-btnSolid {
+  background: #1f8f4a;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 900;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.dfq-btnOutline {
+  background: #fff;
+  color: #1f8f4a;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 900;
+  border: 1px solid rgba(31,143,74,0.35);
+  cursor: pointer;
+}
+
+/* MODAL */
+.dfq-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 15, 18, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.dfq-modal {
+  width: min(520px, 100%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+  position: relative;
+  padding: 18px 18px 16px;
+}
+
+.dfq-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(13,15,18,0.12);
+  background: #fff;
+  color: #0d0f12;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.dfq-mHead {
+  text-align: left;
+  padding-right: 40px;
+}
+
+.dfq-mTitle {
+  font-weight: 900;
+  font-size: 20px;
+  color: #0d0f12;
+}
+
+.dfq-mPromo {
+  margin-top: 6px;
+  font-weight: 800;
+  font-size: 12.5px;
+  color: #0d0f12;
+}
+
+.dfq-mSub {
+  margin-top: 6px;
+  font-size: 13.5px;
+  color: rgba(13,15,18,0.70);
+}
+
+.dfq-form { margin-top: 14px; }
+
+.dfq-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.dfq-grid input,
+.dfq-grid select,
+.dfq-grid textarea {
+  width: 100%;
+  border: 1px solid rgba(13,15,18,0.14);
+  border-radius: 10px;
+  padding: 11px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.dfq-grid textarea { resize: vertical; }
+
+.dfq-submit {
+  margin-top: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #1f8f4a;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.dfq-note {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(13,15,18,0.55);
+}
+
+@media (max-width: 700px) {
+  .dfq { padding: 70px 14px; }
+  .dfq-q { padding: 14px 14px; }
+  .dfq-a { padding: 0 14px 14px; }
+
+  .dfq-modal { padding: 16px 14px 14px; }
+  .dfq-mTitle { font-size: 18px; }
+}

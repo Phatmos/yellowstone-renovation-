@@ -1,0 +1,145 @@
+.promoV2-section {
+    padding: 70px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.promoV2-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+/******** HERO CONTAINER ********/
+.promoV2-container {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    height: 460px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 10px 28px rgba(0,0,0,0.08);
+}
+
+/******** BACKGROUND IMAGE ********/
+.promoV2-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+}
+
+/******** LEFT TEXT CTA ********/
+.promoV2-left {
+    position: absolute;
+    left: 50px;
+    bottom: 60px;
+    color: #fff;
+    text-align: left;
+    max-width: 500px;
+    z-index: 2;
+}
+
+.promoV2-tag {
+    background: #0a923d;
+    padding: 5px 14px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.promoV2-heading {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.promoV2-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.promoV2-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    background: #0a923d;
+    border-radius: 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.promoV2-btn:hover {
+    background: #0ab84a;
+}
+
+/******** RIGHT SIMPLE PROJECT LABEL ********/
+.promoV2-project-box {
+    position: absolute;
+    right: 50px;
+    bottom: 60px;
+    background: rgba(255,255,255,0.9);
+    padding: 14px 20px;
+    border-radius: 12px;
+    text-align: right;
+    z-index: 2;
+    min-width: 220px;
+}
+
+.promoV2-project-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0a923d;
+    margin-bottom: 3px;
+}
+
+.promoV2-project-location {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+}
+
+/******** NAV BUTTONS ********/
+.promoV2-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.35);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.promoV2-nav:hover {
+    background: #0a923d;
+}
+
+.promoV2-nav.left { left: 15px; }
+.promoV2-nav.right { right: 15px; }
+
+/******** MOBILE ********/
+@media(max-width: 900px) {
+    .promoV2-project-box {
+        display: none;
+    }
+    .promoV2-left {
+        bottom: 40px;
+        left: 30px;
+        max-width: 90%;
+    }
+}

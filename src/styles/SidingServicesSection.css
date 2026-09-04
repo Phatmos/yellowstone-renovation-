@@ -1,0 +1,149 @@
+.siding-section {
+  background: #f8f9fa;
+  padding: 100px 0;
+  font-family: "Inter", sans-serif;
+  color: #111;
+}
+
+.siding-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+}
+
+.siding-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.siding-title span {
+  color: #0a923d;
+}
+
+.siding-subtext {
+  color: #444;
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.7;
+}
+
+/* ===== Grid ===== */
+.siding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 35px;
+}
+
+.siding-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.siding-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.siding-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.siding-content {
+  padding: 25px;
+}
+
+.siding-content h3 {
+  font-size: 1.3rem;
+  color: #0a923d;
+  margin-bottom: 10px;
+}
+
+.siding-content p {
+  font-size: 0.98rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.siding-link {
+  color: #0a923d;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.siding-link:hover {
+  color: #055f27;
+}
+
+/* ===== Awards ===== */
+.awards-section {
+  margin-top: 100px;
+}
+
+.awards-section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0a923d;
+  margin-bottom: 15px;
+}
+
+.awards-section p {
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.awards-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.award-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.award-item img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.award-item p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .siding-title {
+    font-size: 2rem;
+  }
+
+  .siding-subtext {
+    font-size: 1rem;
+  }
+
+  .siding-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .awards-grid {
+    gap: 25px;
+  }
+}

@@ -1,0 +1,48 @@
+.dealer-banner {
+  width: 100%;
+  text-align: center;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dealer-banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dealer-banner h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.dealer-banner span {
+  font-weight: 700;
+}
+
+.dealer-banner p {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: 0 auto;
+  color: inherit;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .dealer-banner {
+    padding: 60px 15px;
+  }
+
+  .dealer-banner h2 {
+    font-size: 1.5rem;
+  }
+
+  .dealer-banner p {
+    font-size: 0.95rem;
+  }
+}

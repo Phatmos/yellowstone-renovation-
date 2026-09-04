@@ -1,0 +1,150 @@
+.about-section {
+  background: #fff;
+  padding: 100px 0 80px;
+  width: 100%;
+  color: #111;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-left {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+.about-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-accent {
+  color: #f26522;
+  font-weight: 800;
+  font-size: 2.2rem;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #111;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.about-check {
+  display: inline-block;
+  color: #23b26a;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* ===============================
+   CREDENTIAL BOXES
+   =============================== */
+.about-credentials {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-top: 25px;
+  margin-top: 40px;
+}
+
+.about-cred-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #333;
+  border-right: 1px solid #ddd;
+  padding-right: 40px;
+}
+
+.about-cred-item:last-child {
+  border-right: none;
+}
+
+.about-cred-item a {
+  color: #23b26a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-cred-item a:hover {
+  text-decoration: underline;
+}
+
+.cred-icon {
+  font-size: 1.3rem;
+  color: #f26522;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+   =============================== */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-right {
+    flex: 1;
+  }
+
+  .about-title {
+    justify-content: center;
+  }
+
+  .about-credentials {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .about-cred-item {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .about-cred-item:last-child {
+    border-bottom: none;
+  }
+}
