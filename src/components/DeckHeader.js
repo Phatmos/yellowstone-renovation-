@@ -65,7 +65,7 @@ export default function DeckHeader({
         };
     }, [formOpen, menuOpen]);
 
-    const formAction = `https://formsubmit.co/${emailTo}`;
+    const formAction = "/api/lead";
 
     const openForm = () => {
         setMenuOpen(false);

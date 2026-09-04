@@ -72,7 +72,7 @@ export default function ProjectShowcase({
 
     if (!current) return null;
 
-    const formAction = `https://formsubmit.co/${emailTo}`;
+    const formAction = "/api/lead";
 
     return (
         <>

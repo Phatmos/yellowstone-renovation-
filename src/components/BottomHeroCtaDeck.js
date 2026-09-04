@@ -42,7 +42,7 @@ export default function BottomHeroCtaDeck({
         };
     }, [open]);
 
-    const formAction = `https://formsubmit.co/${emailTo}`;
+    const formAction = "/api/lead";
 
     return (
         <>

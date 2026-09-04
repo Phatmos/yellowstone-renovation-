@@ -109,7 +109,7 @@ export default function DeckQuoteForm() {
 
     const autoSendEmail = async (finalData) => {
         try {
-            await fetch("https://formsubmit.co/ajax/renovationyellowstone@gmail.com", {
+            await fetch("/api/lead", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -613,7 +613,7 @@ export default function DeckQuoteForm() {
 
                                             setError("");
 
-                                            await fetch("https://formsubmit.co/ajax/renovationyellowstone@gmail.com", {
+                                            await fetch("/api/lead", {
                                                 method: "POST",
                                                 headers: {
                                                     "Content-Type": "application/json",

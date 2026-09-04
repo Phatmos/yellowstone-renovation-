@@ -88,7 +88,7 @@ export default function Layout({ children }) {
             <p>Fill out a few details and our team will contact you shortly.</p>
 
             <form
-              action="https://formsubmit.co/renovationyellowstone@gmail.com"
+              action="/api/lead"
               method="POST"
               className="quote-popup-form"
             >

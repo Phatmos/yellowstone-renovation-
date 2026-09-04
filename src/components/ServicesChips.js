@@ -56,7 +56,7 @@ export default function ServicesChips({
         };
     }, [open]);
 
-    const formAction = `https://formsubmit.co/${emailTo}`;
+    const formAction = "/api/lead";
 
     const renderTitle = () => {
         if (!highlight) return title;

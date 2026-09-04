@@ -72,7 +72,7 @@ const BlackFridaySection = () => {
 
         try {
             const response = await fetch(
-                "https://formsubmit.co/ajax/renovationyellowstone@gmail.com",
+                "/api/lead",
                 {
                     method: "POST",
                     headers: {

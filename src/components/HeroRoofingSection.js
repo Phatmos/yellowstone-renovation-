@@ -37,16 +37,14 @@ export default function HeroRoofingSection({
     const isZipValid = zip.length === 5;
     const isStep2Valid = name.length > 1 && phone.length >= 10;
 
-    // ===============================
-    // 🚀 SUBMIT FORM TO FORMSUBMIT.CO
-    // ===============================
+    // Submit through the site's secure lead endpoint.
     const handleSubmit = async () => {
         setLoading(true);
         setSubmitError("");
 
         try {
             const response = await fetch(
-                "https://formsubmit.co/ajax/renovationyellowstone@gmail.com",
+                "/api/lead",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -61,7 +59,7 @@ export default function HeroRoofingSection({
 
             const data = await response.json();
 
-            if (data.success === "true") {
+            if (response.ok && (data.success === "true" || data.success === true)) {
                 window.location.href = "/thank-you";
             } else {
                 setSubmitError("Something went wrong. Please try again.");

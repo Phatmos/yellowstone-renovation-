@@ -121,7 +121,7 @@ export default function HeroSplit1({
     }, [formOpen]);
 
     const finalImage = img || heroImage;
-    const formAction = `https://formsubmit.co/${emailTo}`;
+    const formAction = "/api/lead";
 
     return (
         <>

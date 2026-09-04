@@ -67,7 +67,7 @@ export default function QuoteSection() {
                         {/* ✅ FormSubmit works here with auto redirect */}
                         <form
                             className="hero-deck-popup-form"
-                            action="https://formsubmit.co/renovationyellowstone@gmail.com"
+                            action="/api/lead"
                             method="POST"
                         >
                             {/* redirect to thank-you page */}

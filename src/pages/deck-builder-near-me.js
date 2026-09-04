@@ -22,7 +22,7 @@ function DeckEstimateForm() {
     const data = new FormData(form);
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(data).toString(),

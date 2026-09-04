@@ -9,8 +9,6 @@ export default function OffersPage() {
     const [expiryDate, setExpiryDate] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const emailTo = "renovationyellowstone@gmail.com"; // your verified FormSubmit email
-
     // ✅ Auto-update expiry each month
     useEffect(() => {
         const today = new Date();
@@ -29,7 +27,7 @@ export default function OffersPage() {
 
     const closeForm = () => setIsOpen(false);
 
-    // ✅ FormSubmit handler
+    // Send offer requests through the same secure lead endpoint as every site form.
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
@@ -43,11 +41,13 @@ export default function OffersPage() {
         };
 
         try {
-            await fetch(`https://formsubmit.co/ajax/${emailTo}`, {
+            const response = await fetch("/api/lead", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
+
+            if (!response.ok) throw new Error("Lead submission failed");
 
             setTimeout(() => {
                 const query = new URLSearchParams({

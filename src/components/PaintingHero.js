@@ -30,7 +30,7 @@ export default function PaintingHero({
                 <form
                     className="contact-box slide-in-right"
                     method="POST"
-                    action="https://formsubmit.co/renovationyellowstone@gmail.com"
+                    action="/api/lead"
                     onSubmit={() => setLoading(true)}
                 >
                     {/* ✅ Required hidden fields */}

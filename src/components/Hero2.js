@@ -30,7 +30,7 @@ export default function Hero2({
   const year = currentDate.getFullYear();
   const lastDay = new Date(year, currentDate.getMonth() + 1, 0).getDate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = formRef.current;
@@ -41,28 +41,32 @@ export default function Hero2({
     const service = form.service.value.trim();
     const message = form.message.value.trim();
 
-    // ✅ Send to FormSubmit.co (background)
-    fetch(`https://formsubmit.co/ajax/${emailTo}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstName,
-        lastName,
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone,
+          service,
+          message,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Lead submission failed");
+
+      const query = new URLSearchParams({
+        name: `${firstName} ${lastName}`,
         email,
-        phone,
         service,
-        message,
-      }),
-    }).catch((err) => console.error("Form submit error:", err));
-
-    // ✅ Redirect to success page with user info
-    const query = new URLSearchParams({
-      name: `${firstName} ${lastName}`,
-      email,
-      service,
-    }).toString();
-
-    window.location.href = `${successRedirect}?${query}`;
+      }).toString();
+      window.location.href = `${successRedirect}?${query}`;
+    } catch (error) {
+      console.error("Form submit error:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (

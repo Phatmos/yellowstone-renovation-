@@ -67,7 +67,7 @@ export default function HeroSplit({
         setSubmitting(true);
 
         try {
-            const response = await fetch(`https://formsubmit.co/ajax/${emailTo}`, {
+            const response = await fetch("/api/lead", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
