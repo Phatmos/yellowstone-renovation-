@@ -71,16 +71,16 @@ export default function Footer() {
 
             {/* === Review Logos === */}
             <div className="footer-logos">
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.bbb.org/us/ky/nicholasville/profile/home-improvement/yellowstone-renovation-0402-235919743" target="_blank" rel="noopener noreferrer">
                     <img src="/icons/bbb-logo.webp" alt="BBB" />
                 </a>
                 <a href="https://www.google.com/maps/place/Yellowstone+Renovation" target="_blank" rel="noopener noreferrer">
                     <img src="/icons/google-reviews.webp" alt="Google" />
                 </a>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <span>
                     <img src="/icons/Yelp.webp" alt="Yelp" />
-                </a>
-                <a href="" target="_blank" rel="noopener noreferrer">
+                </span>
+                <a href="https://www.angi.com/companylist/us/ky/nicholasville/yellowstone-renovation-reviews-1.htm" target="_blank" rel="noopener noreferrer">
                     <img src="/icons/angi.webp" alt="Angi" />
                 </a>
             </div>
