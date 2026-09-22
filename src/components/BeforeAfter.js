@@ -83,7 +83,7 @@ export default function BeforeAfter({
     title = "Before & After Transformations",
     description = "We love making homes look fantastic! Let us help you transform your home with durable Hardiplank siding and stylish exterior finishes.",
     buttonText = "See More Before & After Photos →",
-    buttonLink = "/projects/",
+    buttonLink = "/projects-showcase/",
     accentColor = "#0a923d",
     images = [
         { before: "/images/remodler2.webp", after: "/images/remodler1.webp" },

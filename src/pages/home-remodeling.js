@@ -17,6 +17,7 @@ export default function Home() {
     return (
 
         <Layout>
+            <SEO title="Home Remodeling Information | Yellowstone Renovation" description="Explore Yellowstone Renovation exterior project services around Lexington, Kentucky." pathname="/home-remodeling/" noIndex />
             <Hero2
                 topText="Top Home Remodeling Contractor in Lexington, KY"
                 title="Home Remodeling in Lexington"
@@ -120,4 +121,3 @@ export default function Home() {
         </Layout >
     )
 }
-

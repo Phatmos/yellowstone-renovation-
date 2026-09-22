@@ -174,21 +174,21 @@ export default function MeadowthorpeKY() {
                         description:
                             "We design and build handcrafted decks tailored for Meadowthorpe properties. Choose low-maintenance composite or the warmth of natural wood — built for long-term comfort and durability.",
                         image: "/images/deck11.webp",
-                        link: "/cities/meadowthorpe-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Trex, TimberTech, cedar, and pressure-treated lumber — installed with precision. Every deck includes reinforced framing, drainage planning, and long-lasting construction.",
                         image: "/images/deck7.webp",
-                        link: "/cities/meadowthorpe-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie®, LP SmartSide & Vinyl Siding Installation",
                         description:
                             "Upgrade your Meadowthorpe home with durable siding materials engineered to withstand Kentucky weather — including Hardie, SmartSide, and premium vinyl systems.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/meadowthorpe-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

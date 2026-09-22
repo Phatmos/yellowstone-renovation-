@@ -24,9 +24,9 @@ export default function Hero({
                     <p className="hero-desc">{description}</p>
 
                     <div className="buttons">
-                        <a href="#" className="btn yellow">OUR SERVICES</a>
+                        <a href="/decking/" className="btn yellow">OUR SERVICES</a>
                         <a href="tel:8597657267" className="btn green">CALL US</a>
-                        <a href="#" className="btn outline">TEXT US</a>
+                        <a href="sms:+18597657267" className="btn outline">TEXT US</a>
                     </div>
 
                     <div className="rating">⭐⭐⭐⭐⭐ Our Rating 4.9/5 Based On 65 Reviews</div>
@@ -35,7 +35,7 @@ export default function Hero({
                         <img src="../icons/bbb-logo.webp" alt="BBB" />
                         <img src="../icons/google-reviews.webp" alt="Google Reviews" />
                         <img src="../icons/jameshardie.webp.webp" alt="James Hardie" />
-                        <img src="../icons/yelp.webp" alt="Yelp" />
+                        <img src="../icons/Yelp.webp" alt="Yelp" />
                     </div>
                 </div>
 

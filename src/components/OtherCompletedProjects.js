@@ -46,7 +46,7 @@ const OtherCompletedProjects = ({ currentProject }) => {
                 </div>
 
                 <div className="other-completed-action">
-                    <a href="/projects-showcase/">View All Projects</a>
+                    <a href="/projects-showcase/">Project Showcase</a>
                 </div>
             </div>
         </section>

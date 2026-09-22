@@ -13,19 +13,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
 
     // 🔹 SEO & Sitemap
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: { output: `/sitemap.xml` },
-    },
-    {
-      resolve: `gatsby-plugin-robots-txt`,
-      options: { policy: [{ userAgent: "*", allow: "/" }] },
-    },
-    // 🔹 SEO & Sitemap
+    // One sitemap and one robots.txt configuration.
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/`,
+        excludes: [`/404/`, `/projects/`, `/thank-you/`, `/success/`, `/success-offer/`, `/sales-tools/`, `/fence-estimator/`, `/fence-estimator1/`, `/black-friday/`],
         serialize: ({ path }) => ({
           url: path,
           changefreq: "weekly",

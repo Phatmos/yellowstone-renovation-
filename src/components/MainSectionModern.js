@@ -26,10 +26,10 @@ export default function MainSectionModern({
         },
     ],
     projects = [
-        { image: "/images/deck1.jpg", link: "#", title: "Modern Deck" },
-        { image: "/images/deck2.jpg", link: "#", title: "Outdoor Retreat" },
-        { image: "/images/deck3.jpg", link: "#", title: "Wood Finish Deck" },
-        { image: "/images/deck4.jpg", link: "#", title: "Patio Upgrade" },
+        { image: "/images/deck1.jpg", link: "/projects-showcase/", title: "Modern Deck" },
+        { image: "/images/deck2.jpg", link: "/projects-showcase/", title: "Outdoor Retreat" },
+        { image: "/images/deck3.jpg", link: "/projects-showcase/", title: "Wood Finish Deck" },
+        { image: "/images/deck4.jpg", link: "/projects-showcase/", title: "Patio Upgrade" },
     ],
     callToAction = {
         image: "/images/deck-call.jpg",

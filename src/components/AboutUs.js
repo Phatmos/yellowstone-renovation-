@@ -116,7 +116,7 @@ export default function AboutUs() {
                             <img src="/images/yelp.png" alt="Yelp" />
                             <img src="/images/facebook.png" alt="Facebook" />
                         </div>
-                        <a href="/reviews" className="btn-green">
+                        <a href="/projects-showcase/" className="btn-green">
                             Read All Reviews
                         </a>
                     </div>

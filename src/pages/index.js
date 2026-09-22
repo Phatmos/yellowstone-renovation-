@@ -10,7 +10,6 @@ import Services from "../components/Services.js"
 import OurPortfolio from "../components/OurPortfolio"
 import WindowsPromoSection from "../components/WindowsPromoSection"
 import SEO from "../components/SEO"
-import { Helmet } from "react-helmet"
 import MainSectionSideBar from "../components/MainSectionSideBar";
 import HeroRoofingSection from "../components/HeroRoofingSection";
 import HomeVideoStories from "../components/HomeVideoStories";
@@ -20,151 +19,7 @@ export default function Home() {
   return (
     <Layout>
 
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              /* =========================
-                 ORGANIZATION / BUSINESS
-              ========================= */
-              {
-                "@type": ["HomeAndConstructionBusiness", "GeneralContractor"],
-                "@id": "https://yellowstonerenovation.com/#business",
-                "name": "Yellowstone Renovation",
-                "url": "https://yellowstonerenovation.com/",
-                "logo": "https://yellowstonerenovation.com/icons/logo.webp",
-                "image": "https://yellowstonerenovation.com/images/og-home.jpg",
-                "telephone": "+1-859-765-7267",
-                "priceRange": "$$",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "120 Tina Way",
-                  "addressLocality": "Nicholasville",
-                  "addressRegion": "KY",
-                  "postalCode": "40356",
-                  "addressCountry": "US"
-                },
-                "areaServed": [
-                  { "@type": "City", "name": "Lexington", "addressRegion": "KY" },
-                  { "@type": "City", "name": "Nicholasville", "addressRegion": "KY" },
-                  { "@type": "City", "name": "Georgetown", "addressRegion": "KY" },
-                  { "@type": "City", "name": "Richmond", "addressRegion": "KY" },
-                  { "@type": "City", "name": "Versailles", "addressRegion": "KY" },
-                  { "@type": "City", "name": "Winchester", "addressRegion": "KY" },
-                  { "@type": "City", "name": "Frankfort", "addressRegion": "KY" }
-                ],
-                "sameAs": [
-                  "https://www.facebook.com/p/Yellowstone-Renovation-61551123481170/",
-                  "https://www.instagram.com/yellowstone_renovation/",
-                  "https://maps.google.com/?q=Yellowstone+Renovation+Nicholasville+KY"
-                ],
-                "foundingLocation": {
-                  "@type": "Place",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Nicholasville",
-                    "addressRegion": "KY",
-                    "addressCountry": "US"
-                  }
-                },
-                "description":
-                  "Yellowstone Renovation is a trusted exterior remodeling contractor serving Lexington, KY and Central Kentucky. We specialize in custom deck building, composite and wood decking, James Hardie® and vinyl siding installation, exterior trim, windows, and full exterior upgrades with clear communication and organized project management.",
-                "makesOffer": [
-                  { "@id": "https://yellowstonerenovation.com/#service-deck-building" },
-                  { "@id": "https://yellowstonerenovation.com/#service-siding" }
-                ],
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.9",
-                  "reviewCount": "87"
-                },
-                "review": [
-                  {
-                    "@type": "Review",
-                    "author": { "@type": "Person", "name": "Timothy H." },
-                    "datePublished": "2025-03-10",
-                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                    "reviewBody":
-                      "Very responsive and easy to work with. The estimate was clear, the timeline was realistic, and the crew showed up when they said they would. Clean work and great communication."
-                  },
-                  {
-                    "@type": "Review",
-                    "author": { "@type": "Person", "name": "Shaun R." },
-                    "datePublished": "2025-02-02",
-                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                    "reviewBody":
-                      "Hardie siding install came out perfect. The crew protected landscaping, cleaned up daily, and finished faster than expected. The house looks brand new."
-                  },
-                  {
-                    "@type": "Review",
-                    "author": { "@type": "Person", "name": "Michelle B." },
-                    "datePublished": "2024-11-18",
-                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                    "reviewBody":
-                      "From design to final walkthrough, the process was smooth. They handled details, answered questions quickly, and the final result exceeded expectations."
-                  }
-                ]
-              },
-
-              /* =========================
-                 WEBSITE + HOMEPAGE
-              ========================= */
-              {
-                "@type": "WebSite",
-                "@id": "https://yellowstonerenovation.com/#website",
-                "url": "https://yellowstonerenovation.com/",
-                "name": "Yellowstone Renovation",
-                "publisher": { "@id": "https://yellowstonerenovation.com/#business" },
-                "inLanguage": "en-US"
-              },
-              {
-                "@type": "WebPage",
-                "@id": "https://yellowstonerenovation.com/#webpage",
-                "url": "https://yellowstonerenovation.com/",
-                "name": "Deck & Siding Contractor in Lexington, KY | Yellowstone Renovation",
-                "isPartOf": { "@id": "https://yellowstonerenovation.com/#website" },
-                "about": { "@id": "https://yellowstonerenovation.com/#business" },
-                "primaryImageOfPage": {
-                  "@type": "ImageObject",
-                  "url": "https://yellowstonerenovation.com/images/og-home.jpg"
-                },
-                "description":
-                  "Looking for a deck builder or siding contractor in Lexington, KY? Yellowstone Renovation designs and builds custom decks and installs James Hardie® & vinyl siding with clean work, clear estimates, and reliable project management across Central Kentucky."
-              },
-
-              /* =========================
-                 SERVICE: DECK BUILDING
-              ========================= */
-              {
-                "@type": "Service",
-                "@id": "https://yellowstonerenovation.com/#service-deck-building",
-                "name": "Deck Building in Lexington, KY",
-                "serviceType": "Deck Design & Construction",
-                "provider": { "@id": "https://yellowstonerenovation.com/#business" },
-                "areaServed": { "@type": "City", "name": "Lexington", "addressRegion": "KY" },
-                "description":
-                  "Custom deck design and construction in Lexington, KY. Composite and wood decking, multi-level decks, stairs, railings, lighting, and full build management from design to permits and installation."
-              },
-
-              /* =========================
-                 SERVICE: SIDING
-              ========================= */
-              {
-                "@type": "Service",
-                "@id": "https://yellowstonerenovation.com/#service-siding",
-                "name": "Siding Installation in Lexington, KY",
-                "serviceType": "Siding Replacement & Installation",
-                "provider": { "@id": "https://yellowstonerenovation.com/#business" },
-                "areaServed": { "@type": "City", "name": "Lexington", "addressRegion": "KY" },
-                "description":
-                  "Professional siding replacement and installation in Lexington, KY. We install James Hardie® fiber cement and premium vinyl siding designed for Kentucky weather, improving curb appeal, durability, and energy performance."
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
-      <SEO
+      <SEO pathname="/"
         title="Deck & Siding Contractor in Lexington, KY | Yellowstone Renovation"
         description="Yellowstone Renovation is a top-rated deck builder and siding contractor serving Lexington, KY. Custom composite & wood decks, James Hardie® and vinyl siding, clean installs, clear estimates, and reliable project management."
       />
@@ -173,8 +28,8 @@ export default function Home() {
       <HeroRoofingSection
         background="/images/deck/deck-lexington23.webp"
         title="Deck Builder & Siding Contractor in Lexington, KY"
-        subtitle="Yellowstone Renovation is a small, local company made up of a few hardworking people who truly care about what we do. We’re not a big corporation — just a team that takes pride in every project and aims to deliver honest, high-quality work for every client."
-        ratingText="⭐⭐⭐⭐⭐ 4.9 |  #1 Local Exterior Experts"
+        subtitle="Yellowstone Renovation builds custom wood and composite decks and installs siding and windows for homeowners in Lexington and Central Kentucky. Tell us about your project for a clear estimate."
+        ratingText="Locally owned · Serving Central Kentucky"
         placeholder="Enter your ZIP code"
         buttonText="Get a quick quote"
       />
@@ -216,7 +71,7 @@ export default function Home() {
       {/* ✅ SERVICES SECTION */}
       <Services
         title="Professional Exterior Remodeling Services"
-        subtitle="Complete outdoor solutions — decks, siding, gutters, windows, and trim installation. Everything your home exterior needs, built with precision, quality, and pride."
+        subtitle="Explore custom deck building, siding replacement, windows, and exterior trim for homes around Lexington."
         accentColor="#0a923d"
         bgImage="/images/deck-bg.jpg"
         services={[
@@ -316,7 +171,7 @@ export default function Home() {
         offers={[
           {
             image: "/images/deck1.webp",
-            text: "Get $1500 OFF Your New Deck Installation — Limited-Time Offer",
+            text: "Request an Estimate for Your New Deck",
             button: "Claim Discount",
             link: "/contact",
           },
@@ -324,16 +179,16 @@ export default function Home() {
             image: "/images/deck2.webp",
             text: "View 20+ Completed Deck Projects Across Lexington",
             button: "View Gallery",
-            link: "/projects",
+            link: "/projects-showcase/",
           },
         ]}
 
         whyUs={[
-          "Licensed, insured, and trusted local deck builders",
+          "A local team that explains materials and scope clearly",
           "Serving Lexington and all of Central Kentucky",
           "Specializing in composite, wood, and custom outdoor designs",
-          "Fast, clean installations — no delays or hidden fees",
-          "Over 35 years of combined exterior construction experience",
+          "Clear estimates and an organized project process",
+          "Decks, siding, and exterior work in Central Kentucky",
         ]}
 
         projects={[
@@ -344,7 +199,7 @@ export default function Home() {
         ]}
 
         findUs={[
-          { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+          { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
           { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
         ]}
 
@@ -369,7 +224,7 @@ export default function Home() {
           },
         ]}
 
-        partners={["/icons/jameshardie.webp", "/icons/yelp.webp"]}
+        partners={["/icons/jameshardie.webp", "/icons/Yelp.webp"]}
       />
 
 
@@ -383,7 +238,7 @@ export default function Home() {
             description:
               "Boost curb appeal and weather resistance with expert siding installation. We install James Hardie® and premium vinyl siding across Central Kentucky.",
             button: "Explore Siding Options",
-            link: "/siding",
+            link: "/siding-replacement/",
             projectImage: "/images/remodler24.webp",
             projectLocation: "Lexington, KY",
             projectInfo1: "James Hardie",
@@ -398,7 +253,7 @@ export default function Home() {
             description:
               "Custom-built decks designed for Kentucky weather — composite, cedar, or covered patio decks for relaxing and entertaining.",
             button: "View Deck Options",
-            link: "/decks",
+            link: "/decking/",
             projectImage: "/images/deck2.webp",
             projectLocation: "Nicholasville, KY",
             projectInfo1: "Composite",

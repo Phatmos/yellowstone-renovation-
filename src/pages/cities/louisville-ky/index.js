@@ -250,14 +250,14 @@ export default function LouisvilleKY() {
                         description:
                             "Choose composite decking for low maintenance or pressure-treated wood for a more budget-friendly option. We build decks designed for Kentucky rain, humidity, and seasonal changes.",
                         image: "/images/deck7.webp",
-                        link: "/cities/louisville-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your home with durable siding. We install James Hardie fiber cement, vinyl siding, LP SmartSide, and exterior trim systems.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/louisville-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

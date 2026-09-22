@@ -62,7 +62,7 @@ export default function PaintingHero({
 
                     <div className="review-logos">
                         <img src="/icons/google-reviews.webp" alt="Google" />
-                        <img src="/icons/yelp.webp" alt="Yelp" />
+                        <img src="/icons/Yelp.webp" alt="Yelp" />
                     </div>
                 </form>
             </div>

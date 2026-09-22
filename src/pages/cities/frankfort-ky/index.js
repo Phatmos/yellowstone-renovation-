@@ -200,14 +200,14 @@ export default function FrankfortKY() {
                         description:
                             "Choose between low-maintenance composite or classic natural wood. Built strong for Kentucky’s climate.",
                         image: "/images/deck7.webp",
-                        link: "/cities/frankfort-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Enhance curb appeal and protect your home with Hardie fiber cement or durable vinyl siding — installed by licensed professionals.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/frankfort-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

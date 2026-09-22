@@ -42,7 +42,7 @@
   max-width: 800px;
 }
 
-.video-content h2 {
+.video-content h1 {
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.25;
@@ -226,7 +226,7 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
-  .video-content h2 {
+  .video-content h1 {
     font-size: 1.9rem;
   }
 

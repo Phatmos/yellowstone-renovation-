@@ -74,12 +74,7 @@ export default function WinchesterDeckBuilder() {
                             "Pilot View, KY",
                             "Colby, KY",
                             "Clark County, KY"
-                        ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "132"
-                        }
+                        ]
                     })}
                 </script>
             </Helmet>
@@ -294,7 +289,7 @@ We deliver clean work, fair pricing, and dependable project timelines.`
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -322,7 +317,7 @@ We deliver clean work, fair pricing, and dependable project timelines.`
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

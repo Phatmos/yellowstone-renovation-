@@ -4,7 +4,7 @@ import "../styles/TestimonialsSection.css";
 export default function TestimonialsSection() {
     const icons = {
         Google: "/icons/google-reviews.webp",
-        Yelp: "/icons/yelp.webp",
+        Yelp: "/icons/Yelp.webp",
         Houzz: "/icons/houzz-.png",
         Angi: "/icons/angi.png",
     };

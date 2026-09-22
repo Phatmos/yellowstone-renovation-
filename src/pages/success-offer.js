@@ -27,6 +27,7 @@ export default function SuccessOfferPage() {
                 title="Offer Submitted | Yellowstone Renovation"
                 description="Thank you for claiming your Yellowstone Renovation offer! Our team will contact you soon to confirm your project details."
                 pathname="/success-offer"
+                noIndex
             />
 
             <section className="offer-success-section">

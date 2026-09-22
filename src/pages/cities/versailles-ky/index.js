@@ -200,14 +200,14 @@ export default function VersaillesKY() {
                         description:
                             "Choose low-maintenance composite or classic wood decking. Built to withstand Kentucky moisture, storms, and temperature changes.",
                         image: "/images/deck7.webp",
-                        link: "/cities/versailles-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "High-quality siding that protects your home and boosts curb appeal. We install James Hardie fiber cement and durable vinyl siding designed for long-term performance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/versailles-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

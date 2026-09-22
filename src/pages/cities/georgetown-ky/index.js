@@ -200,14 +200,14 @@ export default function GeorgetownKY() {
             description:
               "Choose between low-maintenance composite or timeless wood decking. Built to handle Kentucky’s weather conditions.",
             image: "/images/deck7.webp",
-            link: "/cities/georgetown-ky/composite-deck-installation/",
+            link: "/composite-decks/",
           },
           {
             title: "James Hardie® & Vinyl Siding Installation",
             description:
               "We install top-quality siding that increases curb appeal and protects your home — including Hardie fiber cement and vinyl siding.",
             image: "/images/remodler1.webp",
-            link: "/cities/georgetown-ky/vinyl-siding-installation/",
+            link: "/vinyl-siding/",
           },
           {
             title: "Windows & Exterior Trim Upgrades",

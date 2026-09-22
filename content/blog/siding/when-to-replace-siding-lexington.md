@@ -32,7 +32,7 @@ You might also see:
 
 > Tip: Run your hand across your siding — if you feel soft or spongy spots, water has already gotten behind the surface.
 
-For a full inspection or repair plan, visit [**_our siding services_**](/siding/) to see what materials perform best in Lexington’s humid conditions.
+For a full inspection or repair plan, visit [**_our siding services_**](/siding-replacement/) to see what materials perform best in Lexington’s humid conditions.
 
 ---
 
@@ -82,7 +82,7 @@ That’s a serious red flag — and a clear reason to schedule an inspection imm
 
 > A professional evaluation can pinpoint whether your issue is localized repair or full replacement.
 
-Our team at Yellowstone Renovation handles both — visit [**_our siding page_**](/siding/) to learn more about inspections, repairs, and replacements done right.
+Our team at Yellowstone Renovation handles both — visit [**_our siding page_**](/siding-replacement/) to learn more about inspections, repairs, and replacements done right.
 
 ---
 

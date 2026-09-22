@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import SEO from "../components/SEO";
 import "../styles/ThankYou.css";
 
 export default function ThankYou() {
     return (
         <section className="thankyou-section">
+            <SEO title="Thank You | Yellowstone Renovation" description="Your request has been received." pathname="/thank-you/" noIndex />
             <div className="thankyou-container">
                 <div className="thankyou-icon">✔</div>
                 <h1>Thank You!</h1>

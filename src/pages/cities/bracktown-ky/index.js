@@ -196,14 +196,14 @@ export default function BracktownKY() {
                         description:
                             "Choose from Trex, TimberTech, Fiberon, or premium wood decking. Every installation includes reinforced framing, drainage solutions, and professional finishing.",
                         image: "/images/deck7.webp",
-                        link: "/cities/bracktown-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie®, LP SmartSide & Vinyl Siding Installation",
                         description:
                             "We install durable siding materials engineered for Lexington weather — including James Hardie fiber cement, LP SmartSide wood-engineered siding, and premium vinyl panels.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/bracktown-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

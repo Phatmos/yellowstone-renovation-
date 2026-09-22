@@ -93,7 +93,7 @@ export default function DeckPage() {
     return (
         <main>
             {/* ✅ SEO META */}
-            <SEO
+            <SEO pathname="/deck-local/"
                 title="Deck Builder in Lexington, KY | Composite & Wood Decks | Yellowstone Renovation"
                 description="Yellowstone Renovation is a top-rated deck builder serving Lexington, KY. Custom composite & wood decks, railings, stairs, lighting, and full project management — plus expert siding upgrades across Central Kentucky."
             />
@@ -137,11 +137,6 @@ export default function DeckPage() {
                                 ],
                                 "description":
                                     "Yellowstone Renovation is a trusted deck builder and exterior remodeling contractor serving Lexington, KY and Central Kentucky. We build custom composite and wood decks, handle permits and planning, and deliver clean installs with clear communication and professional project management.",
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "87",
-                                },
                                 "review": [
                                     {
                                         "@type": "Review",

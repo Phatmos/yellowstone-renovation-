@@ -299,7 +299,7 @@ export default function Home() {
                     { image: "/images/remodler24.webp", title: "Modern Vinyl Exterior" }
                 ]}
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
                 blog={[
@@ -322,7 +322,7 @@ export default function Home() {
                         image: "/images/deck8.webp",
                     },
                 ]}
-                partners={["/icons/jameshardie.webp", "/icons/yelp.webp"]}
+                partners={["/icons/jameshardie.webp", "/icons/Yelp.webp"]}
             />
 
 

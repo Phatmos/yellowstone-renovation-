@@ -8,7 +8,6 @@ const stories = [
     detail: "Perryville, KY",
     poster: "/videos/testimonials/august-deck-poster.jpg",
     video: "/videos/testimonials/august-deck-desktop.mp4",
-    mobileVideo: "/videos/testimonials/august-deck-mobile.mp4",
     projectUrl: "/projects-showcase/#august-deck-story",
   },
   {
@@ -214,13 +213,7 @@ export default function HomeVideoStories() {
               autoPlay
               playsInline
             >
-              {stories[active].mobileVideo && (
-                <source
-                  src={stories[active].mobileVideo}
-                  type="video/mp4"
-                  media="(max-width: 700px)"
-                />
-              )}
+
 
               <source
                 src={stories[active].video}

@@ -76,4 +76,4 @@ Whether you’re going bold with contrast or keeping things minimal and natural,
 Check out these related articles:
 - [How to Choose the Right Deck Material](/blog/choosing-right-deck-material/)
 - [Energy-Efficient Windows: Worth the Upgrade?](/blog/energy-efficient-windows/)
-- [Best Exterior Paint Finishes for 2025](/blog/paint-finishes/)
+- [Best Exterior Paint Finishes for 2025](/painting/)

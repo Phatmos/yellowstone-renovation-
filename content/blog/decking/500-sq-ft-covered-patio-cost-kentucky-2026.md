@@ -12,7 +12,7 @@ extraImages:
   - "/images/covered-patio-kentucky-2026.png"
 ---
 
-# How Much Does a 500 Sq Ft Covered Patio Cost in Kentucky in 2026?
+## How Much Does a 500 Sq Ft Covered Patio Cost in Kentucky in 2026?
 
 A 500 square foot covered patio is one of the most popular outdoor upgrades in Kentucky. It’s large enough for a dining space, lounge area, grill station, and even a fireplace or outdoor kitchen.
 

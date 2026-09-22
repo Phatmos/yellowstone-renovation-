@@ -76,12 +76,7 @@ export default function BereaDeckBuilder() {
                             "Bighill, KY",
                             "Red Lick, KY",
                             "Madison County, KY"
-                        ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "132"
-                        }
+                        ]
                     })}
                 </script>
             </Helmet>
@@ -294,7 +289,7 @@ We deliver durable decks with clean installation, fair pricing, and exceptional 
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -322,7 +317,7 @@ We deliver durable decks with clean installation, fair pricing, and exceptional 
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp",
+                    "/icons/Yelp.webp",
                 ]}
             />
 

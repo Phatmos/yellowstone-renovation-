@@ -80,14 +80,7 @@ export default function FlorenceKY() {
                             "Georgetown KY",
                             "Richmond KY",
                             "Florence KY"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "5.0",
-                            "reviewCount": "64",
-                            "bestRating": "5",
-                            "worstRating": "1"
-                        }
+                        ]
                     })}
                 </script>
 
@@ -222,28 +215,28 @@ export default function FlorenceKY() {
                         description:
                             "We design and build custom decks that fit your home, yard, and lifestyle — from simple backyard platforms to full outdoor entertaining spaces.",
                         image: "/images/deck11.webp",
-                        link: "/cities/florence-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Choose durable composite decking or timeless pressure-treated and cedar wood options, all built to handle the changing Kentucky seasons.",
                         image: "/images/deck7.webp",
-                        link: "/cities/florence-ky/composite-decking/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your Florence home with high-quality siding solutions that boost curb appeal, improve durability, and reduce exterior maintenance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/florence-ky/vinyl-siding/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",
                         description:
                             "Refresh the exterior of your home with replacement windows, trim enhancements, and detail work that completes the look.",
                         image: "/images/remodler6.webp",
-                        link: "/cities/florence-ky/windows/",
+                        link: "/windows/",
                     },
                 ]}
             />

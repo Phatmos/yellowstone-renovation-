@@ -118,18 +118,6 @@ export default function IndexPage() {
                                 "brand": {
                                     "@type": "Brand",
                                     "name": "Yellowstone Renovation"
-                                },
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "87"
-                                },
-                                "offers": {
-                                    "@type": "Offer",
-                                    "priceCurrency": "USD",
-                                    "price": "1",
-                                    "availability": "https://schema.org/InStock",
-                                    "url": "https://yellowstonerenovation.com/"
                                 }
                             },
 

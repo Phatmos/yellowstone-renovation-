@@ -100,12 +100,7 @@ export default function ValleyViewKY() {
                             "Wood Decks",
                             "Replacement Windows",
                             "Exterior Repairs"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -148,19 +143,7 @@ export default function ValleyViewKY() {
                         },
                         "sku": "SERVICE-VALLEYVIEW-001",
                         "mpn": "SERVICE-VALLEYVIEW-001",
-                        "url": "https://yellowstonerenovation.com",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": "https://yellowstonerenovation.com",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock"
-                        }
+                        "url": "https://yellowstonerenovation.com"
                     })}
                 </script>
 
@@ -252,21 +235,21 @@ export default function ValleyViewKY() {
                         description:
                             "We build strong, beautiful decks tailored to Valley View homes. From simple backyard platforms to multi-level outdoor spaces - built to last.",
                         image: "/images/deck11.webp",
-                        link: "/cities/valley-view-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Choose composite for low maintenance or wood for natural beauty. Our decks withstand Kentucky storms, humidity, and season changes.",
                         image: "/images/deck7.webp",
-                        link: "/cities/valley-view-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your home with durable siding. We install James Hardie fiber cement and high-quality vinyl siding for long-term performance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/valley-view-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

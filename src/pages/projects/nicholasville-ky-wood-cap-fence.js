@@ -72,12 +72,7 @@ const NicholasvilleWoodFencePage = () => {
                             "Fence Replacement",
                             "Metal Post Fence Installation",
                             "Wood Gate Installation"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -95,19 +90,7 @@ const NicholasvilleWoodFencePage = () => {
                         },
                         "sku": "FENCE-NICHOLASVILLE-260LF",
                         "mpn": "FENCE-NICHOLASVILLE-260LF",
-                        "url": pageUrl,
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock",
-                            "url": pageUrl
-                        }
+                        "url": pageUrl
                     })}
                 </script>
 

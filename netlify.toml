@@ -5,6 +5,49 @@
   directory = "netlify/functions"
 
 [[redirects]]
+  from = "/projects"
+  to = "/projects-showcase/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projects/"
+  to = "/projects-showcase/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/projects/frankfort-composite-deck/"
+  to = "/projects/frankfort-ky-composite-deck/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cities/midway-ky/"
+  to = "/cities/"
+  status = 301
+
+[[redirects]]
+  from = "/OurServices/"
+  to = "/decking/"
+  status = 301
+
+[[redirects]]
+  from = "/black-friday/"
+  to = "/offers/"
+  status = 301
+
+[[redirects]]
+  from = "/flooring/"
+  to = "/decking/"
+  status = 301
+
+[[redirects]]
+  from = "/fence-estimator1/"
+  to = "/fence-estimator/"
+  status = 301
+
+[[redirects]]
   from = "/api/lead"
   to = "/.netlify/functions/submit-lead"
   status = 200

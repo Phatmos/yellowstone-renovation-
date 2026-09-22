@@ -176,7 +176,7 @@ export default function Home() {
                     { image: "/images/remodler4.webp", title: "Outdoor Deck Build" },
                 ]}
                 findUs={[
-                    { name: "Yelp", rating: "4.7/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.7/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
                 blog={[
@@ -199,7 +199,7 @@ export default function Home() {
                         image: "/images/remodler24.webp",
                     },
                 ]}
-                partners={["/icons/jameshardie.webp", "/icons/bbb-logo.webp", "/icons/yelp.webp"]}
+                partners={["/icons/jameshardie.webp", "/icons/bbb-logo.webp", "/icons/Yelp.webp"]}
             />
         </Layout>
     )

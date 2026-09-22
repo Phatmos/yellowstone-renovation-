@@ -74,12 +74,7 @@ export default function RichmondDeckBuilder() {
                             "Kirksville, KY",
                             "Berea, KY",
                             "Madison County, KY"
-                        ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "132"
-                        }
+                        ]
                     })}
                 </script>
             </Helmet>
@@ -302,7 +297,7 @@ We design and build custom decks that enhance home value, outdoor functionality,
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -330,7 +325,7 @@ We design and build custom decks that enhance home value, outdoor functionality,
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

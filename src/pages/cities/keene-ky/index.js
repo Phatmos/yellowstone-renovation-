@@ -196,21 +196,21 @@ export default function KeeneKY() {
                         description:
                             "Every deck we build in Keene is tailored to your home's layout and outdoor lifestyle. Choose between composite or natural wood built for Kentucky weather.",
                         image: "/images/deck11.webp",
-                        link: "/cities/keene-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "We install Trex, TimberTech, cedar, and pressure-treated decks — designed for long-term structural strength and visual appeal.",
                         image: "/images/deck7.webp",
-                        link: "/cities/keene-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect and modernize your home with Hardie fiber cement, LP SmartSide, or high-quality vinyl siding — all installed with precision and clean workmanship.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/keene-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

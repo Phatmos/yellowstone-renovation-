@@ -74,12 +74,7 @@ export default function VersaillesDeckBuilder() {
                             "Millville, KY",
                             "Nonesuch, KY",
                             "Woodford County, KY"
-                        ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "132"
-                        }
+                        ]
                     })}
                 </script>
             </Helmet>
@@ -304,7 +299,7 @@ Expect clean work, fair pricing, and excellent craftsmanship in every deck we bu
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -332,7 +327,7 @@ Expect clean work, fair pricing, and excellent craftsmanship in every deck we bu
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

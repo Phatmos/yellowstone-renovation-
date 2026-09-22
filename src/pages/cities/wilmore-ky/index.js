@@ -196,21 +196,21 @@ export default function WilmoreKY() {
                         description:
                             "Your deck is built specifically for your Wilmore home — no prefabricated layouts. Choose composite or natural wood for a long-lasting outdoor space.",
                         image: "/images/deck11.webp",
-                        link: "/cities/wilmore-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "We install Trex, TimberTech, cedar, and pressure-treated decks — engineered for strength and Kentucky humidity.",
                         image: "/images/deck7.webp",
-                        link: "/cities/wilmore-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your home with Hardie fiber cement, LP SmartSide, or premium vinyl siding — each installed with clean craftsmanship and strong warranties.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/wilmore-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

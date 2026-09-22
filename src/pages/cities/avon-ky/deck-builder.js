@@ -92,12 +92,7 @@ export default function AvonDeckBuilder() {
                             "Athens, KY",
                             "Boone Creek, KY",
                             "Fayette County, KY"
-                        ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "132"
-                        }
+                        ]
                     })}
                 </script>
             </Helmet>
@@ -364,7 +359,7 @@ If you want a deck that enhances your outdoor living and increases home value, Y
 
                 /* FIND US */
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -393,7 +388,7 @@ If you want a deck that enhances your outdoor living and increases home value, Y
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

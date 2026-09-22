@@ -19,7 +19,7 @@ Add a pergola on top, and you’ve got the perfect mix of **style, comfort, and 
 As a deck builder with over two decades of experience in Kentucky, I’ve seen how homeowners transform simple backyards into beautiful outdoor retreats.  
 Whether you want a shaded lounge, an outdoor dining space, or a full backyard entertainment area, a **deck-and-pergola combination** can make it happen.
 
-![Outdoor deck with pergola and lounge furniture](/images/outdoor-living-main.jpg)
+![Outdoor deck with pergola and lounge furniture](/icons/outdoor-living-main.jpg)
 
 ---
 

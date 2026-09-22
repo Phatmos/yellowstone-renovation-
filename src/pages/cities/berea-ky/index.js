@@ -105,12 +105,7 @@ export default function BereaKY() {
                             "Wood Decks",
                             "Replacement Windows",
                             "Exterior Repairs"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -155,19 +150,7 @@ export default function BereaKY() {
                         },
                         "sku": "SERVICE-BEREA-001",
                         "mpn": "SERVICE-BEREA-001",
-                        "url": "https://yellowstonerenovation.com",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": "https://yellowstonerenovation.com",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock"
-                        }
+                        "url": "https://yellowstonerenovation.com"
                     })}
                 </script>
 
@@ -268,14 +251,14 @@ export default function BereaKY() {
                         description:
                             "Choose low-maintenance composite or classic wood decking. Our decks handle Kentucky weather and add beautiful outdoor living space.",
                         image: "/images/deck7.webp",
-                        link: "/cities/berea-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your home with durable siding. We install James Hardie fiber cement and premium vinyl siding for long-lasting performance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/berea-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

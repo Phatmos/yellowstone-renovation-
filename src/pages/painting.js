@@ -155,28 +155,28 @@ export default function Home() {
                         description:
                             "Freshen up your home with clean, modern interior painting. We provide smooth, high-quality finishes, carefully protecting floors and furniture while we work.",
                         image: "/images/remodler1.webp",
-                        link: "/interior-painting",
+                        link: "/painting/",
                     },
                     {
                         title: "Exterior Painting",
                         description:
                             "Boost curb appeal and protect your home from weather damage with durable, fade-resistant paints built to handle Kentucky’s climate year-round.",
                         image: "/images/remodler1.webp",
-                        link: "/exterior-painting",
+                        link: "/painting/",
                     },
                     {
                         title: "Cabinet Painting & Refinishing",
                         description:
                             "Transform your kitchen cabinets with a factory-smooth sprayed finish — a budget-friendly upgrade that looks brand new and lasts for years.",
                         image: "/images/deck11.webp",
-                        link: "/cabinet-painting",
+                        link: "/painting/",
                     },
                     {
                         title: "Commercial Painting",
                         description:
                             "Reliable, fast commercial painting for offices, apartments, and retail spaces — with minimal downtime and professional, long-lasting results.",
                         image: "/images/deck7.webp",
-                        link: "/commercial-painting",
+                        link: "/painting/",
                     },
                 ]}
             />
@@ -258,7 +258,7 @@ export default function Home() {
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 

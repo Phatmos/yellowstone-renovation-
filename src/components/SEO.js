@@ -9,6 +9,7 @@ export default function SEO({
   image,
   keywords,
   article = false,
+  noIndex = false,
 
   // Optional local/project SEO
   city,
@@ -37,7 +38,9 @@ export default function SEO({
     siteUrl,
   } = site.siteMetadata;
 
-  const normalizedPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  const currentPath = pathname || (typeof window !== "undefined" ? window.location.pathname : "/");
+  const cleanPath = currentPath.split(/[?#]/)[0].replace(/^\/+|\/+$/g, "");
+  const normalizedPath = cleanPath ? `/${cleanPath}/` : "/";
 
   const normalizedImage = image
     ? image.startsWith("http")
@@ -58,7 +61,7 @@ export default function SEO({
     "@id": `${siteUrl}/#organization`,
     name: "Yellowstone Renovation",
     url: siteUrl,
-    logo: `${siteUrl}/images/logo.webp`,
+    logo: `${siteUrl}/icons/logo.webp`,
     description:
       "Yellowstone Renovation is a trusted exterior remodeling company serving Kentucky with deck building, siding installation, fencing, and window replacement services.",
     sameAs: [
@@ -70,7 +73,7 @@ export default function SEO({
       "@type": "ContactPoint",
       telephone: "+1-859-765-7267",
       contactType: "customer service",
-      areaServed: "US",
+      areaServed: "KY",
       availableLanguage: ["English"],
     },
   };
@@ -88,7 +91,7 @@ export default function SEO({
 
   const webpageSchema = {
     "@context": "https://schema.org",
-    "@type": article ? "Article" : "WebPage",
+    "@type": article ? "BlogPosting" : "WebPage",
     "@id": `${seo.url}#webpage`,
     url: seo.url,
     name: seo.title,
@@ -108,17 +111,18 @@ export default function SEO({
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "@id": `${siteUrl}/#localbusiness`,
+    "@id": `${siteUrl}/#organization`,
     name: "Yellowstone Renovation",
     url: siteUrl,
-    image: seo.image,
+    image: `${siteUrl}/icons/logo.webp`,
     telephone: "+1-859-765-7267",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: city || "Lexington",
+      streetAddress: "120 Tina Way",
+      addressLocality: "Nicholasville",
       addressRegion: state,
-      postalCode: postalCode || "40509",
+      postalCode: "40356",
       addressCountry: "US",
     },
     areaServed:
@@ -141,11 +145,6 @@ export default function SEO({
           "Window Replacement",
           "Exterior Remodeling",
         ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: 87,
-    },
   };
 
   return (
@@ -153,7 +152,7 @@ export default function SEO({
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
       <link rel="canonical" href={seo.url} />
 
       <meta property="og:type" content={article ? "article" : "website"} />
@@ -170,13 +169,7 @@ export default function SEO({
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
 
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-
-      <script type="application/ld+json">
-        {JSON.stringify(websiteSchema)}
-      </script>
+      {normalizedPath === "/" && <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>}
 
       <script type="application/ld+json">
         {JSON.stringify(webpageSchema)}
@@ -194,18 +187,6 @@ export default function SEO({
             brand: {
               "@type": "Brand",
               name: "Yellowstone Renovation",
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: 87,
-            },
-            offers: {
-              "@type": "Offer",
-              priceCurrency: "USD",
-              price: "1",
-              availability: "https://schema.org/InStock",
-              url: seo.url,
             },
             ...productSchema,
             image: productSchema.image || seo.image,
