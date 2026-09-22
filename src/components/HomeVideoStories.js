@@ -5,17 +5,18 @@ import "../styles/HomeVideoStories.css";
 const stories = [
   {
     title: "A Deck Built for Everyday Living",
-    detail: "Deck Project · Lexington, KY",
-    poster: "/images/deck/deck-lexington23.webp",
-    video: "/videos/deck-builder.mp4",
-    projectUrl: "/projects-showcase/",
+    detail: "Customer Story · Central Kentucky",
+    poster: "/videos/testimonials/august-deck-poster.jpg",
+    video: "/videos/testimonials/august-deck-desktop.mp4",
+    mobileVideo: "/videos/testimonials/august-deck-mobile.mp4",
+    projectUrl: "/projects-showcase/#august-deck-story",
   },
   {
-    title: "A Closer Look at a Finished Project",
-    detail: "Outdoor Project · Frankfort, KY",
-    poster: "/images/projects/frankfort/frn1.webp",
-    video: "/images/projects/frankfort/fr1.MOV",
-    projectUrl: "/projects-showcase/",
+    title: "What Our Homeowner Had to Say",
+    detail: "Customer Story · Central Kentucky",
+    poster: "/videos/testimonials/white-deck-poster.jpg",
+    video: "/videos/testimonials/white-deck-story.mp4",
+    projectUrl: "/projects-showcase/#white-deck-story",
   },
 ];
 
@@ -113,7 +114,7 @@ export default function HomeVideoStories() {
               <div className="home-stories__card-body">
                 <div
                   className="home-stories__stars"
-                  aria-label="5 out of 5 stars"
+                  aria-hidden="true"
                 >
                   <span>★</span>
                   <span>★</span>
@@ -226,12 +227,14 @@ export default function HomeVideoStories() {
 
             <video
               key={stories[active].video}
-              src={stories[active].video}
               poster={stories[active].poster}
               controls
               autoPlay
               playsInline
-            />
+            >
+              {stories[active].mobileVideo && <source src={stories[active].mobileVideo} type="video/mp4" media="(max-width: 700px)" />}
+              <source src={stories[active].video} type="video/mp4" />
+            </video>
           </div>
         </div>
       )}

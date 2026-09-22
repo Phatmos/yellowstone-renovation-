@@ -200,6 +200,25 @@ export default function ProjectsShowcasePage() {
 
                 {/* FILTER */}
                 <div className="projects-container">
+                    <section className="projects-customer-stories" aria-labelledby="projects-stories-title">
+                        <div className="projects-customer-stories-heading">
+                            <span>FROM OUR HOMEOWNERS</span>
+                            <h2 id="projects-stories-title">Watch the stories behind the decks</h2>
+                        </div>
+                        <div className="projects-customer-stories-grid">
+                            <article id="august-deck-story" className="projects-customer-story">
+                                <video controls playsInline preload="none" poster="/videos/testimonials/august-deck-poster.jpg">
+                                    <source src="/videos/testimonials/august-deck-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
+                                    <source src="/videos/testimonials/august-deck-desktop.mp4" type="video/mp4" />
+                                </video>
+                                <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>A deck built for everyday living</h3><p>Hear from the homeowner and see the finished deck.</p></div>
+                            </article>
+                            <article id="white-deck-story" className="projects-customer-story">
+                                <video controls playsInline preload="none" poster="/videos/testimonials/white-deck-poster.jpg" src="/videos/testimonials/white-deck-story.mp4" />
+                                <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>A homeowner's deck story</h3><p>See the finished outdoor space and hear the experience firsthand.</p></div>
+                            </article>
+                        </div>
+                    </section>
                     <section className="projects-tabs-section">
                         <div className="projects-tabs">
                             {tabs.map((tab) => (
