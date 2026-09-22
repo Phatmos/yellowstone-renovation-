@@ -7,6 +7,7 @@ import HeroSplit1 from "../components/HeroSplit1";
 import GallerySection from "../components/GallerySection";
 import ProjectShowcase from "../components/ProjectShowcase";
 import ReviewBadges from "../components/ReviewBadges";
+import HomeVideoStories from "../components/HomeVideoStories";
 import BenefitsGrid from "../components/BenefitsGrid";
 import ServicesChips from "../components/ServicesChips";
 import ProcessStepsDeck from "../components/ProcessStepsDeck";
@@ -220,7 +221,8 @@ export default function DeckPage() {
 
             <ReviewBadges />
 
-            <section id="projects"></section>
+            <HomeVideoStories />
+
             <section id="projects"></section>
             <GallerySection
                 title="Deck Builder in Lexington — Recent Projects"
