@@ -4,16 +4,16 @@ import "../styles/HomeVideoStories.css";
 
 const stories = [
   {
-    title: "A Deck Built for Everyday Living",
-    detail: "Customer Story · Central Kentucky",
+    title: "Deck Build in Perryville",
+    detail: "Perryville, KY",
     poster: "/videos/testimonials/august-deck-poster.jpg",
     video: "/videos/testimonials/august-deck-desktop.mp4",
     mobileVideo: "/videos/testimonials/august-deck-mobile.mp4",
     projectUrl: "/projects-showcase/#august-deck-story",
   },
   {
-    title: "What Our Homeowner Had to Say",
-    detail: "Customer Story · Central Kentucky",
+    title: "Deck Build in Lexington",
+    detail: "Lexington, KY",
     poster: "/videos/testimonials/white-deck-poster.jpg",
     video: "/videos/testimonials/white-deck-story.mp4",
     projectUrl: "/projects-showcase/#white-deck-story",
@@ -51,20 +51,19 @@ export default function HomeVideoStories() {
         {/* HEADING */}
         <header className="home-stories__heading">
           <span className="home-stories__heading-label">
-            REAL PROJECTS. REAL HOMEOWNERS.
+            CUSTOMER STORIES
           </span>
 
           <h2 id="home-stories-title">
-            Watch What Some of{" "}
+            See the Work.{" "}
             <span className="home-stories__green-text">
-              Our Clients
-            </span>{" "}
-            Have to Say
+              Hear From the Homeowners.
+            </span>
           </h2>
 
           <p>
-            Real projects completed by Yellowstone Renovation across
-            Lexington and Central Kentucky.
+            A closer look at completed Yellowstone Renovation projects
+            and the homeowners behind them.
           </p>
         </header>
 
@@ -76,7 +75,7 @@ export default function HomeVideoStories() {
               className="home-stories__card"
               key={story.video}
             >
-              {/* VIDEO IMAGE */}
+              {/* VIDEO */}
               <button
                 className="home-stories__video"
                 type="button"
@@ -97,8 +96,8 @@ export default function HomeVideoStories() {
                 >
                   <svg
                     viewBox="0 0 24 24"
-                    width="22"
-                    height="22"
+                    width="21"
+                    height="21"
                     fill="currentColor"
                   >
                     <path d="M8 5v14l11-7z" />
@@ -110,11 +109,12 @@ export default function HomeVideoStories() {
                 </span>
               </button>
 
-              {/* CARD INFO */}
+              {/* CARD CONTENT */}
               <div className="home-stories__card-body">
+
                 <div
                   className="home-stories__stars"
-                  aria-hidden="true"
+                  aria-label="5 star customer review"
                 >
                   <span>★</span>
                   <span>★</span>
@@ -134,67 +134,49 @@ export default function HomeVideoStories() {
                   className="home-stories__project-button"
                 >
                   View Project
-
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="17"
-                    height="17"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="m13 6 6 6-6 6" />
-                  </svg>
                 </Link>
               </div>
             </article>
           ))}
 
-          {/* PROJECT SHOWCASE CARD */}
+          {/* PROJECT SHOWCASE */}
           <article className="home-stories__showcase-card">
             <Link
               to="/projects-showcase/"
               className="home-stories__showcase-link"
-              aria-label="Explore Yellowstone Renovation Project Showcase"
+              aria-label="View Yellowstone Renovation Project Showcase"
             >
               <img
-                src="/images/deck/deck-lexington105.webp"
-                alt="Yellowstone Renovation completed outdoor project"
+                src="/images/yr1.jpeg"
+                alt="Completed Yellowstone Renovation deck project"
                 loading="lazy"
               />
 
               <span className="home-stories__showcase-overlay" />
 
-              <span className="home-stories__showcase-top">
-                <span className="home-stories__showcase-brand">
-                  YELLOWSTONE RENOVATION
-                </span>
-
-                <span className="home-stories__showcase-icon">
-                  ↗
-                </span>
+              <span className="home-stories__showcase-brand">
+                YELLOWSTONE RENOVATION
               </span>
 
               <span className="home-stories__showcase-content">
+
                 <span className="home-stories__showcase-label">
-                  EXPLORE OUR WORK
+                  PROJECT GALLERY
                 </span>
 
-                <strong>Project Showcase</strong>
+                <strong>
+                  See More of Our Work
+                </strong>
 
                 <span className="home-stories__showcase-description">
-                  See completed decks, siding, fencing and exterior
-                  renovations across Central Kentucky.
+                  Browse completed decks, siding, fencing and exterior
+                  projects across Central Kentucky.
                 </span>
 
                 <span className="home-stories__showcase-button">
-                  View All Projects
-                  <span aria-hidden="true">→</span>
+                  Project Showcase
                 </span>
+
               </span>
             </Link>
           </article>
@@ -232,8 +214,18 @@ export default function HomeVideoStories() {
               autoPlay
               playsInline
             >
-              {stories[active].mobileVideo && <source src={stories[active].mobileVideo} type="video/mp4" media="(max-width: 700px)" />}
-              <source src={stories[active].video} type="video/mp4" />
+              {stories[active].mobileVideo && (
+                <source
+                  src={stories[active].mobileVideo}
+                  type="video/mp4"
+                  media="(max-width: 700px)"
+                />
+              )}
+
+              <source
+                src={stories[active].video}
+                type="video/mp4"
+              />
             </video>
           </div>
         </div>
