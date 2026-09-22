@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 
 const FrankfortVerticalFencePage = () => {
     const pageUrl = "https://yellowstonerenovation.com/projects/frankfort-ky-vertical-fence/";
-    const heroImage = "https://yellowstonerenovation.com//images/projects/frankfort/frn25.webp";
+    const heroImage = "https://yellowstonerenovation.com/images/projects/frankfort/frn25.webp";
 
 
     return (
@@ -76,12 +76,7 @@ const FrankfortVerticalFencePage = () => {
                             "Privacy Fence Construction",
                             "Fence Replacement",
                             "Vertical Fence Installation"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -102,19 +97,7 @@ const FrankfortVerticalFencePage = () => {
                         },
                         "sku": "FENCE-FRANKFORT-VERTICAL-001",
                         "mpn": "FENCE-FRANKFORT-VERTICAL-001",
-                        "url": pageUrl,
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock",
-                            "url": pageUrl
-                        }
+                        "url": pageUrl
                     })}
                 </script>
 

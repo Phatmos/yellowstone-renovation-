@@ -6,7 +6,7 @@ import SEO from "../../components/SEO";
 import OtherCompletedProjects from "../../components/OtherCompletedProjects";
 import { Helmet } from "react-helmet";
 const FrankfortCompositeDeckPage = () => {
-    const pageUrl = "https://yellowstonerenovation.com/projects/frankfort-composite-deck/";
+    const pageUrl = "https://yellowstonerenovation.com/projects/frankfort-ky-composite-deck/";
     const heroImage = "https://yellowstonerenovation.com/images/projects/frankfort/fr20.webp";
 
     return (
@@ -68,12 +68,7 @@ const FrankfortCompositeDeckPage = () => {
                             "Deck Construction",
                             "Deck Replacement",
                             "Outdoor Living Design"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -91,18 +86,6 @@ const FrankfortCompositeDeckPage = () => {
                         "brand": {
                             "@type": "Brand",
                             "name": "Yellowstone Renovation"
-                        },
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock",
-                            "url": pageUrl
                         }
                     })}
                 </script>
@@ -139,7 +122,7 @@ const FrankfortCompositeDeckPage = () => {
             <SEO
                 title="Composite Deck & Concrete Upgrade in Frankfort, KY | Yellowstone Renovation"
                 description="Custom composite deck rebuild in Frankfort, KY with 4000-PSI concrete, picture-frame decking, modern railing, wrapped posts, stairs, gutters, and clean exterior finishes."
-                pathname="/projects/frankfort-composite-deck/"
+                pathname="/projects/frankfort-ky-composite-deck/"
                 image={heroImage}
             />
 
@@ -201,7 +184,7 @@ const FrankfortCompositeDeckPage = () => {
                         "/images/projects/frankfort/fr6.webp",
                         "/images/projects/frankfort/fr5.webp",
                         "/images/projects/frankfort/fr4.webp",
-                        "/images/projects/frankfort/fr3.webp",
+
                         "/images/projects/frankfort/fr19.webp",
                         "/images/projects/frankfort/fr20.webp",
                         "/images/projects/frankfort/fr21.webp",

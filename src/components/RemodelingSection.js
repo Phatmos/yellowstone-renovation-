@@ -87,7 +87,7 @@ export default function RemodelingSection() {
                             <img src="/images/remodler2.webp" alt="Projects" />
                             <div className="banner-overlay">
                                 <p>CHECK OUR MORE THAN 20+ FINISHED PROJECTS</p>
-                                <a href="#" className="btn-dark">SEE MORE HERE</a>
+                                <a href="/projects-showcase/" className="btn-dark">SEE MORE HERE</a>
                             </div>
                         </div>
 
@@ -95,7 +95,7 @@ export default function RemodelingSection() {
                             <img src="/images/remodler1.webp" alt="Siding Offer" />
                             <div className="banner-overlay">
                                 <p>$1500 OFF SIDING INSTALLATION</p>
-                                <a href="#" className="btn-dark">CLAIM</a>
+                                <a href="/contact/" className="btn-dark">CLAIM</a>
                             </div>
                         </div>
 
@@ -103,7 +103,7 @@ export default function RemodelingSection() {
                             <img src="/images/siding-installation.webp" alt="Van Promo" />
                             <div className="banner-overlay">
                                 <p>LOCAL FAMILY-OWNED REMODELING TEAM</p>
-                                <a href="#" className="btn-dark">LEARN MORE</a>
+                                <a href="/about/" className="btn-dark">LEARN MORE</a>
                             </div>
                         </div>
 
@@ -112,19 +112,19 @@ export default function RemodelingSection() {
                         <div className="projects-grid">
                             <div className="project-item">
                                 <img src="/images/kitchen-countertops.webp" alt="Project 1" />
-                                <a href="#">SEE MORE HERE</a>
+                                <a href="/projects-showcase/">SEE MORE HERE</a>
                             </div>
                             <div className="project-item">
                                 <img src="/images/house-bg.webp" alt="Project 2" />
-                                <a href="#">SEE MORE HERE</a>
+                                <a href="/projects-showcase/">SEE MORE HERE</a>
                             </div>
                             <div className="project-item">
                                 <img src="/images/deck-builder.webp" alt="Project 3" />
-                                <a href="#">SEE MORE HERE</a>
+                                <a href="/projects-showcase/">SEE MORE HERE</a>
                             </div>
                             <div className="project-item">
                                 <img src="/images/3D House.webp" alt="Project 4" />
-                                <a href="#">SEE MORE HERE</a>
+                                <a href="/projects-showcase/">SEE MORE HERE</a>
                             </div>
                         </div>
 
@@ -132,7 +132,7 @@ export default function RemodelingSection() {
                             <img src="/images/bathroom-remodeling.webp" alt="Call Offer" />
                             <div className="banner-overlay">
                                 <p>GIVE US A CALL AND GET 7% OFF</p>
-                                <a href="#" className="btn-dark">CALL US</a>
+                                <a href="tel:+18597657267" className="btn-dark">CALL US</a>
                             </div>
                         </div>
                     </aside>

@@ -104,39 +104,19 @@ export default function DeckBuilderPage() {
                             ------------------------------------------------------ */
                             {
                                 "@type": "Product",
-                                "name": "Yellowstone Renovation",
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "87"
-                                }
+                                "name": "Yellowstone Renovation"
                             },
                             {
                                 "@type": "Product",
-                                "name": "Yellowstone Renovation Deck Building",
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "87"
-                                }
+                                "name": "Yellowstone Renovation Deck Building"
                             },
                             {
                                 "@type": "Product",
-                                "name": "Yellowstone Renovation Siding Services",
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "87"
-                                }
+                                "name": "Yellowstone Renovation Siding Services"
                             },
                             {
                                 "@type": "Product",
-                                "name": "Yellowstone Renovation & Remodeling",
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "87"
-                                }
+                                "name": "Yellowstone Renovation & Remodeling"
                             }
                         ]
                     })}
@@ -284,7 +264,7 @@ export default function DeckBuilderPage() {
                     { image: "/images/deck7.webp", title: "Wood Rail Deck" },
                 ]}
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
                 blog={[
@@ -307,7 +287,7 @@ export default function DeckBuilderPage() {
                         image: "/images/deck8.webp",
                     },
                 ]}
-                partners={["/icons/jameshardie.webp", "/icons/yelp.webp"]}
+                partners={["/icons/jameshardie.webp", "/icons/Yelp.webp"]}
             />
 
             <TestimonialsSection />

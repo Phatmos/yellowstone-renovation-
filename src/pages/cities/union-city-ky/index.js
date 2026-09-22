@@ -100,12 +100,7 @@ export default function UnionCityKY() {
                             "Wood Deck Construction",
                             "Replacement Windows",
                             "Exterior Renovation"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -148,19 +143,7 @@ export default function UnionCityKY() {
                         },
                         "sku": "SERVICE-UNIONCITY-001",
                         "mpn": "SERVICE-UNIONCITY-001",
-                        "url": "https://yellowstonerenovation.com",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": "https://yellowstonerenovation.com",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock"
-                        }
+                        "url": "https://yellowstonerenovation.com"
                     })}
                 </script>
 
@@ -251,21 +234,21 @@ export default function UnionCityKY() {
                         description:
                             "We build structurally sound, attractive decks tailored to Union City homes and family lifestyles.",
                         image: "/images/deck11.webp",
-                        link: "/cities/union-city-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Choose low-maintenance composite or classic pressure-treated lumber. We build both for long-term durability.",
                         image: "/images/deck7.webp",
-                        link: "/cities/union-city-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "We install premium siding systems that improve curb appeal and protect your exterior year-round.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/union-city-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

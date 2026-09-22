@@ -101,11 +101,6 @@ export default function WacoKY() {
                             "Exterior Repairs",
                             "Replacement Windows",
                         ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: 87,
-                        },
                     })}
                 </script>
             </Helmet>
@@ -163,21 +158,21 @@ export default function WacoKY() {
                         description:
                             "We design and build custom decks that match your home and your lifestyle, from simple platforms to multi-level outdoor spaces.",
                         image: "/images/deck11.webp",
-                        link: "/cities/waco-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Choose low-maintenance composite or timeless wood. Our deck systems are built for Kentucky weather and everyday use.",
                         image: "/images/deck7.webp",
-                        link: "/cities/waco-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect and refresh your exterior with premium siding materials, expert installation, and clean finishing details.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/waco-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

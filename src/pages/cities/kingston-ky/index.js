@@ -101,11 +101,6 @@ export default function KingstonKY() {
                             "Composite Deck Installation",
                             "Exterior Repairs",
                         ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: 87,
-                        },
                     })}
                 </script>
 
@@ -196,21 +191,21 @@ export default function KingstonKY() {
                         description:
                             "We build tailored decks for Kingston homes, including elevated, ground-level, and multi-zone outdoor living spaces.",
                         image: "/images/deck11.webp",
-                        link: "/cities/kingston-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Choose low-maintenance composite or classic natural wood. Every deck is engineered for structural safety and everyday use.",
                         image: "/images/deck7.webp",
-                        link: "/cities/kingston-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Improve protection, efficiency, and curb appeal with premium siding options that perform in Kentucky weather.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/kingston-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

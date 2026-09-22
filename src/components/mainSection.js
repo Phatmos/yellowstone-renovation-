@@ -35,29 +35,29 @@ export default function MainSectionSideBar({
             title: "How Long Should You Wait on an Estimate?",
             date: "March 3rd, 2024",
             author: "Vasyl",
-            image: "/images/blog1.jpg",
+            image: "/images/deck6.webp",
         },
         {
             title: "Why Your GFCI Outlet Won’t Reset",
             date: "Nov 21st, 2024",
             author: "Vasyl",
-            image: "/images/blog2.jpg",
+            image: "/images/deck6.webp",
         },
         {
             title: "Why Smoke Detectors Go Off at Night",
             date: "June 17th, 2024",
             author: "Oleg",
-            image: "/images/blog3.jpg",
+            image: "/images/deck6.webp",
         },
     ],
-    partners = ["/images/yelp.webp", "/images/angi.webp", "/images/houzz.webp"],
+    partners = ["/icons/Yelp.webp", "/icons/angi-yellow.png", "/icons/houzz.png"],
     projects = [
-        { image: "/images/deck1.jpg", title: "Composite Deck" },
-        { image: "/images/deck2.jpg", title: "Wood Deck" },
-        { image: "/images/deck3.jpg", title: "Backyard Patio" },
-        { image: "/images/deck4.jpg", title: "Modern Porch" },
-        { image: "/images/deck5.jpg", title: "Vinyl Siding Home" },
-        { image: "/images/deck6.jpg", title: "Luxury Remodel" },
+        { image: "/images/deck1.webp", title: "Composite Deck" },
+        { image: "/images/deck2.webp", title: "Wood Deck" },
+        { image: "/images/deck3.webp", title: "Backyard Patio" },
+        { image: "/images/deck4.webp", title: "Modern Porch" },
+        { image: "/images/deck5.webp", title: "Vinyl Siding Home" },
+        { image: "/images/deck6.webp", title: "Luxury Remodel" },
     ],
 }) {
     return (
@@ -139,7 +139,7 @@ export default function MainSectionSideBar({
                                 </div>
                             ))}
                         </div>
-                        <a href="/reviews" className="btn-gradient">
+                        <a href="/projects-showcase/" className="btn-gradient">
                             Read All Reviews
                         </a>
                     </div>

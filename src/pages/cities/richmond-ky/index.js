@@ -200,14 +200,14 @@ export default function RichmondKY() {
                         description:
                             "Choose between low-maintenance composite or natural wood. Each deck is built to withstand Kentucky humidity, storms, and seasonal changes.",
                         image: "/images/deck7.webp",
-                        link: "/cities/richmond-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your Richmond home with durable siding solutions. We install premium James Hardie fiber cement and high-quality vinyl siding built for long-term performance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/richmond-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

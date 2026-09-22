@@ -76,7 +76,7 @@ export default function FloorHeroSlider() {
                     </div>
 
                     <div className="rating-bar">
-                        <img src="/icons/yelp.webp" alt="Rating" />
+                        <img src="/icons/Yelp.webp" alt="Rating" />
                         <span>4.9/5 based on 60+ verified reviews</span>
                     </div>
                 </div>

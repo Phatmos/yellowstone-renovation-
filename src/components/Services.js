@@ -18,7 +18,7 @@ export default function Services({
       description:
         "Premium vinyl, James Hardie, and engineered siding systems that improve curb appeal and weather protection.",
       image: "/images/deck2.webp",
-      link: "/siding",
+      link: "/siding-replacement/",
     },
     {
       title: "Window Replacement",

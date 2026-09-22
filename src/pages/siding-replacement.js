@@ -336,7 +336,7 @@ export default function Home() {
                     { image: "/images/remodler4.webp", title: "Natural Wood Exterior Upgrade" }
                 ]}
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
                 blog={[
@@ -359,7 +359,7 @@ export default function Home() {
                         image: "/images/deck8.webp",
                     },
                 ]}
-                partners={["/icons/jameshardie.webp", "/icons/yelp.webp"]}
+                partners={["/icons/jameshardie.webp", "/icons/Yelp.webp"]}
             />
 
 
@@ -371,7 +371,7 @@ export default function Home() {
                         heading: "Transform Your Home Exterior",
                         description: "Boost curb appeal and protect your home...",
                         button: "Explore Siding",
-                        link: "/siding",
+                        link: "/siding-replacement/",
                         projectImage: "/images/remodler24.webp",
                         projectLocation: "Folsom, CA",
                         projectInfo1: "James Hardie",
@@ -399,7 +399,7 @@ export default function Home() {
                         heading: "Build Your Perfect Backyard",
                         description: "Custom wood and composite decks...",
                         button: "View Deck Options",
-                        link: "/decks",
+                        link: "/decking/",
                         projectImage: "/images/deck2.webp",
                         projectLocation: "El Dorado Hills, CA",
                         projectInfo1: "Composite",

@@ -104,12 +104,7 @@ export default function AthensKY() {
                             "https://www.facebook.com/p/Yellowstone-Renovation-61551123481170/",
                             "https://www.instagram.com/yellowstone_renovation/",
                             "https://maps.google.com/?q=Yellowstone+Renovation+Athens+KY"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -154,19 +149,7 @@ export default function AthensKY() {
                         },
                         "sku": "SERVICE-ATHENS-001",
                         "mpn": "SERVICE-ATHENS-001",
-                        "url": "https://yellowstonerenovation.com",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": "https://yellowstonerenovation.com",
-                            "price": "1",
-                            "priceCurrency": "USD",
-                            "availability": "https://schema.org/InStock"
-                        }
+                        "url": "https://yellowstonerenovation.com"
                     })}
                 </script>
 
@@ -267,14 +250,14 @@ export default function AthensKY() {
                         description:
                             "Trex, TimberTech, and classic wood decking — installed with clean craftsmanship and engineered for Kentucky weather.",
                         image: "/images/deck7.webp",
-                        link: "/cities/athens-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your home with premium siding materials. We install Hardie fiber cement, LP SmartSide, and high-quality vinyl siding.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/athens-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

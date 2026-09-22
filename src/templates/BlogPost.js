@@ -45,7 +45,9 @@ export default function BlogPost({ data }) {
       <SEO
         title={`${post.title} | Yellowstone Renovation`}
         description={post.excerpt}
-        pathname={`/blog/${post.slug}`}
+        pathname={`/blog/${post.slug}/`}
+        image={post.image}
+        article
       />
 
       {/* ===== BREADCRUMBS ===== */}

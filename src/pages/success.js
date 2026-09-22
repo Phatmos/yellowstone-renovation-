@@ -24,6 +24,7 @@ export default function SuccessPage() {
                 title="Thank You | Yellowstone Renovation"
                 description="We’ve received your request and will contact you within 24 hours."
                 pathname="/success"
+                noIndex
             />
 
             <section className="success-modern">

@@ -343,7 +343,7 @@ export default function Home() {
                     { image: "/images/remodler4.webp", title: "HardiePlank® Upgrade" }
                 ]}
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
                 blog={[
@@ -366,7 +366,7 @@ export default function Home() {
                         image: "/images/deck8.webp",
                     },
                 ]}
-                partners={["/icons/jameshardie.webp", "/icons/yelp.webp"]}
+                partners={["/icons/jameshardie.webp", "/icons/Yelp.webp"]}
             />
 
             {/* Repurpose the slider strictly for siding topics */}

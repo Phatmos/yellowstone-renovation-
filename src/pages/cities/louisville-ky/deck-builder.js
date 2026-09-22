@@ -387,7 +387,7 @@ We build decks that improve outdoor space, increase home value, and give homeown
                     { image: "/images/deck7.webp", title: "Covered Deck Extension" },
                 ]}
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
                 blog={[
@@ -413,7 +413,7 @@ We build decks that improve outdoor space, increase home value, and give homeown
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

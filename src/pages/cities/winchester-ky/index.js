@@ -147,11 +147,6 @@ export default function WinchesterKY() {
                                     "url": "https://yellowstonerenovation.com/images/remodler1.webp",
                                     "width": 1200,
                                     "height": 800
-                                },
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "87"
                                 }
                             },
 
@@ -257,14 +252,14 @@ export default function WinchesterKY() {
                         description:
                             "Choose low-maintenance composite or classic wood decking. Our builds are engineered for Kentucky wind, sun, and rain.",
                         image: "/images/deck7.webp",
-                        link: "/cities/winchester-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your home with durable siding. We install James Hardie fiber cement and quality vinyl siding for long-lasting performance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/winchester-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

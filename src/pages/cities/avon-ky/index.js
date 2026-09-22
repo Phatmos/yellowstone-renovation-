@@ -101,12 +101,7 @@ export default function AvonKY() {
                             "https://www.facebook.com/p/Yellowstone-Renovation-61551123481170/",
                             "https://www.instagram.com/yellowstone_renovation/",
                             "https://maps.google.com/?q=Yellowstone+Renovation+Avon+KY"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -148,19 +143,7 @@ export default function AvonKY() {
                         "brand": { "@type": "Brand", "name": "Yellowstone Renovation" },
                         "sku": "SERVICE-AVON-001",
                         "mpn": "SERVICE-AVON-001",
-                        "url": "https://yellowstonerenovation.com",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": "https://yellowstonerenovation.com",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock"
-                        }
+                        "url": "https://yellowstonerenovation.com"
                     })}
                 </script>
 
@@ -261,14 +244,14 @@ export default function AvonKY() {
                         description:
                             "Choose top-tier composite brands like Trex and TimberTech or select cedar and pressure-treated lumber for a classic wood design. Installed to handle Fayette County climate conditions.",
                         image: "/images/deck7.webp",
-                        link: "/cities/avon-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie®, LP SmartSide & Vinyl Siding Installation",
                         description:
                             "We install durable siding products that improve curb appeal and protect your home: Hardie fiber cement, LP SmartSide engineered wood, and premium vinyl siding.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/avon-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

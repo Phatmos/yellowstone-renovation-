@@ -191,7 +191,7 @@ export default function CoveredDeckPage() {
                         description:
                             "Turn your deck into an all-day, all-night living space. We install ceiling fans, recessed lighting, heaters, outlets, mounted TVs, and smart comfort features to keep your space cool, illuminated, and entertainment-ready. Weatherproof materials and hidden wiring ensure long-lasting performance and a clean, modern look.",
                         image: "/images/deck9.webp",
-                        link: "/conta",
+                        link: "/contact/",
                     },
                 ]}
             />
@@ -297,7 +297,7 @@ export default function CoveredDeckPage() {
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -322,7 +322,7 @@ export default function CoveredDeckPage() {
                     },
                 ]}
 
-                partners={["/icons/jameshardie.webp", "/icons/yelp.webp"]}
+                partners={["/icons/jameshardie.webp", "/icons/Yelp.webp"]}
             />
 
             <WindowsPromoSection

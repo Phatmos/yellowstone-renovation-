@@ -58,7 +58,7 @@ export default function Footer() {
                 <div className="footer-col">
                     <h4>Areas Served</h4>
                     <ul>
-                        <li><a href="/cities/lexington-ky">Lexington, KY</a></li>
+                        <li><a href="/cities/">Lexington, KY</a></li>
                         <li><a href="/cities/richmond-ky">Richmond, KY</a></li>
                         <li><a href="/cities/nicholasville-ky">Nicholasville, KY</a></li>
                         <li><a href="/cities/georgetown-ky">Georgetown, KY</a></li>
@@ -78,7 +78,7 @@ export default function Footer() {
                     <img src="/icons/google-reviews.webp" alt="Google" />
                 </a>
                 <a href="" target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/yelp.webp" alt="Yelp" />
+                    <img src="/icons/Yelp.webp" alt="Yelp" />
                 </a>
                 <a href="" target="_blank" rel="noopener noreferrer">
                     <img src="/icons/angi.webp" alt="Angi" />

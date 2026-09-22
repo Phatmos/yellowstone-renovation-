@@ -201,21 +201,21 @@ export default function DanvilleKY() {
                         description:
                             "Choose between low-maintenance composite or classic natural wood. Built strong for Kentucky’s climate.",
                         image: "/images/deck7.webp",
-                        link: "/cities/danville-ky/composite-decking/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Enhance curb appeal and protect your home with Hardie fiber cement or durable vinyl siding — installed by licensed professionals.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/danville-ky/vinyl-siding/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",
                         description:
                             "Improve energy efficiency and home appearance with professional window installations and trim upgrades.",
                         image: "/images/remodler6.webp",
-                        link: "/cities/danville-ky/windows/",
+                        link: "/windows/",
                     },
                 ]}
             />

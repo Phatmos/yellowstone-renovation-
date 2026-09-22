@@ -73,12 +73,7 @@ export default function GeorgetownDeckBuilder() {
                             "Stamping Ground, KY",
                             "Sadieville, KY",
                             "Scott County, KY"
-                        ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "132"
-                        }
+                        ]
                     })}
                 </script>
             </Helmet>
@@ -301,7 +296,7 @@ We build custom decks that upgrade outdoor living with dependable craftsmanship 
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -329,7 +324,7 @@ We build custom decks that upgrade outdoor living with dependable craftsmanship 
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

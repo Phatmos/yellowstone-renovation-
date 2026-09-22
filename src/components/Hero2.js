@@ -92,7 +92,7 @@ export default function Hero2({
           <div className="hero2-logos">
             <img src="/icons/bbb-logo.webp" alt="BBB" />
             <img src="/icons/google-reviews.webp" alt="Google Reviews" />
-            <img src="/icons/yelp.webp" alt="Yelp" />
+            <img src="/icons/Yelp.webp" alt="Yelp" />
           </div>
         </div>
 

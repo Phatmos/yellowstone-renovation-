@@ -8,7 +8,7 @@ export default function SidingServicesSection() {
             description:
                 "Top-rated Lexington siding contractor near you offering superior products, expert installation, and long-lasting protection for every remodel. From fiber cement to vinyl, we deliver unmatched quality and precision.",
             image: "/images/siding-installation.jpg",
-            link: "/siding-installation",
+            link: "/siding-replacement/",
         },
         {
             title: "Vinyl Siding",
@@ -29,7 +29,7 @@ export default function SidingServicesSection() {
             description:
                 "Boost your home’s energy efficiency with modern replacement windows. Our products reduce heating and cooling costs, improve insulation, and add a fresh, elegant look to your exterior.",
             image: "/images/replacement-windows.jpg",
-            link: "/replacement-windows",
+            link: "/windows/",
         },
         {
             title: "Deck Building & Exteriors",
@@ -43,7 +43,7 @@ export default function SidingServicesSection() {
             description:
                 "Protect your roof and siding with expertly installed soffit and fascia. Our precision work ensures proper ventilation and long-term protection against moisture and pests.",
             image: "/images/soffit-fascia.jpg",
-            link: "/soffit-fascia",
+            link: "/siding-replacement/",
         },
     ];
 

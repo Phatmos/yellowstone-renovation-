@@ -106,12 +106,7 @@ export default function NicholasvilleDeckBuilder() {
                             "https://www.facebook.com/p/Yellowstone-Renovation-61551123481170/",
                             "https://www.instagram.com/yellowstone_renovation/",
                             "https://maps.google.com/?q=Yellowstone+Renovation+Nicholasville+KY"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -131,19 +126,7 @@ export default function NicholasvilleDeckBuilder() {
                         },
                         "sku": "DECK-NICHOLASVILLE-001",
                         "mpn": "DECK-NICHOLASVILLE-001",
-                        "url": "https://yellowstonerenovation.com/cities/nicholasville-ky/deck-builder",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock",
-                            "url": "https://yellowstonerenovation.com/cities/nicholasville-ky/deck-builder"
-                        }
+                        "url": "https://yellowstonerenovation.com/cities/nicholasville-ky/deck-builder"
                     })}
                 </script>
 
@@ -425,7 +408,7 @@ We design and build decks that increase property value, improve outdoor function
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -453,7 +436,7 @@ We design and build decks that increase property value, improve outdoor function
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

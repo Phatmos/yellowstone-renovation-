@@ -85,12 +85,7 @@ export default function BracktownDeckBuilder() {
                             "Greendale, KY",
                             "Lexington North, KY",
                             "Fayette County, KY"
-                        ],
-                        aggregateRating: {
-                            "@type": "AggregateRating",
-                            ratingValue: "4.9",
-                            reviewCount: "132"
-                        }
+                        ]
                     })}
                 </script>
             </Helmet>
@@ -322,7 +317,7 @@ We build durable, beautiful decks with honest pricing, dependable timelines, and
                 ]}
 
                 findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
                     { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
                 ]}
 
@@ -350,7 +345,7 @@ We build durable, beautiful decks with honest pricing, dependable timelines, and
                 partners={[
                     "/icons/trex.webp",
                     "/icons/timbertech.webp",
-                    "/icons/yelp.webp"
+                    "/icons/Yelp.webp"
                 ]}
             />
 

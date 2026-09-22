@@ -1,16 +1,17 @@
 import React, { useMemo, useState } from "react";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import "../styles/projects-showcase.css";
 
 const projectData = [
     {
         id: 1,
-        title: "Trex Backyard Deck",
+        title: "Composite Deck & Concrete Upgrade",
         type: "decking",
         category: "Decking",
-        location: "Lexington, KY",
+        location: "Frankfort, KY",
         size: "420 SQFT",
-        feature1: "TimberTech Composite",
+        feature1: "Composite Deck",
         feature2: "Fascia",
         image: "/images/projects/frankfort/fr20.webp",
         link: "/projects/frankfort-ky-composite-deck/"
@@ -39,120 +40,11 @@ const projectData = [
         image: "/images/projects/frankfort/frn25.webp",
         link: "/projects/frankfort-ky-vertical-fence/"
     },
-    {
-        id: 4,
-        title: "Black Frame Windows",
-        type: "windows",
-        category: "Windows",
-        location: "Frankfort, KY",
-        size: "12 Windows",
-        feature1: "Energy Efficient",
-        feature2: "Black Frame",
-        image: "/images/projects/window-1.webp"
-    },
-    {
-        id: 5,
-        title: "Elevated Composite Deck",
-        type: "decking",
-        category: "Decking",
-        location: "Richmond, KY",
-        size: "420 SQFT",
-        feature1: "Trex Enhance",
-        feature2: "Stairs + Railing",
-        image: "/images/projects/deck-3.webp"
-    },
-    {
-        id: 6,
-        title: "Board-on-Board Fence",
-        type: "fencing",
-        category: "Fencing",
-        location: "Nicholasville, KY",
-        size: "210 LF",
-        feature1: "Board-on-Board",
-        feature2: "Premium Wood",
-        image: "/images/projects/Fence-2.webp"
-    },
-    {
-        id: 7,
-        title: "Vinyl Siding Upgrade",
-        type: "siding",
-        category: "Siding",
-        location: "Versailles, KY",
-        size: "1850 SQFT",
-        feature1: "Vinyl Siding",
-        feature2: "Trim Package",
-        image: "/images/projects/siding-2.webp"
-    },
-    {
-        id: 8,
-        title: "Commercial Window Install",
-        type: "windows",
-        category: "Windows",
-        location: "Louisville, KY",
-        size: "9 Windows + 1 Door",
-        feature1: "Low-E Glass",
-        feature2: "Custom Fit",
-        image: "/images/projects/window-2.webp"
-    },
-    {
-        id: 9,
-        title: "Custom Wood Deck",
-        type: "decking",
-        category: "Decking",
-        location: "Lexington, KY",
-        size: "510 SQFT",
-        feature1: "Wood Railing",
-        feature2: "Pressure Treated",
-        image: "/images/projects/deck-4.webp"
-    },
-    {
-        id: 10,
-        title: "Board-on-Board Fence",
-        type: "fencing",
-        category: "Fencing",
-        location: "Lexington, KY",
-        size: "160 LF",
-        feature1: "Board-on-Board",
-        feature2: "Premium Wood",
-        image: "/images/projects/Fence-3.webp"
-    },
-    {
-        id: 11,
-        title: "Trex Backyard Deck",
-        type: "decking",
-        category: "Decking",
-        location: "Lexington, KY",
-        size: "520 SQFT",
-        feature1: "Trex Composite",
-        feature2: "Picture Frame",
-        image: "/images/projects/Deck-1.webp"
-    },
-    {
-        id: 12,
-        title: "Horizontal Privacy Wood Fence",
-        type: "fencing",
-        category: "Fencing",
-        location: "Frankfort, KY",
-        size: "280 LF",
-        feature1: "Horizontal Privacy Fence",
-        feature2: "Pressure Treated",
-        image: "/images/projects/Fence-1.webp"
-    },
-    {
-        id: 13,
-        title: "James Hardie Siding",
-        type: "siding",
-        category: "Siding",
-        location: "Georgetown, KY",
-        size: "2400 SQFT",
-        feature1: "Board & Batten + Shake",
-        feature2: "Full Replacement",
-        image: "/images/projects/siding-1.webp"
-    },
+
 ];
 
 
-const tabs = ["All", "Decking", "Fencing", "Siding", "Windows"];
+const tabs = ["All", "Decking", "Fencing"];
 
 export default function ProjectsShowcasePage() {
     const [activeTab, setActiveTab] = useState("All");
@@ -164,13 +56,14 @@ export default function ProjectsShowcasePage() {
 
     return (
         <Layout>
+            <SEO title="Project Showcase | Decks & Fences in Central Kentucky | Yellowstone Renovation" description="Explore completed deck and fence projects by Yellowstone Renovation in Frankfort and Nicholasville, KY, and watch homeowners share their experiences." pathname="/projects-showcase/" image="/images/projects/frankfort/fr20.webp" />
             <main className="projects-page">
 
                 {/* HERO */}
                 <section className="projects-hero">
                     <img
                         src="/images/projects/team-1.webp"
-                        alt="Completed exterior remodeling projects"
+                        alt="Yellowstone Renovation project showcase"
                         className="projects-hero-image"
                     />
                     <div className="projects-hero-overlay" />
@@ -182,8 +75,7 @@ export default function ProjectsShowcasePage() {
                             <h1>Our Completed Exterior Remodeling Projects</h1>
 
                             <p>
-                                Explore real decking, fencing, siding, and window projects
-                                completed by our team with clean craftsmanship and quality materials.
+                                See completed deck and fence projects in Central Kentucky, with photos and details from each job.
                             </p>
 
                             <div className="projects-hero-buttons">
@@ -207,15 +99,14 @@ export default function ProjectsShowcasePage() {
                         </div>
                         <div className="projects-customer-stories-grid">
                             <article id="august-deck-story" className="projects-customer-story">
-                                <video controls playsInline preload="none" poster="/videos/testimonials/august-deck-poster.jpg">
-                                    <source src="/videos/testimonials/august-deck-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
+                                <video controls playsInline preload="none" poster="/videos/testimonials/august-deck-poster.jpg" aria-label="Perryville deck customer story">
                                     <source src="/videos/testimonials/august-deck-desktop.mp4" type="video/mp4" />
                                 </video>
-                                <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>A deck built for everyday living</h3><p>Hear from the homeowner and see the finished deck.</p></div>
+                                <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>Deck Build in Perryville, KY</h3><p>Hear from the homeowner and see the finished deck.</p></div>
                             </article>
                             <article id="white-deck-story" className="projects-customer-story">
-                                <video controls playsInline preload="none" poster="/videos/testimonials/white-deck-poster.jpg" src="/videos/testimonials/white-deck-story.mp4" />
-                                <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>A homeowner's deck story</h3><p>See the finished outdoor space and hear the experience firsthand.</p></div>
+                                <video controls playsInline preload="none" poster="/videos/testimonials/white-deck-poster.jpg" src="/videos/testimonials/white-deck-story.mp4" aria-label="Lexington deck customer story" />
+                                <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>Deck Build in Lexington, KY</h3><p>See the finished outdoor space and hear the experience firsthand.</p></div>
                             </article>
                         </div>
                     </section>
@@ -237,7 +128,7 @@ export default function ProjectsShowcasePage() {
                     {/* GRID */}
                     <section className="projects-grid" id="projects-grid">
                         {filteredProjects.map((item) => (
-                            <a href={item.link || "#"} className="project-card" key={item.id}>
+                            <a href={item.link} className="project-card" key={item.id}>
                                 <div className="project-card-image-wrap">
                                     <img
                                         src={item.image}
@@ -249,9 +140,7 @@ export default function ProjectsShowcasePage() {
                                 <div className="project-card-body">
                                     <div className="project-card-top">
                                         <h3>{item.title}</h3>
-                                        <span className="project-card-arrow" aria-hidden="true">
-                                            <span>↗</span>
-                                        </span>
+
                                     </div>
 
                                     <p className="project-card-location">{item.location}</p>

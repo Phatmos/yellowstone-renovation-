@@ -105,12 +105,7 @@ export default function NicholasvilleKY() {
                             "Wood Decks",
                             "Replacement Windows",
                             "Exterior Repairs"
-                        ],
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        }
+                        ]
                     })}
                 </script>
 
@@ -155,19 +150,7 @@ export default function NicholasvilleKY() {
                         },
                         "sku": "SERVICE-NICHOLASVILLE-001",
                         "mpn": "SERVICE-NICHOLASVILLE-001",
-                        "url": "https://yellowstonerenovation.com",
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.9",
-                            "reviewCount": 87
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": "https://yellowstonerenovation.com",
-                            "priceCurrency": "USD",
-                            "price": "1",
-                            "availability": "https://schema.org/InStock"
-                        }
+                        "url": "https://yellowstonerenovation.com"
                     })}
                 </script>
 
@@ -267,14 +250,14 @@ export default function NicholasvilleKY() {
                         description:
                             "Choose composite for low maintenance or wood for natural beauty. Our decks withstand Kentucky storms, humidity, and season changes.",
                         image: "/images/deck7.webp",
-                        link: "/cities/nicholasville-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your home with durable siding. We install James Hardie fiber cement and high-quality vinyl siding for long-term performance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/nicholasville-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

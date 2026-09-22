@@ -197,21 +197,21 @@ export default function HamburgKY() {
                         description:
                             "We build long-lasting, visually stunning decks tailored for Hamburg homes. Choose low-maintenance composite or classic natural wood — both engineered for comfort and performance.",
                         image: "/images/deck11.webp",
-                        link: "/cities/hamburg-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Trex, TimberTech, cedar, and pressure-treated lumber — installed with clean craftsmanship and engineered for Lexington's weather.",
                         image: "/images/deck7.webp",
-                        link: "/cities/hamburg-ky/composite-deck-installation/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Upgrade your home with premium siding materials. We install Hardie fiber cement, LP SmartSide, and durable vinyl siding — backed by manufacturer and workmanship warranties.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/hamburg-ky/vinyl-siding-installation/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",

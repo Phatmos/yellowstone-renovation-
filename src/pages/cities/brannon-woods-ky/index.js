@@ -186,28 +186,28 @@ export default function BrannonWoodsKY() {
                         description:
                             "We design and build custom decks that fit your home, yard, and lifestyle — from simple backyard platforms to full outdoor entertaining spaces.",
                         image: "/images/deck11.webp",
-                        link: "/cities/brannon-woods-ky/deck-builder/",
+                        link: "/deck-builder/",
                     },
                     {
                         title: "Composite & Wood Deck Installation",
                         description:
                             "Choose durable composite decking or timeless pressure-treated and cedar wood options, all built to handle the changing Kentucky seasons.",
                         image: "/images/deck7.webp",
-                        link: "/cities/brannon-woods-ky/composite-decking/",
+                        link: "/composite-decks/",
                     },
                     {
                         title: "James Hardie® & Vinyl Siding Installation",
                         description:
                             "Protect your Brannon Woods home with high-quality siding solutions that boost curb appeal, improve durability, and reduce exterior maintenance.",
                         image: "/images/remodler1.webp",
-                        link: "/cities/brannon-woods-ky/vinyl-siding/",
+                        link: "/vinyl-siding/",
                     },
                     {
                         title: "Windows & Exterior Trim Upgrades",
                         description:
                             "Refresh the exterior of your home with replacement windows, trim enhancements, and detail work that completes the look.",
                         image: "/images/remodler6.webp",
-                        link: "/cities/brannon-woods-ky/windows/",
+                        link: "/windows/",
                     },
                 ]}
             />

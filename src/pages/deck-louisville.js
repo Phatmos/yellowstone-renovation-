@@ -93,7 +93,7 @@ export default function LouisvilleDeckPage() {
 
     return (
         <main>
-            <SEO
+            <SEO pathname="/deck-louisville/"
                 title="Deck Builder Louisville KY | Composite & Wood Decks"
                 description="Yellowstone Renovation builds custom composite and wood decks in Louisville, KY. Get professional design, clear pricing, permit assistance, quality construction, and a 36-month workmanship warranty."
             />
@@ -169,11 +169,6 @@ export default function LouisvilleDeckPage() {
                                 ],
                                 description:
                                     "Yellowstone Renovation is a professional deck builder serving Louisville, KY and nearby communities. We design and build custom composite and wood decks, stairs, railings, picture-frame borders, fascia, lighting, and other outdoor living upgrades.",
-                                aggregateRating: {
-                                    "@type": "AggregateRating",
-                                    ratingValue: "4.9",
-                                    reviewCount: "87",
-                                },
                                 review: [
                                     {
                                         "@type": "Review",

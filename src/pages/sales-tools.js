@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import SEO from "../components/SEO";
 import "../styles/sales-tools.css";
 
 const SalesToolsPage = () => {
     return (
         <main className="sales-root">
+            <SEO title="Sales Tools | Yellowstone Renovation" description="Internal sales tools." pathname="/sales-tools/" noIndex />
             <div className="sales-gradient-bg" />
 
             <header className="sales-header">

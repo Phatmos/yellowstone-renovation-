@@ -385,7 +385,7 @@ export default function DeckBuilderNearMePage() {
         ]}
         findUs={[
           { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
-          { name: "Yelp", rating: "4.6/5", logo: "/icons/yelp.webp" },
+          { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
         ]}
         blog={[
           {
@@ -407,7 +407,7 @@ export default function DeckBuilderNearMePage() {
             image: "/images/deck8.webp",
           },
         ]}
-        partners={["/icons/jameshardie.webp", "/icons/yelp.webp"]}
+        partners={["/icons/jameshardie.webp", "/icons/Yelp.webp"]}
       />
 
       <TestimonialsSection />

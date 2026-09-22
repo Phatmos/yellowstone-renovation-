@@ -48,8 +48,8 @@ export default function OurPortfolio() {
                 </div>
 
                 <div className="portfolio-btn-wrap">
-                    <a href="/projects" className="portfolio-btn">
-                        View All Deck & Siding Projects
+                    <a href="/projects-showcase/" className="portfolio-btn">
+                        Project Showcase
                     </a>
                 </div>
             </div>
