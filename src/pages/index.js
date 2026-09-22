@@ -13,6 +13,7 @@ import SEO from "../components/SEO"
 import { Helmet } from "react-helmet"
 import MainSectionSideBar from "../components/MainSectionSideBar";
 import HeroRoofingSection from "../components/HeroRoofingSection";
+import HomeVideoStories from "../components/HomeVideoStories";
 
 
 export default function Home() {
@@ -178,6 +179,8 @@ export default function Home() {
         buttonText="Get a quick quote"
       />
 
+
+      <HomeVideoStories />
 
       {/* ✅ GALLERY */}
       <GallerySection
