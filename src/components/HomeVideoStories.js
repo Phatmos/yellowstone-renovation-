@@ -7,14 +7,14 @@ const stories = [
     title: "Deck Build in Perryville",
     detail: "Perryville, KY",
     poster: "/videos/testimonials/august-deck-poster.jpg",
-    video: "/videos/testimonials/august-deck-desktop.mp4",
+    video: "https://media.githubusercontent.com/media/Phatmos/yellowstone-renovation-/main/static/videos/testimonials/august-deck-desktop.mp4",
     projectUrl: "/projects-showcase/#august-deck-story",
   },
   {
     title: "Deck Build in Lexington",
     detail: "Lexington, KY",
     poster: "/videos/testimonials/white-deck-poster.jpg",
-    video: "/videos/testimonials/white-deck-story.mp4",
+    video: "https://media.githubusercontent.com/media/Phatmos/yellowstone-renovation-/main/static/videos/testimonials/white-deck-story.mp4",
     projectUrl: "/projects-showcase/#white-deck-story",
   },
 ];
@@ -212,6 +212,7 @@ export default function HomeVideoStories() {
               controls
               autoPlay
               playsInline
+              preload="metadata"
             >
 
 
