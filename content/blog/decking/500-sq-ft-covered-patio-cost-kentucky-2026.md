@@ -7,7 +7,7 @@ category: "Outdoor Living"
 image: "/images/covered-patio-kentucky-2026.png"
 excerpt: "How much does a 500 sq ft covered patio cost in Kentucky in 2026? See real pricing breakdowns, material options, labor costs, roofing types, and expert insights to plan your project correctly." 
 extraImages:
-  - "/images/covered-p atio-kentucky-2026.png"
+  - "/images/covered-patio-kentucky-2026.png"
   - "/images/covered-patio-kentucky-2026.png"
   - "/images/covered-patio-kentucky-2026.png"
 ---

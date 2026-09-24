@@ -4,10 +4,11 @@ slug: "fiberglass-vs-steel-entry-door-lexington-ky-2026"
 date: "2026-09-23"
 author: "Yellowstone Renovation"
 category: "Doors"
-image: "/images/doors/door1.webp"
+image: "/images/blog/entry-door-threshold-water-leak-lexington-ky.webp"
+imageAlt: "Illustration of a painted exterior entry door and threshold after rain"
 excerpt: "Compare fiberglass and steel entry doors for Lexington homes, including durability, finish, glass options, frame condition and installation details that matter."
 extraImages:
-  - "/images/doors/door1.webp"
+  - "/images/blog/entry-door-threshold-water-leak-lexington-ky.webp"
 ---
 
 # Fiberglass vs. Steel Entry Doors in Lexington, KY

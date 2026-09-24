@@ -4,10 +4,11 @@ slug: "wood-vs-vinyl-privacy-fence-lexington-ky-2026"
 date: "2026-09-23"
 author: "Yellowstone Renovation"
 category: "Fencing"
-image: "/images/fence/fence1.webp"
+image: "/images/projects/Fence-1.webp"
+imageAlt: "Wood privacy fence enclosing a residential backyard"
 excerpt: "Compare wood and vinyl privacy fencing for Lexington homes, including appearance, maintenance, gates, grade changes and the details that affect installed cost."
 extraImages:
-  - "/images/fence/fence1.webp"
+  - "/images/projects/Fence-1.webp"
 ---
 
 # Wood vs. Vinyl Privacy Fence in Lexington, KY

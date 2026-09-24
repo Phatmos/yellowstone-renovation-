@@ -8,7 +8,7 @@ image: "/images/deck-builder.webp"
 excerpt: "A detailed, expert guide explaining the true cost of deck construction and renovation in 2025 — from materials and labor to timelines and what to expect from professional deck builders near you."
 extraImages:
   - "/images/deck-builder.webp"
-  - "/images/deck-builder.webp.webp"
+  - "/images/deck-builder.webp"
 ---
 
 ## The Real Cost of Building or Renovating a Deck in 2025

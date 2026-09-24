@@ -4,10 +4,11 @@ slug: "full-frame-vs-insert-windows-lexington-ky-2026"
 date: "2026-09-23"
 author: "Yellowstone Renovation"
 category: "Windows"
-image: "/images/windows/windows1.webp"
+image: "/images/projects/window-1.webp"
+imageAlt: "Replacement windows with white trim on a gray-sided home"
 excerpt: "Understand the difference between full-frame and insert replacement windows, when each approach makes sense and what Lexington homeowners should inspect before choosing."
 extraImages:
-  - "/images/windows/windows1.webp"
+  - "/images/projects/window-1.webp"
 ---
 
 # Full-Frame vs. Insert Replacement Windows in Lexington, KY

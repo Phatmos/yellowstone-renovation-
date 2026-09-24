@@ -4,10 +4,11 @@ slug: "signs-your-siding-needs-replacement-lexington-ky-2026"
 date: "2026-09-23"
 author: "Yellowstone Renovation"
 category: "Siding"
-image: "/images/siding/siding1.webp"
+image: "/images/projects/siding-1.webp"
+imageAlt: "Two-story home with gray exterior siding and white trim"
 excerpt: "Learn the siding warning signs Lexington homeowners should watch for, from loose panels and failed caulk to moisture damage and recurring repairs."
 extraImages:
-  - "/images/siding/siding1.webp"
+  - "/images/projects/siding-1.webp"
 ---
 
 # 7 Signs Your Siding May Need Replacement in Lexington, KY
