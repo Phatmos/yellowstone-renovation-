@@ -8,7 +8,7 @@ import BlogHeader from "../../components/BlogHeader";
 export default function BlogPage({ data }) {
   const posts = data.allMarkdownRemark.nodes;
 
-  const categories = ["All", "Siding", "Decking", "Windows", "Painting"];
+  const categories = ["All", "Decking", "Fencing", "Siding", "Windows", "Doors", "Painting"];
   const [filter, setFilter] = useState("All");
   const [current, setCurrent] = useState(0);
 

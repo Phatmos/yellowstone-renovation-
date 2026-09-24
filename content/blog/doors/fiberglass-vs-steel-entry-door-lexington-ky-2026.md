@@ -80,3 +80,6 @@ It can when the existing door has poor seals or alignment, but the new unit must
 ## Exterior door replacement in Central Kentucky
 
 Yellowstone Renovation handles exterior improvements for homeowners across Lexington and surrounding communities. Browse our [Project Showcase](/projects-showcase/) or [request an on-site estimate](/contact/) to discuss the opening, door style and related exterior work.
+
+
+If rainwater is appearing at the entry, use our [door threshold leak checklist](/blog/entry-door-threshold-water-leak-lexington-ky/) to prepare for an inspection.

@@ -74,3 +74,6 @@ Often yes, but planning drainage, electrical work and clearances during the deck
 ## Planning an elevated deck in Central Kentucky?
 
 Yellowstone Renovation builds wood and composite decks throughout Lexington and surrounding Central Kentucky communities. Browse our [completed projects](/projects-showcase/) and [request an estimate](/contact/) when you are ready to compare layouts, materials and options for your property.
+
+
+For the route from an elevated deck into the yard, read our [deck stair and landing layout guide](/blog/deck-stair-landing-layout-lexington-ky/).

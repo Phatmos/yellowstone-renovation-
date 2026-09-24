@@ -9,6 +9,8 @@ export default function SEO({
   image,
   keywords,
   article = false,
+  publishedTime,
+  author,
   noIndex = false,
 
   // Optional local/project SEO
@@ -102,6 +104,7 @@ export default function SEO({
     about: {
       "@id": `${siteUrl}/#organization`,
     },
+    ...(article && { datePublished: publishedTime, author: { "@type": "Organization", name: author || "Yellowstone Renovation" }, publisher: { "@id": `${siteUrl}/#organization` } }),
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: seo.image,

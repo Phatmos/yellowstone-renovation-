@@ -72,3 +72,6 @@ No exterior cladding is literally maintenance-free. Fiber cement reduces some ma
 ## Planning siding replacement in Central Kentucky?
 
 See our [siding work and other exterior projects](/projects-showcase/) or [request an estimate](/contact/). Yellowstone Renovation can inspect the visible conditions, discuss material options and build a scope around the actual home rather than a generic square-foot number.
+
+
+When moisture appears near an opening, our [siding and flashing guide for windows and doors](/blog/siding-flashing-around-windows-doors-lexington-ky/) explains what to inspect.

@@ -89,3 +89,6 @@ Yes. Gate width and quantity affect materials, posts, hardware and labor, so the
 ## Get a fence estimate in Central Kentucky
 
 Yellowstone Renovation installs residential fencing in Lexington and surrounding communities. [Contact our team](/contact/) for an on-site measurement and a clear scope based on your yard, preferred material and gate layout.
+
+
+Gate placement and grade can change the plan even after you choose a material. See our [privacy fence gate and slope guide](/blog/privacy-fence-gate-slope-layout-lexington-ky/).

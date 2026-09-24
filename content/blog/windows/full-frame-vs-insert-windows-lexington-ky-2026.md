@@ -72,3 +72,6 @@ Visible staining, soft material and repeated leaks are warning signs, but some c
 ## Replacement windows in Lexington and Central Kentucky
 
 Yellowstone Renovation works on windows, siding and other exterior improvements across Central Kentucky. Browse our [Project Showcase](/projects-showcase/) and [contact us for an estimate](/contact/) to compare replacement approaches for your home.
+
+
+Before assuming a fogged window needs a full replacement, see our [guide to where window condensation forms](/blog/window-condensation-location-lexington-ky/).

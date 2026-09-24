@@ -35,7 +35,7 @@ export default function BlogPost({ data }) {
       ? "More in Windows"
       : post.category === "Siding"
       ? "More in Siding"
-      : "More in Paint ";
+      : post.category === "Fencing" ? "More in Fencing" : post.category === "Doors" ? "More in Doors" : "More in Paint";
 
   return (
     <Layout>
@@ -43,11 +43,13 @@ export default function BlogPost({ data }) {
 
 
       <SEO
-        title={`${post.title} | Yellowstone Renovation`}
+        title={post.metaTitle || `${post.title} | Yellowstone Renovation`}
         description={post.excerpt}
         pathname={`/blog/${post.slug}/`}
         image={post.image}
         article
+        publishedTime={post.dateRaw}
+        author={post.author || "Yellowstone Renovation"}
       />
 
       {/* ===== BREADCRUMBS ===== */}
@@ -74,7 +76,7 @@ export default function BlogPost({ data }) {
         </div>
 
         <div className="bp-image-container">
-          <img src={post.image} alt={post.title} />
+          <img src={post.image} alt={post.imageAlt || post.title} width="1200" height="800" />
         </div>
 
         <div className="bp-share">
@@ -198,6 +200,9 @@ export const query = graphql`
         category
         image
         excerpt
+        metaTitle
+        imageAlt
+        dateRaw: date(formatString: "YYYY-MM-DD")
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
