@@ -75,6 +75,8 @@ Keep a few matching boards and stain on hand. Fix small scratches or gouges righ
 
 ## Fall: Prep for Rain and Cold
 
+For a safety-first walk-through of railings, stairs, framing and the house connection, use our [fall deck inspection checklist for Lexington homeowners](/blog/fall-deck-inspection-lexington-ky/). It complements the seasonal cleaning steps below.
+
 Fall is the perfect time to get ahead of moisture and leaf buildup — two of the biggest threats to deck longevity.
 
 ### 1. Clear Out Debris
