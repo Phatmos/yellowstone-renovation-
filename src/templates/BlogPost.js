@@ -49,6 +49,7 @@ export default function BlogPost({ data }) {
         image={post.image}
         article
         publishedTime={post.dateRaw}
+        modifiedTime={post.updatedRaw}
         author={post.author || "Yellowstone Renovation"}
       />
 
@@ -71,7 +72,8 @@ export default function BlogPost({ data }) {
           <span className="bp-category">{post.category}</span>
           <h1 className="bp-title">{post.title}</h1>
           <div className="bp-meta">
-            By {post.author || "Yellowstone Team"} — {post.date}
+            By {post.author || "Yellowstone Team"} — Published {post.date}
+            {post.updated && ` — Updated ${post.updated}`}
           </div>
         </div>
 
@@ -196,6 +198,7 @@ export const query = graphql`
         title
         slug
         date(formatString: "MMMM D, YYYY")
+        updated(formatString: "MMMM D, YYYY")
         author
         category
         image
@@ -203,6 +206,7 @@ export const query = graphql`
         metaTitle
         imageAlt
         dateRaw: date(formatString: "YYYY-MM-DD")
+        updatedRaw: updated(formatString: "YYYY-MM-DD")
       }
     }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {

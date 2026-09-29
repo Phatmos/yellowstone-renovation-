@@ -10,6 +10,7 @@ export default function SEO({
   keywords,
   article = false,
   publishedTime,
+  modifiedTime,
   author,
   noIndex = false,
 
@@ -104,7 +105,12 @@ export default function SEO({
     about: {
       "@id": `${siteUrl}/#organization`,
     },
-    ...(article && { datePublished: publishedTime, author: { "@type": "Organization", name: author || "Yellowstone Renovation" }, publisher: { "@id": `${siteUrl}/#organization` } }),
+    ...(article && {
+      datePublished: publishedTime,
+      ...(modifiedTime && { dateModified: modifiedTime }),
+      author: { "@type": "Organization", name: author || "Yellowstone Renovation" },
+      publisher: { "@id": `${siteUrl}/#organization` },
+    }),
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: seo.image,
@@ -159,6 +165,8 @@ export default function SEO({
       <link rel="canonical" href={seo.url} />
 
       <meta property="og:type" content={article ? "article" : "website"} />
+      {article && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {article && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
