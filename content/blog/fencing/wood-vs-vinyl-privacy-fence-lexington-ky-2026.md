@@ -146,4 +146,4 @@ Standard ornamental aluminum fencing is open and is not intended to provide full
 
 ## Plan a fence around how your yard is actually used
 
-Use Yellowstone Renovation's [fence estimator](/fence-estimator/) to organize the basic dimensions, then [request an on-site estimate](/contact/). We can measure the route, review gates and grade, and compare wood, vinyl and aluminum based on the actual yard rather than a generic material ranking.
+Sketch the fence route, note the gates you need and [request an on-site estimate](/contact/). Yellowstone Renovation can measure the route, review gates and grade, and compare wood, vinyl and aluminum based on the actual yard rather than a generic material ranking.
