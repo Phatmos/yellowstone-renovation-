@@ -100,12 +100,12 @@ export default function ProjectsShowcasePage() {
                         <div className="projects-customer-stories-grid">
                             <article id="august-deck-story" className="projects-customer-story">
                                 <video controls playsInline preload="none" poster="/videos/testimonials/august-deck-poster.jpg" aria-label="Perryville deck customer story">
-                                    <source src="/videos/testimonials/august-deck-desktop.mp4" type="video/mp4" />
+                                    <source src="https://media.githubusercontent.com/media/Phatmos/yellowstone-renovation-/25db3a5be6a792d0e176ead275a9391622332a97/static/videos/testimonials/august-deck-desktop.mp4" type="video/mp4" />
                                 </video>
                                 <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>Deck Build in Perryville, KY</h3><p>Hear from the homeowner and see the finished deck.</p></div>
                             </article>
                             <article id="white-deck-story" className="projects-customer-story">
-                                <video controls playsInline preload="none" poster="/videos/testimonials/white-deck-poster.jpg" src="/videos/testimonials/white-deck-story.mp4" aria-label="Lexington deck customer story" />
+                                <video controls playsInline preload="none" poster="/videos/testimonials/white-deck-poster.jpg" src="https://media.githubusercontent.com/media/Phatmos/yellowstone-renovation-/25db3a5be6a792d0e176ead275a9391622332a97/static/videos/testimonials/white-deck-story.mp4" aria-label="Lexington deck customer story" />
                                 <div><span className="projects-customer-story-stars" aria-hidden="true">★★★★★</span><h3>Deck Build in Lexington, KY</h3><p>See the finished outdoor space and hear the experience firsthand.</p></div>
                             </article>
                         </div>
