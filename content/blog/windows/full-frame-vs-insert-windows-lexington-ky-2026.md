@@ -76,3 +76,5 @@ Yellowstone Renovation works on windows, siding and other exterior improvements 
 
 
 Before assuming a fogged window needs a full replacement, see our [guide to where window condensation forms](/blog/window-condensation-location-lexington-ky/).
+
+If you are deciding which openings should be addressed before colder weather, use our [pre-winter window replacement checklist](/blog/window-upgrade-tips/).
