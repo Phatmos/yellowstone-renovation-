@@ -14,6 +14,8 @@ A fall deck inspection in Lexington starts with the parts that keep people safe:
 
 Central Kentucky's wet leaves and winter temperature changes make late September or October a useful time to check a deck before another season of moisture. This guide is for an existing deck, whether its walking surface is wood or composite. It does not replace an inspection by a qualified professional.
 
+For a whole-house walk-around that also covers drainage, siding, fences, windows and doors, use the [fall exterior home maintenance checklist for Central Kentucky](/blog/fall-exterior-maintenance-central-kentucky/).
+
 *Published and last reviewed September 28, 2026 by Yellowstone Renovation. The cover image is an illustration, not a Yellowstone project photograph.*
 
 ## Quick fall deck inspection checklist

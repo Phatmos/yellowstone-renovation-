@@ -44,7 +44,7 @@ export default function BlogPost({ data }) {
 
       <SEO
         title={post.metaTitle || `${post.title} | Yellowstone Renovation`}
-        description={post.excerpt}
+        description={post.metaDescription || post.excerpt}
         pathname={`/blog/${post.slug}/`}
         image={post.image}
         article
@@ -204,6 +204,7 @@ export const query = graphql`
         image
         excerpt
         metaTitle
+        metaDescription
         imageAlt
         dateRaw: date(formatString: "YYYY-MM-DD")
         updatedRaw: updated(formatString: "YYYY-MM-DD")
