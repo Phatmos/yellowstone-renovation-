@@ -16,6 +16,8 @@ An elevated deck is not simply a ground-level deck on taller posts. Once the wal
 
 If you are comparing options for a second-story or raised backyard deck, start with our [Lexington deck builder page](/deck-local/) and [decking services](/decking/). This guide explains the details that usually move the budget before finishes and upgrades are selected.
 
+For a broader starting budget by deck size, read our updated [2026 Lexington deck cost guide](/blog/deck-installation-cost-lexington-ky/). It uses transparent planning scenarios and explains what must be included before two estimates can be compared fairly.
+
 ## 1. Deck height changes more than the posts
 
 Height affects post length, bracing, stair geometry and the amount of material that must be moved and installed above grade. A raised deck may also need more careful staging than a low platform. The framing design must work as a system: footings support posts, posts support beams, beams support joists, and the ledger or freestanding connection must safely transfer loads.
