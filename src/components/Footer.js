@@ -90,7 +90,8 @@ export default function Footer() {
                 <p>
                     © {new Date().getFullYear()} Yellowstone Renovation. All Rights Reserved. |{" "}
                     <a href="/privacy-policy">Privacy Policy</a> |{" "}
-                    <a href="/terms-of-service">Terms of Service</a>
+                    <a href="/terms-of-service">Terms of Service</a> |{" "}
+                    <a href="/affiliate-program/">Affiliate & Referral Program</a>
                 </p>
                 
             </div>
