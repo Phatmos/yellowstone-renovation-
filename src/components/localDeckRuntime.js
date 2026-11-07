@@ -28,6 +28,11 @@ export default function initLocalDeck(root) {
   };
   const $ = s => root.querySelector(s),
     $$ = s => [...root.querySelectorAll(s)];
+  // Measure the wrapped offer/header instead of assuming a fixed mobile height.
+  const header = $('.topwrap');
+  const measureHeader = () => root.style.setProperty('--top', `${header.getBoundingClientRect().height}px`);
+  new ResizeObserver(measureHeader).observe(header);
+  measureHeader();
   $('#burger').onclick = () => $('#mnav').hidden = false;
   $('#mnavX').onclick = () => $('#mnav').hidden = true;
   $('#mnav').addEventListener('click', e => {
@@ -49,9 +54,15 @@ export default function initLocalDeck(root) {
     hw.classList.add('on');
     hv.muted = false;
     hv.controls = true;
-    hv.play().catch(() => {});
+    hv.play().catch(() => {
+      hw.classList.remove('on');
+      hv.controls = false;
+    });
   };
-  hv.addEventListener('ended', () => hw.classList.remove('on'));
+  listen(hv, 'ended', () => {
+    hw.classList.remove('on');
+    hv.controls = false;
+  });
   new IntersectionObserver(es => {
     if (!es[0].isIntersecting && !hv.paused) hv.pause();
   }, {
@@ -100,11 +111,11 @@ export default function initLocalDeck(root) {
     if (z) z.value = $('#zipIn').value.replace(/\D/g, '').slice(0, 5);
   });
   const platformLogos = {
-    google: 'google-reviews.webp',
-    angi: 'angi.webp',
-    facebook: 'fb.png',
-    houzz: 'houzz.png',
-    yelp: 'Yelp.webp'
+    google: 'google.svg',
+    angi: 'angi.svg',
+    facebook: 'facebook.svg',
+    houzz: 'houzz.svg',
+    yelp: 'yelp.svg'
   };
   const PF = {
     google: ['Google', '4.9', '40+', 'G', '#4285f4', [['Mike D.', 'Frankfort, KY · Apr 2025', 'Clear pricing, no surprises, and the timeline was realistic. We got updates throughout the project and the final result is excellent.'], ['Carlos R.', 'Lexington, KY · Aug 2025', 'Clean build, great communication, and finished on time. William explained everything clearly and Andrew kept the project moving smoothly.']]],
@@ -119,7 +130,7 @@ export default function initLocalDeck(root) {
     if (!b) return;
     const [n, r, c, l, col, list] = PF[b.dataset.pf];
     const items = list ? list.map(([w, m, t]) => `<div class="ri"><div class="top"><span><b>${w}</b><br><small>${m}</small></span><span class="stars">★★★★★</span></div><p>${t}</p></div>`).join('') : '<p>Read more homeowner feedback on our review platforms.</p>';
-    $('#rvIn').innerHTML = `<div class="rhd"><img class="platform-logo" src="/icons/${platformLogos[b.dataset.pf]}" alt="${n}"><span><b id="rvT">${r} on ${n}</b><span class="stars">★★★★★</span> <small style="color:var(--muted)">${c} reviews</small></span></div><div class="rlist">${items}</div><button class="btn btn-o btn-lg" data-open="est">Get My Free Estimate</button>`;
+    $('#rvIn').innerHTML = `<div class="rhd"><img class="platform-logo" src="/local-deck/img/platforms/${platformLogos[b.dataset.pf]}" alt="${n}"><span><b id="rvT">${r} on ${n}</b><span class="stars">★★★★★</span> <small style="color:var(--muted)">${c} reviews</small></span></div><div class="rlist">${items}</div><button class="btn btn-o btn-lg" data-open="est">Get My Free Estimate</button>`;
     open('rv');
   });
   const BUD = ['$10,000 – $20,000', '$20,000 – $30,000', '$30,000 – $40,000', '$40,000 – $100,000', '$100,000 – $150,000', '$150,000+', 'More than $150,000'];
@@ -191,7 +202,7 @@ export default function initLocalDeck(root) {
       zip: $('#e-zip').value.trim(),
       message: $('#e-desc').value.trim(),
       photos_attached: $('#e-ph').files.length,
-      page: location.href,
+      page: window.location.href,
       timestamp: new Date().toLocaleString()
     };
     const submit = $('#estNext');
@@ -264,7 +275,7 @@ export default function initLocalDeck(root) {
           source: 'local-deck',
           name: $('#k-name').value.trim(),
           email: $('#k-email').value.trim(),
-          page: location.href,
+          page: window.location.href,
           timestamp: new Date().toLocaleString()
         })
       });
