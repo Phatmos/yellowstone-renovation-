@@ -48,17 +48,28 @@ export default function initLocalDeck(root) {
     im.classList.add('on');
     $('#slidecap').textContent = im.dataset.cap;
   }, 6500);
-  const hv = $('#hv'),
-    hw = $('#hvid');
-  $('#snd').onclick = () => {
-    hw.classList.add('on');
-    hv.muted = false;
-    hv.controls = true;
-    hv.play().catch(() => {
-      hw.classList.remove('on');
-      hv.controls = false;
-    });
+  const hw = $('#hvid');
+  let heroPlayer = null;
+  const pauseHero = () => {
+    if (heroPlayer) heroPlayer.contentWindow?.postMessage(JSON.stringify({
+      event: 'command', func: 'pauseVideo', args: []
+    }), 'https://www.youtube.com');
   };
+  listen($('#snd'), 'click', () => {
+    $$('video').forEach(video => video.pause());
+    if (!heroPlayer) {
+      heroPlayer = document.createElement('iframe');
+      heroPlayer.id = 'hv';
+      heroPlayer.title = 'Before you build your deck — Yellowstone Renovation';
+      heroPlayer.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      heroPlayer.allowFullscreen = true;
+      heroPlayer.referrerPolicy = 'strict-origin-when-cross-origin';
+      heroPlayer.src = 'https://www.youtube.com/embed/Hop1ciTYcqM?autoplay=1&playsinline=1&rel=0&enablejsapi=1&origin=' + encodeURIComponent(window.location.origin);
+      $('#videoPlayer').appendChild(heroPlayer);
+    }
+    hw.classList.add('on');
+  });
+  disposers.push(() => heroPlayer?.remove());
   // Start within the tap gesture so Safari permits playback with sound.
   $$('.customer-story').forEach(card => {
     const video = card.querySelector('video');
@@ -75,6 +86,7 @@ export default function initLocalDeck(root) {
       });
     });
     listen(video, 'play', () => {
+      pauseHero();
       $$('video').forEach(other => { if (other !== video) other.pause(); });
     });
     listen(video, 'ended', () => {
@@ -85,15 +97,9 @@ export default function initLocalDeck(root) {
       if (!entries[0].isIntersecting) video.pause();
     }, { threshold: .1 }).observe(card);
   });
-  listen(hv, 'ended', () => {
-    hw.classList.remove('on');
-    hv.controls = false;
-  });
-  new IntersectionObserver(es => {
-    if (!es[0].isIntersecting && !hv.paused) hv.pause();
-  }, {
-    threshold: .2
-  }).observe(hv);
+  new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) pauseHero();
+  }, { threshold: .2 }).observe(hw);
   const vio = new IntersectionObserver(es => es.forEach(en => {
     const v = en.target;
     if (en.isIntersecting) {

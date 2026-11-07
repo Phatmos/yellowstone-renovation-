@@ -604,3 +604,8 @@
  .local-deck-page .hero .deck-video{order:3;width:min(100%,340px);margin:12px auto 0;aspect-ratio:9/16}
  .local-deck-page .hero .deck-video .scr{aspect-ratio:9/16}
 }
+
+/* Keep the hero Shorts player in the existing vertical video frame. */
+.local-deck-page .hero .deck-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.local-deck-page .hero .hero-video-poster{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.local-deck-page .hero .deck-video.on .hero-video-poster{display:none}
