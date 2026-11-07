@@ -51,3 +51,9 @@
   from = "/api/lead"
   to = "/.netlify/functions/submit-lead"
   status = 200
+
+[[redirects]]
+  from = "/local-builder.html"
+  to = "/local-builder/"
+  status = 301
+  force = true
