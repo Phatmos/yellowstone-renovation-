@@ -1,14 +1,3 @@
-[[redirects]]
-  from = "/siding-replacement-in-lexington"
-  to = "/siding-replacement"
-  status = 301
-
-[[redirects]]
-  from = "/wood-siding-installation"
-  to = "/wood-siding"
-  status = 301
-
-[[redirects]]
-  from = "/james-hardie-siding-in-lexington"
-  to = "/james-hardie-siding"
-  status = 301
+/siding-replacement-in-lexington /siding-replacement 301
+/wood-siding-installation /wood-siding 301
+/james-hardie-siding-in-lexington /james-hardie-siding 301

@@ -1,0 +1,1012 @@
+export default function initLocalDeck(root) {
+  const disposers = [];
+  let active = true;
+  const listen = (target, event, fn, opts) => {
+    target.addEventListener(event, fn, opts);
+    disposers.push(() => target.removeEventListener(event, fn, opts));
+  };
+  const setInterval = (fn, ms) => {
+    const id = window.setInterval(fn, ms);
+    disposers.push(() => window.clearInterval(id));
+    return id;
+  };
+  const setTimeout = (fn, ms) => {
+    const id = window.setTimeout(fn, ms);
+    disposers.push(() => window.clearTimeout(id));
+    return id;
+  };
+  const requestAnimationFrame = fn => active ? window.requestAnimationFrame(fn) : 0;
+  const IntersectionObserver = function (...args) {
+    const observer = new window.IntersectionObserver(...args);
+    disposers.push(() => observer.disconnect());
+    return observer;
+  };
+  const ResizeObserver = function (...args) {
+    const observer = new window.ResizeObserver(...args);
+    disposers.push(() => observer.disconnect());
+    return observer;
+  };
+  const $ = s => root.querySelector(s),
+    $$ = s => [...root.querySelectorAll(s)];
+  $('#burger').onclick = () => $('#mnav').hidden = false;
+  $('#mnavX').onclick = () => $('#mnav').hidden = true;
+  $('#mnav').addEventListener('click', e => {
+    if (e.target.closest('a,[data-open]')) $('#mnav').hidden = true;
+  });
+  const sl = $$('#slides img');
+  let si = 0;
+  setInterval(() => {
+    sl[si].classList.remove('on');
+    si = (si + 1) % sl.length;
+    const im = sl[si];
+    void im.offsetWidth;
+    im.classList.add('on');
+    $('#slidecap').textContent = im.dataset.cap;
+  }, 6500);
+  const hv = $('#hv'),
+    hw = $('#hvid');
+  $('#snd').onclick = () => {
+    hw.classList.add('on');
+    hv.muted = false;
+    hv.controls = true;
+    hv.play().catch(() => {});
+  };
+  hv.addEventListener('ended', () => hw.classList.remove('on'));
+  new IntersectionObserver(es => {
+    if (!es[0].isIntersecting && !hv.paused) hv.pause();
+  }, {
+    threshold: .2
+  }).observe(hv);
+  const vio = new IntersectionObserver(es => es.forEach(en => {
+    const v = en.target;
+    if (en.isIntersecting) {
+      v.play().catch(() => {});
+    } else v.pause();
+  }), {
+    threshold: .25
+  });
+  $$('video[data-auto]').forEach(v => vio.observe(v));
+  const closeAll = () => {
+    $$('.ov').forEach(o => o.hidden = true);
+  };
+  const open = id => {
+    closeAll();
+    const m = $('#m-' + id);
+    if (m) {
+      m.hidden = false;
+      if (id === 'est' && $('#estF [data-st]')) setEst(1);
+    }
+  };
+  listen(document, 'click', e => {
+    const o = e.target.closest('[data-open]');
+    if (o) {
+      e.preventDefault();
+      open(o.dataset.open);
+      return;
+    }
+    if (e.target.closest('[data-close]') || e.target.classList.contains('ov')) closeAll();
+  });
+  listen(document, 'keydown', e => {
+    if (e.key === 'Escape') {
+      closeAll();
+      $('#mnav').hidden = true;
+      $('#lb').hidden = true;
+    }
+  });
+  $('#zipHero').addEventListener('submit', e => {
+    e.preventDefault();
+    open('est');
+    const z = $('#e-zip');
+    if (z) z.value = $('#zipIn').value.replace(/\D/g, '').slice(0, 5);
+  });
+  const platformLogos = {
+    google: 'google-reviews.webp',
+    angi: 'angi.webp',
+    facebook: 'fb.png',
+    houzz: 'houzz.png',
+    yelp: 'Yelp.webp'
+  };
+  const PF = {
+    google: ['Google', '4.9', '40+', 'G', '#4285f4', [['Mike D.', 'Frankfort, KY · Apr 2025', 'Clear pricing, no surprises, and the timeline was realistic. We got updates throughout the project and the final result is excellent.'], ['Carlos R.', 'Lexington, KY · Aug 2025', 'Clean build, great communication, and finished on time. William explained everything clearly and Andrew kept the project moving smoothly.']]],
+    angi: ['Angi', '5.0', '13+', 'Angi', '#ff5a45', [['Marta G.', 'June 2025', 'Highly recommend Peter and Yellowstone Renovation for any remodeling project!'], ['Siarhei M.', 'May 2025', 'Would absolutely recommend Yellowstone Renovation to anyone considering a remodel.']]],
+    facebook: ['Facebook', '5.0', '9+', 'f', '#1877f2', [['Andrew S.', 'Versailles, KY · Feb 2025', 'From design to final walkthrough, smooth process. We felt taken care of and the deck turned out beautiful.'], ['Sharon K.', 'Nicholasville, KY · May 2025', 'Strong craftsmanship and clean finishes. The railing details came out better than we expected. Great experience overall.']]],
+    houzz: ['Houzz', '5.0', '8+', 'houzz', '#4dbc15', null],
+    yelp: ['Yelp', '4.6', '10+', 'yelp', '#d32323', [['Laura P.', 'Richmond, KY · Mar 2025', 'Great details on railing and stairs. Looks premium. They showed up on time and handled everything professionally.'], ['Brian & Amanda', 'Georgetown, KY · Jul 2025', 'Professional crew and very organized process. Our composite deck looks amazing and the jobsite stayed clean the whole time.']]],
+    gq: ['GuildQuality', '4.8', '11+', 'GQ', '#0c4f6b', null]
+  };
+  listen(document, 'click', e => {
+    const b = e.target.closest('[data-pf]');
+    if (!b) return;
+    const [n, r, c, l, col, list] = PF[b.dataset.pf];
+    const items = list ? list.map(([w, m, t]) => `<div class="ri"><div class="top"><span><b>${w}</b><br><small>${m}</small></span><span class="stars">★★★★★</span></div><p>${t}</p></div>`).join('') : '<p>Read more homeowner feedback on our review platforms.</p>';
+    $('#rvIn').innerHTML = `<div class="rhd"><img class="platform-logo" src="/icons/${platformLogos[b.dataset.pf]}" alt="${n}"><span><b id="rvT">${r} on ${n}</b><span class="stars">★★★★★</span> <small style="color:var(--muted)">${c} reviews</small></span></div><div class="rlist">${items}</div><button class="btn btn-o btn-lg" data-open="est">Get My Free Estimate</button>`;
+    open('rv');
+  });
+  const BUD = ['$10,000 – $20,000', '$20,000 – $30,000', '$30,000 – $40,000', '$40,000 – $100,000', '$100,000 – $150,000', '$150,000+', 'More than $150,000'];
+  const bud = $('#bud');
+  bud.oninput = () => $('#bval').textContent = BUD[+bud.value];
+  $$('#estF .chips').forEach(c => c.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    c.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+  let est = 1;
+  function setEst(n) {
+    est = n;
+    $$('#estF [data-st]').forEach(d => d.hidden = +d.dataset.st !== n);
+    $$('#estF .prog i').forEach((i, k) => i.classList.toggle('on', k < n));
+    $('#estK').textContent = n === 1 ? 'Step 1 of 2 · Your deck' : 'Step 2 of 2 · How to reach you';
+    $('#estBack').hidden = n === 1;
+    $('#estNext').textContent = n === 1 ? 'Continue' : 'Get My Free Estimate';
+    $('#eErr').textContent = '';
+    $('#m-est .modal').scrollTop = 0;
+  }
+  $('#estBack').onclick = () => setEst(1);
+  $('#e-ph').onchange = e => {
+    const n = e.target.files.length;
+    if (n) $('#e-phl').textContent = n + ' photo' + (n > 1 ? 's' : '') + ' attached';
+  };
+  $('#estF').addEventListener('submit', async e => {
+    e.preventDefault();
+    const er = $('#eErr');
+    if (est === 1) {
+      if (!$('#estF [data-name="type"] [aria-pressed="true"]')) {
+        er.textContent = 'Pick what you are planning.';
+        return;
+      }
+      setEst(2);
+      $('#e-name').focus();
+      return;
+    }
+    if (!$('#e-name').value.trim()) {
+      er.textContent = 'Enter your name.';
+      $('#e-name').focus();
+      return;
+    }
+    if ($('#e-phone').value.replace(/\D/g, '').length < 10) {
+      er.textContent = 'Enter a 10-digit phone number.';
+      $('#e-phone').focus();
+      return;
+    }
+    if (!/^\d{5}$/.test($('#e-zip').value.trim())) {
+      er.textContent = 'Enter a 5-digit ZIP code.';
+      $('#e-zip').focus();
+      return;
+    }
+    const pick = n => {
+      const b = $(`#estF [data-name="${n}"] [aria-pressed="true"]`);
+      return b ? b.textContent : '';
+    };
+    const data = {
+      project_type: 'Deck building',
+      _subject: 'Local Deck Landing - Free Estimate',
+      source: 'local-deck',
+      project: pick('type'),
+      material: pick('mat'),
+      budget: BUD[+bud.value],
+      timeline: pick('when'),
+      name: $('#e-name').value.trim(),
+      phone: $('#e-phone').value.trim(),
+      email: $('#e-email').value.trim(),
+      zip: $('#e-zip').value.trim(),
+      message: $('#e-desc').value.trim(),
+      photos_attached: $('#e-ph').files.length,
+      page: location.href,
+      timestamp: new Date().toLocaleString()
+    };
+    const submit = $('#estNext');
+    submit.disabled = true;
+    const photos = $('#e-ph').files;
+    if (photos.length) {
+      const upload = new FormData();
+      upload.append('name', data.name);
+      upload.append('phone', data.phone);
+      upload.append('email', data.email);
+      for (const photo of photos) upload.append('photos', photo);
+      try {
+        const response = await fetch('/api/lead-photos', {
+          method: 'POST',
+          body: upload
+        });
+        if (!response.ok) throw new Error('Upload failed');
+        data.message += '\nYard photos uploaded for ' + data.name + ' - ' + data.phone;
+      } catch (error) {
+        er.textContent = 'Photos could not upload. Try fewer or smaller photos, or remove them to send your request.';
+        submit.disabled = false;
+        return;
+      }
+    }
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+      if (!response.ok) throw new Error('Submission failed');
+    } catch (error) {
+      er.textContent = 'Could not send your request. Please try again or call (859) 765-7267.';
+      submit.disabled = false;
+      return;
+    }
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'generate_lead',
+        form: 'local-deck-estimate'
+      });
+    } catch (err) {}
+    e.target.innerHTML = '<div class="ok"><img src="/local-deck/img/bear-thumbsup.webp" alt=""><h3 style="padding:0">Request received!</h3><p>A deck specialist will call you within one business day to book your free visit and 3D design.</p><button class="btn btn-w" type="button" data-close>Close</button></div>';
+  });
+  $('#catF').addEventListener('submit', async e => {
+    e.preventDefault();
+    const f = e.target,
+      er = f.querySelector('.err');
+    if (!$('#k-name').value.trim()) {
+      er.textContent = 'Enter your name.';
+      return;
+    }
+    if (!/^\S+@\S+\.\S+$/.test($('#k-email').value)) {
+      er.textContent = 'Enter a valid email.';
+      return;
+    }
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'Local Deck Landing - Catalog Request',
+          source: 'local-deck',
+          name: $('#k-name').value.trim(),
+          email: $('#k-email').value.trim(),
+          page: location.href,
+          timestamp: new Date().toLocaleString()
+        })
+      });
+      if (!response.ok) throw new Error('Submission failed');
+    } catch (error) {
+      er.textContent = 'Could not send. Please try again or call (859) 765-7267.';
+      return;
+    }
+    f.innerHTML = '<div class="ok"><img src="/local-deck/img/bear-thumbsup.webp" alt=""><h3 style="padding:0">You\'re on the list!</h3><p>We\'ll email the 2026 Deck Design Catalog to you.</p><button class="btn btn-w" type="button" data-close>Close</button></div>';
+  });
+  const DK = [{
+    k: 'Ground-level',
+    t: 'Ground-level decks',
+    d: 'A low, step-out deck that turns a plain backyard into an outdoor room. Fewer stairs, faster builds and a clean fascia all around.',
+    imgs: ['/local-deck/img/g/d15.webp', '/local-deck/img/g/d4.webp', '/local-deck/img/r/sunroom-deck-wide.webp', '/local-deck/img/r/white-rail-lattice.webp'],
+    f: [['Best for', 'Flat yards, patios, sunrooms'], ['Height', '1–3 steps from the door'], ['Materials', 'Composite or pressure-treated'], ['Railing', 'Aluminum or composite']],
+    t2: ['Footings & framing built to code', 'Picture-frame border & fascia', 'Skirting or lattice to finish the base']
+  }, {
+    k: 'Elevated',
+    t: 'Elevated & second-story decks',
+    d: 'Walk straight out from the kitchen onto a deck on heavy posts, with full stairs to the yard and a shaded patio underneath.',
+    imgs: ['/local-deck/img/r/elevated-posts.webp', '/local-deck/img/r/elevated-stairs.webp', '/local-deck/img/g/d104.webp', '/local-deck/img/r/stairs-front.webp'],
+    f: [['Best for', 'Walkout basements, sloped yards'], ['Height', 'Second story, full staircase'], ['Materials', 'Composite or pressure-treated'], ['Railing', 'Code-height aluminum rail']],
+    t2: ['Heavy posts, beams & footings', 'Ledger bolted and flashed to the house', 'Permits and inspections handled']
+  }, {
+    k: 'Multi-level',
+    t: 'Multi-level decks',
+    d: 'Separate spaces for grilling, dining and lounging, stepped down the yard with a landing in between.',
+    imgs: ['/local-deck/img/g/d39.webp', '/local-deck/img/g/d22.webp', '/local-deck/img/g/d41.webp', '/local-deck/img/g/d28.webp'],
+    f: [['Best for', 'Big families, entertaining'], ['Layout', '2+ levels with landings'], ['Materials', 'Composite, mixed colors'], ['Extras', 'Lighting, planters, gates']],
+    t2: ['Zones designed around how you live', 'Wide stairs between levels', 'Planned in 3D before we start']
+  }, {
+    k: 'Covered',
+    t: 'Covered decks & porches',
+    d: 'An outdoor room with a roof tied cleanly into your house, a finished ceiling, a fan and lights. Use it rain or shine.',
+    imgs: ['/local-deck/img/g/d91.webp', '/local-deck/img/r/under-deck-patio.webp', '/local-deck/img/p/covered-porch-1.webp', '/local-deck/img/p/covered-porch-2.webp'],
+    f: [['Best for', 'Shade, rainy days, evenings'], ['Roof', 'Gable or shed, tied to the house'], ['Ceiling', 'Finished, with lights & fan'], ['Floor', 'Composite or concrete patio']],
+    t2: ['Roof framing tied into your house', 'Recessed lights & ceiling fan', 'Under-deck ceilings for patios below']
+  }];
+  let dCur = 0,
+    dImg = 0;
+  $('#dtabs').innerHTML = DK.map((d, i) => `<button class="dtab" role="tab" aria-selected="${i === 0}" data-i="${i}"><img src="${d.imgs[0]}" alt="">${d.k}</button>`).join('');
+  const setImg = j => {
+    dImg = j;
+    const d = DK[dCur],
+      im = $('#dimg');
+    im.style.opacity = .2;
+    setTimeout(() => {
+      im.src = d.imgs[j];
+      im.alt = d.t;
+      im.style.opacity = 1;
+    }, 140);
+    $('#dcnt').textContent = `${j + 1} / ${d.imgs.length}`;
+    $$('#dthumbs button').forEach((b, k) => b.setAttribute('aria-current', k === j));
+  };
+  const showD = i => {
+    dCur = i;
+    const d = DK[i];
+    $('#dkick').textContent = d.k;
+    $('#dtitle').textContent = d.t;
+    $('#ddesc').textContent = d.d;
+    $('#dfacts').innerHTML = d.f.map(([a, b]) => `<li><span>${a}</span><b>${b}</b></li>`).join('');
+    $('#dticks').innerHTML = d.t2.map(x => `<li>${x}</li>`).join('');
+    $('#dthumbs').innerHTML = d.imgs.map((s, k) => `<button aria-label="Photo ${k + 1}"><img src="${s}" alt="" loading="lazy"></button>`).join('');
+    $$('#dtabs .dtab').forEach((b, j) => b.setAttribute('aria-selected', j === i));
+    setImg(0);
+  };
+  $('#dtabs').addEventListener('click', e => {
+    const b = e.target.closest('.dtab');
+    if (b) showD(+b.dataset.i);
+  });
+  $('#dthumbs').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) setImg([...b.parentNode.children].indexOf(b));
+  });
+  $('#dmain').addEventListener('click', () => setImg((dImg + 1) % DK[dCur].imgs.length));
+  showD(0);
+  const BA = [['Old wood deck to a clean new deck', 'Lexington, KY', 'A tired, gray wood deck replaced with new boards, railing and a fresh look.'], ['Screened porch to an open composite deck', 'Lexington, KY', 'An enclosed, worn porch opened up into a low composite deck with clean edges.'], ['Faded stairs to black aluminum rail', 'Central Kentucky', 'Weathered stairs and rail rebuilt with white risers and black aluminum railing.'], ['Front steps to a covered entry porch', 'Central Kentucky', 'Bare front steps turned into a covered porch with columns and new stairs.']];
+  let bi = 0;
+  const bas = $('#bas'),
+    br = bas.querySelector('input');
+  br.oninput = () => bas.style.setProperty('--pos', br.value + '%');
+  $('#bathumbs').innerHTML = BA.map((_, k) => `<button aria-label="Transformation ${k + 1}"><img src="/local-deck/img/g/ba${k + 1}a.webp" alt="" loading="lazy"></button>`).join('');
+  const showBA = k => {
+    bi = (k + BA.length) % BA.length;
+    $('#baB').src = `/local-deck/img/g/ba${bi + 1}b.webp`;
+    $('#baA').src = `/local-deck/img/g/ba${bi + 1}a.webp`;
+    $('#baN').textContent = `Transformation ${bi + 1} of ${BA.length} · ${BA[bi][1]}`;
+    $('#baT').textContent = BA[bi][0];
+    $('#baD').textContent = BA[bi][2];
+    br.value = 50;
+    bas.style.setProperty('--pos', '50%');
+    $$('#bathumbs button').forEach((b, j) => b.setAttribute('aria-current', j === bi));
+  };
+  $('#baP').onclick = () => showBA(bi - 1);
+  $('#baX').onclick = () => showBA(bi + 1);
+  $('#bathumbs').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) showBA([...b.parentNode.children].indexOf(b));
+  });
+  showBA(0);
+  const G = [['d39', 'w2 h2r', 'Multi-level deck · Lexington'], ['d15', '', 'Composite deck'], ['d22', '', 'Deck with stairs'], ['r/sunroom-deck', '', 'Sunroom deck'], ['d41', '', 'Family deck'], ['d104', 'w2', 'Elevated deck'], ['d48', '', 'White-rail deck'], ['r/stairs-top', 'h2r', 'Stair detail'], ['d60', '', 'Black & white rail'], ['d28', '', 'Deck with stairs'], ['d07', 'w2', 'Modern rail'], ['r/under-deck-patio', '', 'Under-deck patio'], ['d101', '', 'Elevated deck'], ['d54', '', 'Raised deck'], ['d95', '', 'Ground-level deck'], ['d65', '', 'Stair & border detail'], ['d87', '', 'Wood deck'], ['d46', '', 'Top view']];
+  const gsrc = g => g.startsWith('r/') ? `/local-deck/img/${g}.webp` : `/local-deck/img/g/${g}.webp`;
+  $('#gal').innerHTML = G.map(([g, c, t], i) => `<button class="${c}" data-i="${i}"><img src="${gsrc(g)}" alt="${t}" loading="lazy"><span>${t}</span></button>`).join('');
+  let li = 0;
+  const lb = $('#lb'),
+    showLB = () => {
+      $('#lbImg').src = gsrc(G[li][0]);
+      $('#lbImg').alt = G[li][2];
+    };
+  $('#gal').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    li = +b.dataset.i;
+    lb.hidden = false;
+    showLB();
+  });
+  $('#lbP').onclick = () => {
+    li = (li - 1 + G.length) % G.length;
+    showLB();
+  };
+  $('#lbN').onclick = () => {
+    li = (li + 1) % G.length;
+    showLB();
+  };
+  $('#lbX').onclick = () => lb.hidden = true;
+  lb.addEventListener('click', e => {
+    if (e.target === lb) lb.hidden = true;
+  });
+
+  /* ===== 3D deck build: SketchUp-style canvas renderer ===== */
+  const cv = $('#cv'),
+    ctx = cv.getContext('2d'),
+    stage = $('#stage');
+  const STEPS = [['Layout & dig', 'We stake out the deck, run string lines and dig footing holes below the frost line.'], ['Concrete footings', 'Concrete is poured in every hole and post bases are set level and square.'], ['Posts & beams', 'Pressure-treated posts go on the footings, with doubled beams on top.'], ['Ledger & joists', 'The ledger is bolted and flashed to the house. Joists go in at 16″ on center.'], ['Decking', 'Boards go down one by one, then the picture-frame border and fascia.'], ['Stairs', 'Stringers, treads and risers down to a solid landing pad.'], ['Railing', 'Posts, rails and balusters at code height. Ready for your first cookout.']];
+  const NST = STEPS.length;
+  $('#sbar').innerHTML = STEPS.map((s, i) => `<button class="st" data-s="${i + 1}" title="${s[0]}"><i>${i + 1}</i><span>${s[0]}</span></button>`).join('') + '<button class="pl" id="playB">▶<span> Play</span></button>';
+  const F = [],
+    cnt = new Array(NST + 1).fill(0);
+  const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]],
+    crs = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+    nrm = a => {
+      const m = Math.hypot(...a) || 1;
+      return a.map(v => v / m);
+    },
+    dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const newell = p => {
+    const n = [0, 0, 0];
+    for (let i = 0; i < p.length; i++) {
+      const a = p[i],
+        b = p[(i + 1) % p.length];
+      n[0] += (a[1] - b[1]) * (a[2] + b[2]);
+      n[1] += (a[2] - b[2]) * (a[0] + b[0]);
+      n[2] += (a[0] - b[0]) * (a[1] + b[1]);
+    }
+    return nrm(n);
+  };
+  const cen = p => {
+    const c = [0, 0, 0];
+    p.forEach(q => {
+      c[0] += q[0];
+      c[1] += q[1];
+      c[2] += q[2];
+    });
+    return c.map(v => v / p.length);
+  };
+  function addFace(p, col, g, k, o, center) {
+    let n = newell(p);
+    if (center) {
+      const c = cen(p);
+      if (dot(n, sub(c, center)) < 0) n = n.map(v => -v);
+    }
+    F.push({
+      p,
+      n,
+      col,
+      g,
+      k,
+      e: o.e !== false,
+      until: o.until || 99,
+      decal: false,
+      drop: o.drop == null ? 3 : o.drop
+    });
+  }
+  function solid(c8, col, g, o = {}) {
+    const k = cnt[g]++;
+    const C = cen(c8);
+    [[0, 1, 2, 3], [4, 5, 6, 7], [0, 1, 5, 4], [1, 2, 6, 5], [2, 3, 7, 6], [3, 0, 4, 7]].forEach(ix => addFace(ix.map(i => c8[i]), col, g, k, o, C));
+  }
+  function box(x0, y0, z0, x1, y1, z1, col, g, o) {
+    solid([[x0, y0, z0], [x1, y0, z0], [x1, y0, z1], [x0, y0, z1], [x0, y1, z0], [x1, y1, z0], [x1, y1, z1], [x0, y1, z1]], col, g, o);
+  }
+  function beam(a, b, w, h, col, g, o) {
+    const d = sub(b, a);
+    let s = crs(d, [0, 1, 0]);
+    if (Math.hypot(...s) < 1e-6) s = [1, 0, 0];
+    s = nrm(s).map(v => v * w / 2);
+    const u = nrm(crs(s, d)).map(v => v * h / 2);
+    const P = (p, i, j) => [p[0] + s[0] * i + u[0] * j, p[1] + s[1] * i + u[1] * j, p[2] + s[2] * i + u[2] * j];
+    solid([P(a, -1, -1), P(b, -1, -1), P(b, 1, -1), P(a, 1, -1), P(a, -1, 1), P(b, -1, 1), P(b, 1, 1), P(a, 1, 1)], col, g, o);
+  }
+  function prism(cx, cz, r, y0, y1, n, col, g, o = {}) {
+    const k = cnt[g]++;
+    const C = [cx, (y0 + y1) / 2, cz];
+    const pt = (i, y) => [cx + Math.cos(i / n * 6.2832) * r, y, cz + Math.sin(i / n * 6.2832) * r];
+    for (let i = 0; i < n; i++) addFace([pt(i, y0), pt(i + 1, y0), pt(i + 1, y1), pt(i, y1)], col, g, k, {
+      ...o,
+      e: false
+    }, C);
+    addFace(Array.from({
+      length: n
+    }, (_, i) => pt(i, y1)), col, g, k, o, C);
+  }
+  function decal(pts, col, g, o = {}) {
+    const k = cnt[g]++;
+    F.push({
+      p: pts,
+      n: [0, 1, 0],
+      col,
+      g,
+      k,
+      e: false,
+      until: o.until || 99,
+      decal: true,
+      drop: 0
+    });
+  }
+  const disc = (cx, cz, r, y, n = 14) => Array.from({
+    length: n
+  }, (_, i) => [cx + Math.cos(i / n * 6.2832) * r, y, cz + Math.sin(i / n * 6.2832) * r]);
+  let seed = 7;
+  const rnd = () => (seed = seed * 16807 % 2147483647) / 2147483647;
+  const jit = (hex, a) => {
+    const n = parseInt(hex.slice(1), 16);
+    const f = 1 + (rnd() - .5) * a;
+    return '#' + [n >> 16, n >> 8 & 255, n & 255].map(v => Math.max(0, Math.min(255, Math.round(v * f))).toString(16).padStart(2, '0')).join('');
+  };
+  const W = 16,
+    D = 12,
+    H = 3.2,
+    X0 = -W / 2,
+    X1 = W / 2,
+    SX = 3.2,
+    SW = 4.4,
+    NS = 5,
+    RISE = H / (NS + 1),
+    RUN = .95;
+  // house (group 0) — drawn in insertion order
+  box(-15, 0, -13, 15, 1.2, 0, '#a8a29a', 0);
+  box(-15, 1.2, -13, 15, 19, 0, '#e9ecea', 0);
+  addFace([[-15, 19.1, 0], [-15, 25.4, -6], [-15, 19.1, -13]], '#e9ecea', 0, 0, {}, [0, 22, -6]);
+  addFace([[15, 19.1, 0], [15, 19.1, -13], [15, 25.4, -6]], '#e9ecea', 0, 0, {}, [0, 22, -6]);
+  addFace([[-15.9, 19.1, 1], [15.9, 19.1, 1], [15.9, 25.8, -6], [-15.9, 25.8, -6]], '#3a403e', 0, 0, {}, [0, 10, -6]);
+  for (let y = 19.9; y < 25.6; y += .85) {
+    const z = 1 - (y - 19.1) / 6.7 * 7;
+    addFace([[-15.9, y, z], [15.9, y, z], [15.9, y + .06, z - .06], [-15.9, y + .06, z - .06]], '#2c3230', 0, 0, {
+      e: false
+    }, [0, 10, -6]);
+  }
+  for (let y = 1.9; y < 19; y += .7) box(-15, y, 0, 15, y + .07, .06, '#d3d9d6', 0, {
+    e: false
+  });
+  box(-15.2, 1.2, -.05, -14.6, 19, .25, '#ffffff', 0);
+  box(14.6, 1.2, -.05, 15.2, 19, .25, '#ffffff', 0);
+  box(-15.6, 18.6, -.2, 15.6, 19.2, .7, '#ffffff', 0);
+  const win = (cx, y0, w, h) => {
+    box(cx - w / 2 - 1.1, y0 - .1, 0, cx - w / 2 - .45, y0 + h + .1, .16, '#2f4a3b', 0);
+    box(cx + w / 2 + .45, y0 - .1, 0, cx + w / 2 + 1.1, y0 + h + .1, .16, '#2f4a3b', 0);
+    box(cx - w / 2 - .38, y0 - .38, 0, cx + w / 2 + .38, y0 + h + .38, .2, '#ffffff', 0);
+    box(cx - w / 2, y0, .2, cx + w / 2, y0 + h, .24, '#7da5bd', 0, {
+      e: false
+    });
+    box(cx - .07, y0, .24, cx + .07, y0 + h, .3, '#ffffff', 0, {
+      e: false
+    });
+    box(cx - w / 2, y0 + h / 2 - .07, .24, cx + w / 2, y0 + h / 2 + .07, .3, '#ffffff', 0, {
+      e: false
+    });
+  };
+  win(-9.5, 11.2, 3.2, 4.4);
+  win(-2, 11.2, 3.2, 4.4);
+  win(5.5, 11.2, 3.2, 4.4);
+  win(11.6, 11.2, 2.4, 4.4);
+  win(-10.5, 4.8, 3.2, 4.2);
+  box(.4, H - .05, 0, 7.6, H + 7.2, .22, '#ffffff', 0);
+  box(.8, H, .22, 7.2, H + 6.8, .27, '#6f97ae', 0, {
+    e: false
+  });
+  box(3.93, H, .27, 4.07, H + 6.8, .32, '#ffffff', 0, {
+    e: false
+  });
+  const cols = [X0 + .7, 0, X1 - .7],
+    rows = [D * .5, D - .7];
+  const FP = [];
+  cols.forEach(x => rows.forEach(z => FP.push([x, z])));
+  // 1 layout & dig
+  FP.forEach(([x, z]) => decal(disc(x, z, .78, .02), '#3a2a1c', 1));
+  [[X0 - 1, -.3], [X1 + 1, -.3], [X0 - 1, D + 1], [X1 + 1, D + 1]].forEach(([x, z]) => box(x - .08, 0, z - .08, x + .08, 1.4, z + .08, '#c79a5f', 1, {
+    until: 3
+  }));
+  beam([X0 - 1, 1.15, D - .7], [X1 + 1, 1.15, D - .7], .05, .05, '#f26b21', 1, {
+    until: 3,
+    e: false,
+    drop: 0
+  });
+  beam([X0 - .7, 1.15, -.3], [X0 - .7, 1.15, D + 1], .05, .05, '#f26b21', 1, {
+    until: 3,
+    e: false,
+    drop: 0
+  });
+  beam([X1 + .7, 1.15, -.3], [X1 + .7, 1.15, D + 1], .05, .05, '#f26b21', 1, {
+    until: 3,
+    e: false,
+    drop: 0
+  });
+  FP.forEach(([x, z]) => prism(x + 1.3, z + .5, .62, 0, .38, 9, '#7a5a3c', 1, {
+    until: 1,
+    e: false
+  }));
+  // 2 footings
+  FP.forEach(([x, z]) => {
+    prism(x, z, .64, -.05, .34, 14, '#c2bfb8', 2);
+    box(x - .3, .34, z - .3, x + .3, .44, z + .3, '#6d7270', 2);
+  });
+  // 3 posts & beams
+  FP.forEach(([x, z]) => box(x - .27, .44, z - .27, x + .27, H - 1.75, z + .27, '#b08a5e', 3));
+  rows.forEach(z => {
+    box(X0, H - 1.75, z - .32, X1, H - 1.0, z, '#9c7550', 3);
+    box(X0, H - 1.75, z, X1, H - 1.0, z + .32, '#a37c56', 3);
+  });
+  // 4 ledger & joists
+  box(X0, H - 1.0, 0, X1, H - .22, .25, '#9c7550', 4);
+  box(X0, H - .2, 0, X1, H - .1, .4, '#596060', 4, {
+    e: false
+  });
+  for (let x = X0 + .1; x < X1 - .2; x += 1.333) box(x, H - 1.0, .25, x + .16, H - .22, D - .2, jit('#b9905f', .1), 4);
+  box(X1 - .18, H - 1.0, .25, X1, H - .22, D - .2, '#b9905f', 4);
+  box(X0, H - 1.0, D - .2, X1, H - .22, D, '#a8804f', 4);
+  for (let x = X0 + .26; x < X1 - 1; x += 1.333) box(x, H - .95, D / 2 - .08, x + 1.17, H - .3, D / 2 + .08, '#a8804f', 4, {
+    e: false
+  });
+  // 5 decking
+  const BC = '#8a5b3b',
+    BF = '#4d3223';
+  for (let z = .55; z < D - .6; z += .47) box(X0 + .55, H - .22, z, X1 - .55, H - .08, z + .42, jit(BC, .14), 5, {
+    drop: 1.4
+  });
+  box(X0, H - .22, D - .55, X1, H - .06, D + .05, BF, 5);
+  box(X0 - .05, H - .22, .05, X0 + .55, H - .06, D - .55, BF, 5);
+  box(X1 - .55, H - .22, .05, X1 + .05, H - .06, D - .55, BF, 5);
+  box(X0 - .06, H - 1.0, D, X1 + .06, H - .22, D + .08, BF, 5);
+  box(X0 - .08, H - 1.0, 0, X0 - .01, H - .22, D, BF, 5);
+  box(X1 + .01, H - 1.0, 0, X1 + .08, H - .22, D, BF, 5);
+  // 6 stairs
+  const S0 = D + .08,
+    SL = S0 + NS * RUN;
+  box(SX - SW / 2 - .6, -.05, SL - .1, SX + SW / 2 + .6, .16, SL + 2.2, '#c9c6bf', 6);
+  [SX - SW / 2 + .12, SX, SX + SW / 2 - .12].forEach(x => beam([x, H - .75, S0 + .1], [x, .3, SL + .1], .16, .9, '#a37c56', 6));
+  for (let i = 0; i < NS; i++) {
+    const y = H - (i + 1) * RISE,
+      z = S0 + i * RUN;
+    box(SX - SW / 2, y - RISE + .03, z - .02, SX + SW / 2, y - .14, z + .06, BF, 6, {
+      e: false
+    });
+    box(SX - SW / 2, y - .14, z, SX + SW / 2, y, z + RUN, jit(BC, .1), 6);
+  }
+  // 7 railing
+  const RK = '#1b1e1d',
+    RH = 3.0;
+  const post = (x, z, y0, h) => box(x - .18, y0, z - .18, x + .18, y0 + h, z + .18, RK, 7);
+  const run = (ax, az, bx, bz) => {
+    const len = Math.hypot(bx - ax, bz - az);
+    beam([ax, H + RH - .08, az], [bx, H + RH - .08, bz], .22, .14, RK, 7);
+    beam([ax, H + .32, az], [bx, H + .32, bz], .12, .1, RK, 7, {
+      e: false
+    });
+    const m = Math.floor(len / .4);
+    for (let i = 1; i < m; i++) {
+      const t = i / m,
+        x = ax + (bx - ax) * t,
+        z = az + (bz - az) * t;
+      box(x - .035, H + .37, z - .035, x + .035, H + RH - .15, z + .035, RK, 7, {
+        e: false,
+        drop: 1
+      });
+    }
+  };
+  [[X0 + .25, .6], [X0 + .25, D / 2], [X0 + .25, D - .25], [-3, D - .25], [SX - SW / 2 - .1, D - .25], [SX + SW / 2 + .1, D - .25], [X1 - .25, D - .25], [X1 - .25, D / 2], [X1 - .25, .6]].forEach(([x, z]) => post(x, z, H - .08, RH + .2));
+  run(X0 + .25, .6, X0 + .25, D / 2);
+  run(X0 + .25, D / 2, X0 + .25, D - .25);
+  run(X0 + .25, D - .25, -3, D - .25);
+  run(-3, D - .25, SX - SW / 2 - .1, D - .25);
+  run(SX + SW / 2 + .1, D - .25, X1 - .25, D - .25);
+  run(X1 - .25, D - .25, X1 - .25, D / 2);
+  run(X1 - .25, D / 2, X1 - .25, .6);
+  [SX - SW / 2 - .1, SX + SW / 2 + .1].forEach(x => {
+    const zb = SL + .1,
+      yb = .16;
+    post(x, zb, yb, RH + .5);
+    beam([x, H + RH - .08, D - .25], [x, yb + RH + .25, zb], .2, .14, RK, 7);
+    beam([x, H + .3, D - .05], [x, yb + .6, zb], .12, .1, RK, 7, {
+      e: false
+    });
+    for (let i = 1; i < NS * 2; i++) {
+      const t = i / (NS * 2),
+        z = D - .15 + t * (zb - D + .15),
+        yl = H + (yb + .3 - H) * t;
+      box(x - .035, yl + .1, z - .035, x + .035, yl + RH - .2, z + .035, RK, 7, {
+        e: false,
+        drop: 1
+      });
+    }
+  });
+  F.forEach(f => {
+    const c = cnt[f.g];
+    f.k = c > 1 ? f.k / (c - 1) : 0;
+  });
+  // renderer
+  const CAM = [{
+    t: [1, 5, 5],
+    d: 46,
+    p: .36
+  }, {
+    t: [0, 1, 7.5],
+    d: 36,
+    p: .62
+  }, {
+    t: [0, 1, 7.5],
+    d: 35,
+    p: .6
+  }, {
+    t: [0, 1.5, 7],
+    d: 36,
+    p: .52
+  }, {
+    t: [0, 2, 7],
+    d: 37,
+    p: .52
+  }, {
+    t: [.5, 2.5, 7.5],
+    d: 39,
+    p: .5
+  }, {
+    t: [1.5, 2.5, 9],
+    d: 41,
+    p: .44
+  }, {
+    t: [1.5, 4, 7.5],
+    d: 44,
+    p: .38
+  }];
+  let shown = 0,
+    prog = 1,
+    yaw = .55,
+    pitch = .36,
+    dist = 44,
+    tgt = [1, 5, 4],
+    auto = true,
+    drag = null,
+    dpitch = 0,
+    dyaw = .5;
+  const L = nrm([.5, .85, .55]);
+  let Wc = 0,
+    Hc = 0;
+  function resize() {
+    const r = stage.getBoundingClientRect();
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    Wc = r.width;
+    Hc = r.height;
+    cv.width = Wc * dpr;
+    cv.height = Hc * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  new ResizeObserver(resize).observe(stage);
+  resize();
+  const shade = (hex, k) => {
+    const n = parseInt(hex.slice(1), 16);
+    return `rgb(${Math.min(255, (n >> 16) * k) | 0},${Math.min(255, (n >> 8 & 255) * k) | 0},${Math.min(255, (n & 255) * k) | 0})`;
+  };
+  const poly = s => {
+    ctx.beginPath();
+    s.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]));
+    ctx.closePath();
+  };
+  const TREES = [[-28, -12, 7.5], [25, -14, 8.5], [-36, -4, 6], [35, -6, 7], [-20, -24, 9], [14, -26, 8]];
+  const SHRUBS = [[-13, 1.6], [-11.4, 1.4], [12.2, 1.5], [13.8, 1.7]];
+  function render() {
+    const cp = Math.cos(pitch);
+    const eye = [tgt[0] + Math.sin(yaw) * cp * dist, tgt[1] + Math.sin(pitch) * dist, tgt[2] + Math.cos(yaw) * cp * dist];
+    const f = nrm(sub(tgt, eye)),
+      r = nrm([-f[2], 0, f[0]]),
+      u = crs(r, f);
+    const mob = Wc < 700,
+      fl = Math.min(Wc * (mob ? 1.25 : 1.05), Hc * 1.45),
+      cx = Wc * (mob ? .5 : .57),
+      cy = Hc * (mob ? .57 : .55);
+    const prj = p => {
+      const v = sub(p, eye);
+      const z = dot(v, f);
+      return [cx + dot(v, r) * fl / z, cy - dot(v, u) * fl / z, z];
+    };
+    const ok = s => s.every(p => p[2] > .6);
+    ctx.clearRect(0, 0, Wc, Hc);
+    const hz = prj([eye[0] - Math.sin(yaw) * 4000, 0, eye[2] - Math.cos(yaw) * 4000])[1];
+    ctx.fillStyle = '#9cc28a';
+    ctx.beginPath();
+    ctx.moveTo(0, hz + 1);
+    for (let x = 0; x <= Wc + 20; x += Wc / 18) ctx.lineTo(x, hz - 10 - 12 * Math.abs(Math.sin(x * .013 + 1)));
+    ctx.lineTo(Wc, hz + 1);
+    ctx.fill();
+    const gg = ctx.createLinearGradient(0, hz, 0, Hc);
+    gg.addColorStop(0, '#a9cf8f');
+    gg.addColorStop(1, '#7fb466');
+    ctx.fillStyle = gg;
+    ctx.fillRect(0, hz, Wc, Hc - hz);
+    for (let z = -40; z < eye[2] - 3; z += 3) {
+      if ((z + 40) / 3 % 2) continue;
+      for (let x = -60; x < 60; x += 12) {
+        const s = [[x, 0, z], [x + 12, 0, z], [x + 12, 0, z + 3], [x, 0, z + 3]].map(prj);
+        if (!ok(s)) continue;
+        ctx.fillStyle = 'rgba(255,255,255,.07)';
+        poly(s);
+        ctx.fill();
+      }
+    }
+    let s = [[-15, 0, 0], [15, 0, 0], [15, 0, 1.8], [-15, 0, 1.8]].map(prj);
+    if (ok(s)) {
+      ctx.fillStyle = 'rgba(30,50,30,.16)';
+      poly(s);
+      ctx.fill();
+    }
+    if (shown >= 1) {
+      const a = shown >= 5 ? .5 : 1;
+      s = [[X0 - 1.2, .005, .2], [X1 + 1.2, .005, .2], [X1 + 1.2, .005, D + 1.2], [X0 - 1.2, .005, D + 1.2]].map(prj);
+      if (ok(s)) {
+        ctx.fillStyle = `rgba(150,118,82,${.55 * a})`;
+        poly(s);
+        ctx.fill();
+      }
+    }
+    const tree = (x, z, h) => {
+      const b = prj([x, 0, z]),
+        t = prj([x, h * 2.1, z]);
+      if (b[2] < 1) return;
+      const rr = Math.abs(t[1] - b[1]) * .42;
+      ctx.fillStyle = 'rgba(0,0,0,.09)';
+      ctx.beginPath();
+      ctx.ellipse(b[0] + rr * .3, b[1], rr * 1.2, rr * .24, 0, 0, 7);
+      ctx.fill();
+      ctx.fillStyle = '#6d5a45';
+      ctx.fillRect(b[0] - rr * .07, t[1], rr * .14, b[1] - t[1]);
+      [['#477f47', 0, 0, 1], ['#55934f', -.35, -.3, .62], ['#3f7442', .4, .15, .6]].forEach(([c, dx, dy, k]) => {
+        ctx.fillStyle = c;
+        ctx.beginPath();
+        ctx.arc(t[0] + rr * dx, t[1] + rr * dy, rr * k, 0, 7);
+        ctx.fill();
+      });
+    };
+    TREES.forEach(t => tree(...t));
+    if (shown >= 5) {
+      s = [[X0 + .8, .01, 1.6], [X1 + .8, .01, 1.6], [X1 + .8, .01, D + 1.6], [X0 + .8, .01, D + 1.6]].map(prj);
+      if (ok(s)) {
+        ctx.fillStyle = 'rgba(20,35,20,.22)';
+        poly(s);
+        ctx.fill();
+      }
+    }
+    const vis = [];
+    for (const q of F) {
+      if (q.g > shown || shown > q.until) continue;
+      let e = 1;
+      if (q.g === shown && q.g > 0) e = Math.max(0, Math.min(1, (prog - q.k * .72) / .28));
+      if (e <= 0) continue;
+      const dy = (1 - e) * (1 - e) * q.drop;
+      let c0 = 0,
+        c1 = 0,
+        c2 = 0;
+      for (const p of q.p) {
+        c0 += p[0];
+        c1 += p[1];
+        c2 += p[2];
+      }
+      const n = q.p.length;
+      c0 /= n;
+      c1 = c1 / n + dy;
+      c2 /= n;
+      const vx = eye[0] - c0,
+        vy = eye[1] - c1,
+        vz = eye[2] - c2;
+      if (!q.decal && q.n[0] * vx + q.n[1] * vy + q.n[2] * vz <= 0) continue;
+      vis.push([q, dy, e, vx * vx + vy * vy + vz * vz]);
+    }
+    vis.sort((a, b) => a[0].decal !== b[0].decal ? a[0].decal ? -1 : 1 : a[0].g !== b[0].g ? a[0].g - b[0].g : a[0].g === 0 ? 0 : b[3] - a[3]);
+    let shr = false;
+    const drawShr = () => {
+      shr = true;
+      SHRUBS.forEach(([x, z]) => {
+        const b = prj([x, 0, z]);
+        if (b[2] < 1) return;
+        const t = prj([x, 1.6, z]);
+        const rr = Math.abs(t[1] - b[1]) * .75;
+        ctx.fillStyle = '#3f7a45';
+        ctx.beginPath();
+        ctx.ellipse(b[0], b[1] - rr * .55, rr * 1.1, rr * .75, 0, 0, 7);
+        ctx.fill();
+        ctx.fillStyle = '#4f8f4f';
+        ctx.beginPath();
+        ctx.ellipse(b[0] - rr * .3, b[1] - rr * .8, rr * .6, rr * .45, 0, 0, 7);
+        ctx.fill();
+      });
+    };
+    for (const [q, dy, e] of vis) {
+      if (!shr && !q.decal && q.g > 0) drawShr();
+      const sp = q.p.map(p => prj([p[0], p[1] + dy, p[2]]));
+      if (!ok(sp)) continue;
+      const lam = q.decal ? 1 : .6 + .4 * Math.max(0, dot(q.n, L)) + (q.n[1] > .5 ? .05 : 0);
+      ctx.globalAlpha = e < 1 ? .25 + .75 * e : 1;
+      ctx.fillStyle = shade(q.col, lam);
+      poly(sp);
+      ctx.fill();
+      if (q.e) {
+        ctx.strokeStyle = 'rgba(18,20,19,.28)';
+        ctx.lineWidth = .7;
+        ctx.stroke();
+      }
+    }
+    ctx.globalAlpha = 1;
+    if (!shr) drawShr();
+  }
+  const btns = $$('#sbar .st'),
+    pb = $('#playB');
+  function setStep(n, instant) {
+    const prev = shown;
+    shown = n;
+    prog = instant || n <= prev ? 1 : 0;
+    btns.forEach((b, i) => {
+      b.classList.toggle('on', i === n - 1);
+      b.classList.toggle('done', i < n - 1);
+    });
+    $('#capS').textContent = `Step ${n} of ${NST}`;
+    $('#capT').textContent = n ? STEPS[n - 1][0] : 'Your backyard today';
+    $('#capP').textContent = n ? STEPS[n - 1][1] : 'Press play to watch your deck go up, step by step.';
+    $('#capB').style.width = n / NST * 100 + '%';
+  }
+  let playT = null;
+  const stopPlay = () => {
+    clearInterval(playT);
+    playT = null;
+    pb.innerHTML = '▶<span> Play</span>';
+  };
+  btns.forEach(b => b.addEventListener('click', () => {
+    stopPlay();
+    const n = +b.dataset.s;
+    if (n > shown + 1) setStep(n - 1, true);
+    setStep(n);
+  }));
+  pb.onclick = () => {
+    if (playT) {
+      stopPlay();
+      return;
+    }
+    if (shown >= NST) setStep(0, true);
+    pb.innerHTML = '❚❚<span> Pause</span>';
+    const tick = () => {
+      if (shown >= NST) {
+        stopPlay();
+        return;
+      }
+      setStep(shown + 1);
+      if (shown >= NST) stopPlay();
+    };
+    tick();
+    playT = setInterval(tick, 2700);
+  };
+  stage.addEventListener('pointerdown', e => {
+    if (e.target.closest('button')) return;
+    drag = {
+      x: e.clientX,
+      y: e.clientY,
+      yaw: yaw,
+      pitch: dpitch
+    };
+    auto = false;
+    stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener('pointermove', e => {
+    if (!drag) return;
+    dyaw = Math.max(-1.3, Math.min(1.3, drag.yaw - (e.clientX - drag.x) * .006));
+    dpitch = Math.max(-.25, Math.min(.4, drag.pitch + (e.clientY - drag.y) * .004));
+  });
+  const up = () => drag = null;
+  stage.addEventListener('pointerup', up);
+  stage.addEventListener('pointercancel', up);
+  let visS = true,
+    started = false,
+    last = performance.now();
+  new IntersectionObserver(es => {
+    visS = es[0].isIntersecting;
+    if (visS && !started) {
+      started = true;
+      setTimeout(() => {
+        if (shown === 0 && !playT) pb.click();
+      }, 700);
+    }
+  }, {
+    threshold: .35
+  }).observe(stage);
+  (function loop(t) {
+    requestAnimationFrame(loop);
+    const dt = Math.min(.05, Math.max(0, (t - last) / 1000));
+    last = t;
+    if (!visS) return;
+    if (prog < 1) prog = Math.min(1, prog + dt / 1.9);
+    const c = CAM[shown],
+      mob = Wc < 700,
+      k = 1 - Math.pow(.04, dt);
+    tgt = tgt.map((v, i) => v + (c.t[i] - v) * k);
+    dist += (c.d * (mob ? 1.12 : 1) - dist) * k;
+    const ty = auto ? .42 * Math.sin(t / 8000) + .25 : dyaw;
+    yaw += (ty - yaw) * (drag ? .6 : k);
+    pitch += (c.p + dpitch - pitch) * k;
+    render();
+  })(last);
+  window.__deck = {
+    snap(n, y, p) {
+      stopPlay();
+      setStep(n, true);
+      auto = false;
+      dyaw = y;
+      yaw = y;
+      const c = CAM[n];
+      tgt = c.t.slice();
+      dist = c.d * (Wc < 700 ? 1.12 : 1);
+      dpitch = p || 0;
+      pitch = c.p + dpitch;
+      render();
+    }
+  };
+  return () => {
+    active = false;
+    disposers.forEach(fn => fn());
+    root.querySelectorAll("video").forEach(v => v.pause());
+    delete window.__deck;
+  };
+}
