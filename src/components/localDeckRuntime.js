@@ -110,6 +110,7 @@ export default function initLocalDeck(root) {
   });
   $$('video[data-auto]').forEach(v => vio.observe(v));
   const closeAll = () => {
+    root.classList.remove('has-modal');
     $$('.ov').forEach(o => o.hidden = true);
   };
   const open = id => {
@@ -117,6 +118,7 @@ export default function initLocalDeck(root) {
     const m = $('#m-' + id);
     if (m) {
       m.hidden = false;
+      root.classList.add('has-modal');
       if (id === 'est' && $('#estF [data-st]')) setEst(1);
     }
   };
@@ -389,17 +391,47 @@ export default function initLocalDeck(root) {
   let bi = 0;
   const bas = $('#bas'),
     br = bas.querySelector('input');
-  br.oninput = () => bas.style.setProperty('--pos', br.value + '%');
-  $('#bathumbs').innerHTML = BA.map((_, k) => `<button aria-label="Transformation ${k + 1}"><img src="/local-deck/img/g/ba${k + 1}a.webp" alt="" loading="lazy"></button>`).join('');
+  const setComparison = value => {
+    const position = Math.max(0, Math.min(100, value));
+    br.value = position;
+    br.setAttribute('aria-valuetext', `${Math.round(position)}% before, ${Math.round(100 - position)}% after`);
+    bas.style.setProperty('--pos', position + '%');
+  };
+  listen(br, 'input', () => setComparison(Number(br.value)));
+  let comparisonPointer = null;
+  const moveComparison = event => {
+    const rect = bas.getBoundingClientRect();
+    setComparison((event.clientX - rect.left) / rect.width * 100);
+  };
+  // Drag from anywhere on the picture; vertical swipes still scroll the page.
+  listen(bas, 'pointerdown', event => {
+    if (!event.isPrimary || event.button !== 0) return;
+    event.preventDefault();
+    comparisonPointer = event.pointerId;
+    br.focus({ preventScroll: true });
+    bas.setPointerCapture(event.pointerId);
+    moveComparison(event);
+  });
+  listen(bas, 'pointermove', event => {
+    if (event.pointerId === comparisonPointer) moveComparison(event);
+  });
+  const finishComparison = event => {
+    if (event.pointerId !== comparisonPointer) return;
+    comparisonPointer = null;
+    if (bas.hasPointerCapture(event.pointerId)) bas.releasePointerCapture(event.pointerId);
+  };
+  listen(bas, 'pointerup', finishComparison);
+  listen(bas, 'pointercancel', finishComparison);
+  listen(bas, 'lostpointercapture', () => { comparisonPointer = null; });
+  listen(bas, 'dragstart', event => event.preventDefault());
+  $('#bathumbs').innerHTML = BA.map((_, k) => `<button type="button" aria-label="Show ${BA[k][0]}"><img src="/local-deck/img/g/ba${k + 1}a.webp" alt="" loading="lazy"></button>`).join('');
   const showBA = k => {
     bi = (k + BA.length) % BA.length;
     $('#baB').src = `/local-deck/img/g/ba${bi + 1}b.webp`;
     $('#baA').src = `/local-deck/img/g/ba${bi + 1}a.webp`;
-    $('#baN').textContent = `Transformation ${bi + 1} of ${BA.length} · ${BA[bi][1]}`;
     $('#baT').textContent = BA[bi][0];
     $('#baD').textContent = BA[bi][2];
-    br.value = 50;
-    bas.style.setProperty('--pos', '50%');
+    setComparison(50);
     $$('#bathumbs button').forEach((b, j) => b.setAttribute('aria-current', j === bi));
   };
   $('#baP').onclick = () => showBA(bi - 1);

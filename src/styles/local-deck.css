@@ -609,3 +609,42 @@
 .local-deck-page .hero .deck-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .local-deck-page .hero .hero-video-poster{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
 .local-deck-page .hero .deck-video.on .hero-video-poster{display:none}
+
+/* Compact calls to action and project comparison controls. */
+.local-deck-page .btn{min-height:44px;padding:12px 22px;font-size:15px;box-shadow:none;line-height:1.25;white-space:normal;text-align:center}
+.local-deck-page .btn-lg{padding:14px 26px;font-size:16px}
+.local-deck-page .btn:hover{transform:none}
+.local-deck-page .ba-media{min-width:0;display:grid;gap:14px}
+.local-deck-page .ba-controls{display:flex;align-items:center;gap:12px}
+.local-deck-page .ba-controls .nav2{display:flex;gap:6px;flex:none}
+.local-deck-page .ba-controls .nav2 button{width:40px;height:40px;min-height:40px;padding:0;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:23px;box-shadow:none;cursor:pointer}
+.local-deck-page .ba-controls .bathumbs{flex:1;min-width:0;gap:8px}
+.local-deck-page .ba-controls .bathumbs button{background:transparent;border:2px solid transparent;border-radius:10px;min-width:0;min-height:0;box-shadow:none}
+.local-deck-page .ba-controls .bathumbs button[aria-current="true"]{border-color:var(--o)}
+.local-deck-page .bas{cursor:ew-resize}
+.local-deck-page .bas img{-webkit-user-drag:none;pointer-events:none}
+.local-deck-page .bas input[type="range"]{z-index:3;appearance:none;-webkit-appearance:none;border:0;border-radius:0;background:transparent;touch-action:pan-y;min-height:0}
+.local-deck-page .bas .kn{width:48px;height:48px;margin:-24px 0 0 -24px;font-size:18px}
+.local-deck-page .bas:focus-within{outline:3px solid var(--g);outline-offset:4px}
+.local-deck-page.has-modal .mbar,.local-deck-page.has-modal .bearbtn{display:none}
+@media(max-width:760px){
+ .local-deck-page .obar .wrap{min-height:38px;padding-block:4px;gap:8px;justify-content:space-between;line-height:1.25}
+ .local-deck-page .obar{font-size:11px}
+ .local-deck-page .obar .cl{font-size:11px;min-height:30px;padding:5px 11px}
+ .local-deck-page .btn,.local-deck-page .btn-lg,.local-deck-page .hero .ctas .btn{min-height:44px;padding:11px 18px;font-size:14px;box-shadow:none}
+ .local-deck-page .mbar{grid-template-columns:1fr 1.4fr;gap:8px;padding:6px 12px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -2px 12px #0000000d;align-items:center}
+ .local-deck-page .mbar .btn{height:42px;min-height:42px;padding:8px 12px;margin:0;font-size:13px;box-shadow:none}
+ .local-deck-page .bearbtn{bottom:calc(64px + env(safe-area-inset-bottom,0px));right:10px}
+ .local-deck-page .bearbtn .bb{width:40px;height:40px}
+ .local-deck-page .bainfo{gap:12px}
+ .local-deck-page .bainfo h3{font-size:24px}
+ .local-deck-page .bainfo p{font-size:16px!important}
+ .local-deck-page .ba{gap:20px}
+ .local-deck-page .ba-controls{gap:8px}
+ .local-deck-page .ba-controls .nav2 button{width:34px;height:40px;border-radius:10px}
+ .local-deck-page .ba-controls .bathumbs{gap:5px}
+ .local-deck-page .rvm .ri{padding:14px}
+ .local-deck-page .rvm .ri p{font-size:15px;line-height:1.5}
+ .local-deck-page .rvm .rhd b{font-size:23px}
+ .local-deck-page .rvm .ri .stars{font-size:14px;letter-spacing:1px}
+}
