@@ -74,7 +74,7 @@ export default function initLocalDeck(root) {
       heroPlayer.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       heroPlayer.allowFullscreen = true;
       heroPlayer.referrerPolicy = 'strict-origin-when-cross-origin';
-      heroPlayer.src = 'https://www.youtube.com/embed/Hop1ciTYcqM?autoplay=1&playsinline=1&rel=0&enablejsapi=1&origin=' + encodeURIComponent(window.location.origin);
+      heroPlayer.src = 'https://www.youtube.com/embed/9XcXhPwMEYE?autoplay=1&playsinline=1&rel=0&enablejsapi=1&origin=' + encodeURIComponent(window.location.origin);
       $('#videoPlayer').appendChild(heroPlayer);
     }
     hw.classList.add('on');
@@ -151,9 +151,50 @@ export default function initLocalDeck(root) {
   });
   $('#zipHero').addEventListener('submit', e => {
     e.preventDefault();
-    open('est');
-    const z = $('#e-zip');
-    if (z) z.value = $('#zipIn').value.replace(/\D/g, '').slice(0, 5);
+    const form = $('#estimate-top .inline-lead-form');
+    form.elements.zip.value = $('#zipIn').value.replace(/\D/g, '').slice(0, 5);
+    $('#estimate-top').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    form.elements.name.focus({ preventScroll: true });
+  });
+  $$('.inline-lead-form').forEach(form => {
+    listen(form, 'submit', async event => {
+      event.preventDefault();
+      const status = form.querySelector('.inline-status');
+      const button = form.querySelector('[type="submit"]');
+      const values = Object.fromEntries(new FormData(form));
+      status.textContent = '';
+      if (!values.name.trim()) {
+        status.textContent = 'Please enter your name.';
+        form.elements.name.focus();
+        return;
+      }
+      const digits = values.phone.replace(/\D/g, '');
+      if (!/^(?:1)?\d{10}$/.test(digits)) {
+        status.textContent = 'Enter a 10-digit phone number.';
+        form.elements.phone.focus();
+        return;
+      }
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      try {
+        const response = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ ...values, project_type: 'Deck building', source: 'local-deck', placement: form.dataset.placement, _subject: 'Local Deck Landing - Free Estimate', page: window.location.href })
+        });
+        const result = await response.json();
+        if (!response.ok || result.success === false || result.ok === false) throw new Error('Submission failed');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', form: 'local-deck-inline-estimate', placement: form.dataset.placement });
+        form.reset();
+        status.textContent = 'Request received! A deck specialist will call within one business day to arrange your free visit.';
+        button.textContent = 'Request received';
+      } catch (error) {
+        status.textContent = 'Could not send your request. Please try again or call (859) 765-7267.';
+        button.disabled = false;
+        button.textContent = 'Get My Free Estimate';
+      }
+    });
   });
   const platformLogos = {
     google: 'google.svg',

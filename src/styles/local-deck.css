@@ -705,3 +705,75 @@
  .local-deck-page .catalog .btn{width:100%;margin-top:24px;min-height:50px;font-size:15px}
  .local-deck-page .catalog .kick{font-size:12px;letter-spacing:.16em}
 }
+
+/* Open estimate forms: the same simple request at three natural stopping points. */
+.local-deck-page .inline-estimate{padding:56px 0;background:#f7f7f2;scroll-margin-top:calc(var(--top) + 18px)}
+.local-deck-page .inline-estimate-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.local-deck-page .inline-estimate-copy h2{font-size:clamp(28px,3.3vw,44px);line-height:1.15;letter-spacing:-.035em;margin:12px 0 18px;color:#173b2b}
+.local-deck-page .inline-estimate-copy p{max-width:38ch;font-size:17px;line-height:1.7;color:#515b53}
+.local-deck-page .inline-estimate-copy>small{display:block;margin-top:18px;color:#616b63;font-size:12px}
+.local-deck-page .inline-lead-form{background:#fff;padding:28px;border:1px solid #dde2da;border-radius:16px;box-shadow:0 5px 18px #20342605;min-width:0}
+.local-deck-page .inline-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.local-deck-page .inline-fields label{display:flex;flex-wrap:wrap;align-content:start;gap:6px;font-size:13px;font-weight:600;color:#263e30;min-width:0}
+.local-deck-page .inline-fields label>span{font-weight:400;color:#69736b}
+.local-deck-page .inline-fields input,.local-deck-page .inline-fields textarea{width:100%;min-width:0;padding:12px;border:1px solid #cdd5cc;border-radius:7px;background:#fff;font:inherit;font-size:16px;color:#203b2b;line-height:1.4;box-sizing:border-box}
+.local-deck-page .inline-fields input:focus,.local-deck-page .inline-fields textarea:focus{outline:2px solid #2f7651;outline-offset:2px}
+.local-deck-page .inline-fields .full-field{grid-column:1/-1}
+.local-deck-page .inline-fields textarea{resize:vertical;min-height:78px}
+.local-deck-page .inline-status{font-size:14px;line-height:1.5;color:#244c34;margin:12px 0}
+.local-deck-page .inline-status:empty{display:none}
+.local-deck-page .inline-lead-form>.btn{width:100%;margin-top:16px;min-height:48px;font-size:15px}
+.local-deck-page .inline-lead-form>.btn:disabled{opacity:.7;cursor:default}
+.local-deck-page .inline-privacy{display:block;font-size:11px;line-height:1.6;color:#626d65;margin-top:12px}
+.local-deck-page .inline-privacy a{text-decoration:underline}
+.local-deck-page .compact-estimate{background:#fff;border-block:1px solid #e7e9e2}
+/* Printed catalog built from actual project photos and clean, readable typography. */
+.local-deck-page .catalog{background:#f1f3eb;border:1px solid #dfe4d8;color:#546052;gap:40px;margin-top:72px;padding:42px;border-radius:20px;overflow:hidden}
+.local-deck-page .catalog h3{color:#173b2b;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.04em}
+.local-deck-page .catalog .kick{color:#387248}
+.local-deck-page .catalog p{font-size:17px;line-height:1.7}
+.local-deck-page .catalog .btn{background:#183f2c;color:#fff;box-shadow:none}
+.local-deck-page .catalog .print-catalog{position:relative;min-width:0;margin:0;padding:26px 0 20px;display:flex;align-items:center;isolation:isolate}
+.local-deck-page .print-catalog img{border-radius:0;box-shadow:none;transform:none;display:block;object-fit:cover}
+.local-deck-page .catalog-cover{width:39%;flex-shrink:0;background:#fff;padding:10px;box-shadow:2px 12px 20px #19352225;transform:rotate(-8deg);position:relative;z-index:1;border:1px solid #e1e3da}
+.local-deck-page .catalog-cover .print-logo{width:86%;height:auto;margin:3px auto 10px}
+.local-deck-page .catalog-cover .cover-photo{width:100%;height:155px}
+.local-deck-page .catalog-cover>div{padding:12px 3px 8px}
+.local-deck-page .catalog-cover small{font-size:6px;letter-spacing:.06em;color:#596653;display:block}
+.local-deck-page .catalog-cover strong{font-size:23px;letter-spacing:-.05em;line-height:1.05;color:#173b2b;display:block;margin:8px 0}
+.local-deck-page .catalog-cover span{font-size:8px;line-height:1.4;display:block;color:#546052}
+.local-deck-page .catalog-spread{display:grid;grid-template-columns:1fr 1fr;background:#fff;width:78%;flex-shrink:0;margin-left:-17%;transform:rotate(4deg) translateY(23px);box-shadow:1px 15px 26px #19352225;z-index:2;border:1px solid #e0e1d7}
+.local-deck-page .print-page{min-width:0;padding:14px 11px 9px;background:#fff;position:relative;display:flex;flex-direction:column}
+.local-deck-page .print-page+article{background:linear-gradient(90deg,#dadcd4 0,#f5f5ef 5%,#fff 14%);border-left:1px solid #d4d7ca}
+.local-deck-page .print-page>small{font-size:5px;letter-spacing:.08em;color:#5f6b55;margin-bottom:9px}
+.local-deck-page .print-page h4{color:#24462f;font-size:16px;line-height:1.1;letter-spacing:-.04em;margin:0 0 10px}
+.local-deck-page .print-page>img{height:95px;width:100%;margin-bottom:10px}
+.local-deck-page .print-page p{font-size:7px!important;line-height:1.55!important;color:#5f655b;margin:0 0 10px!important}
+.local-deck-page .print-page footer{display:flex;justify-content:space-between;gap:4px;margin-top:auto;padding-top:10px;border-top:1px solid #dfe1d7;color:#606d57;background:transparent;font-size:4px;letter-spacing:.04em}
+.local-deck-page .print-swatches{display:flex;gap:4px;margin-bottom:12px}
+.local-deck-page .print-swatches i{width:20px;height:12px;background:#b9a58a}
+.local-deck-page .print-swatches i:nth-child(2){background:#8f8c81}
+.local-deck-page .print-swatches i:nth-child(3){background:#594937}
+@media(max-width:900px){
+ .local-deck-page .inline-estimate-layout{grid-template-columns:1fr;gap:24px;max-width:680px}
+ .local-deck-page .inline-estimate{padding:36px 0}
+ .local-deck-page .inline-estimate-copy p{max-width:52ch}
+ .local-deck-page .catalog{padding:28px;grid-template-columns:1fr;gap:24px;margin-top:48px}
+ .local-deck-page .catalog .print-catalog{order:-1;max-width:500px;width:100%;margin:auto;padding:16px 10px 30px 0}
+ .local-deck-page .catalog h3{max-width:none;margin-top:0}
+ .local-deck-page .catalog-cover .cover-photo{height:clamp(105px,28vw,200px)}
+ .local-deck-page .catalog-cover strong{font-size:clamp(20px,5vw,30px)}
+ .local-deck-page .print-page>img{height:clamp(75px,19vw,125px)}
+ .local-deck-page .print-page h4{font-size:clamp(13px,3.4vw,20px)}
+}
+@media(max-width:480px){
+ .local-deck-page .inline-lead-form{padding:20px 16px}
+ .local-deck-page .inline-fields{gap:14px 12px}
+ .local-deck-page .inline-fields label{font-size:12px}
+ .local-deck-page .inline-estimate-copy h2{font-size:30px}
+ .local-deck-page .catalog{padding:24px 20px}
+ .local-deck-page .catalog-cover{padding:7px}
+ .local-deck-page .print-page{padding:11px 8px 8px}
+ .local-deck-page .catalog .btn{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){.local-deck-page .print-catalog *{transition:none}}
