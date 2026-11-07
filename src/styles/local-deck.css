@@ -820,3 +820,28 @@
  .local-deck-page .estimate-thanks p{font-size:14px}
  .local-deck-page .thanks-next p{font-size:12px}
 }
+
+/* Keep homeowner stories and the large, looping job-site gallery separate. */
+.local-deck-page .jobsite-section{background:#f4f8f3}
+.local-deck-page .jobsite-section .jobsite-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:1120px;margin-inline:auto}
+.local-deck-page .jobsite-section .jobsite-clip{aspect-ratio:4/5;border-radius:24px;box-shadow:0 4px 16px #183f2c0c}
+.local-deck-page .jobsite-section .jobsite-clip video{pointer-events:none;object-fit:cover}
+.local-deck-page .jobsite-section .jobsite-clip .cp{left:26px;right:26px;bottom:28px}
+.local-deck-page .jobsite-section .jobsite-clip .cp b{font-size:26px;line-height:1.2}
+.local-deck-page .jobsite-section .jobsite-clip .cp span{font-size:16px;line-height:1.5;margin-top:8px}
+.local-deck-page .jobsite-section .jobsite-clip .live{font-size:12px;right:18px;top:18px;padding:6px 12px}
+.local-deck-page .jobsite-more{text-align:center;margin-top:32px}
+.local-deck-page .jobsite-more p{font-size:13px;color:var(--muted);margin-bottom:14px}
+.local-deck-page .jobsite-more .btn{min-width:220px;border-color:#b8cdbb;background:#fff;color:#173b2b}
+/* Use the supplied sharp frame with its natural colors and a light caption gradient. */
+.local-deck-page .hero .deck-video{backdrop-filter:none;filter:none;box-shadow:0 8px 22px #0002;border-color:#ffffff80}
+.local-deck-page .hero .hero-video-poster{object-fit:cover;object-position:center;filter:none;opacity:1}
+.local-deck-page .hero .deck-video .bigplay{background:linear-gradient(180deg,transparent 52%,#000a 100%)}
+@media(max-width:640px){
+ .local-deck-page .jobsite-section .jobsite-grid{grid-template-columns:1fr;gap:22px}
+ .local-deck-page .jobsite-section .jobsite-clip{aspect-ratio:4/5;border-radius:20px}
+ .local-deck-page .jobsite-section .jobsite-clip .cp{left:20px;right:20px;bottom:24px}
+ .local-deck-page .jobsite-section .jobsite-clip .cp b{font-size:24px}
+ .local-deck-page .jobsite-section .jobsite-clip .cp span{font-size:15px}
+ .local-deck-page .jobsite-section .jobsite-clip .live{font-size:11px;top:14px;right:14px}
+}

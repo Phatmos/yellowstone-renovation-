@@ -66,7 +66,7 @@ export default function initLocalDeck(root) {
     }), 'https://www.youtube.com');
   };
   listen($('#snd'), 'click', () => {
-    $$('video').forEach(video => video.pause());
+    $$('.customer-story video').forEach(video => video.pause());
     if (!heroPlayer) {
       heroPlayer = document.createElement('iframe');
       heroPlayer.id = 'hv';
@@ -85,7 +85,7 @@ export default function initLocalDeck(root) {
     const video = card.querySelector('video');
     const button = card.querySelector('.story-start');
     listen(button, 'click', () => {
-      $$('video').forEach(other => { if (other !== video) other.pause(); });
+      $$('.customer-story video').forEach(other => { if (other !== video) other.pause(); });
       if (!video.getAttribute('src')) video.src = video.dataset.src;
       video.controls = true;
       video.muted = video.hasAttribute('data-silent');
@@ -97,7 +97,7 @@ export default function initLocalDeck(root) {
     });
     listen(video, 'play', () => {
       pauseHero();
-      $$('video').forEach(other => { if (other !== video) other.pause(); });
+      $$('.customer-story video').forEach(other => { if (other !== video) other.pause(); });
     });
     listen(video, 'ended', () => {
       card.classList.remove('playing');
@@ -110,17 +110,48 @@ export default function initLocalDeck(root) {
   new IntersectionObserver(entries => {
     if (!entries[0].isIntersecting) pauseHero();
   }, { threshold: .2 }).observe(hw);
-  const vio = new IntersectionObserver(es => es.forEach(en => {
-    const v = en.target;
-    if (en.isIntersecting) {
-      v.play().catch(() => {});
-    } else v.pause();
-  }), {
-    threshold: .25
+  // Loop job-site footage only while visible; hidden "more" clips stay unloaded.
+  const jobVideos = $$('video[data-jobsite]');
+  const loadJobVideo = video => {
+    if (!video.getAttribute('src')) video.src = video.dataset.src;
+  };
+  const jobLoad = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
+    if (isIntersecting && !target.closest('[hidden]')) loadJobVideo(target);
+  }), { rootMargin: '160px 0px' });
+  const jobPlay = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
+    target.dataset.visible = String(isIntersecting);
+    if (isIntersecting && !target.closest('[hidden]') && !document.hidden) {
+      loadJobVideo(target);
+      target.play().catch(() => {});
+    } else target.pause();
+  }), { threshold: .1 });
+  jobVideos.forEach(video => {
+    video.muted = true;
+    video.controls = false;
+    jobLoad.observe(video);
+    jobPlay.observe(video);
   });
-  $$('video[data-auto]').forEach(v => {
-    v.playbackRate = 0.85;
-    vio.observe(v);
+  listen(document, 'visibilitychange', () => {
+    jobVideos.forEach(video => {
+      if (!document.hidden && video.dataset.visible === 'true' && !video.closest('[hidden]')) {
+        video.play().catch(() => {});
+      } else video.pause();
+    });
+  });
+  listen($('#jobsite-more'), 'click', () => {
+    const hiddenCards = $$('[data-more-jobsite][hidden]');
+    const next = hiddenCards.slice(0, 4);
+    next.forEach(card => card.hidden = false);
+    const count = $$('.jobsite-clip:not([hidden])').length;
+    const remaining = $$('[data-more-jobsite][hidden]').length;
+    $('#jobsite-count').textContent = `Showing ${count} of ${jobVideos.length} job-site videos`;
+    $('#jobsite-more').setAttribute('aria-expanded', 'true');
+    if (!remaining) $('#jobsite-more').hidden = true;
+    // Move keyboard focus to the revealed group without jumping the page.
+    if (next[0]) {
+      next[0].tabIndex = -1;
+      next[0].focus({ preventScroll: true });
+    }
   });
   let thanksReturnFocus = null;
   const closeAll = () => {
