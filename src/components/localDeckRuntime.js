@@ -59,6 +59,32 @@ export default function initLocalDeck(root) {
       hv.controls = false;
     });
   };
+  // Start within the tap gesture so Safari permits playback with sound.
+  $$('.customer-story').forEach(card => {
+    const video = card.querySelector('video');
+    const button = card.querySelector('.story-start');
+    listen(button, 'click', () => {
+      $$('video').forEach(other => { if (other !== video) other.pause(); });
+      if (!video.getAttribute('src')) video.src = video.dataset.src;
+      video.controls = true;
+      video.muted = false;
+      card.classList.add('playing');
+      video.play().catch(() => {
+        card.classList.remove('playing');
+        video.controls = false;
+      });
+    });
+    listen(video, 'play', () => {
+      $$('video').forEach(other => { if (other !== video) other.pause(); });
+    });
+    listen(video, 'ended', () => {
+      card.classList.remove('playing');
+      video.controls = false;
+    });
+    new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) video.pause();
+    }, { threshold: .1 }).observe(card);
+  });
   listen(hv, 'ended', () => {
     hw.classList.remove('on');
     hv.controls = false;
