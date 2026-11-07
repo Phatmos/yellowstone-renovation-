@@ -33,10 +33,20 @@ export default function initLocalDeck(root) {
   const measureHeader = () => root.style.setProperty('--top', `${header.getBoundingClientRect().height}px`);
   new ResizeObserver(measureHeader).observe(header);
   measureHeader();
-  $('#burger').onclick = () => $('#mnav').hidden = false;
-  $('#mnavX').onclick = () => $('#mnav').hidden = true;
-  $('#mnav').addEventListener('click', e => {
-    if (e.target.closest('a,[data-open]')) $('#mnav').hidden = true;
+  const setMenu = open => {
+    $('#mnav').hidden = !open;
+    $('#burger').setAttribute('aria-expanded', String(open));
+    root.classList.toggle('has-menu', open);
+    if (open) $('#mnavX').focus();
+    else $('#burger').focus();
+  };
+  $('#burger').onclick = () => setMenu(true);
+  $('#mnavX').onclick = () => setMenu(false);
+  listen($('#mnav'), 'click', e => {
+    if (e.target.closest('a,[data-open]')) setMenu(false);
+  });
+  listen(document, 'keydown', e => {
+    if (e.key === 'Escape' && !$('#mnav').hidden) setMenu(false);
   });
   const sl = $$('#slides img');
   let si = 0;
@@ -108,7 +118,10 @@ export default function initLocalDeck(root) {
   }), {
     threshold: .25
   });
-  $$('video[data-auto]').forEach(v => vio.observe(v));
+  $$('video[data-auto]').forEach(v => {
+    v.playbackRate = 0.85;
+    vio.observe(v);
+  });
   const closeAll = () => {
     root.classList.remove('has-modal');
     $$('.ov').forEach(o => o.hidden = true);
@@ -134,8 +147,6 @@ export default function initLocalDeck(root) {
   listen(document, 'keydown', e => {
     if (e.key === 'Escape') {
       closeAll();
-      $('#mnav').hidden = true;
-      $('#lb').hidden = true;
     }
   });
   $('#zipHero').addEventListener('submit', e => {
@@ -187,10 +198,6 @@ export default function initLocalDeck(root) {
     $('#m-est .modal').scrollTop = 0;
   }
   $('#estBack').onclick = () => setEst(1);
-  $('#e-ph').onchange = e => {
-    const n = e.target.files.length;
-    if (n) $('#e-phl').textContent = n + ' photo' + (n > 1 ? 's' : '') + ' attached';
-  };
   $('#estF').addEventListener('submit', async e => {
     e.preventDefault();
     const er = $('#eErr');
@@ -235,32 +242,11 @@ export default function initLocalDeck(root) {
       email: $('#e-email').value.trim(),
       zip: $('#e-zip').value.trim(),
       message: $('#e-desc').value.trim(),
-      photos_attached: $('#e-ph').files.length,
       page: window.location.href,
       timestamp: new Date().toLocaleString()
     };
     const submit = $('#estNext');
     submit.disabled = true;
-    const photos = $('#e-ph').files;
-    if (photos.length) {
-      const upload = new FormData();
-      upload.append('name', data.name);
-      upload.append('phone', data.phone);
-      upload.append('email', data.email);
-      for (const photo of photos) upload.append('photos', photo);
-      try {
-        const response = await fetch('/api/lead-photos', {
-          method: 'POST',
-          body: upload
-        });
-        if (!response.ok) throw new Error('Upload failed');
-        data.message += '\nYard photos uploaded for ' + data.name + ' - ' + data.phone;
-      } catch (error) {
-        er.textContent = 'Photos could not upload. Try fewer or smaller photos, or remove them to send your request.';
-        submit.disabled = false;
-        return;
-      }
-    }
     try {
       const response = await fetch('/api/lead', {
         method: 'POST',
@@ -455,6 +441,8 @@ export default function initLocalDeck(root) {
     if (!b) return;
     li = +b.dataset.i;
     lb.hidden = false;
+    root.classList.add('has-gallery');
+    $('#lbX').focus();
     showLB();
   });
   $('#lbP').onclick = () => {
@@ -465,9 +453,20 @@ export default function initLocalDeck(root) {
     li = (li + 1) % G.length;
     showLB();
   };
-  $('#lbX').onclick = () => lb.hidden = true;
+  const closeGallery = () => {
+    lb.hidden = true;
+    root.classList.remove('has-gallery');
+    $('#gal').querySelector(`[data-i="${li}"]`)?.focus();
+  };
+  $('#lbX').onclick = closeGallery;
+  listen(document, 'keydown', e => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeGallery();
+    if (e.key === 'ArrowLeft') { e.preventDefault(); $('#lbP').click(); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); $('#lbN').click(); }
+  });
   lb.addEventListener('click', e => {
-    if (e.target === lb) lb.hidden = true;
+    if (e.target === lb) closeGallery();
   });
 
   /* ===== 3D deck build: SketchUp-style canvas renderer ===== */

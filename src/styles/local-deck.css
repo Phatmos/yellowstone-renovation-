@@ -648,3 +648,60 @@
  .local-deck-page .rvm .rhd b{font-size:23px}
  .local-deck-page .rvm .ri .stars{font-size:14px;letter-spacing:1px}
 }
+
+/* Stable header controls and a clearer promise hierarchy. */
+.local-deck-page .burger{padding:0;margin:0;min-width:44px;min-height:44px;line-height:1;align-items:center;justify-content:center;box-shadow:none;position:static;transform:none}
+.local-deck-page .burger svg{display:block;flex:none;width:24px;height:24px;margin:0}
+.local-deck-page .hdr .wrap{flex-wrap:nowrap}
+.local-deck-page .hero h1 .l{color:#fff;background-image:var(--sc-o);text-shadow:0 2px 14px #0008}
+.local-deck-page .hero .sub .ul-l{background:none;padding:0;color:#fff}
+.local-deck-page .hero .trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;width:100%;text-align:left;align-items:stretch}
+.local-deck-page .hero .trust span{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:5px;border:0;border-left:2px solid #f26b21;border-radius:0;background:none;padding:0 14px;line-height:1.4}
+.local-deck-page .hero .trust b{color:#fff;font-size:14px}
+.local-deck-page .hero .trust small{font-size:12px;color:#e2e9e4}
+.local-deck-page .catalog-preview{min-width:0}
+.local-deck-page .catalog-preview img{width:100%;height:auto;border-radius:18px;box-shadow:0 20px 45px #0004}
+.local-deck-page .owner-roles{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0}
+.local-deck-page .owner-roles article{border-top:2px solid var(--g);padding-top:14px;min-width:0}
+.local-deck-page .owner-roles h3{font-size:24px}
+.local-deck-page .owner-roles span{display:block;color:var(--g-d);font-size:12px;font-weight:700;margin:6px 0}
+.local-deck-page .promise .owner-roles p{font-size:15px;line-height:1.65}
+.local-deck-page .lb{grid-template-columns:56px minmax(0,1fr) 56px;gap:14px;padding:72px 20px;overscroll-behavior:contain}
+.local-deck-page .lb img{grid-column:2;max-width:100%;max-height:calc(100dvh - 144px);width:auto;margin:auto}
+.local-deck-page .lb button{padding:0;display:grid;place-items:center;line-height:1;min-height:48px;min-width:48px;background:#fff;color:var(--gd);box-shadow:none;z-index:2}
+.local-deck-page .lb .p,.local-deck-page .lb .n{top:50%;transform:translateY(-50%)}
+.local-deck-page.has-menu .mbar,.local-deck-page.has-menu .bearbtn,.local-deck-page.has-gallery .mbar,.local-deck-page.has-gallery .bearbtn{display:none}
+@media(max-width:1060px){.local-deck-page .burger{display:flex}}
+@media(max-width:980px){.local-deck-page .hero .trust{order:4;max-width:620px}.local-deck-page .hero .ctas{order:5}.local-deck-page .catalog-preview{order:-1}}
+@media(max-width:760px){
+ .local-deck-page .hdr .wrap{display:grid;grid-template-columns:minmax(0,1fr) 44px 44px;gap:8px}
+ .local-deck-page .hdr .logo{width:100%;max-width:260px}
+ .local-deck-page .hdr .hcall{margin:0;justify-content:center}
+ .local-deck-page .hdr .burger{width:44px;height:44px}
+ .local-deck-page .hero .trust{grid-template-columns:1fr;gap:14px;margin-top:8px}
+ .local-deck-page .hero .trust span{padding:0 14px}
+ .local-deck-page .hero .trust b{font-size:15px}
+ .local-deck-page .hero .trust small{font-size:13px}
+ .local-deck-page .catalog{gap:24px;margin-top:60px;padding:24px 18px}
+ .local-deck-page .lb{grid-template-columns:minmax(0,1fr);padding:72px 12px 100px}
+ .local-deck-page .lb img{grid-column:1;max-height:calc(100dvh - 172px)}
+ .local-deck-page .lb .p,.local-deck-page .lb .n{top:auto;bottom:24px;transform:none;width:48px;height:48px}
+ .local-deck-page .lb .p{left:calc(50% - 58px)}
+ .local-deck-page .lb .n{right:calc(50% - 58px)}
+}
+@media(max-width:420px){.local-deck-page .owner-roles{grid-template-columns:1fr}}
+
+/* Let the printed catalogs overlap the card, as on the mobile reference. */
+.local-deck-page .catalog{background:radial-gradient(ellipse at 85% 15%,#2c6141 0,transparent 58%),linear-gradient(140deg,#0d281a,#19482f);overflow:visible}
+.local-deck-page .catalog-preview{position:relative;margin:-92px -20px -12px 0;align-self:center}
+.local-deck-page .catalog-preview img{border-radius:20px;box-shadow:0 28px 44px #0004;transform:rotate(-2deg)}
+.local-deck-page .catalog p{max-width:44ch;line-height:1.7}
+@media(max-width:980px){
+ .local-deck-page .catalog{grid-template-columns:1fr;gap:24px;margin-top:120px;padding:0 26px 32px}
+ .local-deck-page .catalog-preview{order:-1;margin:-66px -10px 0}
+ .local-deck-page .catalog-preview img{transform:rotate(-2deg);border-radius:16px}
+ .local-deck-page .catalog h3{font-size:clamp(30px,6.5vw,44px);line-height:1.13;margin-top:10px;max-width:17ch}
+ .local-deck-page .catalog p{font-size:17px;line-height:1.7;margin-top:18px}
+ .local-deck-page .catalog .btn{width:100%;margin-top:24px;min-height:50px;font-size:15px}
+ .local-deck-page .catalog .kick{font-size:12px;letter-spacing:.16em}
+}
