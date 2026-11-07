@@ -777,3 +777,46 @@
  .local-deck-page .catalog .btn{font-size:15px}
 }
 @media(prefers-reduced-motion:reduce){.local-deck-page .print-catalog *{transition:none}}
+
+.local-deck-page .testimonial-row{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin-inline:auto;gap:24px}
+.local-deck-page .testimonial-row .vc{aspect-ratio:4/5}
+.local-deck-page .jobsite-heading{margin:56px 0 24px;max-width:640px}
+.local-deck-page .jobsite-heading h3{font-size:clamp(27px,3vw,38px);line-height:1.2;letter-spacing:-.035em;margin:10px 0 12px;color:#183f2c}
+.local-deck-page .jobsite-heading p{font-size:16px;color:var(--muted)}
+.local-deck-page .jobsite-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.local-deck-page .jobsite-clip{aspect-ratio:9/16}
+.local-deck-page .jobsite-clip .pb{width:54px;height:54px;top:45%}
+.local-deck-page .jobsite-clip .pb svg{width:22px;height:22px}
+.local-deck-page .jobsite-clip .live{font-size:11px;right:10px;top:12px}
+.local-deck-page .jobsite-clip .cp{left:14px;right:14px;bottom:18px}
+.local-deck-page .jobsite-clip .cp b{font-size:17px}
+.local-deck-page .jobsite-clip .cp span{font-size:12px;line-height:1.5}
+.local-deck-page .jobsite-clip.playing .live{display:none}
+.local-deck-page .estimate-thanks{width:min(560px,100%);border:1px solid #dae4d9}
+.local-deck-page .estimate-thanks .in{padding:42px 32px 28px;gap:18px;text-align:center;justify-items:center}
+.local-deck-page .thanks-check{display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:#eef5e9;color:#2d7045}
+.local-deck-page .thanks-check svg{width:35px;height:35px}
+.local-deck-page .estimate-thanks h2{font-size:clamp(28px,5.5vw,37px);line-height:1.15;letter-spacing:-.035em;color:#173b2b;max-width:20ch;outline:none}
+.local-deck-page .estimate-thanks .kick{font-size:11px;letter-spacing:.12em}
+.local-deck-page .estimate-thanks p{font-size:15px;line-height:1.7;color:#566252}
+.local-deck-page .thanks-next{padding:16px 20px;background:#f5f7f0;border-radius:12px;text-align:left;width:100%}
+.local-deck-page .thanks-next strong{display:block;font-size:14px;color:#244c34;margin-bottom:5px}
+.local-deck-page .thanks-next p{font-size:13px}
+.local-deck-page .estimate-thanks .btn{width:100%;min-height:48px;box-shadow:none}
+.local-deck-page .thanks-phone{font-size:12px;text-decoration:underline;color:#34563d}
+@media(max-width:900px){.local-deck-page .jobsite-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){
+ .local-deck-page .testimonial-row{grid-template-columns:1fr;max-width:420px}
+ .local-deck-page .jobsite-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .local-deck-page .jobsite-clip{border-radius:14px}
+ .local-deck-page .jobsite-clip .cp{left:10px;right:10px;bottom:14px}
+ .local-deck-page .jobsite-clip .cp b{font-size:14px}
+ .local-deck-page .jobsite-clip .cp span{font-size:10px}
+ .local-deck-page .jobsite-clip .live{font-size:9px;padding:4px 7px;right:7px;top:8px}
+ .local-deck-page .jobsite-clip .pb{width:42px;height:42px}
+ .local-deck-page .estimate-thanks .in{padding:34px 22px 24px;gap:14px}
+ .local-deck-page .estimate-thanks .thanks-check{width:56px;height:56px}
+ .local-deck-page .estimate-thanks h2{font-size:29px}
+ .local-deck-page .estimate-thanks p{font-size:14px}
+ .local-deck-page .thanks-next p{font-size:12px}
+}

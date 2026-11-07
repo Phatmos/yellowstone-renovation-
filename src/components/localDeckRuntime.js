@@ -88,7 +88,7 @@ export default function initLocalDeck(root) {
       $$('video').forEach(other => { if (other !== video) other.pause(); });
       if (!video.getAttribute('src')) video.src = video.dataset.src;
       video.controls = true;
-      video.muted = false;
+      video.muted = video.hasAttribute('data-silent');
       card.classList.add('playing');
       video.play().catch(() => {
         card.classList.remove('playing');
@@ -122,9 +122,12 @@ export default function initLocalDeck(root) {
     v.playbackRate = 0.85;
     vio.observe(v);
   });
+  let thanksReturnFocus = null;
   const closeAll = () => {
+    const wasThanks = !$('#m-thanks').hidden;
     root.classList.remove('has-modal');
     $$('.ov').forEach(o => o.hidden = true);
+    if (wasThanks && thanksReturnFocus?.isConnected) thanksReturnFocus.focus({ preventScroll: true });
   };
   const open = id => {
     closeAll();
@@ -135,6 +138,21 @@ export default function initLocalDeck(root) {
       if (id === 'est' && $('#estF [data-st]')) setEst(1);
     }
   };
+  const showThanks = returnTo => {
+    thanksReturnFocus = returnTo;
+    open('thanks');
+    $('#thanks-title').focus({ preventScroll: true });
+  };
+  listen($('#m-thanks'), 'keydown', event => {
+    if (event.key !== 'Tab') return;
+    const items = [...$('#m-thanks').querySelectorAll('button, a[href]')];
+    const first = items[0], last = items[items.length - 1];
+    if (event.shiftKey && (document.activeElement === first || document.activeElement === $('#thanks-title'))) {
+      event.preventDefault(); last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault(); first.focus();
+    }
+  });
   listen(document, 'click', e => {
     const o = e.target.closest('[data-open]');
     if (o) {
@@ -188,7 +206,9 @@ export default function initLocalDeck(root) {
         window.dataLayer.push({ event: 'generate_lead', form: 'local-deck-inline-estimate', placement: form.dataset.placement });
         form.reset();
         status.textContent = 'Request received! A deck specialist will call within one business day to arrange your free visit.';
-        button.textContent = 'Request received';
+        button.textContent = 'Get My Free Estimate';
+        button.disabled = false;
+        showThanks(button);
       } catch (error) {
         status.textContent = 'Could not send your request. Please try again or call (859) 765-7267.';
         button.disabled = false;
@@ -310,7 +330,9 @@ export default function initLocalDeck(root) {
         form: 'local-deck-estimate'
       });
     } catch (err) {}
-    e.target.innerHTML = '<div class="ok"><img src="/local-deck/img/bear-thumbsup.webp" alt=""><h3 style="padding:0">Request received!</h3><p>A deck specialist will call you within one business day to book your free visit and 3D design.</p><button class="btn btn-w" type="button" data-close>Close</button></div>';
+    e.target.reset();
+    submit.disabled = false;
+    showThanks($('.hbtn'));
   });
   $('#catF').addEventListener('submit', async e => {
     e.preventDefault();
