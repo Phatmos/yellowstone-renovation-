@@ -1,3 +1,5 @@
+import initContactDraft from './localDeckContact';
+
 export default function initLocalDeck(root) {
   const disposers = [];
   let active = true;
@@ -28,6 +30,7 @@ export default function initLocalDeck(root) {
   };
   const $ = s => root.querySelector(s),
     $$ = s => [...root.querySelectorAll(s)];
+  const contactDraft = initContactDraft(root, { listen, later: setTimeout });
   // Measure the wrapped offer/header instead of assuming a fixed mobile height.
   const header = $('.topwrap');
   const measureHeader = () => root.style.setProperty('--top', `${header.getBoundingClientRect().height}px`);
@@ -187,7 +190,7 @@ export default function initLocalDeck(root) {
   }), { rootMargin: '160px 0px' });
   const jobPlay = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
     target.dataset.visible = String(isIntersecting);
-    if (isIntersecting && !target.closest('[hidden]') && !document.hidden) {
+    if (isIntersecting && !target.closest('[hidden]') && !document.hidden && target.dataset.userPaused !== 'true') {
       loadJobVideo(target);
       target.play().catch(() => {});
     } else target.pause();
@@ -195,12 +198,30 @@ export default function initLocalDeck(root) {
   jobVideos.forEach(video => {
     video.muted = true;
     video.controls = false;
+    const card = video.closest('.jobsite-clip');
+    const toggle = card.querySelector('[data-film-toggle]');
+    const updatePlayback = () => {
+      card.dataset.playing = String(!video.paused);
+      toggle.setAttribute('aria-label', `${video.paused ? 'Play' : 'Pause'} video: ${video.getAttribute('aria-label')}`);
+    };
+    listen(video, 'play', updatePlayback);
+    listen(video, 'pause', updatePlayback);
+    listen(toggle, 'click', () => {
+      if (video.paused) {
+        video.dataset.userPaused = 'false';
+        loadJobVideo(video);
+        video.play().catch(() => {});
+      } else {
+        video.dataset.userPaused = 'true';
+        video.pause();
+      }
+    });
     jobLoad.observe(video);
     jobPlay.observe(video);
   });
   listen(document, 'visibilitychange', () => {
     jobVideos.forEach(video => {
-      if (!document.hidden && video.dataset.visible === 'true' && !video.closest('[hidden]')) {
+      if (!document.hidden && video.dataset.visible === 'true' && !video.closest('[hidden]') && video.dataset.userPaused !== 'true') {
         video.play().catch(() => {});
       } else video.pause();
     });
@@ -211,7 +232,7 @@ export default function initLocalDeck(root) {
     next.forEach(card => card.hidden = false);
     const count = $$('.jobsite-clip:not([hidden])').length;
     const remaining = $$('[data-more-jobsite][hidden]').length;
-    $('#jobsite-count').textContent = `Showing ${count} of ${jobVideos.length} job-site videos`;
+    $('#jobsite-count').textContent = `Showing ${count} of ${jobVideos.length} project videos`;
     $('#jobsite-more').setAttribute('aria-expanded', 'true');
     if (!remaining) $('#jobsite-more').hidden = true;
     // Move keyboard focus to the revealed group without jumping the page.
@@ -234,6 +255,7 @@ export default function initLocalDeck(root) {
       m.hidden = false;
       root.classList.add('has-modal');
       pauseHero();
+      contactDraft.restore();
       if (id === 'est' && $('#estF [data-st]')) setEst(1);
     }
   };
@@ -269,7 +291,7 @@ export default function initLocalDeck(root) {
   $('#zipHero').addEventListener('submit', e => {
     e.preventDefault();
     const form = $('#estimate-top .inline-lead-form');
-    form.elements.zip.value = $('#zipIn').value.replace(/\D/g, '').slice(0, 5);
+    contactDraft.remember({ zip: $('#zipIn').value });
     $('#estimate-top').scrollIntoView({ behavior: 'smooth', block: 'start' });
     form.elements.first_name.focus({ preventScroll: true });
   });
@@ -291,6 +313,7 @@ export default function initLocalDeck(root) {
         form.elements.phone.focus();
         return;
       }
+      contactDraft.remember(values);
       button.disabled = true;
       button.textContent = 'Sending…';
       try {
@@ -304,6 +327,7 @@ export default function initLocalDeck(root) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: 'generate_lead', form: 'local-deck-inline-estimate', placement: form.dataset.placement });
         form.reset();
+        contactDraft.restore();
         status.textContent = 'Request received! A deck specialist will call within one business day to arrange your free visit.';
         button.textContent = 'Send My Request';
         button.disabled = false;
@@ -393,6 +417,7 @@ export default function initLocalDeck(root) {
   }
   function finishEstimate() {
     $('#estF').reset();
+    contactDraft.restore();
     resetProjectDetails();
     contactSnapshot = null;
     showThanks(estimateReturnFocus || $('.hbtn'));
@@ -432,6 +457,7 @@ export default function initLocalDeck(root) {
         project_type: 'Deck building', source: 'local-deck', page: window.location.href,
         submission_stage: 'contact', timestamp: new Date().toISOString()
       };
+      contactDraft.remember(data);
     } else {
       const pick = name => $(`#estF [data-name="${name}"] [aria-pressed="true"]`)?.textContent || '';
       const details = { project: pick('type'), material: pick('mat'), budget: budgetSelected ? BUDGETS[Number(bud.value)] : '', timeline: pick('when'), message: $('#e-desc').value.trim() };
