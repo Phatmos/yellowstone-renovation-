@@ -57,3 +57,9 @@
   to = "/local-builder/"
   status = 301
   force = true
+
+# YouTube embeds must receive the site origin (Error 153 otherwise).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"

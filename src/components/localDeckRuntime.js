@@ -30,6 +30,57 @@ export default function initLocalDeck(root) {
   };
   const $ = s => root.querySelector(s),
     $$ = s => [...root.querySelectorAll(s)];
+  const fullscreenElement = () => document.fullscreenElement || document.webkitFullscreenElement;
+  const isFullscreen = element => {
+    const current = fullscreenElement();
+    return !!(current && (current === element || element.contains(current) || current.contains(element))) || !!element.querySelector('video')?.webkitDisplayingFullscreen;
+  };
+  const bindFullscreen = (button, target, video) => {
+    const request = target.requestFullscreen || target.webkitRequestFullscreen;
+    const nativeVideo = !request && video?.webkitEnterFullscreen;
+    if (!request && !nativeVideo) return;
+    button.hidden = false;
+    target.classList.add('has-fullscreen');
+    const label = button.getAttribute('aria-label');
+    const status = target.querySelector('[data-fullscreen-status]');
+    let wasFullscreen = false;
+    const update = () => {
+      const expanded = isFullscreen(target);
+      target.classList.toggle('is-fullscreen', expanded);
+      button.setAttribute('aria-label', expanded ? 'Exit full screen' : label);
+      if (video) video.controls = expanded;
+      if (wasFullscreen && !expanded) button.focus({ preventScroll: true });
+      wasFullscreen = expanded;
+    };
+    listen(button, 'click', async () => {
+      if (status) status.textContent = '';
+      try {
+        if (isFullscreen(target)) {
+          const leave = document.exitFullscreen || document.webkitExitFullscreen;
+          if (leave) await leave.call(document);
+          else video?.webkitExitFullscreen?.();
+        } else {
+          // Load the original source within the tap gesture for iPhone playback.
+          if (video) {
+            if (!video.getAttribute('src')) video.src = video.dataset.src;
+            video.dataset.userPaused = 'false';
+            video.play().catch(() => {});
+          }
+          if (request) await request.call(target);
+          else nativeVideo.call(video);
+        }
+        update();
+      } catch (error) {
+        if (status) status.textContent = 'Full screen is unavailable. You can still watch the video here.';
+      }
+    });
+    listen(document, 'fullscreenchange', update);
+    listen(document, 'webkitfullscreenchange', update);
+    if (video) {
+      listen(video, 'webkitbeginfullscreen', update);
+      listen(video, 'webkitendfullscreen', update);
+    }
+  };
   const contactDraft = initContactDraft(root, { listen, later: setTimeout });
   // Measure the wrapped offer/header instead of assuming a fixed mobile height.
   const header = $('.topwrap');
@@ -62,11 +113,15 @@ export default function initLocalDeck(root) {
     $('#slidecap').textContent = im.dataset.cap;
   }, 6500);
   const hw = $('#hvid');
+  bindFullscreen($('#heroExpand'), hw);
   let heroPlayer = null;
   let heroVisible = false;
   let heroReady = false;
   let heroLoading = false;
-  let heroHasSound = false;
+  // Request audible autoplay. Browsers can require a user gesture first.
+  let heroHasSound = true;
+  let heroSoundBlocked = false;
+  let heroAudioUnlocked = false;
   const heroCommand = method => {
     if (heroReady && heroPlayer && typeof heroPlayer[method] === 'function') heroPlayer[method]();
   };
@@ -93,7 +148,6 @@ export default function initLocalDeck(root) {
     if (heroReady) {
       if (heroHasSound) heroCommand('unMute');
       heroCommand('playVideo');
-      $('#heroSound').hidden = heroHasSound;
       return;
     }
     if (heroLoading) return;
@@ -101,31 +155,55 @@ export default function initLocalDeck(root) {
     try {
       const YT = await loadYouTube();
       if (!active) return;
-      const mount = document.createElement('div');
+      // Set the referrer policy before navigation, including when the site
+      // response carries a stricter policy. YouTube requires client identity.
+      const mount = document.createElement('iframe');
       mount.id = 'hero-youtube';
+      mount.title = 'Before you build your deck — Yellowstone Renovation';
+      mount.referrerPolicy = 'strict-origin-when-cross-origin';
+      mount.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      mount.allowFullscreen = true;
+      const params = new URLSearchParams({
+        enablejsapi: '1', autoplay: '1', mute: '0', controls: '1',
+        playsinline: '1', rel: '0', origin: window.location.origin,
+      });
+      mount.src = `https://www.youtube.com/embed/9XcXhPwMEYE?${params}`;
       $('#videoPlayer').appendChild(mount);
       heroPlayer = new YT.Player(mount, {
         videoId: '9XcXhPwMEYE',
-        playerVars: { autoplay: 0, mute: 1, controls: 1, playsinline: 1, rel: 0, origin: window.location.origin },
+        playerVars: { autoplay: 1, mute: 0, controls: 1, playsinline: 1, rel: 0, origin: window.location.origin },
         events: {
           onReady: event => {
             if (!active) return;
             heroReady = true;
             event.target.getIframe().title = 'Before you build your deck — Yellowstone Renovation';
             if (heroHasSound) event.target.unMute(); else event.target.mute();
-            if (heroVisible && !document.hidden && !root.classList.contains('has-modal')) event.target.playVideo();
+            if ((heroVisible || isFullscreen(hw)) && !document.hidden && !root.classList.contains('has-modal')) event.target.playVideo();
           },
           onStateChange: event => {
             if (!active) return;
             if (event.data === YT.PlayerState.PLAYING) {
               hw.classList.add('on');
-              $('#heroSound').hidden = heroHasSound;
+              if (heroHasSound && !event.target.isMuted()) {
+                heroAudioUnlocked = true;
+                heroSoundBlocked = false;
+              }
               $$('.customer-story video').forEach(video => video.pause());
               // An iframe can finish starting after its card has left the screen.
-              if (!heroVisible || document.hidden || root.classList.contains('has-modal')) pauseHero();
+              if ((!heroVisible && !isFullscreen(hw)) || document.hidden || root.classList.contains('has-modal')) pauseHero();
             }
           },
-          onAutoplayBlocked: () => { hw.classList.remove('on'); $('#heroSound').hidden = true; },
+          onAutoplayBlocked: () => {
+            if (!active) return;
+            if (heroHasSound && (heroVisible || isFullscreen(hw)) && !document.hidden && !root.classList.contains('has-modal')) {
+              heroHasSound = false;
+              heroSoundBlocked = true;
+              heroCommand('mute');
+              heroCommand('playVideo');
+              return;
+            }
+            hw.classList.remove('on');
+          },
           onError: () => { hw.classList.remove('on'); $('#heroVideoStatus').textContent = 'Video unavailable. Please try again.'; }
         }
       });
@@ -135,17 +213,24 @@ export default function initLocalDeck(root) {
     }
   };
   listen($('#snd'), 'click', () => startHero(true));
-  listen($('#heroSound'), 'click', () => {
+  // Retry audio inside the first eligible real gesture, without an extra
+  // sound overlay. Once sound plays, preserve the visitor's player controls.
+  const unlockHeroAudio = event => {
+    if (!event.isTrusted || heroAudioUnlocked || !heroSoundBlocked || !heroReady || !heroVisible || document.hidden || root.classList.contains('has-modal') || root.classList.contains('has-menu')) return;
+    if (event.target.closest('button, a, input, textarea, select, [role="button"]')) return;
+    if (event.type === 'keydown' && !['Enter', ' '].includes(event.key)) return;
     heroHasSound = true;
+    heroSoundBlocked = false;
     heroCommand('unMute');
     heroCommand('playVideo');
-    $('#heroSound').hidden = true;
-  });
+  };
+  listen(root, 'pointerup', unlockHeroAudio);
+  listen(root, 'keydown', unlockHeroAudio);
   const heroObserver = new IntersectionObserver(entries => {
     const entry = entries[0];
     heroVisible = entry.isIntersecting && entry.intersectionRatio >= .55;
     if (heroVisible && !document.hidden && !root.classList.contains('has-modal')) startHero();
-    else pauseHero();
+    else if (!isFullscreen(hw)) pauseHero();
   }, { threshold: [0, .25, .55, .8] });
   heroObserver.observe(hw);
   listen(document, 'visibilitychange', () => {
@@ -190,7 +275,7 @@ export default function initLocalDeck(root) {
   }), { rootMargin: '160px 0px' });
   const jobPlay = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
     target.dataset.visible = String(isIntersecting);
-    if (isIntersecting && !target.closest('[hidden]') && !document.hidden && target.dataset.userPaused !== 'true') {
+    if ((isIntersecting || isFullscreen(target.parentElement)) && !target.closest('[hidden]') && !document.hidden && target.dataset.userPaused !== 'true') {
       loadJobVideo(target);
       target.play().catch(() => {});
     } else target.pause();
@@ -199,6 +284,7 @@ export default function initLocalDeck(root) {
     video.muted = true;
     video.controls = false;
     const card = video.closest('.jobsite-clip');
+    bindFullscreen(card.querySelector('[data-film-expand]'), video.parentElement, video);
     const toggle = card.querySelector('[data-film-toggle]');
     const updatePlayback = () => {
       card.dataset.playing = String(!video.paused);
@@ -338,29 +424,6 @@ export default function initLocalDeck(root) {
         button.textContent = 'Send My Request';
       }
     });
-  });
-  const platformLogos = {
-    google: 'google.svg',
-    angi: 'angi.svg',
-    facebook: 'facebook.svg',
-    houzz: 'houzz.svg',
-    yelp: 'yelp.svg'
-  };
-  const PF = {
-    google: ['Google', '4.9', '40+', 'G', '#4285f4', [['Mike D.', 'Frankfort, KY · Apr 2025', 'Clear pricing, no surprises, and the timeline was realistic. We got updates throughout the project and the final result is excellent.'], ['Carlos R.', 'Lexington, KY · Aug 2025', 'Clean build, great communication, and finished on time. William explained everything clearly and Andrew kept the project moving smoothly.']]],
-    angi: ['Angi', '5.0', '13+', 'Angi', '#ff5a45', [['Marta G.', 'June 2025', 'Highly recommend Peter and Yellowstone Renovation for any remodeling project!'], ['Siarhei M.', 'May 2025', 'Would absolutely recommend Yellowstone Renovation to anyone considering a remodel.']]],
-    facebook: ['Facebook', '5.0', '9+', 'f', '#1877f2', [['Andrew S.', 'Versailles, KY · Feb 2025', 'From design to final walkthrough, smooth process. We felt taken care of and the deck turned out beautiful.'], ['Sharon K.', 'Nicholasville, KY · May 2025', 'Strong craftsmanship and clean finishes. The railing details came out better than we expected. Great experience overall.']]],
-    houzz: ['Houzz', '5.0', '8+', 'houzz', '#4dbc15', null],
-    yelp: ['Yelp', '4.6', '10+', 'yelp', '#d32323', [['Laura P.', 'Richmond, KY · Mar 2025', 'Great details on railing and stairs. Looks premium. They showed up on time and handled everything professionally.'], ['Brian & Amanda', 'Georgetown, KY · Jul 2025', 'Professional crew and very organized process. Our composite deck looks amazing and the jobsite stayed clean the whole time.']]],
-    gq: ['GuildQuality', '4.8', '11+', 'GQ', '#0c4f6b', null]
-  };
-  listen(document, 'click', e => {
-    const b = e.target.closest('[data-pf]');
-    if (!b) return;
-    const [n, r, c, l, col, list] = PF[b.dataset.pf];
-    const items = list ? list.map(([w, m, t]) => `<div class="ri"><div class="top"><span><b>${w}</b><br><small>${m}</small></span><span class="stars">★★★★★</span></div><p>${t}</p></div>`).join('') : '<p>Read more homeowner feedback on our review platforms.</p>';
-    $('#rvIn').innerHTML = `<div class="rhd"><img class="platform-logo" src="/local-deck/img/platforms/${platformLogos[b.dataset.pf]}" alt="${n}"><span><b id="rvT">${r} on ${n}</b><span class="stars">★★★★★</span> <small style="color:var(--muted)">${c} reviews</small></span></div><div class="rlist">${items}</div><button class="btn btn-o btn-lg" data-open="est">Get My Free Estimate</button>`;
-    open('rv');
   });
   const BUDGETS = ['$10,000 – $20,000', '$20,000 – $30,000', '$30,000 – $40,000', '$40,000 – $100,000', '$100,000 – $150,000', '$150,000+', 'More than $150,000'];
   const bud = $('#bud');
