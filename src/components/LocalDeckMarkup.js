@@ -7,7 +7,6 @@ function JobSiteClip({ file, poster, title, detail, more = false, landscape = fa
     <div className="project-film-media">
       <video playsInline preload="none" muted loop autoPlay disablePictureInPicture controlsList="nodownload noremoteplayback" data-jobsite="true" poster={poster || `/local-deck/img/r/${file}-poster.webp`} data-src={`/local-deck/video/${file}.mp4`} aria-label={title} />
       <span className="film-status">{progress ? 'In progress' : 'Finished deck'}</span>
-      <button type="button" className="film-toggle" data-film-toggle aria-label={`Play video: ${title}`}><svg className="film-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z" /></svg><svg className="film-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg></button>
       <button type="button" className="film-expand" data-film-expand hidden aria-label={`Watch full screen: ${title}`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5" /></svg></button>
       <span className="sr" data-fullscreen-status aria-live="polite" />
     </div>

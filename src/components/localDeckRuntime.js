@@ -63,7 +63,6 @@ export default function initLocalDeck(root) {
           // Load the original source within the tap gesture for iPhone playback.
           if (video) {
             if (!video.getAttribute('src')) video.src = video.dataset.src;
-            video.dataset.userPaused = 'false';
             video.play().catch(() => {});
           }
           if (request) await request.call(target);
@@ -270,48 +269,50 @@ export default function initLocalDeck(root) {
   const loadJobVideo = video => {
     if (!video.getAttribute('src')) video.src = video.dataset.src;
   };
+  const shouldPlayJobVideo = video =>
+    (video.dataset.visible === 'true' || isFullscreen(video.parentElement)) &&
+    !video.closest('[hidden]') && !document.hidden &&
+    !root.matches('.has-modal,.has-gallery,.has-menu');
+  const syncJobVideo = video => {
+    if (shouldPlayJobVideo(video)) {
+      loadJobVideo(video);
+      if (video.paused) video.play().catch(() => {});
+    } else if (!video.paused) video.pause();
+  };
+  const syncJobVideos = () => jobVideos.forEach(syncJobVideo);
   const jobLoad = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
     if (isIntersecting && !target.closest('[hidden]')) loadJobVideo(target);
   }), { rootMargin: '160px 0px' });
-  const jobPlay = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
-    target.dataset.visible = String(isIntersecting);
-    if ((isIntersecting || isFullscreen(target.parentElement)) && !target.closest('[hidden]') && !document.hidden && target.dataset.userPaused !== 'true') {
-      loadJobVideo(target);
-      target.play().catch(() => {});
-    } else target.pause();
+  const jobPlay = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting, intersectionRatio }) => {
+    target.dataset.visible = String(isIntersecting && intersectionRatio >= .1);
+    syncJobVideo(target);
   }), { threshold: .1 });
   jobVideos.forEach(video => {
-    video.muted = true;
+    video.muted = video.defaultMuted = true;
+    video.playsInline = true;
     video.controls = false;
     const card = video.closest('.jobsite-clip');
     bindFullscreen(card.querySelector('[data-film-expand]'), video.parentElement, video);
-    const toggle = card.querySelector('[data-film-toggle]');
-    const updatePlayback = () => {
-      card.dataset.playing = String(!video.paused);
-      toggle.setAttribute('aria-label', `${video.paused ? 'Play' : 'Pause'} video: ${video.getAttribute('aria-label')}`);
-    };
-    listen(video, 'play', updatePlayback);
-    listen(video, 'pause', updatePlayback);
-    listen(toggle, 'click', () => {
-      if (video.paused) {
-        video.dataset.userPaused = 'false';
-        loadJobVideo(video);
-        video.play().catch(() => {});
-      } else {
-        video.dataset.userPaused = 'true';
-        video.pause();
-      }
-    });
+    // Native autoplay may start after preloading; keep it tied to visibility.
+    listen(video, 'play', () => { if (!shouldPlayJobVideo(video)) video.pause(); });
+    listen(video, 'loadeddata', () => syncJobVideo(video));
+    listen(video, 'canplay', () => syncJobVideo(video));
+    listen(video, 'webkitbeginfullscreen', () => syncJobVideo(video));
+    listen(video, 'webkitendfullscreen', () => syncJobVideo(video));
     jobLoad.observe(video);
     jobPlay.observe(video);
   });
-  listen(document, 'visibilitychange', () => {
-    jobVideos.forEach(video => {
-      if (!document.hidden && video.dataset.visible === 'true' && !video.closest('[hidden]') && video.dataset.userPaused !== 'true') {
-        video.play().catch(() => {});
-      } else video.pause();
-    });
-  });
+  listen(document, 'visibilitychange', syncJobVideos);
+  listen(document, 'fullscreenchange', syncJobVideos);
+  listen(document, 'webkitfullscreenchange', syncJobVideos);
+  listen(window, 'pageshow', syncJobVideos);
+  // Retry blocked muted autoplay after a real touch or keyboard interaction.
+  listen(root, 'pointerup', syncJobVideos);
+  listen(root, 'touchend', syncJobVideos, { passive: true });
+  listen(root, 'keydown', syncJobVideos);
+  const jobOverlayObserver = new window.MutationObserver(syncJobVideos);
+  jobOverlayObserver.observe(root, { attributes: true, attributeFilter: ['class'] });
+  disposers.push(() => jobOverlayObserver.disconnect());
   listen($('#jobsite-more'), 'click', () => {
     const hiddenCards = $$('[data-more-jobsite][hidden]');
     const next = hiddenCards.slice(0, 3);
