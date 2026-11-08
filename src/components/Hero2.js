@@ -20,7 +20,7 @@ export default function Hero2({
   ],
   ctaText = "Get My Estimate",
   successRedirect = "/success", // ✅ Local success page
-  emailTo = "renovationyellowstone@gmail.com",
+  emailTo = "info@yellowstonerenovation.com",
 }) {
   const formRef = useRef(null);
 

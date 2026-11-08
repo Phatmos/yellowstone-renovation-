@@ -200,7 +200,7 @@ export default function LouisvilleKY() {
                 subtitle="Upgrade your Louisville home with a custom deck, durable siding, and exterior improvements built for Kentucky weather."
                 projectCount="Custom deck and siding projects completed across Central Kentucky"
                 city="Louisville"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

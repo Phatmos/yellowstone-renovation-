@@ -20,8 +20,8 @@ export default function Footer() {
 
                         <strong>Contact Us</strong><br />
                         <a href="tel:8597657267">(859) 765-7267</a><br />
-                        <a href="mailto:renovationyellowstone@gmail.com">
-                            renovationyellowstone@gmail.com
+                        <a href="mailto:info@yellowstonerenovation.com">
+                            info@yellowstonerenovation.com
                         </a><br /><br />
 
                         <strong>Location</strong><br />

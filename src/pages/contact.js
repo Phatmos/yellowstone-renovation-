@@ -6,7 +6,7 @@ import "../styles/ContactPage.css";
 export default function ContactPage() {
     const [submitting, setSubmitting] = React.useState(false);
     const formRef = React.useRef(null);
-    const emailTo = "renovationyellowstone@gmail.com";
+    const emailTo = "info@yellowstonerenovation.com";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -109,8 +109,8 @@ export default function ContactPage() {
                             <img src="/icons/email-green.png" alt="Email" />
                             <div>
                                 <h4>Email</h4>
-                                <a href="mailto:renovationyellowstone@gmail.com">
-                                    renovationyellowstone@gmail.com
+                                <a href="mailto:info@yellowstonerenovation.com">
+                                    info@yellowstonerenovation.com
                                 </a>
                             </div>
                         </div>

@@ -26,7 +26,7 @@ export default function ProjectShowcase({
     ],
 
     /* FORM SETTINGS */
-    emailTo = "renovationyellowstone@gmail.com",
+    emailTo = "info@yellowstonerenovation.com",
     nextUrl = "https://yellowstonerenovation.com/thank-you/",
     subject = "New Consultation Request",
 }) {

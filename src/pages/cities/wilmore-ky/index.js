@@ -150,7 +150,7 @@ export default function WilmoreKY() {
                 subtitle="Transform your Wilmore home with clean, durable exterior upgrades — from premium siding to beautiful custom-built decks."
                 projectCount="3+ exterior projects completed in Jessamine County"
                 city="Wilmore"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

@@ -145,7 +145,7 @@ export default function KingstonKY() {
                 subtitle="Upgrade your Kingston property with custom decks and weather-resistant siding engineered for Kentucky humidity, storms, and seasonal changes."
                 projectCount="32+ deck and siding projects completed this year across Central Kentucky"
                 city="Kingston"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

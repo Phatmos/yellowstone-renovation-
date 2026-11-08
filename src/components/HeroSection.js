@@ -8,7 +8,7 @@ export default function HeroSection({
   subtitle = "Get your free deck consultation today — we’ll help you plan the right design, materials, and budget for your home. Proudly serving homeowners in Lexington and the surrounding areas.",
   city = "Lexington and surrounding areas",
   projectCount = "132+ projects completed in the past year",
-  emailTo = "renovationyellowstone@gmail.com",
+  emailTo = "info@yellowstonerenovation.com",
   features = [
     {
       icon: "/icons/n1.svg",

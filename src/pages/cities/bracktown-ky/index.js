@@ -143,7 +143,7 @@ export default function BracktownKY() {
                 subtitle="Enhance your Bracktown home with durable siding and beautifully crafted decks — installed by local experts serving North Lexington and all of Fayette County."
                 projectCount="2+ exterior projects completed in Central Kentucky"
                 city="Bracktown"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

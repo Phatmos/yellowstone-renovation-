@@ -199,7 +199,7 @@ export default function WinchesterKY() {
                 subtitle="Give your Winchester home a fresh exterior with custom-built decks and durable siding — designed for long-term performance in Kentucky’s climate."
                 projectCount="30+ deck and siding projects completed this year across Central Kentucky"
                 city="Winchester"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

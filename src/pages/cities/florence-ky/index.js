@@ -170,7 +170,7 @@ export default function FlorenceKY() {
                 subtitle="Upgrade your Florence home with expertly built decks and weather-resistant siding — crafted for long-term durability, curb appeal, and comfort."
                 projectCount="31+ deck and siding projects completed this year in Boone County"
                 city="Florence"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

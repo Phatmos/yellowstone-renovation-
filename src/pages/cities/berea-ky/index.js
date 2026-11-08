@@ -198,7 +198,7 @@ export default function BereaKY() {
                 subtitle="Transform your Berea home with durable siding and custom-built decks — designed for long-term performance and Kentucky’s weather."
                 projectCount="4+ deck and siding projects completed this year across Central Kentucky"
                 city="Berea"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

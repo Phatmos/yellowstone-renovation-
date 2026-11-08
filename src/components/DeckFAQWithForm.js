@@ -10,7 +10,7 @@ export default function DeckFAQWithForm({
     ctaText = "Get My Free Deck Estimate",
 
     // formsubmit settings
-    emailTo = "renovationyellowstone@gmail.com",
+    emailTo = "info@yellowstonerenovation.com",
     nextUrl = "https://yellowstonerenovation.com/thank-you/",
     subject = "New Deck Estimate Request",
 

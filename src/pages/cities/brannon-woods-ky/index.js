@@ -143,7 +143,7 @@ export default function BrannonWoodsKY() {
                 subtitle="Upgrade your Brannon Woods home with expertly built decks and weather-resistant siding — crafted for long-term durability, curb appeal, and comfort."
                 projectCount="31+ deck and siding projects completed this year in Jessamine County"
                 city="Brannon Woods"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

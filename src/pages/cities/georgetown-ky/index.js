@@ -148,7 +148,7 @@ export default function GeorgetownKY() {
         subtitle="Improve your Georgetown home with reliable siding installation and custom deck construction — built for beauty, comfort, and Kentucky weather."
         projectCount="35+ deck and siding projects completed this year across Scott County"
         city="Georgetown"
-        emailTo="yellowstonerenovation@gmail.com"
+        emailTo="info@yellowstonerenovation.com"
       />
 
       <AboutSection />

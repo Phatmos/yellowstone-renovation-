@@ -19,7 +19,7 @@ export default function HeroSplit({
     cardTitle = "Plan Your Project With Confidence",
     cardText = "Review materials and options — then visualize your project before work begins.",
 
-    emailTo = "renovationyellowstone@gmail.com",
+    emailTo = "info@yellowstonerenovation.com",
     nextUrl = "/thank-you/",
     subject = "New Deck Estimate Request",
 }) {

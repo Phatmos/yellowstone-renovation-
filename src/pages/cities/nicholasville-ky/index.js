@@ -197,7 +197,7 @@ export default function NicholasvilleKY() {
                 subtitle="Upgrade your Nicholasville home with custom-built decks and durable siding — designed for long-term performance and curb appeal in Kentucky’s weather."
                 projectCount="32+ deck and siding projects completed this year across Central Kentucky"
                 city="Nicholasville"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

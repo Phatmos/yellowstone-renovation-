@@ -147,7 +147,7 @@ export default function RichmondKY() {
                 subtitle="Transform your Richmond home with custom-built decks and durable siding — designed for curb appeal, comfort, and long-term performance in Kentucky’s weather."
                 projectCount="27+ deck and siding projects completed this year across Central Kentucky"
                 city="Richmond"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

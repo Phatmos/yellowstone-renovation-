@@ -188,7 +188,7 @@ export default function UnionCityKY() {
                 subtitle="Improve your Union City home with custom deck construction and high-performance siding installation built for beauty, strength, and long-term value."
                 projectCount="30+ deck and siding projects completed this year across Western Kentucky"
                 city="Union City"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

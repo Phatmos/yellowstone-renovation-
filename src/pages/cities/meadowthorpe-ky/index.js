@@ -143,7 +143,7 @@ export default function MeadowthorpeKY() {
                 subtitle="Transform your Meadowthorpe home with durable siding and custom outdoor living spaces designed for comfort, style, and long-term value."
                 projectCount="2+ exterior projects completed in Central Kentucky"
                 city="Meadowthorpe"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

@@ -151,7 +151,7 @@ export default function HamburgKY() {
                 subtitle="Transform your Hamburg home with durable siding and custom-built decks — designed to handle Kentucky weather while improving beauty, efficiency, and long-term value."
                 projectCount="3+ exterior projects completed in East Lexington"
                 city="Hamburg"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

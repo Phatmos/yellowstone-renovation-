@@ -147,7 +147,7 @@ export default function VersaillesKY() {
                 subtitle="Upgrade your Versailles home with professionally built decks and long-lasting siding — crafted for curb appeal, comfort, and Kentucky weather."
                 projectCount="19+ deck and siding projects completed this year in Central Kentucky"
                 city="Versailles"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

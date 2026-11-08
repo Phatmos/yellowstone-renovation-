@@ -35,7 +35,7 @@ export default function AffiliateProgram() {
       form.reset();
     } catch {
       setStatus("idle");
-      setError("Your application could not be submitted. Please try again, call (859) 765-7267, or email renovationyellowstone@gmail.com.");
+      setError("Your application could not be submitted. Please try again, call (859) 765-7267, or email info@yellowstonerenovation.com.");
     }
   }
 
@@ -71,7 +71,7 @@ export default function AffiliateProgram() {
         </section>
 
         <section className="yr-aff-section yr-aff-apply" id="apply" aria-labelledby="apply-title">
-          <div><p className="yr-aff-eyebrow">LET’S WORK TOGETHER</p><h2 id="apply-title">Become a Yellowstone partner.</h2><p>Have a local audience or experience generating home improvement leads? Tell us about your approach.</p><p>This form is for <strong>partner applications</strong>. Please do not submit homeowner information here.</p><div className="yr-aff-contact"><a href="tel:8597657267">(859) 765-7267</a><a href="mailto:renovationyellowstone@gmail.com">renovationyellowstone@gmail.com</a></div><p className="yr-aff-small">Need work done at your own home? <a href="/contact/">Request an estimate here.</a></p></div>
+          <div><p className="yr-aff-eyebrow">LET’S WORK TOGETHER</p><h2 id="apply-title">Become a Yellowstone partner.</h2><p>Have a local audience or experience generating home improvement leads? Tell us about your approach.</p><p>This form is for <strong>partner applications</strong>. Please do not submit homeowner information here.</p><div className="yr-aff-contact"><a href="tel:8597657267">(859) 765-7267</a><a href="mailto:info@yellowstonerenovation.com">info@yellowstonerenovation.com</a></div><p className="yr-aff-small">Need work done at your own home? <a href="/contact/">Request an estimate here.</a></p></div>
           <div className="yr-aff-form-panel">
             {status === "success" ? <div className="yr-aff-success" role="status"><h3>Application received.</h3><p>Thank you for your interest in Yellowstone Renovation. Our team will review your application and contact you about next steps.</p><p>Approval, referral tracking and payment terms must be confirmed before you send traffic or homeowner referrals.</p><button className="yr-aff-button" onClick={() => setStatus("idle")}>Submit another application</button></div> : <form onSubmit={submitApplication}>
               <label>Full name<input name="name" autoComplete="name" maxLength={160} required /></label>

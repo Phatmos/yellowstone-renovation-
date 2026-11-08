@@ -197,7 +197,7 @@ export default function AthensKY() {
                 subtitle="Transform your Athens home with durable siding and custom-built decks — designed to withstand Kentucky’s climate while boosting curb appeal and value."
                 projectCount="4+ exterior projects completed across Central Kentucky"
                 city="Athens"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

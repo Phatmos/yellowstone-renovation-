@@ -150,7 +150,7 @@ export default function KeeneKY() {
                 subtitle="Upgrade your Keene home with durable siding and custom deck installation — engineered for strength, beauty, and long-term performance."
                 projectCount="3+ exterior projects completed in Jessamine County"
                 city="Keene"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

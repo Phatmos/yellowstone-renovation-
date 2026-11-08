@@ -16,7 +16,7 @@ export default function BottomHeroCtaDeck({
     "Lexington • Nicholasville • Georgetown • Richmond • Frankfort • Versailles",
 
     // form submit
-    emailTo = "renovationyellowstone@gmail.com",
+    emailTo = "info@yellowstonerenovation.com",
     nextUrl = "https://yellowstonerenovation.com/thank-you/",
     subject = "New Deck Estimate Request",
 }) {

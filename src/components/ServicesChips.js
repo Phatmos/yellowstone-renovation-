@@ -26,7 +26,7 @@ export default function ServicesChips({
     buttonText = "Get My Free Deck Estimate",
 
     /* EMAIL + REDIRECT */
-    emailTo = "renovationyellowstone@gmail.com",
+    emailTo = "info@yellowstonerenovation.com",
     nextUrl = "https://yellowstonerenovation.com/thank-you/",
     subject = "New Deck Estimate Request",
 }) {

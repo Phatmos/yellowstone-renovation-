@@ -191,7 +191,7 @@ export default function AvonKY() {
                 subtitle="Upgrade your Avon home with high-quality siding and beautifully designed, long-lasting decks — built to handle Kentucky weather and enhance curb appeal."
                 projectCount="5+ exterior projects completed in Central Kentucky"
                 city="Avon"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

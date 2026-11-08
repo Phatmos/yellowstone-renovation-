@@ -149,7 +149,7 @@ export default function DanvilleKY() {
                 subtitle="Enhance your Danville home with durable siding and professionally built decks — designed to handle Kentucky weather and elevate curb appeal."
                 projectCount="28+ deck and siding projects completed this year in Boyle County"
                 city="Danville"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

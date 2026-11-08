@@ -148,7 +148,7 @@ export default function FrankfortKY() {
                 subtitle="Enhance your Frankfort home with durable siding and professionally built decks — designed to handle Kentucky weather and elevate curb appeal."
                 projectCount="28+ deck and siding projects completed this year in Franklin County"
                 city="Frankfort"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

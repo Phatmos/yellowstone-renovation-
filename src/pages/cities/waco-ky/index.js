@@ -112,7 +112,7 @@ export default function WacoKY() {
                 subtitle="Upgrade your Waco home with custom decks and high-performance siding designed for Kentucky heat, rain, and seasonal weather swings."
                 projectCount="32+ deck and siding projects completed this year across Central Kentucky"
                 city="Waco"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />

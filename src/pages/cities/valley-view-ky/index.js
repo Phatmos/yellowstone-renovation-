@@ -189,7 +189,7 @@ export default function ValleyViewKY() {
                 subtitle="Upgrade your Valley View home with custom-built decks and durable siding — designed for long-term performance and curb appeal in Kentucky's weather."
                 projectCount="32+ deck and siding projects completed this year across Central Kentucky"
                 city="Valley View"
-                emailTo="yellowstonerenovation@gmail.com"
+                emailTo="info@yellowstonerenovation.com"
             />
 
             <AboutSection />
