@@ -5,8 +5,8 @@ export const onRenderBody = ({ setHeadComponents, setHtmlAttributes, pathname })
     // ✅ Add <html lang="en">
     setHtmlAttributes({ lang: "en" });
 
-    // The lightweight landing variant does not use Maps or address search.
-    if (/^\/local-ky(?:\/|$)/.test(pathname || "")) return;
+    // These variants either omit address search or use their own address helper.
+    if (/^\/(?:local-ky|deck-local-ky)(?:\/|$)/.test(pathname || "")) return;
 
     // ✅ Keep your Google Maps script
     setHeadComponents([

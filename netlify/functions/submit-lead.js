@@ -448,10 +448,10 @@ function backupEmailBody(lead) {
     ].filter(Boolean).join("\n");
 }
 
-async function sendBackupEmail(lead) {
+async function sendBackupEmail(lead, { subject: customSubject } = {}) {
     const recipient = process.env.LEAD_NOTIFICATION_EMAIL || DEFAULT_BACKUP_EMAIL;
     const fullName = [lead.firstName, lead.lastName].filter(Boolean).join(" ") || "Website Lead";
-    const subject = `New Website Lead — ${fullName}${lead.projectType ? ` — ${lead.projectType}` : ""}`;
+    const subject = customSubject || `New Website Lead — ${fullName}${lead.projectType ? ` — ${lead.projectType}` : ""}`;
     const text = backupEmailBody(lead);
 
     if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_FROM_EMAIL) {
@@ -598,3 +598,6 @@ exports._test = {
     submitZohoWebform,
     zohoWebformProjectType,
 };
+
+// Server-only reuse for the separate deck intake. The public lead handler is unchanged.
+exports._delivery = { buildLead, getAttribution, hasZohoCredentials, upsertZohoLead, sendBackupEmail };
