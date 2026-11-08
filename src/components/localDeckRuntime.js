@@ -98,8 +98,19 @@ export default function initLocalDeck(root) {
     try {
       const YT = await loadYouTube();
       if (!active) return;
-      const mount = document.createElement('div');
+      // Set the referrer policy before navigation, including when the site
+      // response carries a stricter policy. YouTube requires client identity.
+      const mount = document.createElement('iframe');
       mount.id = 'hero-youtube';
+      mount.title = 'Before you build your deck — Yellowstone Renovation';
+      mount.referrerPolicy = 'strict-origin-when-cross-origin';
+      mount.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      mount.allowFullscreen = true;
+      const params = new URLSearchParams({
+        enablejsapi: '1', autoplay: '0', mute: '1', controls: '1',
+        playsinline: '1', rel: '0', origin: window.location.origin,
+      });
+      mount.src = `https://www.youtube.com/embed/9XcXhPwMEYE?${params}`;
       $('#videoPlayer').appendChild(mount);
       heroPlayer = new YT.Player(mount, {
         videoId: '9XcXhPwMEYE',
