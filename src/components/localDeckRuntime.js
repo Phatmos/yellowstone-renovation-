@@ -63,8 +63,10 @@ export default function initLocalDeck(root) {
   let heroVisible = false;
   let heroReady = false;
   let heroLoading = false;
-  // Prefer sound; fall back to muted playback when browser policy requires it.
+  // Request audible autoplay. Browsers can require a user gesture first.
   let heroHasSound = true;
+  let heroSoundBlocked = false;
+  let heroAudioUnlocked = false;
   const heroCommand = method => {
     if (heroReady && heroPlayer && typeof heroPlayer[method] === 'function') heroPlayer[method]();
   };
@@ -91,7 +93,6 @@ export default function initLocalDeck(root) {
     if (heroReady) {
       if (heroHasSound) heroCommand('unMute');
       heroCommand('playVideo');
-      $('#heroSound').hidden = heroHasSound;
       return;
     }
     if (heroLoading) return;
@@ -108,14 +109,14 @@ export default function initLocalDeck(root) {
       mount.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       mount.allowFullscreen = true;
       const params = new URLSearchParams({
-        enablejsapi: '1', autoplay: '0', mute: '0', controls: '1',
+        enablejsapi: '1', autoplay: '1', mute: '0', controls: '1',
         playsinline: '1', rel: '0', origin: window.location.origin,
       });
       mount.src = `https://www.youtube.com/embed/9XcXhPwMEYE?${params}`;
       $('#videoPlayer').appendChild(mount);
       heroPlayer = new YT.Player(mount, {
         videoId: '9XcXhPwMEYE',
-        playerVars: { autoplay: 0, mute: 0, controls: 1, playsinline: 1, rel: 0, origin: window.location.origin },
+        playerVars: { autoplay: 1, mute: 0, controls: 1, playsinline: 1, rel: 0, origin: window.location.origin },
         events: {
           onReady: event => {
             if (!active) return;
@@ -128,7 +129,10 @@ export default function initLocalDeck(root) {
             if (!active) return;
             if (event.data === YT.PlayerState.PLAYING) {
               hw.classList.add('on');
-              $('#heroSound').hidden = heroHasSound;
+              if (heroHasSound && !event.target.isMuted()) {
+                heroAudioUnlocked = true;
+                heroSoundBlocked = false;
+              }
               $$('.customer-story video').forEach(video => video.pause());
               // An iframe can finish starting after its card has left the screen.
               if (!heroVisible || document.hidden || root.classList.contains('has-modal')) pauseHero();
@@ -138,13 +142,12 @@ export default function initLocalDeck(root) {
             if (!active) return;
             if (heroHasSound && heroVisible && !document.hidden && !root.classList.contains('has-modal')) {
               heroHasSound = false;
+              heroSoundBlocked = true;
               heroCommand('mute');
-              $('#heroSound').hidden = false;
               heroCommand('playVideo');
               return;
             }
             hw.classList.remove('on');
-            $('#heroSound').hidden = true;
           },
           onError: () => { hw.classList.remove('on'); $('#heroVideoStatus').textContent = 'Video unavailable. Please try again.'; }
         }
@@ -155,12 +158,19 @@ export default function initLocalDeck(root) {
     }
   };
   listen($('#snd'), 'click', () => startHero(true));
-  listen($('#heroSound'), 'click', () => {
+  // Retry audio inside the first eligible real gesture, without an extra
+  // sound overlay. Once sound plays, preserve the visitor's player controls.
+  const unlockHeroAudio = event => {
+    if (!event.isTrusted || heroAudioUnlocked || !heroSoundBlocked || !heroReady || !heroVisible || document.hidden || root.classList.contains('has-modal') || root.classList.contains('has-menu')) return;
+    if (event.target.closest('button, a, input, textarea, select, [role="button"]')) return;
+    if (event.type === 'keydown' && !['Enter', ' '].includes(event.key)) return;
     heroHasSound = true;
+    heroSoundBlocked = false;
     heroCommand('unMute');
     heroCommand('playVideo');
-    $('#heroSound').hidden = true;
-  });
+  };
+  listen(root, 'pointerup', unlockHeroAudio);
+  listen(root, 'keydown', unlockHeroAudio);
   const heroObserver = new IntersectionObserver(entries => {
     const entry = entries[0];
     heroVisible = entry.isIntersecting && entry.intersectionRatio >= .55;
