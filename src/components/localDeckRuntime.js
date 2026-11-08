@@ -338,29 +338,6 @@ export default function initLocalDeck(root) {
       }
     });
   });
-  const platformLogos = {
-    google: 'google.svg',
-    angi: 'angi.svg',
-    facebook: 'facebook.svg',
-    houzz: 'houzz.svg',
-    yelp: 'yelp.svg'
-  };
-  const PF = {
-    google: ['Google', '4.9', '40+', 'G', '#4285f4', [['Mike D.', 'Frankfort, KY · Apr 2025', 'Clear pricing, no surprises, and the timeline was realistic. We got updates throughout the project and the final result is excellent.'], ['Carlos R.', 'Lexington, KY · Aug 2025', 'Clean build, great communication, and finished on time. William explained everything clearly and Andrew kept the project moving smoothly.']]],
-    angi: ['Angi', '5.0', '13+', 'Angi', '#ff5a45', [['Marta G.', 'June 2025', 'Highly recommend Peter and Yellowstone Renovation for any remodeling project!'], ['Siarhei M.', 'May 2025', 'Would absolutely recommend Yellowstone Renovation to anyone considering a remodel.']]],
-    facebook: ['Facebook', '5.0', '9+', 'f', '#1877f2', [['Andrew S.', 'Versailles, KY · Feb 2025', 'From design to final walkthrough, smooth process. We felt taken care of and the deck turned out beautiful.'], ['Sharon K.', 'Nicholasville, KY · May 2025', 'Strong craftsmanship and clean finishes. The railing details came out better than we expected. Great experience overall.']]],
-    houzz: ['Houzz', '5.0', '8+', 'houzz', '#4dbc15', null],
-    yelp: ['Yelp', '4.6', '10+', 'yelp', '#d32323', [['Laura P.', 'Richmond, KY · Mar 2025', 'Great details on railing and stairs. Looks premium. They showed up on time and handled everything professionally.'], ['Brian & Amanda', 'Georgetown, KY · Jul 2025', 'Professional crew and very organized process. Our composite deck looks amazing and the jobsite stayed clean the whole time.']]],
-    gq: ['GuildQuality', '4.8', '11+', 'GQ', '#0c4f6b', null]
-  };
-  listen(document, 'click', e => {
-    const b = e.target.closest('[data-pf]');
-    if (!b) return;
-    const [n, r, c, l, col, list] = PF[b.dataset.pf];
-    const items = list ? list.map(([w, m, t]) => `<div class="ri"><div class="top"><span><b>${w}</b><br><small>${m}</small></span><span class="stars">★★★★★</span></div><p>${t}</p></div>`).join('') : '<p>Read more homeowner feedback on our review platforms.</p>';
-    $('#rvIn').innerHTML = `<div class="rhd"><img class="platform-logo" src="/local-deck/img/platforms/${platformLogos[b.dataset.pf]}" alt="${n}"><span><b id="rvT">${r} on ${n}</b><span class="stars">★★★★★</span> <small style="color:var(--muted)">${c} reviews</small></span></div><div class="rlist">${items}</div><button class="btn btn-o btn-lg" data-open="est">Get My Free Estimate</button>`;
-    open('rv');
-  });
   const BUDGETS = ['$10,000 – $20,000', '$20,000 – $30,000', '$30,000 – $40,000', '$40,000 – $100,000', '$100,000 – $150,000', '$150,000+', 'More than $150,000'];
   const bud = $('#bud');
   let budgetSelected = false;
