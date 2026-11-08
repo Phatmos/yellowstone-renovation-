@@ -43,7 +43,7 @@ export function KyClickVideo({ youtube = false, title, poster, source, portrait 
   return <div className={`ky-video ${portrait ? 'ky-video-portrait' : ''}`} ref={media}>
     {!open ? <button type="button" className="ky-video-start" aria-label={`Play ${title}`} onClick={() => { setOpen(true); setError(false); kyTrack('video_start', { video: youtube ? 'intro' : 'homeowner-story' }); }}>
       <img src={poster} alt="" loading="lazy" decoding="async" width={portrait ? 707 : 1920} height={portrait ? 1536 : 1080} />
-      <span className="ky-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z" /></svg></span><span className="ky-video-label">{title}<small>Tap to watch with sound</small></span>
+      <span className="ky-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z" /></svg></span><span className="ky-video-label">{title}</span>
     </button> : youtube ? <iframe title={title} src={`https://www.youtube.com/embed/9XcXhPwMEYE?autoplay=1&controls=1&playsinline=1&rel=0&enablejsapi=1&origin=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin : '')}`} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /> : <video src={source} poster={poster} controls autoPlay playsInline preload="metadata" aria-label={title} onError={() => setError(true)} />}
     {error && <div className="ky-video-error" role="status"><p>The video couldn’t load.</p><button type="button" onClick={() => setOpen(false)}>Try again</button></div>}
   </div>;

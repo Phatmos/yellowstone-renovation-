@@ -344,6 +344,15 @@ export default function initLocalDeck(root) {
     video.playsInline = true;
     video.controls = false;
     const card = video.closest('.jobsite-clip');
+    const playButton = card.querySelector('.project-film-play');
+    listen(playButton, 'click', () => {
+      pauseHero();
+      root.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); });
+      loadJobVideo(video);
+      video.muted = false;
+      video.controls = true;
+      video.play().then(() => { playButton.hidden = true; }).catch(() => {});
+    });
     const showPoster = () => card.classList.remove('video-playing');
     listen(video, 'playing', () => {
       if (activeJobVideos.has(video) && !document.hidden && !root.matches('.has-modal,.has-gallery,.has-menu')) card.classList.add('video-playing');

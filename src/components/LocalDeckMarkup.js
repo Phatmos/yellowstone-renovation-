@@ -25,6 +25,7 @@ function JobSiteClip({ file, poster, title, detail, project, more = false, lands
     <div className="project-film-media">
       <video playsInline preload="none" muted loop autoPlay disablePictureInPicture controlsList="nodownload noremoteplayback" data-jobsite="true" poster={posterSrc} data-src={`/local-deck/video/${file}.mp4`} aria-label={title} />
       <img className="project-film-poster" src={posterSrc} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <button type="button" className="project-film-play" aria-label={`Play ${title} with sound`}><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z" /></svg></button>
       <span className="film-status">{progress ? 'In progress' : 'Finished deck'}</span>
     </div>
     <div className="cp"><b>{title}</b><span>{detail}</span></div>

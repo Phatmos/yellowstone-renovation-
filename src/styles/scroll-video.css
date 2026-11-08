@@ -1,0 +1,6 @@
+.scroll-video{position:relative;aspect-ratio:16/9;width:100%;background:#12301f;overflow:hidden;border-radius:inherit}
+.scroll-video>video{display:block;width:100%;height:100%;object-fit:contain}
+.scroll-video-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer;display:grid;place-items:center}
+.scroll-video-play svg{width:58px;height:58px;padding:17px;border-radius:50%;background:#fffffff0;fill:#1f8a4c;box-shadow:0 3px 16px #0003}
+.scroll-video-play:focus-visible{outline:3px solid #e96620;outline-offset:-4px}
+.scroll-video-retry{position:absolute;bottom:12px;left:12px;padding:10px 15px;border:0;border-radius:8px;background:#fff;color:#12301f}

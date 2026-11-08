@@ -1,4 +1,5 @@
 import * as React from "react";
+import ScrollVideo from "./ScrollVideo";
 import { Link } from "gatsby";
 import "../styles/HomeVideoStories.css";
 
@@ -20,26 +21,6 @@ const stories = [
 ];
 
 export default function HomeVideoStories() {
-  const [active, setActive] = React.useState(null);
-
-  React.useEffect(() => {
-    if (active === null) return undefined;
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        setActive(null);
-      }
-    };
-
-    document.body.classList.add("video-modal-open");
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.body.classList.remove("video-modal-open");
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [active]);
-
   return (
     <section
       className="home-stories"
@@ -69,44 +50,13 @@ export default function HomeVideoStories() {
         {/* GRID */}
         <div className="home-stories__grid">
 
-          {stories.map((story, index) => (
+          {stories.map((story) => (
             <article
               className="home-stories__card"
               key={story.video}
             >
               {/* VIDEO */}
-              <button
-                className="home-stories__video"
-                type="button"
-                onClick={() => setActive(index)}
-                aria-label={`Play video: ${story.title}`}
-              >
-                <img
-                  src={story.poster}
-                  alt={story.title}
-                  loading="lazy"
-                />
-
-                <span className="home-stories__image-overlay" />
-
-                <span
-                  className="home-stories__play"
-                  aria-hidden="true"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="21"
-                    height="21"
-                    fill="currentColor"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </span>
-
-                <span className="home-stories__watch-label">
-                  Watch Story
-                </span>
-              </button>
+              <ScrollVideo className="home-stories__video" src={story.video} poster={story.poster} title={story.title} />
 
               {/* CARD CONTENT */}
               <div className="home-stories__card-body">
@@ -183,47 +133,6 @@ export default function HomeVideoStories() {
         </div>
       </div>
 
-      {/* VIDEO MODAL */}
-      {active !== null && (
-        <div
-          className="home-stories__modal"
-          role="presentation"
-          onClick={() => setActive(null)}
-        >
-          <div
-            className="home-stories__dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-label={stories[active].title}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              className="home-stories__close"
-              type="button"
-              onClick={() => setActive(null)}
-              aria-label="Close video"
-            >
-              ×
-            </button>
-
-            <video
-              key={stories[active].video}
-              poster={stories[active].poster}
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
-            >
-
-
-              <source
-                src={stories[active].video}
-                type="video/mp4"
-              />
-            </video>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
