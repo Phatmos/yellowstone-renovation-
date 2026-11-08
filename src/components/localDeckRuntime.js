@@ -140,7 +140,7 @@ export default function initLocalDeck(root) {
   });
   listen($('#jobsite-more'), 'click', () => {
     const hiddenCards = $$('[data-more-jobsite][hidden]');
-    const next = hiddenCards.slice(0, 4);
+    const next = hiddenCards.slice(0, 3);
     next.forEach(card => card.hidden = false);
     const count = $$('.jobsite-clip:not([hidden])').length;
     const remaining = $$('[data-more-jobsite][hidden]').length;
@@ -521,48 +521,6 @@ export default function initLocalDeck(root) {
     if (b) showBA([...b.parentNode.children].indexOf(b));
   });
   showBA(0);
-  const G = [['d39', 'w2 h2r', 'Multi-level deck · Lexington'], ['d15', '', 'Composite deck'], ['d22', '', 'Deck with stairs'], ['r/sunroom-deck', '', 'Sunroom deck'], ['d41', '', 'Family deck'], ['d104', 'w2', 'Elevated deck'], ['d48', '', 'White-rail deck'], ['r/stairs-top', 'h2r', 'Stair detail'], ['d60', '', 'Black & white rail'], ['d28', '', 'Deck with stairs'], ['d07', 'w2', 'Modern rail'], ['r/under-deck-patio', '', 'Under-deck patio'], ['d101', '', 'Elevated deck'], ['d54', '', 'Raised deck'], ['d95', '', 'Ground-level deck'], ['d65', '', 'Stair & border detail'], ['d87', '', 'Wood deck'], ['d46', '', 'Top view']];
-  const gsrc = g => g.startsWith('r/') ? `/local-deck/img/${g}.webp` : `/local-deck/img/g/${g}.webp`;
-  $('#gal').innerHTML = G.map(([g, c, t], i) => `<button class="${c}" data-i="${i}"><img src="${gsrc(g)}" alt="${t}" loading="lazy"><span>${t}</span></button>`).join('');
-  let li = 0;
-  const lb = $('#lb'),
-    showLB = () => {
-      $('#lbImg').src = gsrc(G[li][0]);
-      $('#lbImg').alt = G[li][2];
-    };
-  $('#gal').addEventListener('click', e => {
-    const b = e.target.closest('button');
-    if (!b) return;
-    li = +b.dataset.i;
-    lb.hidden = false;
-    root.classList.add('has-gallery');
-    $('#lbX').focus();
-    showLB();
-  });
-  $('#lbP').onclick = () => {
-    li = (li - 1 + G.length) % G.length;
-    showLB();
-  };
-  $('#lbN').onclick = () => {
-    li = (li + 1) % G.length;
-    showLB();
-  };
-  const closeGallery = () => {
-    lb.hidden = true;
-    root.classList.remove('has-gallery');
-    $('#gal').querySelector(`[data-i="${li}"]`)?.focus();
-  };
-  $('#lbX').onclick = closeGallery;
-  listen(document, 'keydown', e => {
-    if (lb.hidden) return;
-    if (e.key === 'Escape') closeGallery();
-    if (e.key === 'ArrowLeft') { e.preventDefault(); $('#lbP').click(); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); $('#lbN').click(); }
-  });
-  lb.addEventListener('click', e => {
-    if (e.target === lb) closeGallery();
-  });
-
   /* ===== 3D deck build: SketchUp-style canvas renderer ===== */
   const cv = $('#cv'),
     ctx = cv.getContext('2d'),

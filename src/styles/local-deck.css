@@ -823,12 +823,13 @@
 
 /* Keep homeowner stories and the large, looping job-site gallery separate. */
 .local-deck-page .jobsite-section{background:#f4f8f3}
-.local-deck-page .jobsite-section .jobsite-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:1120px;margin-inline:auto}
-.local-deck-page .jobsite-section .jobsite-clip{aspect-ratio:4/5;border-radius:24px;box-shadow:0 4px 16px #183f2c0c}
+.local-deck-page .jobsite-section .jobsite-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1304px;margin-inline:auto}
+.local-deck-page .jobsite-section .jobsite-clip{aspect-ratio:9/16;border-radius:24px;box-shadow:0 4px 16px #183f2c0c}
 .local-deck-page .jobsite-section .jobsite-clip video{pointer-events:none;object-fit:cover}
+.local-deck-page .jobsite-section .landscape-clip video{object-fit:contain;background:#102218}
 .local-deck-page .jobsite-section .jobsite-clip .cp{left:26px;right:26px;bottom:28px}
-.local-deck-page .jobsite-section .jobsite-clip .cp b{font-size:26px;line-height:1.2}
-.local-deck-page .jobsite-section .jobsite-clip .cp span{font-size:16px;line-height:1.5;margin-top:8px}
+.local-deck-page .jobsite-section .jobsite-clip .cp b{font-size:23px;line-height:1.2}
+.local-deck-page .jobsite-section .jobsite-clip .cp span{font-size:15px;line-height:1.5;margin-top:8px}
 .local-deck-page .jobsite-section .jobsite-clip .live{font-size:12px;right:18px;top:18px;padding:6px 12px}
 .local-deck-page .jobsite-more{text-align:center;margin-top:32px}
 .local-deck-page .jobsite-more p{font-size:13px;color:var(--muted);margin-bottom:14px}
@@ -844,4 +845,93 @@
  .local-deck-page .jobsite-section .jobsite-clip .cp b{font-size:24px}
  .local-deck-page .jobsite-section .jobsite-clip .cp span{font-size:15px}
  .local-deck-page .jobsite-section .jobsite-clip .live{font-size:11px;top:14px;right:14px}
+}
+
+/* A wider desktop headline and a clear offer over the project photography. */
+.local-deck-page .hero::after{background:linear-gradient(90deg,#09170eeb 0%,#09170ebd 48%,#09170e55 100%),linear-gradient(0deg,#09170ed9,transparent 60%)}
+.local-deck-page .hero-design{font-size:clamp(23px,2.3vw,32px);font-weight:600;line-height:1.5;color:#fff;text-shadow:0 2px 16px #0009}
+.local-deck-page .hero-design strong{background:#f6f9ee;color:#173b2b;padding:2px 9px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:4px;text-shadow:none}
+.local-deck-page .hero-design>span{display:block;font-size:17px;font-weight:400;margin-top:8px;color:#fff}
+.local-deck-page .hero .ctas{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:660px}
+.local-deck-page .hero .ctas .btn{width:100%;min-height:60px;padding:16px 18px;font-size:16px}
+.local-deck-page .hero .trust b{font-size:16px}
+.local-deck-page .hero .trust small{font-size:14px;color:#f5f7f3}
+@media(min-width:981px){
+ .local-deck-page .hero .hgrid{grid-template-columns:minmax(0,1.85fr) minmax(280px,1fr);gap:56px;max-width:1440px}
+ .local-deck-page .hero .htxt{gap:24px}
+ .local-deck-page .hero h1{font-size:clamp(54px,5.5vw,86px);line-height:1.08;letter-spacing:-.035em;text-wrap:initial}
+ .local-deck-page .hero h1 .hero-title-line{display:block;white-space:nowrap}
+ .local-deck-page .hero .sub{font-size:22px;max-width:44ch}
+ .local-deck-page .hero .deck-video{max-width:360px;width:100%}
+}
+
+/* Project photos arrive in groups of twenty, with full-size lightbox images. */
+.local-deck-page .gal{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:row;grid-auto-rows:auto;gap:16px}
+.local-deck-page .gal button{aspect-ratio:4/3;border-radius:16px;min-width:0}
+.local-deck-page .gal button span{left:10px;right:10px;bottom:10px;border-radius:8px;font-size:12px;line-height:1.4;text-align:left;padding:7px 10px}
+.local-deck-page .gallery-more{display:grid;justify-items:center;gap:14px;margin-top:30px}
+.local-deck-page .gallery-more p{font-size:15px;color:#556554}
+.local-deck-page .gallery-more .btn{border-color:#a9bda9;min-height:54px;gap:22px;color:#183f2c}
+.local-deck-page .lightbox-caption{position:absolute;bottom:20px;left:90px;right:90px;text-align:center;color:#fff;font-size:15px;line-height:1.5;pointer-events:none}
+body:has(.local-deck-page.has-gallery){overflow:hidden}
+
+/* A spacious, graph-paper estimate section with a legible starting point. */
+.local-deck-page .inline-estimate{padding:88px 0;background-color:#f2f4eb;background-image:linear-gradient(#284a3010 1px,transparent 1px),linear-gradient(90deg,#284a3010 1px,transparent 1px);background-size:40px 40px;border-block:1px solid #dce3d5}
+.local-deck-page .inline-estimate-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.local-deck-page .estimate-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#39563b;line-height:1.5}
+.local-deck-page .estimate-eyebrow i{height:10px;width:10px;flex:none;border-radius:50%;background:#e96a25}
+.local-deck-page .inline-estimate-copy h2{font-size:clamp(38px,4.4vw,62px);line-height:1.08;letter-spacing:-.045em;margin:22px 0;max-width:12ch;text-wrap:initial}
+.local-deck-page .inline-estimate-copy p{font-size:19px;line-height:1.7;color:#40543f;max-width:37ch}
+.local-deck-page .estimate-steps{display:grid;gap:17px;margin:28px 0 30px}
+.local-deck-page .estimate-steps li{display:flex;align-items:center;gap:14px;font-size:16px;line-height:1.5;color:#25402b}
+.local-deck-page .estimate-steps b{display:grid;place-items:center;width:34px;height:34px;flex:none;background:#e3eadb;border:1px solid #c3d1bb;border-radius:50%;font-size:12px;color:#2f5238}
+.local-deck-page .estimate-assurance{display:inline-block;font-size:14px;font-weight:600;line-height:1.6;color:#34523c}
+.local-deck-page .inline-lead-form{position:relative;padding:36px;border:1px solid #cdd9c5;border-top:5px solid #295339;border-radius:22px;box-shadow:0 20px 50px #25402b12;background:#fffefa}
+.local-deck-page .estimate-form-heading{margin-bottom:27px}
+.local-deck-page .estimate-form-tag{display:inline-block;margin-bottom:12px;border-radius:5px;background:#e7eddc;color:#345439;padding:5px 10px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.local-deck-page .estimate-form-heading h3{font-size:31px;line-height:1.15;letter-spacing:-.04em;color:#173b2b}
+.local-deck-page .estimate-form-heading p{font-size:15px;line-height:1.65;color:#53644f;margin-top:10px;max-width:34ch}
+.local-deck-page .inline-fields{gap:20px 16px}
+.local-deck-page .inline-fields label{font-size:15px;line-height:1.5;gap:8px;color:#233d29}
+.local-deck-page .inline-fields label>span{font-size:13px}
+.local-deck-page .inline-fields input,.local-deck-page .inline-fields textarea{min-height:52px;padding:13px 14px;background:#fff;border-color:#bacab3;border-radius:9px;font-size:16px}
+.local-deck-page .inline-fields textarea{min-height:90px}
+.local-deck-page .inline-lead-form>.btn{min-height:58px;font-size:17px;margin-top:23px;border-radius:10px;background:#e96620;color:#fff}
+.local-deck-page .inline-lead-form>.btn:hover{background:#ce5010}
+.local-deck-page .inline-privacy{font-size:13px;line-height:1.7;margin-top:15px;color:#53614f}
+.local-deck-page .compact-estimate{background-color:#f7f6ef}
+@media(min-width:641px) and (max-width:980px){
+ .local-deck-page .jobsite-section .jobsite-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:980px){
+ .local-deck-page .inline-estimate-layout{grid-template-columns:1fr;gap:36px;max-width:720px}
+ .local-deck-page .inline-estimate-copy h2{max-width:17ch}
+ .local-deck-page .inline-estimate-copy p{max-width:48ch}
+ .local-deck-page .hero-design{order:3;text-align:center}
+ .local-deck-page .hero .deck-video{order:4}
+ .local-deck-page .hero .trust{order:5}
+ .local-deck-page .hero .ctas{order:6}
+}
+@media(max-width:760px){
+ .local-deck-page .gal{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .local-deck-page .gal button{border-radius:10px}
+ .local-deck-page .gal button span{display:none}
+ .local-deck-page .hero .ctas{grid-template-columns:1fr;gap:10px;max-width:440px}
+ .local-deck-page .hero .ctas .btn{min-height:54px;font-size:16px}
+ .local-deck-page .hero-design{font-size:25px}
+ .local-deck-page .hero-design>span{font-size:16px}
+ .local-deck-page .inline-estimate{padding:52px 0;background-size:30px 30px}
+ .local-deck-page .inline-estimate-copy h2{font-size:43px;max-width:13ch}
+ .local-deck-page .inline-estimate-copy p{font-size:18px}
+ .local-deck-page .estimate-eyebrow{font-size:13px}
+ .local-deck-page .inline-lead-form{padding:26px 20px;border-radius:18px}
+ .local-deck-page .estimate-form-heading h3{font-size:29px}
+ .local-deck-page .inline-fields{gap:17px 12px}
+ .local-deck-page .inline-fields label{font-size:14px}
+ .local-deck-page .lightbox-caption{bottom:82px;left:12px;right:12px;font-size:13px}
+}
+@media(max-width:380px){
+ .local-deck-page .inline-fields{grid-template-columns:1fr}
+ .local-deck-page .inline-estimate-copy h2{font-size:38px}
+ .local-deck-page .estimate-steps li{font-size:15px}
 }

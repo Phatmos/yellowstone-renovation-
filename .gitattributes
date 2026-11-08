@@ -2,3 +2,6 @@
 *.MP4 filter=lfs diff=lfs merge=lfs -text
 *.mov filter=lfs diff=lfs merge=lfs -text
 *.MOV filter=lfs diff=lfs merge=lfs -text
+
+# Small web-ready landing-page clips deploy as regular Git assets.
+static/local-deck/video/*.mp4 -filter -diff -merge -text
