@@ -1,0 +1,42 @@
+[
+  {
+    "title": "A fresh start for an aging deck",
+    "description": "The same backyard, before and after. Weathered wood boards gave way to new composite decking with a clean border and dark railing.",
+    "before": "/local-deck/img/gallery/full/backyard-deck-before.webp",
+    "after": "/local-deck/img/gallery/full/backyard-deck-after.webp",
+    "thumbnail": "/local-deck/img/gallery/backyard-deck-after.webp",
+    "portrait": true
+  },
+  {
+    "title": "From weathered stairs to a finished backyard",
+    "description": "Two views of the same home: the original wood deck and the completed deck, with new stairs, dark railing and lattice below.",
+    "before": "/local-deck/img/gallery/full/backyard-stairs-before.webp",
+    "after": "/local-deck/img/gallery/full/backyard-stairs-after.webp",
+    "thumbnail": "/local-deck/img/gallery/backyard-stairs-after.webp",
+    "portrait": true
+  },
+  {
+    "title": "Old wood deck to a clean new deck",
+    "description": "A tired, gray wood deck replaced with new boards, railing and a fresh look.",
+    "before": "/local-deck/img/g/ba1b.webp",
+    "after": "/local-deck/img/g/ba1a.webp"
+  },
+  {
+    "title": "Screened porch to an open composite deck",
+    "description": "An enclosed, worn porch opened up into a low composite deck with clean edges.",
+    "before": "/local-deck/img/g/ba2b.webp",
+    "after": "/local-deck/img/g/ba2a.webp"
+  },
+  {
+    "title": "Faded stairs to black aluminum rail",
+    "description": "Weathered stairs and rail rebuilt with white risers and black aluminum railing.",
+    "before": "/local-deck/img/g/ba3b.webp",
+    "after": "/local-deck/img/g/ba3a.webp"
+  },
+  {
+    "title": "Front steps to a covered entry porch",
+    "description": "Bare front steps turned into a covered porch with columns and new stairs.",
+    "before": "/local-deck/img/g/ba4b.webp",
+    "after": "/local-deck/img/g/ba4a.webp"
+  }
+]

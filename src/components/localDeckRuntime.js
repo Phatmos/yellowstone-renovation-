@@ -1,4 +1,5 @@
 import initContactDraft from './localDeckContact';
+import comparisons from '../data/localDeckComparisons.json';
 
 export default function initLocalDeck(root) {
   const disposers = [];
@@ -241,28 +242,48 @@ export default function initLocalDeck(root) {
   $$('.customer-story').forEach(card => {
     const video = card.querySelector('video');
     const button = card.querySelector('.story-start');
+    const status = card.querySelector('.story-status');
+    const resetStory = message => {
+      card.classList.remove('playing', 'story-loading');
+      button.disabled = false;
+      video.controls = false;
+      if (status) status.textContent = message;
+    };
     listen(button, 'click', () => {
+      pauseHero();
       $$('.customer-story video').forEach(other => { if (other !== video) other.pause(); });
-      if (!video.getAttribute('src')) video.src = video.dataset.src;
+      if (!video.getAttribute('src') || video.error) {
+        video.src = video.dataset.src;
+        video.load();
+      }
       video.controls = true;
       video.muted = video.hasAttribute('data-silent');
-      card.classList.add('playing');
+      card.classList.add('story-loading');
+      button.disabled = true;
+      if (status) status.textContent = 'Loading your homeowner story…';
       video.play().catch(() => {
-        card.classList.remove('playing');
-        video.controls = false;
+        resetStory('Tap the story to try again.');
       });
     });
+    listen(video, 'playing', () => {
+      card.classList.add('playing');
+      card.classList.remove('story-loading');
+      button.disabled = false;
+      if (status) status.textContent = '';
+    });
+    listen(video, 'error', () => resetStory('This story could not load. Tap to retry.'));
     listen(video, 'play', () => {
       pauseHero();
       $$('.customer-story video').forEach(other => { if (other !== video) other.pause(); });
     });
     listen(video, 'ended', () => {
-      card.classList.remove('playing');
-      video.controls = false;
+      resetStory('');
     });
-    new IntersectionObserver(entries => {
+    const storyObserver = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) video.pause();
-    }, { threshold: .1 }).observe(card);
+    }, { threshold: .1 });
+    storyObserver.observe(card);
+    disposers.push(() => { storyObserver.disconnect(); video.pause(); });
   });
   // Loop job-site footage only while visible; hidden "more" clips stay unloaded.
   const jobVideos = $$('video[data-jobsite]');
@@ -706,7 +727,7 @@ export default function initLocalDeck(root) {
   });
   $('#dmain').addEventListener('click', () => setImg((dImg + 1) % DK[dCur].imgs.length));
   showD(0);
-  const BA = [['Old wood deck to a clean new deck', 'Lexington, KY', 'A tired, gray wood deck replaced with new boards, railing and a fresh look.'], ['Screened porch to an open composite deck', 'Lexington, KY', 'An enclosed, worn porch opened up into a low composite deck with clean edges.'], ['Faded stairs to black aluminum rail', 'Central Kentucky', 'Weathered stairs and rail rebuilt with white risers and black aluminum railing.'], ['Front steps to a covered entry porch', 'Central Kentucky', 'Bare front steps turned into a covered porch with columns and new stairs.']];
+  const BA = comparisons;
   let bi = 0;
   const bas = $('#bas'),
     br = bas.querySelector('input');
@@ -743,13 +764,16 @@ export default function initLocalDeck(root) {
   listen(bas, 'pointercancel', finishComparison);
   listen(bas, 'lostpointercapture', () => { comparisonPointer = null; });
   listen(bas, 'dragstart', event => event.preventDefault());
-  $('#bathumbs').innerHTML = BA.map((_, k) => `<button type="button" aria-label="Show ${BA[k][0]}"><img src="/local-deck/img/g/ba${k + 1}a.webp" alt="" loading="lazy"></button>`).join('');
   const showBA = k => {
     bi = (k + BA.length) % BA.length;
-    $('#baB').src = `/local-deck/img/g/ba${bi + 1}b.webp`;
-    $('#baA').src = `/local-deck/img/g/ba${bi + 1}a.webp`;
-    $('#baT').textContent = BA[bi][0];
-    $('#baD').textContent = BA[bi][2];
+    $('#baB').src = BA[bi].before;
+    $('#baB').alt = `Before: ${BA[bi].title}`;
+    $('#baA').src = BA[bi].after;
+    $('#baA').alt = `After: ${BA[bi].title}`;
+    bas.dataset.portrait = Boolean(BA[bi].portrait);
+    $('#baT').textContent = BA[bi].title;
+    $('#baD').textContent = BA[bi].description;
+    $('#baCount').textContent = `Project ${bi + 1} of ${BA.length}`;
     setComparison(50);
     $$('#bathumbs button').forEach((b, j) => b.setAttribute('aria-current', j === bi));
   };

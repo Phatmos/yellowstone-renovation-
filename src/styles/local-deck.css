@@ -1032,3 +1032,45 @@ body:has(.local-deck-page.has-gallery){overflow:hidden}
  .local-deck-page .jobsite-section .project-film .cp span{font-size:15px}
  .local-deck-page .estimate-thanks h2{font-size:33px}
 }
+
+/* Homeowner interviews keep their full landscape frame and usable controls. */
+.local-deck-page .testimonial-row{max-width:1120px;gap:28px}
+.local-deck-page .testimonial-row .customer-story{aspect-ratio:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:22px}
+.local-deck-page .customer-story::after{display:none}
+.local-deck-page .story-media{position:relative;aspect-ratio:16/9;background:#102218}
+.local-deck-page .customer-story .story-media video{object-fit:contain}
+.local-deck-page .customer-story .story-start{border-radius:0;overflow:hidden;color:#fff}
+.local-deck-page .story-start::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.72));pointer-events:none}
+.local-deck-page .story-start:disabled{opacity:1;cursor:wait}
+.local-deck-page .story-play{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);z-index:1;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;color:var(--gd);box-shadow:0 4px 22px #0003}
+.local-deck-page .story-play svg{width:27px;height:27px;fill:currentColor;margin-left:4px}
+.local-deck-page .story-watch{position:absolute;left:20px;bottom:18px;z-index:1;font-weight:700;font-size:15px}
+.local-deck-page .story-copy{padding:23px 25px 26px}
+.local-deck-page .story-eyebrow{display:block;color:var(--g);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}
+.local-deck-page .story-copy h3{font-size:24px;line-height:1.2;margin:0 0 9px;color:var(--gd)}
+.local-deck-page .story-copy p{font-size:16px;line-height:1.55;color:var(--muted);margin:0}
+.local-deck-page .story-copy .story-status:not(:empty){margin-top:12px;color:var(--gd);font-weight:600}
+.local-deck-page .story-copy .story-status:empty{display:none}
+.local-deck-page .story-loading .story-watch{font-size:0}
+.local-deck-page .story-loading .story-watch::after{content:"Loading story…";font-size:15px}
+.local-deck-page .transformations{padding-block:64px}
+.local-deck-page .transformations .ba{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:54px;max-width:1100px;margin-inline:auto}
+.local-deck-page .transformations .ba-media{width:100%;max-width:540px;margin-inline:auto}
+.local-deck-page .bas[data-portrait="true"]{aspect-ratio:3/4}
+.local-deck-page .transformations .bathumbs{grid-template-columns:repeat(6,minmax(0,1fr))}
+.local-deck-page .comparison-count{justify-self:start;border-radius:8px;background:var(--gd);color:#fff;padding:7px 12px;font-weight:700;font-size:13px}
+.local-deck-page .transformations .bainfo h3{font-size:clamp(28px,3.1vw,42px);line-height:1.12;color:var(--gd);margin:0}
+.local-deck-page .transformations #baD{font-size:18px;line-height:1.65;margin:0}
+.local-deck-page .comparison-hint{font-size:14px;color:var(--muted);margin:0}
+@media(max-width:960px){
+ .local-deck-page .transformations .ba{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:640px){
+ .local-deck-page .testimonial-row{max-width:560px}
+ .local-deck-page .story-copy{padding:20px}
+ .local-deck-page .story-copy h3{font-size:22px}
+ .local-deck-page .story-play{width:54px;height:54px}
+ .local-deck-page .transformations{padding-block:44px}
+ .local-deck-page .transformations .ba-controls{flex-wrap:wrap}
+ .local-deck-page .transformations .ba-controls .bathumbs{flex-basis:100%;order:-1;gap:5px}
+}
