@@ -60,26 +60,96 @@ export default function initLocalDeck(root) {
   }, 6500);
   const hw = $('#hvid');
   let heroPlayer = null;
-  const pauseHero = () => {
-    if (heroPlayer) heroPlayer.contentWindow?.postMessage(JSON.stringify({
-      event: 'command', func: 'pauseVideo', args: []
-    }), 'https://www.youtube.com');
+  let heroVisible = false;
+  let heroReady = false;
+  let heroLoading = false;
+  let heroHasSound = false;
+  const heroCommand = method => {
+    if (heroReady && heroPlayer && typeof heroPlayer[method] === 'function') heroPlayer[method]();
   };
-  listen($('#snd'), 'click', () => {
-    $$('.customer-story video').forEach(video => video.pause());
-    if (!heroPlayer) {
-      heroPlayer = document.createElement('iframe');
-      heroPlayer.id = 'hv';
-      heroPlayer.title = 'Before you build your deck — Yellowstone Renovation';
-      heroPlayer.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      heroPlayer.allowFullscreen = true;
-      heroPlayer.referrerPolicy = 'strict-origin-when-cross-origin';
-      heroPlayer.src = 'https://www.youtube.com/embed/9XcXhPwMEYE?autoplay=1&playsinline=1&rel=0&enablejsapi=1&origin=' + encodeURIComponent(window.location.origin);
-      $('#videoPlayer').appendChild(heroPlayer);
+  const pauseHero = () => heroCommand('pauseVideo');
+  const loadYouTube = () => {
+    if (window.YT?.Player) return Promise.resolve(window.YT);
+    if (!window.__yellowstoneYouTubeReady) {
+      window.__yellowstoneYouTubeReady = new Promise((resolve, reject) => {
+        const previous = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = () => {
+          try { previous?.(); } finally { resolve(window.YT); }
+        };
+        const script = document.createElement('script');
+        script.src = 'https://www.youtube.com/iframe_api';
+        script.async = true;
+        script.onerror = () => { window.__yellowstoneYouTubeReady = null; reject(new Error('Video unavailable')); };
+        document.head.appendChild(script);
+      });
     }
-    hw.classList.add('on');
+    return window.__yellowstoneYouTubeReady;
+  };
+  const startHero = async (withSound = false) => {
+    if (withSound) heroHasSound = true;
+    if (heroReady) {
+      if (heroHasSound) heroCommand('unMute');
+      heroCommand('playVideo');
+      $('#heroSound').hidden = heroHasSound;
+      return;
+    }
+    if (heroLoading) return;
+    heroLoading = true;
+    try {
+      const YT = await loadYouTube();
+      if (!active) return;
+      const mount = document.createElement('div');
+      mount.id = 'hero-youtube';
+      $('#videoPlayer').appendChild(mount);
+      heroPlayer = new YT.Player(mount, {
+        videoId: '9XcXhPwMEYE',
+        playerVars: { autoplay: 0, mute: 1, controls: 1, playsinline: 1, rel: 0, origin: window.location.origin },
+        events: {
+          onReady: event => {
+            if (!active) return;
+            heroReady = true;
+            event.target.getIframe().title = 'Before you build your deck — Yellowstone Renovation';
+            if (heroHasSound) event.target.unMute(); else event.target.mute();
+            if (heroVisible && !document.hidden && !root.classList.contains('has-modal')) event.target.playVideo();
+          },
+          onStateChange: event => {
+            if (!active) return;
+            if (event.data === YT.PlayerState.PLAYING) {
+              hw.classList.add('on');
+              $('#heroSound').hidden = heroHasSound;
+              $$('.customer-story video').forEach(video => video.pause());
+              // An iframe can finish starting after its card has left the screen.
+              if (!heroVisible || document.hidden || root.classList.contains('has-modal')) pauseHero();
+            }
+          },
+          onAutoplayBlocked: () => { hw.classList.remove('on'); $('#heroSound').hidden = true; },
+          onError: () => { hw.classList.remove('on'); $('#heroVideoStatus').textContent = 'Video unavailable. Please try again.'; }
+        }
+      });
+    } catch (error) {
+      heroLoading = false;
+      $('#heroVideoStatus').textContent = 'Tap to retry the video.';
+    }
+  };
+  listen($('#snd'), 'click', () => startHero(true));
+  listen($('#heroSound'), 'click', () => {
+    heroHasSound = true;
+    heroCommand('unMute');
+    heroCommand('playVideo');
+    $('#heroSound').hidden = true;
   });
-  disposers.push(() => heroPlayer?.remove());
+  const heroObserver = new IntersectionObserver(entries => {
+    const entry = entries[0];
+    heroVisible = entry.isIntersecting && entry.intersectionRatio >= .55;
+    if (heroVisible && !document.hidden && !root.classList.contains('has-modal')) startHero();
+    else pauseHero();
+  }, { threshold: [0, .25, .55, .8] });
+  heroObserver.observe(hw);
+  listen(document, 'visibilitychange', () => {
+    if (document.hidden) pauseHero();
+    else if (heroVisible && !root.classList.contains('has-modal')) startHero();
+  });
+  disposers.push(() => heroPlayer?.destroy());
   // Start within the tap gesture so Safari permits playback with sound.
   $$('.customer-story').forEach(card => {
     const video = card.querySelector('video');
@@ -107,9 +177,6 @@ export default function initLocalDeck(root) {
       if (!entries[0].isIntersecting) video.pause();
     }, { threshold: .1 }).observe(card);
   });
-  new IntersectionObserver(entries => {
-    if (!entries[0].isIntersecting) pauseHero();
-  }, { threshold: .2 }).observe(hw);
   // Loop job-site footage only while visible; hidden "more" clips stay unloaded.
   const jobVideos = $$('video[data-jobsite]');
   const loadJobVideo = video => {
@@ -166,6 +233,7 @@ export default function initLocalDeck(root) {
     if (m) {
       m.hidden = false;
       root.classList.add('has-modal');
+      pauseHero();
       if (id === 'est' && $('#estF [data-st]')) setEst(1);
     }
   };
@@ -229,7 +297,7 @@ export default function initLocalDeck(root) {
         const response = await fetch('/api/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ ...values, project_type: 'Deck building', source: 'local-deck', placement: form.dataset.placement, _subject: 'Local Deck Landing - Free Estimate', page: window.location.href })
+          body: JSON.stringify({ ...values, submission_stage: 'contact', project_type: 'Deck building', source: 'local-deck', placement: form.dataset.placement, _subject: 'Local Deck Landing - Free Estimate', page: window.location.href })
         });
         const result = await response.json();
         if (!response.ok || result.success === false || result.ok === false) throw new Error('Submission failed');
@@ -237,13 +305,13 @@ export default function initLocalDeck(root) {
         window.dataLayer.push({ event: 'generate_lead', form: 'local-deck-inline-estimate', placement: form.dataset.placement });
         form.reset();
         status.textContent = 'Request received! A deck specialist will call within one business day to arrange your free visit.';
-        button.textContent = 'Get My Free Estimate';
+        button.textContent = 'Send My Request';
         button.disabled = false;
-        showThanks(button);
+        beginProjectDetails(values, button);
       } catch (error) {
         status.textContent = 'Could not send your request. Please try again or call (859) 765-7267.';
         button.disabled = false;
-        button.textContent = 'Get My Free Estimate';
+        button.textContent = 'Send My Request';
       }
     });
   });
@@ -270,113 +338,129 @@ export default function initLocalDeck(root) {
     $('#rvIn').innerHTML = `<div class="rhd"><img class="platform-logo" src="/local-deck/img/platforms/${platformLogos[b.dataset.pf]}" alt="${n}"><span><b id="rvT">${r} on ${n}</b><span class="stars">★★★★★</span> <small style="color:var(--muted)">${c} reviews</small></span></div><div class="rlist">${items}</div><button class="btn btn-o btn-lg" data-open="est">Get My Free Estimate</button>`;
     open('rv');
   });
+  const BUDGETS = ['$10,000 – $20,000', '$20,000 – $30,000', '$30,000 – $40,000', '$40,000 – $100,000', '$100,000 – $150,000', '$150,000+', 'More than $150,000'];
   const bud = $('#bud');
-  $$('#estF .chips').forEach(c => c.addEventListener('click', e => {
+  let budgetSelected = false;
+  const setBudget = index => {
+    budgetSelected = index !== null;
+    if (budgetSelected) bud.value = String(index);
+    else bud.value = '0';
+    const label = budgetSelected ? BUDGETS[index] : 'No budget selected';
+    $('#bval').textContent = label;
+    bud.setAttribute('aria-valuetext', label);
+    bud.style.setProperty('--budget-progress', `${budgetSelected ? index / 6 * 100 : 0}%`);
+    $$('#estF [data-budget]').forEach(button => button.setAttribute('aria-pressed', String(budgetSelected && Number(button.dataset.budget) === index)));
+  };
+  listen(bud, 'input', () => setBudget(Number(bud.value)));
+  // A tap at the initial slider position is still an explicit $10K selection.
+  listen(bud, 'pointerup', () => setBudget(Number(bud.value)));
+  $$('#estF [data-budget]').forEach(button => listen(button, 'click', () => setBudget(Number(button.dataset.budget))));
+  listen($('#budgetClear'), 'click', () => setBudget(null));
+  $$('#estF .chips').forEach(c => listen(c, 'click', e => {
     const b = e.target.closest('button');
     if (!b) return;
     const selected = b.getAttribute('aria-pressed') !== 'true';
     c.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b && selected));
   }));
   let est = 1;
+  let contactSnapshot = null;
+  let estimateReturnFocus = null;
+  let sendingEstimate = false;
   function setEst(n) {
     est = n;
     $$('#estF [data-st]').forEach(d => d.hidden = +d.dataset.st !== n);
     $$('#estF .prog i').forEach((i, k) => i.classList.toggle('on', k < n));
-    $('#estK').textContent = n === 1 ? 'Step 1 of 2 · Your contact details' : 'Step 2 of 2 · Project details (optional)';
-    $('#estBack').hidden = n === 1;
-    $('#estNext').textContent = n === 1 ? 'Continue' : 'Send My Request';
-    $('#estSkip').hidden = n !== 1;
+    $('#estK').textContent = n === 1 ? 'Step 1 · Your contact details' : 'Request sent · Your deck (optional)';
+    $('#estBack').hidden = true;
+    $('#estNext').textContent = n === 1 ? 'Send & continue' : 'Save project details';
+    $('#estSkip').hidden = n !== 2;
     $('#eErr').textContent = '';
     $('#m-est .modal').scrollTop = 0;
   }
-  $('#estBack').onclick = () => setEst(1);
+  function resetProjectDetails() {
+    setBudget(null);
+    $$('#estF .chips button').forEach(button => button.setAttribute('aria-pressed', 'false'));
+    $('#e-desc').value = '';
+  }
+  function beginProjectDetails(values, returnFocus) {
+    contactSnapshot = { project_type: 'Deck building', source: 'local-deck', page: window.location.href, ...values, submission_stage: 'project_details' };
+    estimateReturnFocus = returnFocus;
+    resetProjectDetails();
+    open('est');
+    setEst(2);
+    $('#estF .contact-saved').tabIndex = -1;
+    $('#estF .contact-saved').focus({ preventScroll: true });
+  }
+  function finishEstimate() {
+    $('#estF').reset();
+    resetProjectDetails();
+    contactSnapshot = null;
+    showThanks(estimateReturnFocus || $('.hbtn'));
+  }
+  listen($('#estSkip'), 'click', finishEstimate);
   $('#estF').addEventListener('submit', async e => {
     e.preventDefault();
+    if (sendingEstimate) return;
     const er = $('#eErr');
-    if (!$('#e-name').value.trim() || !$('#e-last-name').value.trim()) {
-      setEst(1);
-      er.textContent = 'Enter your first and last name.';
-      $(!$('#e-name').value.trim() ? '#e-name' : '#e-last-name').focus();
-      return;
+    er.textContent = '';
+    let data;
+    const isContactStep = est === 1;
+    if (isContactStep) {
+      if (!$('#e-name').value.trim() || !$('#e-last-name').value.trim()) {
+        er.textContent = 'Enter your first and last name.';
+        $(!$('#e-name').value.trim() ? '#e-name' : '#e-last-name').focus();
+        return;
+      }
+      if (!/^(?:1)?\d{10}$/.test($('#e-phone').value.replace(/\D/g, ''))) {
+        er.textContent = 'Enter a 10-digit phone number.';
+        $('#e-phone').focus();
+        return;
+      }
+      if ($('#e-zip').value.trim() && !/^\d{5}$/.test($('#e-zip').value.trim())) {
+        er.textContent = 'Enter a 5-digit ZIP code or leave it blank.';
+        $('#e-zip').focus();
+        return;
+      }
+      if ($('#e-email').value && !$('#e-email').validity.valid) {
+        er.textContent = 'Enter a valid email or leave it blank.';
+        $('#e-email').focus();
+        return;
+      }
+      data = {
+        first_name: $('#e-name').value.trim(), last_name: $('#e-last-name').value.trim(),
+        phone: $('#e-phone').value.trim(), email: $('#e-email').value.trim(), zip: $('#e-zip').value.trim(),
+        project_type: 'Deck building', source: 'local-deck', page: window.location.href,
+        submission_stage: 'contact', timestamp: new Date().toISOString()
+      };
+    } else {
+      const pick = name => $(`#estF [data-name="${name}"] [aria-pressed="true"]`)?.textContent || '';
+      const details = { project: pick('type'), material: pick('mat'), budget: budgetSelected ? BUDGETS[Number(bud.value)] : '', timeline: pick('when'), message: $('#e-desc').value.trim() };
+      if (!Object.values(details).some(Boolean)) { finishEstimate(); return; }
+      data = { ...contactSnapshot, ...details, submission_stage: 'project_details' };
     }
-    if (!/^(?:1)?\d{10}$/.test($('#e-phone').value.replace(/\D/g, ''))) {
-      setEst(1);
-      er.textContent = 'Enter a 10-digit phone number.';
-      $('#e-phone').focus();
-      return;
-    }
-    if (!/^\d{5}$/.test($('#e-zip').value.trim())) {
-      setEst(1);
-      er.textContent = 'Enter a 5-digit ZIP code.';
-      $('#e-zip').focus();
-      return;
-    }
-    if ($('#e-email').value && !$('#e-email').validity.valid) {
-      setEst(1);
-      er.textContent = 'Enter a valid email or leave it blank.';
-      $('#e-email').focus();
-      return;
-    }
-    if (est === 1 && e.submitter !== $('#estSkip')) {
-      setEst(2);
-      $('#estF [data-st="2"] button').focus();
-      return;
-    }
-    const skipDetails = est === 1;
-    const pick = n => {
-      const b = $(`#estF [data-name="${n}"] [aria-pressed="true"]`);
-      return !skipDetails && b ? b.textContent : '';
-    };
-    const data = {
-      project_type: 'Deck building',
-      _subject: 'Local Deck Landing - Free Estimate',
-      source: 'local-deck',
-      project: pick('type'),
-      material: pick('mat'),
-      budget: skipDetails ? '' : bud.value,
-      timeline: pick('when'),
-      first_name: $('#e-name').value.trim(),
-      last_name: $('#e-last-name').value.trim(),
-      name: `${$('#e-name').value.trim()} ${$('#e-last-name').value.trim()}`,
-      phone: $('#e-phone').value.trim(),
-      email: $('#e-email').value.trim(),
-      zip: $('#e-zip').value.trim(),
-      message: skipDetails ? '' : $('#e-desc').value.trim(),
-      page: window.location.href,
-      timestamp: new Date().toLocaleString()
-    };
-    const submit = $('#estNext');
-    submit.disabled = true;
+    sendingEstimate = true;
+    $('#estNext').disabled = true;
     $('#estSkip').disabled = true;
+    $('#estNext').textContent = 'Sending…';
     try {
       const response = await fetch('/api/lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify(data)
+        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data)
       });
       const result = await response.json();
       if (!response.ok || result.success === false || result.ok === false) throw new Error('Submission failed');
+      if (isContactStep) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', form: 'local-deck-estimate' });
+        beginProjectDetails(data, $('.hbtn'));
+      } else finishEstimate();
     } catch (error) {
-      er.textContent = 'Could not send your request. Please try again or call (859) 765-7267.';
-      submit.disabled = false;
+      er.textContent = isContactStep ? 'Could not send your request. Please try again or call (859) 765-7267.' : 'Your contact details are saved. Could not save these extra details. Try again or skip this step.';
+    } finally {
+      sendingEstimate = false;
+      $('#estNext').disabled = false;
       $('#estSkip').disabled = false;
-      return;
+      $('#estNext').textContent = est === 1 ? 'Send & continue' : 'Save project details';
     }
-    try {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'generate_lead',
-        form: 'local-deck-estimate'
-      });
-    } catch (err) {}
-    e.target.reset();
-    $$('#estF .chips button').forEach(button => button.setAttribute('aria-pressed', 'false'));
-    submit.disabled = false;
-    $('#estSkip').disabled = false;
-    showThanks($('.hbtn'));
   });
   $('#catF').addEventListener('submit', async e => {
     e.preventDefault();
