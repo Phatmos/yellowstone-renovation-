@@ -3,6 +3,22 @@ import photos from "../data/localDeckGallery.json";
 
 const PAGE_SIZE = 20;
 
+// Keep photo order stable, with a few larger tiles in each revealed group.
+const tileClasses = photos.map(() => '');
+for (let start = 0; start < photos.length; start += PAGE_SIZE) {
+  const group = photos.slice(start, start + PAGE_SIZE);
+  const feature = group.findIndex(photo => photo.width >= photo.height);
+  tileClasses[start + Math.max(0, feature)] = 'w2 h2r';
+  const place = (className, from, to, fits) => {
+    const index = group.findIndex((photo, index) => index >= from && index < to && !tileClasses[start + index] && fits(photo));
+    if (index !== -1) tileClasses[start + index] = className;
+  };
+  place('w2', 5, 12, photo => photo.width >= photo.height);
+  place('w2', 12, PAGE_SIZE, photo => photo.width >= photo.height);
+  place('h2r', 6, 12, photo => photo.height > photo.width);
+  place('h2r', 17, PAGE_SIZE, photo => photo.height > photo.width);
+}
+
 export default function LocalDeckGallery() {
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [selected, setSelected] = useState(null);
@@ -49,11 +65,11 @@ export default function LocalDeckGallery() {
   const remaining = photos.length - visible;
   return <>
     <div className="gal" id="gal" ref={gallery}>
-      {photos.slice(0, visible).map((item, index) => <button key={item.src} type="button" aria-label={`View photo ${index + 1}: ${item.alt}`} onClick={event => {
+      {photos.slice(0, visible).map((item, index) => <button key={item.src} className={tileClasses[index] || undefined} type="button" aria-label={`View photo ${index + 1}: ${item.alt}`} onClick={event => {
         returnTo.current = event.currentTarget;
         setSelected(index);
       }}>
-        <img src={item.src} alt={item.alt} loading="lazy" decoding="async" width={item.width} height={item.height} />
+        <img src={tileClasses[index] && item.full ? item.full : item.src} alt={item.alt} loading="lazy" decoding="async" width={item.width} height={item.height} />
         <span>{item.alt}</span>
       </button>)}
     </div>

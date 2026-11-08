@@ -23,9 +23,8 @@ function JobSiteClip({ file, poster, title, detail, project, more = false, lands
   const posterSrc = poster || `/local-deck/img/r/${file}-poster.webp`;
   return <article className={`vc jobsite-clip project-film${landscape ? " landscape-clip" : ""}`} hidden={more} data-project={project} data-more-jobsite={more || undefined}>
     <div className="project-film-media">
-      <video playsInline preload="none" muted loop autoPlay disablePictureInPicture controlsList="nodownload noremoteplayback" data-jobsite="true" poster={posterSrc} data-src={`/local-deck/video/${file}.mp4`} aria-label={title} />
+      <video playsInline webkit-playsinline="true" preload="none" muted loop autoPlay controls={false} disablePictureInPicture controlsList="nodownload noremoteplayback" data-jobsite="true" poster={posterSrc} data-src={`/local-deck/video/${file}.mp4`} aria-label={title} />
       <img className="project-film-poster" src={posterSrc} alt="" aria-hidden="true" loading="lazy" decoding="async" />
-      <button type="button" className="project-film-play" aria-label={`Play ${title} with sound`}><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z" /></svg></button>
       <span className="film-status">{progress ? 'In progress' : 'Finished deck'}</span>
     </div>
     <div className="cp"><b>{title}</b><span>{detail}</span></div>

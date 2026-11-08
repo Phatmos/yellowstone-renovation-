@@ -287,6 +287,16 @@ export default function initLocalDeck(root) {
   });
   // Loop job-site footage only while visible; hidden "more" clips stay unloaded.
   const jobVideos = $$('video[data-jobsite]');
+  const prepareJobVideo = video => {
+    video.muted = video.defaultMuted = true;
+    video.playsInline = true;
+    video.controls = false;
+    video.disablePictureInPicture = true;
+    video.disableRemotePlayback = true;
+    video.removeAttribute('controls');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', 'true');
+  };
   const loadJobVideo = video => {
     if (!video.getAttribute('src')) video.src = video.dataset.src;
   };
@@ -326,6 +336,7 @@ export default function initLocalDeck(root) {
       if (!activeJobVideos.has(video) && !video.paused) video.pause();
     });
     activeJobVideos.forEach(video => {
+      prepareJobVideo(video);
       loadJobVideo(video);
       if (video.paused) video.play().catch(() => {});
     });
@@ -340,19 +351,9 @@ export default function initLocalDeck(root) {
     syncJobVideos();
   }, { threshold: [0, .1, .25, .5, .75, 1] });
   jobVideos.forEach(video => {
-    video.muted = video.defaultMuted = true;
-    video.playsInline = true;
-    video.controls = false;
+    prepareJobVideo(video);
     const card = video.closest('.jobsite-clip');
-    const playButton = card.querySelector('.project-film-play');
-    listen(playButton, 'click', () => {
-      pauseHero();
-      root.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); });
-      loadJobVideo(video);
-      video.muted = false;
-      video.controls = true;
-      video.play().then(() => { playButton.hidden = true; }).catch(() => {});
-    });
+    listen(card, 'pointerenter', syncJobVideos);
     const showPoster = () => card.classList.remove('video-playing');
     listen(video, 'playing', () => {
       if (activeJobVideos.has(video) && !document.hidden && !root.matches('.has-modal,.has-gallery,.has-menu')) card.classList.add('video-playing');
@@ -361,6 +362,7 @@ export default function initLocalDeck(root) {
     ['pause', 'waiting', 'emptied', 'error'].forEach(event => listen(video, event, showPoster));
     // Native autoplay may start after preloading; keep it tied to visibility.
     listen(video, 'play', () => {
+      prepareJobVideo(video);
       if (!activeJobVideos.has(video) || document.hidden || root.matches('.has-modal,.has-gallery,.has-menu')) video.pause();
     });
     listen(video, 'loadeddata', syncJobVideos);
