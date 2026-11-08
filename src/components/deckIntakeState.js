@@ -7,6 +7,10 @@ export const questions = [
   { key: 'notes', title: 'Anything else on your wish list?', hint: 'Railings, a roof, lighting, a tricky yard… tell us what matters.', options: null },
 ];
 export const emptyIntake = { street: '', city: '', state: 'KY', zip: '', first_name: '', phone: '', email: '', company: '', project_type: '', material: '', size: '', timeline: '', notes: '' };
+export function readFullAddress(value = '') {
+  const match = value.trim().match(/^(.+?),\s*(.+?)(?:,\s*|\s+)([a-z]{2})[,\s]+(\d{5})(?:-\d{4})?$/i);
+  return match ? { street: match[1].trim(), city: match[2].replace(/,$/, '').trim(), state: match[3].toUpperCase(), zip: match[4] } : null;
+}
 export function intakeTrack(event, details = {}) {
   if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer || [];

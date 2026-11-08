@@ -1,10 +1,10 @@
 # Deck intake landing
 
-`/deck-local-ky/` is a third, independent ad landing. Existing `/local/` and `/local-ky/` are retained. Its CSS is scoped to `.dky-page`. It uses the existing logo, Poppins type, deep green, lime accents, orange pill buttons, and real project imagery. The page is noindex and excluded from the sitemap.
+`/deck-local-ky/` is a third, independent ad landing. Existing `/local/` and `/local-ky/` are retained. Its CSS is scoped to `.dky-page`. It uses the existing logo, Poppins type, deep green, lime accents, orange pill buttons, and the real gray-deck photo supplied by the owner. The reference-led layout is a centered headline with the original hand-drawn underline, a single white form, three plain process cards, and videos. Mobile text is at least 14px; primary body, fields and buttons are larger. Written reviews are optional in an expandable section. The page is noindex and excluded from the sitemap.
 
 ## Visitor journey
 
-1. Address with browser autofill and optional U.S. Census matches. Selecting a match fills street, city, state and ZIP. Manual entry is always accepted; no Google key or Google Maps script is needed. Suggestions need a street plus city or ZIP; this is an address lookup, not Google prefix completion.
+1. One address field with browser autofill and optional U.S. Census matches. A complete typed address, such as `123 Main St, Lexington, KY 40502`, is separated into the address fields when continuing. Selecting a match fills street, city, state and ZIP. City/state/ZIP fields expand with “Enter address manually”, or automatically if more detail is needed. Manual entry is always accepted; no Google key or Google Maps script is needed. Suggestions need a street plus city or ZIP; this is an address lookup, not Google prefix completion.
 2. First name, phone and optional email. Submitting sends the contact and full address immediately through the existing CRM/email delivery. The page only confirms receipt after the server acknowledges delivery.
 3. Five optional qualification steps: project type, material, rough size, timing and notes. Every selection sends a full snapshot; notes autosave after a short pause and on blur. A saved indication requires a successful response. Visitors can discuss the remaining questions by phone instead.
 4. Inline confirmation. No instant pricing or invented availability is promised. The team calls within one business day.

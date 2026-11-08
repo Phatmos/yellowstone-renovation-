@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { formatPhone } from './localDeckContact';
-import { DECK_DRAFT, emptyIntake, intakePayload, intakeTrack, questions, readIntake, reportIntake } from './deckIntakeState';
+import { DECK_DRAFT, emptyIntake, intakePayload, intakeTrack, questions, readFullAddress, readIntake, reportIntake } from './deckIntakeState';
 
 const signature = values => JSON.stringify(Object.fromEntries(Object.keys(emptyIntake).filter(key => key !== 'company').map(key => [key, values[key]])));
 const ENDPOINT = '/.netlify/functions/deck-intake';
@@ -9,6 +9,7 @@ export default function DeckLocalIntake() {
   const [values, setValues] = useState(emptyIntake), [phase, setPhase] = useState('address'), [question, setQuestion] = useState(0);
   const [error, setError] = useState(''), [saving, setSaving] = useState(false), [saved, setSaved] = useState(false), [ready, setReady] = useState(false);
   const [matches, setMatches] = useState([]), [lookup, setLookup] = useState(''), [activeMatch, setActiveMatch] = useState(-1);
+  const [addressDetails, setAddressDetails] = useState(false);
   const form = useRef(null), title = useRef(null), id = useRef(''), latest = useRef(emptyIntake), currentPhase = useRef('address'), currentQuestion = useRef(0), revision = useRef(0), savedSignature = useRef(''), queue = useRef(Promise.resolve()), submitting = useRef(false), mounted = useRef(true), pendingSaves = useRef(0), skipLookup = useRef(false);
   latest.current = values; currentPhase.current = phase; currentQuestion.current = question;
   useEffect(() => {
@@ -63,8 +64,8 @@ export default function DeckLocalIntake() {
     if (phase !== 'address' || !ready) return undefined;
     if (skipLookup.current) { skipLookup.current = false; return undefined; }
     setMatches([]); setActiveMatch(-1);
-    const text = [values.street, values.city, values.state, values.zip].filter(Boolean).join(', ');
-    if (!/^\d/.test(values.street) || values.street.length < 7 || (!values.city && !/\b\d{5}\b/.test(values.street))) { setLookup(''); return undefined; }
+    const text = readFullAddress(values.street) ? values.street : [values.street, values.city, values.state, values.zip].filter(Boolean).join(', ');
+    if (!/^\d/.test(values.street) || values.street.length < 7 || (!values.city && !/\b\d{5}\b|,/.test(values.street))) { setLookup(''); return undefined; }
     let cancelled = false;
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
@@ -78,7 +79,7 @@ export default function DeckLocalIntake() {
     return () => { cancelled = true; clearTimeout(timer); controller.abort(); };
   }, [values.street, values.city, values.state, values.zip, phase, ready]);
   const selectAddress = match => {
-    skipLookup.current = true; setValues(current => ({ ...current, street: match.street, city: match.city, state: match.state, zip: match.zip })); setMatches([]); setLookup('Address filled. You can edit any detail.'); setActiveMatch(-1);
+    skipLookup.current = true; setValues(current => ({ ...current, street: match.street, city: match.city, state: match.state, zip: match.zip })); setMatches([]); setLookup(''); setAddressDetails(false); setActiveMatch(-1);
   };
   const change = event => {
     const { name, value } = event.target;
@@ -98,10 +99,13 @@ export default function DeckLocalIntake() {
     setError('');
     const read = name => form.current.elements.namedItem(name)?.value?.trim() || '';
     if (phase === 'address') {
-      const next = { ...values, street: read('street'), city: read('city'), state: read('state'), zip: read('zip') };
+      let next = { ...values, street: read('street'), city: read('city'), state: read('state'), zip: read('zip') };
+      const fullAddress = readFullAddress(next.street);
+      if (fullAddress) next = { ...next, ...fullAddress };
+      else if ((!next.city || !next.zip) && matches.length === 1) next = { ...next, ...matches[0] };
       setValues(next); latest.current = next;
       const invalid = !next.street ? ['street', 'Enter your street address.'] : !next.city ? ['city', 'Enter your city.'] : !/^[A-Za-z]{2}$/.test(next.state) ? ['state', 'Enter the 2-letter state.'] : !/^\d{5}$/.test(next.zip) ? ['zip', 'Enter your 5-digit ZIP code.'] : null;
-      if (invalid) { setError(invalid[1]); form.current.elements.namedItem(invalid[0]).focus(); return; }
+      if (invalid) { setError(invalid[1]); if (invalid[0] !== 'street') setAddressDetails(true); window.requestAnimationFrame(() => form.current?.elements.namedItem(invalid[0])?.focus()); return; }
       setMatches([]); setPhase('contact'); intakeTrack('estimate_step', { step: 'contact' }); return;
     }
     if (phase === 'contact') {
@@ -132,21 +136,22 @@ export default function DeckLocalIntake() {
     <span className="dky-success-icon" aria-hidden="true">✓</span><span className="dky-eyebrow">You’re all set</span><h2 ref={title} tabIndex={-1}>Thanks, {values.first_name || 'neighbor'}.</h2><p>Your request and the details you shared are saved. We’ll call within one business day to arrange your free design visit.</p><div className="dky-address-receipt"><strong>Your project address</strong><span>{values.street}<br />{values.city}, {values.state} {values.zip}</span></div><p className="dky-small">No payment. No obligation. Just a conversation about your deck.</p><a className="dky-button dky-button-dark" href="tel:+18597657267">Call (859) 765-7267</a><a className="dky-text-link" href="#deck-stories">Meet your team &amp; hear from homeowners ↓</a>
   </div>;
   return <form id="deck-estimate" className="dky-form" ref={form} onSubmit={submit} noValidate aria-labelledby="dky-form-title">
-    <div className="dky-form-top"><span>{phase === 'address' ? 'Let’s start with your home' : phase === 'contact' ? 'Your free visit starts here' : 'Your request is saved'}<i aria-hidden="true">{phase === 'qualify' ? '✓' : '↗'}</i></span><small>{phase === 'qualify' ? `Project details ${question + 1} of 5 · optional` : `Step ${phase === 'address' ? 1 : 2} of 2`}</small></div>
-    <div className="dky-progress" aria-hidden="true"><i style={{ width: `${phase === 'qualify' ? (question + 1) * 20 : phase === 'contact' ? 100 : 50}%` }} /></div>
-    <h2 id="dky-form-title" ref={title} tabIndex={-1}>{phase === 'address' ? 'Where will your deck be?' : phase === 'contact' ? 'Where can we reach you?' : questions[question].title}</h2>
-    <p className="dky-form-intro">{phase === 'address' ? 'Enter your address. We’ll plan a free on-site design and estimate.' : phase === 'contact' ? 'We’ll call within one business day to arrange a time that works.' : questions[question].hint}</p>
+    {phase !== 'address' && <div className="dky-form-top"><span>{phase === 'qualify' ? '✓ Your request is saved' : 'Step 2 of 2'}</span>{phase === 'qualify' && <span>Question {question + 1} of 5 · optional</span>}</div>}
+    {phase !== 'address' && <div className="dky-progress" aria-hidden="true"><i style={{ width: `${phase === 'qualify' ? (question + 1) * 20 : 100}%` }} /></div>}
+    <h2 id="dky-form-title" ref={title} tabIndex={-1}>{phase === 'address' ? 'Where’s your home?' : phase === 'contact' ? 'Where can we reach you?' : questions[question].title}</h2>
+    {phase !== 'address' && <p className="dky-form-intro">{phase === 'contact' ? 'We’ll call within one business day to book your free visit.' : questions[question].hint}</p>}
     {phase === 'address' && <fieldset className="dky-fields" disabled={saving}>
-      <div className="dky-address-search"><label htmlFor="dky-street">Home address</label><input id="dky-street" name="street" role="combobox" aria-autocomplete="list" aria-expanded={matches.length > 0} aria-controls="dky-address-list" aria-activedescendant={activeMatch >= 0 ? `dky-address-${activeMatch}` : undefined} aria-describedby="dky-address-help" placeholder="Start with your street address" autoComplete="address-line1" value={values.street} maxLength={200} onChange={change} onKeyDown={event => {
+      <div className="dky-address-search"><label htmlFor="dky-street">Home address</label><input id="dky-street" name="street" role="combobox" aria-autocomplete="list" aria-expanded={matches.length > 0} aria-controls={matches.length ? 'dky-address-list' : undefined} aria-activedescendant={activeMatch >= 0 ? `dky-address-${activeMatch}` : undefined} aria-describedby="dky-address-help" placeholder="Start typing your full address" autoComplete="address-line1" value={values.street} maxLength={200} onChange={change} onKeyDown={event => {
         if (!matches.length) return;
         if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); setActiveMatch(i => (i + (event.key === 'ArrowDown' ? 1 : -1) + matches.length) % matches.length); }
         if (event.key === 'Escape') { event.preventDefault(); setMatches([]); }
         if (event.key === 'Enter' && activeMatch >= 0) { event.preventDefault(); selectAddress(matches[activeMatch]); }
       }} required />
       {matches.length > 0 && <ul id="dky-address-list" role="listbox" aria-label="Matching addresses">{matches.map((match, index) => <li id={`dky-address-${index}`} key={match.label} role="option" aria-selected={activeMatch === index} onMouseDown={event => event.preventDefault()}><button type="button" tabIndex={-1} onClick={() => selectAddress(match)}>{match.label}<span>Use this address ↗</span></button></li>)}</ul>}
-      <small id="dky-address-help" role="status">{lookup || 'Add your city or ZIP for address suggestions. Manual entry works too.'}</small></div>
-      <div className="dky-address-row"><label htmlFor="dky-city">City<input id="dky-city" name="city" autoComplete="address-level2" placeholder="e.g. Lexington" value={values.city} maxLength={100} onChange={change} required /></label><label htmlFor="dky-state">State<input id="dky-state" name="state" autoComplete="address-level1" placeholder="KY" value={values.state} maxLength={2} onChange={change} required /></label><label htmlFor="dky-zip">ZIP code<input id="dky-zip" name="zip" autoComplete="postal-code" inputMode="numeric" placeholder="40502" value={values.zip} maxLength={5} onChange={change} required /></label></div>
-      <small className="dky-lookup-credit">Address helper: U.S. Census Bureau</small>
+      <span id="dky-address-help" role="status">{lookup}</span>{matches.length > 0 && <span className="dky-lookup-credit">Address suggestions: U.S. Census Bureau</span>}</div>
+      {!addressDetails && values.city && values.zip && <p className="dky-address-filled">{values.city}, {values.state} {values.zip}</p>}
+      <div className="dky-address-row" hidden={!addressDetails}><label htmlFor="dky-city">City<input id="dky-city" name="city" autoComplete="address-level2" placeholder="e.g. Lexington" value={values.city} maxLength={100} onChange={change} required /></label><label htmlFor="dky-state">State<input id="dky-state" name="state" autoComplete="address-level1" placeholder="KY" value={values.state} maxLength={2} onChange={change} required /></label><label htmlFor="dky-zip">ZIP code<input id="dky-zip" name="zip" autoComplete="postal-code" inputMode="numeric" placeholder="40502" value={values.zip} maxLength={5} onChange={change} required /></label></div>
+      <button type="button" className="dky-manual-address" aria-expanded={addressDetails} onClick={() => setAddressDetails(!addressDetails)}>{addressDetails ? 'Hide address details' : 'Enter address manually'}</button>
     </fieldset>}
     {phase === 'contact' && <fieldset className="dky-fields" disabled={saving}>
       <div className="dky-address-summary"><span aria-hidden="true">⌂</span><span>{values.street}<small>{values.city}, {values.state} {values.zip}</small></span><button type="button" onClick={() => { setPhase('address'); setError(''); }}>Edit</button></div>
@@ -155,15 +160,15 @@ export default function DeckLocalIntake() {
       <label htmlFor="dky-email">Email <span className="dky-optional">optional</span><input id="dky-email" name="email" type="email" autoComplete="email" placeholder="alex@example.com" value={values.email} maxLength={254} onChange={change} /></label>
     </fieldset>}
     {phase === 'qualify' && <div className="dky-qualification">
-      {question === 0 && <p className="dky-contact-saved">✓ Thanks, {values.first_name}. Your contact details are already with our team.</p>}
-      {questions[question].options ? <fieldset className="dky-choices"><legend className="dky-sr">{questions[question].title}</legend>{questions[question].options.map((option, index) => <label key={option}><input type="radio" name={questions[question].key} value={option} checked={values[questions[question].key] === option} onChange={change} /><span><small>{questions[question].icons[index]}</small><strong>{option}</strong><i aria-hidden="true">✓</i></span></label>)}</fieldset> : <label htmlFor="dky-notes" className="dky-notes-label">Your ideas <span className="dky-optional">optional</span><textarea id="dky-notes" name="notes" rows={4} maxLength={1500} placeholder="I’d love space for a dining table, and maybe some shade…" value={values.notes} onChange={change} onBlur={() => { if (savedSignature.current !== signature(latest.current)) save(latest.current).catch(() => {}); }} /></label>}
+      {question === 0 && <p className="dky-contact-saved">Thanks, {values.first_name}. We’ve received your request. These next questions are optional.</p>}
+      {questions[question].options ? <fieldset className="dky-choices"><legend className="dky-sr">{questions[question].title}</legend>{questions[question].options.map(option => <label key={option}><input type="radio" name={questions[question].key} value={option} checked={values[questions[question].key] === option} onChange={change} /><span><strong>{option}</strong><i aria-hidden="true">✓</i></span></label>)}</fieldset> : <label htmlFor="dky-notes" className="dky-notes-label">Your ideas <span className="dky-optional">optional</span><textarea id="dky-notes" name="notes" rows={4} maxLength={1500} placeholder="I’d love space for a dining table, and maybe some shade…" value={values.notes} onChange={change} onBlur={() => { if (savedSignature.current !== signature(latest.current)) save(latest.current).catch(() => {}); }} /></label>}
       <p className="dky-save-status" role="status">{saving ? 'Saving your answer…' : saved ? '✓ Saved with your request' : 'Your contact request is saved.'}</p>
       {error && <button className="dky-retry" type="button" onClick={() => save(latest.current).catch(() => {})} disabled={saving}>Retry saving this answer</button>}
     </div>}
     <label className="dky-honey" aria-hidden="true">Leave empty<input name="company" tabIndex={-1} autoComplete="off" value={values.company} onChange={change} /></label>
     <p className="dky-form-error" role="alert">{error}</p>
     <button type="submit" className="dky-button" disabled={saving || !ready}>{saving ? (phase === 'contact' ? 'Sending your request…' : 'Saving…') : phase === 'address' ? 'Get My Free Estimate' : phase === 'contact' ? 'Request My Free Visit' : question === 4 ? 'Finish My Request' : 'Continue'}<span aria-hidden="true">→</span></button>
-    {phase === 'qualify' ? <div className="dky-form-secondary">{question > 0 && <button type="button" disabled={saving} onClick={() => { setQuestion(question - 1); setError(''); }}>← Back</button>}<button type="button" disabled={saving} onClick={finishLater}>I’ll tell you when you call</button></div> : <p className="dky-form-privacy">{phase === 'address' ? 'Free on-site visit · No payment · No obligation' : <>By sending, you agree that Yellowstone Renovation may contact you about this project and save the answers you choose to share. <a href="/privacy-policy/">Privacy policy</a>.</>}</p>}
+    {phase === 'qualify' ? <div className="dky-form-secondary">{question > 0 && <button type="button" disabled={saving} onClick={() => { setQuestion(question - 1); setError(''); }}>← Back</button>}<button type="button" disabled={saving} onClick={finishLater}>I’ll tell you when you call</button></div> : <><p className="dky-form-privacy">{phase === 'address' ? 'Free visit. No obligation.' : <>By sending, you agree we may contact you about your deck. <a href="/privacy-policy/">Privacy policy</a>.</>}</p>{phase === 'address' && <a className="dky-rating" href="#deck-reviews"><span aria-hidden="true">★★★★★</span><strong>4.9</strong><span className="dky-rating-count">· 64+ reviews</span></a>}</>}
     <noscript>Please call <a href="tel:+18597657267">(859) 765-7267</a> to request your free estimate.</noscript>
   </form>;
 }
