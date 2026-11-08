@@ -203,7 +203,7 @@ export default function initLocalDeck(root) {
     const form = $('#estimate-top .inline-lead-form');
     form.elements.zip.value = $('#zipIn').value.replace(/\D/g, '').slice(0, 5);
     $('#estimate-top').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    form.elements.name.focus({ preventScroll: true });
+    form.elements.first_name.focus({ preventScroll: true });
   });
   $$('.inline-lead-form').forEach(form => {
     listen(form, 'submit', async event => {
@@ -212,9 +212,9 @@ export default function initLocalDeck(root) {
       const button = form.querySelector('[type="submit"]');
       const values = Object.fromEntries(new FormData(form));
       status.textContent = '';
-      if (!values.name.trim()) {
-        status.textContent = 'Please enter your name.';
-        form.elements.name.focus();
+      if (!values.first_name.trim() || !values.last_name.trim()) {
+        status.textContent = 'Please enter your first and last name.';
+        form.elements[!values.first_name.trim() ? 'first_name' : 'last_name'].focus();
         return;
       }
       const digits = values.phone.replace(/\D/g, '');
@@ -270,22 +270,22 @@ export default function initLocalDeck(root) {
     $('#rvIn').innerHTML = `<div class="rhd"><img class="platform-logo" src="/local-deck/img/platforms/${platformLogos[b.dataset.pf]}" alt="${n}"><span><b id="rvT">${r} on ${n}</b><span class="stars">★★★★★</span> <small style="color:var(--muted)">${c} reviews</small></span></div><div class="rlist">${items}</div><button class="btn btn-o btn-lg" data-open="est">Get My Free Estimate</button>`;
     open('rv');
   });
-  const BUD = ['$10,000 – $20,000', '$20,000 – $30,000', '$30,000 – $40,000', '$40,000 – $100,000', '$100,000 – $150,000', '$150,000+', 'More than $150,000'];
   const bud = $('#bud');
-  bud.oninput = () => $('#bval').textContent = BUD[+bud.value];
   $$('#estF .chips').forEach(c => c.addEventListener('click', e => {
     const b = e.target.closest('button');
     if (!b) return;
-    c.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    const selected = b.getAttribute('aria-pressed') !== 'true';
+    c.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b && selected));
   }));
   let est = 1;
   function setEst(n) {
     est = n;
     $$('#estF [data-st]').forEach(d => d.hidden = +d.dataset.st !== n);
     $$('#estF .prog i').forEach((i, k) => i.classList.toggle('on', k < n));
-    $('#estK').textContent = n === 1 ? 'Step 1 of 2 · Your deck' : 'Step 2 of 2 · How to reach you';
+    $('#estK').textContent = n === 1 ? 'Step 1 of 2 · Your contact details' : 'Step 2 of 2 · Project details (optional)';
     $('#estBack').hidden = n === 1;
-    $('#estNext').textContent = n === 1 ? 'Continue' : 'Get My Free Estimate';
+    $('#estNext').textContent = n === 1 ? 'Continue' : 'Send My Request';
+    $('#estSkip').hidden = n !== 1;
     $('#eErr').textContent = '';
     $('#m-est .modal').scrollTop = 0;
   }
@@ -293,33 +293,39 @@ export default function initLocalDeck(root) {
   $('#estF').addEventListener('submit', async e => {
     e.preventDefault();
     const er = $('#eErr');
-    if (est === 1) {
-      if (!$('#estF [data-name="type"] [aria-pressed="true"]')) {
-        er.textContent = 'Pick what you are planning.';
-        return;
-      }
-      setEst(2);
-      $('#e-name').focus();
+    if (!$('#e-name').value.trim() || !$('#e-last-name').value.trim()) {
+      setEst(1);
+      er.textContent = 'Enter your first and last name.';
+      $(!$('#e-name').value.trim() ? '#e-name' : '#e-last-name').focus();
       return;
     }
-    if (!$('#e-name').value.trim()) {
-      er.textContent = 'Enter your name.';
-      $('#e-name').focus();
-      return;
-    }
-    if ($('#e-phone').value.replace(/\D/g, '').length < 10) {
+    if (!/^(?:1)?\d{10}$/.test($('#e-phone').value.replace(/\D/g, ''))) {
+      setEst(1);
       er.textContent = 'Enter a 10-digit phone number.';
       $('#e-phone').focus();
       return;
     }
     if (!/^\d{5}$/.test($('#e-zip').value.trim())) {
+      setEst(1);
       er.textContent = 'Enter a 5-digit ZIP code.';
       $('#e-zip').focus();
       return;
     }
+    if ($('#e-email').value && !$('#e-email').validity.valid) {
+      setEst(1);
+      er.textContent = 'Enter a valid email or leave it blank.';
+      $('#e-email').focus();
+      return;
+    }
+    if (est === 1 && e.submitter !== $('#estSkip')) {
+      setEst(2);
+      $('#estF [data-st="2"] button').focus();
+      return;
+    }
+    const skipDetails = est === 1;
     const pick = n => {
       const b = $(`#estF [data-name="${n}"] [aria-pressed="true"]`);
-      return b ? b.textContent : '';
+      return !skipDetails && b ? b.textContent : '';
     };
     const data = {
       project_type: 'Deck building',
@@ -327,18 +333,21 @@ export default function initLocalDeck(root) {
       source: 'local-deck',
       project: pick('type'),
       material: pick('mat'),
-      budget: BUD[+bud.value],
+      budget: skipDetails ? '' : bud.value,
       timeline: pick('when'),
-      name: $('#e-name').value.trim(),
+      first_name: $('#e-name').value.trim(),
+      last_name: $('#e-last-name').value.trim(),
+      name: `${$('#e-name').value.trim()} ${$('#e-last-name').value.trim()}`,
       phone: $('#e-phone').value.trim(),
       email: $('#e-email').value.trim(),
       zip: $('#e-zip').value.trim(),
-      message: $('#e-desc').value.trim(),
+      message: skipDetails ? '' : $('#e-desc').value.trim(),
       page: window.location.href,
       timestamp: new Date().toLocaleString()
     };
     const submit = $('#estNext');
     submit.disabled = true;
+    $('#estSkip').disabled = true;
     try {
       const response = await fetch('/api/lead', {
         method: 'POST',
@@ -348,10 +357,12 @@ export default function initLocalDeck(root) {
         },
         body: JSON.stringify(data)
       });
-      if (!response.ok) throw new Error('Submission failed');
+      const result = await response.json();
+      if (!response.ok || result.success === false || result.ok === false) throw new Error('Submission failed');
     } catch (error) {
       er.textContent = 'Could not send your request. Please try again or call (859) 765-7267.';
       submit.disabled = false;
+      $('#estSkip').disabled = false;
       return;
     }
     try {
@@ -362,7 +373,9 @@ export default function initLocalDeck(root) {
       });
     } catch (err) {}
     e.target.reset();
+    $$('#estF .chips button').forEach(button => button.setAttribute('aria-pressed', 'false'));
     submit.disabled = false;
+    $('#estSkip').disabled = false;
     showThanks($('.hbtn'));
   });
   $('#catF').addEventListener('submit', async e => {

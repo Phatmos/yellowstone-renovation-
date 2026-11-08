@@ -845,3 +845,7 @@
  .local-deck-page .jobsite-section .jobsite-clip .cp span{font-size:15px}
  .local-deck-page .jobsite-section .jobsite-clip .live{font-size:11px;top:14px;right:14px}
 }
+
+.local-deck-page #estF select{display:block;width:100%;min-width:0;margin-top:5px;padding:12px;border:1px solid #cdd5cc;border-radius:7px;background:#fff;color:#203b2b;font:inherit;font-size:16px}
+.local-deck-page #estF select:focus{outline:2px solid #2f7651;outline-offset:2px}
+.local-deck-page #estSkip{width:100%;margin-top:10px;white-space:normal}
