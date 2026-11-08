@@ -63,7 +63,8 @@ export default function initLocalDeck(root) {
   let heroVisible = false;
   let heroReady = false;
   let heroLoading = false;
-  let heroHasSound = false;
+  // Prefer sound; fall back to muted playback when browser policy requires it.
+  let heroHasSound = true;
   const heroCommand = method => {
     if (heroReady && heroPlayer && typeof heroPlayer[method] === 'function') heroPlayer[method]();
   };
@@ -107,14 +108,14 @@ export default function initLocalDeck(root) {
       mount.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       mount.allowFullscreen = true;
       const params = new URLSearchParams({
-        enablejsapi: '1', autoplay: '0', mute: '1', controls: '1',
+        enablejsapi: '1', autoplay: '0', mute: '0', controls: '1',
         playsinline: '1', rel: '0', origin: window.location.origin,
       });
       mount.src = `https://www.youtube.com/embed/9XcXhPwMEYE?${params}`;
       $('#videoPlayer').appendChild(mount);
       heroPlayer = new YT.Player(mount, {
         videoId: '9XcXhPwMEYE',
-        playerVars: { autoplay: 0, mute: 1, controls: 1, playsinline: 1, rel: 0, origin: window.location.origin },
+        playerVars: { autoplay: 0, mute: 0, controls: 1, playsinline: 1, rel: 0, origin: window.location.origin },
         events: {
           onReady: event => {
             if (!active) return;
@@ -133,7 +134,18 @@ export default function initLocalDeck(root) {
               if (!heroVisible || document.hidden || root.classList.contains('has-modal')) pauseHero();
             }
           },
-          onAutoplayBlocked: () => { hw.classList.remove('on'); $('#heroSound').hidden = true; },
+          onAutoplayBlocked: () => {
+            if (!active) return;
+            if (heroHasSound && heroVisible && !document.hidden && !root.classList.contains('has-modal')) {
+              heroHasSound = false;
+              heroCommand('mute');
+              $('#heroSound').hidden = false;
+              heroCommand('playVideo');
+              return;
+            }
+            hw.classList.remove('on');
+            $('#heroSound').hidden = true;
+          },
           onError: () => { hw.classList.remove('on'); $('#heroVideoStatus').textContent = 'Video unavailable. Please try again.'; }
         }
       });
