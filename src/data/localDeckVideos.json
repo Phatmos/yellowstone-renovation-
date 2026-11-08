@@ -1,0 +1,69 @@
+[
+  {
+    "file": "gray-deck-boards-hd",
+    "project": "gray-deck-build",
+    "title": "Every board, lined up",
+    "detail": "Gray composite decking during installation",
+    "progress": true
+  },
+  {
+    "file": "stairs-white-rail-hd",
+    "project": "warm-composite",
+    "title": "Built for the way down",
+    "detail": "Composite stairs with white posts and black balusters"
+  },
+  {
+    "file": "pergola-frame-close-hd",
+    "project": "pergola-frame",
+    "title": "A pergola takes shape",
+    "detail": "New overhead framing above an existing deck",
+    "progress": true
+  },
+  {
+    "file": "garden-deck-framing-hd",
+    "project": "garden-frame",
+    "title": "The frame comes first",
+    "detail": "New deck framing beside an established garden",
+    "progress": true
+  },
+  {
+    "file": "gray-deck-border-hd",
+    "project": "gray-deck-build",
+    "title": "A clean picture-frame border",
+    "detail": "Gray decking fitted around the corner posts",
+    "progress": true
+  },
+  {
+    "file": "materials-on-site-hd",
+    "project": "materials-arrival",
+    "title": "Ready for the build",
+    "detail": "Lumber and materials staged for the next project",
+    "progress": true
+  },
+  {
+    "file": "sunset-deck-treads-hd",
+    "project": "warm-composite",
+    "title": "The details in the evening light",
+    "detail": "Composite treads and railing at sunset"
+  },
+  {
+    "file": "pergola-frame-wide-hd",
+    "project": "pergola-frame",
+    "title": "From the yard, looking up",
+    "detail": "A wider look at the pergola framing",
+    "progress": true
+  },
+  {
+    "file": "gray-deck-joists-hd",
+    "project": "gray-deck-build",
+    "title": "How the boards meet the frame",
+    "detail": "Decking installation and the exposed joists below",
+    "progress": true
+  },
+  {
+    "file": "white-gate-detail-hd",
+    "project": "white-gate",
+    "title": "A gate that finishes the space",
+    "detail": "White railing and a gate beside gray deck boards"
+  }
+]
