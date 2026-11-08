@@ -322,6 +322,13 @@ export default function initLocalDeck(root) {
     video.muted = video.defaultMuted = true;
     video.playsInline = true;
     video.controls = false;
+    const card = video.closest('.jobsite-clip');
+    const showPoster = () => card.classList.remove('video-playing');
+    listen(video, 'playing', () => {
+      if (activeJobVideos.has(video) && !document.hidden && !root.matches('.has-modal,.has-gallery,.has-menu')) card.classList.add('video-playing');
+      else video.pause();
+    });
+    ['pause', 'waiting', 'emptied', 'error'].forEach(event => listen(video, event, showPoster));
     // Native autoplay may start after preloading; keep it tied to visibility.
     listen(video, 'play', () => {
       if (!activeJobVideos.has(video) || document.hidden || root.matches('.has-modal,.has-gallery,.has-menu')) video.pause();

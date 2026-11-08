@@ -988,11 +988,19 @@ body:has(.local-deck-page.has-gallery){overflow:hidden}
 
 /* Preserve each complete video frame; captions stay below the footage. */
 .local-deck-page .jobsite-section{background:#f1f5ec;padding-block:64px}
+.local-deck-page #projects{padding-block:64px}
 .local-deck-page .jobsite-section .jobsite-grid{max-width:1120px;gap:24px;align-items:start}
 .local-deck-page .jobsite-section .project-film{aspect-ratio:auto;width:100%;max-width:360px;justify-self:center;padding:8px 8px 0;border:1px solid #d3dfcc;border-radius:23px;background:#fff;color:#173b2b;box-shadow:0 10px 26px #203d2710}
 .local-deck-page .jobsite-section .project-film::after{display:none}
 .local-deck-page .project-film-media{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;border-radius:16px;background:#142a1e}
-.local-deck-page .jobsite-section .project-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:none;transform:none;pointer-events:none}
+.local-deck-page .jobsite-section .project-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:none;transform:none;pointer-events:none;opacity:0}
+.local-deck-page .project-film-media .project-film-poster{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.local-deck-page .jobsite-section .project-film.video-playing video{opacity:1}
+.local-deck-page .project-film.video-playing .project-film-poster{opacity:0}
+.local-deck-page video[data-jobsite]::-webkit-media-controls{display:none!important}
+.local-deck-page video[data-jobsite]::-webkit-media-controls-enclosure{display:none!important}
+.local-deck-page video[data-jobsite]::-webkit-media-controls-panel{display:none!important}
+.local-deck-page video[data-jobsite]::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
 .local-deck-page .film-status{position:absolute;top:12px;left:12px;z-index:2;border:1px solid #ffffffa6;border-radius:999px;padding:6px 11px;background:#fbfff3ed;color:#24442d;font-size:11px;font-weight:700;line-height:1.4;letter-spacing:.025em}
 .local-deck-page .hero-expand[hidden]{display:none}
 .local-deck-page .hero-expand:focus-visible{outline:3px solid #ffbe70;outline-offset:3px}
@@ -1013,6 +1021,7 @@ body:has(.local-deck-page.has-gallery){overflow:hidden}
 .local-deck-page .jobsite-section .project-film .cp span{display:block;font-size:14px;line-height:1.6;color:#53654e;margin-top:7px}
 @media(max-width:640px){
  .local-deck-page .jobsite-section{padding-block:44px}
+ .local-deck-page #projects{padding-block:44px}
  .local-deck-page .inline-fields{grid-template-columns:1fr;gap:18px}
  .local-deck-page .inline-fields label{font-size:15px}
  .local-deck-page .inline-fields input{min-height:58px}
