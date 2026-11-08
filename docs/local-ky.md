@@ -17,3 +17,5 @@ The form uses the existing `/api/lead` CRM/email delivery route. Submissions inc
 GTM events: `landing_view`, `estimate_cta_click`, `estimate_step`, `phone_click`, `video_start` and success-only `generate_lead`. Events contain no contact details. If an existing Meta Pixel is loaded, the confirmation also calls its `Lead` event with the same unique event ID. No Pixel ID, server-side Conversions API integration, ad targeting or campaign settings were created by this change.
 
 Both new routes are excluded from the sitemap and marked noindex. Existing page metadata remains unchanged.
+
+The variant shares the original landing's bold Poppins headings, deep green photo hero, lime highlights, hand-drawn accents, rounded orange buttons and graph-paper estimate treatment. These overrides live in `local-ky-brand.css`, scoped to `.ky-landing-page`, so the control and confirmation page keep their own styling.

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import LocalKyLanding from '../components/LocalKyLanding';
 import '../styles/local-ky.css';
+import '../styles/local-ky-brand.css';
 
 export default function LocalKyPage() {
   return <><Helmet>
