@@ -1,69 +1,156 @@
 [
   {
-    "file": "gray-deck-boards-hd",
+    "file": "covered-deck-in-progress-original",
+    "title": "The structure takes shape",
+    "detail": "A closer look at a covered deck in progress",
+    "progress": true,
+    "project": "pergola-frame"
+  },
+  {
+    "file": "backyard-composite-tour-original",
+    "title": "Made for everyday living",
+    "detail": "An open deck and a view of the backyard",
+    "project": "white-rail-deck"
+  },
+  {
+    "file": "gray-deck-boards-natural-hd",
     "project": "gray-deck-build",
     "title": "Every board, lined up",
     "detail": "Gray composite decking during installation",
     "progress": true
   },
   {
-    "file": "stairs-white-rail-hd",
-    "project": "warm-composite",
-    "title": "Built for the way down",
-    "detail": "Composite stairs with white posts and black balusters"
+    "file": "elevated-deck-exterior-original",
+    "title": "Built for the view",
+    "detail": "An elevated deck, seen from the lawn",
+    "project": "warm-composite"
   },
   {
-    "file": "pergola-frame-close-hd",
+    "file": "deck-walk1-hq",
+    "title": "Composite & black rail",
+    "detail": "A finished deck beside the sunroom",
+    "project": "sunroom-deck"
+  },
+  {
+    "file": "white-rail-stair-tour-original",
+    "title": "A better way outside",
+    "detail": "Composite stairs, white posts and black balusters",
+    "project": "white-rail-deck"
+  },
+  {
+    "file": "pergola-frame-close-natural-hd",
     "project": "pergola-frame",
     "title": "A pergola takes shape",
     "detail": "New overhead framing above an existing deck",
     "progress": true
   },
   {
-    "file": "garden-deck-framing-hd",
-    "project": "garden-frame",
-    "title": "The frame comes first",
-    "detail": "New deck framing beside an established garden",
-    "progress": true
+    "file": "gray-deck-exterior-hq",
+    "title": "Made for this home",
+    "detail": "A complete view of the finished deck",
+    "project": "modern-gray-deck"
   },
   {
-    "file": "gray-deck-border-hd",
+    "file": "deck-stairs-hq",
+    "title": "Stairs, rail & fascia",
+    "detail": "Clean edges and finishing details",
+    "landscape": true,
+    "project": "brick-home-stairs"
+  },
+  {
+    "file": "composite-deck-tour-hq",
+    "title": "Take a walk outside",
+    "detail": "Composite decking and crisp white railing",
+    "project": "white-rail-deck"
+  },
+  {
+    "file": "gray-deck-border-natural-hd",
     "project": "gray-deck-build",
     "title": "A clean picture-frame border",
     "detail": "Gray decking fitted around the corner posts",
     "progress": true
   },
   {
-    "file": "materials-on-site-hd",
-    "project": "materials-arrival",
-    "title": "Ready for the build",
-    "detail": "Lumber and materials staged for the next project",
+    "file": "stairs-white-rail-natural-hd",
+    "project": "warm-composite",
+    "title": "Built for the way down",
+    "detail": "Composite stairs with white posts and black balusters"
+  },
+  {
+    "file": "deck-boards-in-progress-original",
+    "title": "Every board, in place",
+    "detail": "Decking details from a workday with our crew",
+    "progress": true,
+    "project": "pergola-frame"
+  },
+  {
+    "file": "white-rail-corner-original",
+    "title": "Railing details, up close",
+    "detail": "Clean corners and a picture-frame border",
+    "project": "white-rail-deck"
+  },
+  {
+    "file": "garden-deck-framing-natural-hd",
+    "project": "garden-frame",
+    "title": "The frame comes first",
+    "detail": "New deck framing beside an established garden",
     "progress": true
   },
   {
-    "file": "sunset-deck-treads-hd",
-    "project": "warm-composite",
-    "title": "The details in the evening light",
-    "detail": "Composite treads and railing at sunset"
+    "file": "white-gate-detail-natural-hd",
+    "project": "white-gate",
+    "title": "A gate that finishes the space",
+    "detail": "White railing and a gate beside gray deck boards"
   },
   {
-    "file": "pergola-frame-wide-hd",
+    "file": "deck-walk2-hq",
+    "title": "Off the sunroom",
+    "detail": "Decking, black railing and wide steps",
+    "project": "sunroom-deck"
+  },
+  {
+    "file": "composite-stairway-original",
+    "title": "Step into the details",
+    "detail": "A walk up the finished composite stairway",
+    "project": "white-rail-deck"
+  },
+  {
+    "file": "pergola-frame-wide-natural-hd",
     "project": "pergola-frame",
     "title": "From the yard, looking up",
     "detail": "A wider look at the pergola framing",
     "progress": true
   },
   {
-    "file": "gray-deck-joists-hd",
+    "file": "sunset-deck-treads-natural-hd",
+    "project": "warm-composite",
+    "title": "The details in the evening light",
+    "detail": "Composite treads and railing at sunset"
+  },
+  {
+    "file": "materials-on-site-natural-hd",
+    "project": "materials-arrival",
+    "title": "Ready for the build",
+    "detail": "Lumber and materials staged for the next project",
+    "progress": true
+  },
+  {
+    "file": "deck-to-stair-walkthrough-original",
+    "title": "From the deck to the yard",
+    "detail": "Deck boards, stairs and the finishing touches",
+    "project": "white-rail-deck"
+  },
+  {
+    "file": "gray-deck-joists-natural-hd",
     "project": "gray-deck-build",
     "title": "How the boards meet the frame",
     "detail": "Decking installation and the exposed joists below",
     "progress": true
   },
   {
-    "file": "white-gate-detail-hd",
-    "project": "white-gate",
-    "title": "A gate that finishes the space",
-    "detail": "White railing and a gate beside gray deck boards"
+    "file": "gray-deck-detail-hq",
+    "title": "The details, up close",
+    "detail": "Gray deck boards and black aluminum rail",
+    "project": "modern-gray-deck"
   }
 ]
