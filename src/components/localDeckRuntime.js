@@ -269,24 +269,51 @@ export default function initLocalDeck(root) {
   const loadJobVideo = video => {
     if (!video.getAttribute('src')) video.src = video.dataset.src;
   };
-  const shouldPlayJobVideo = video =>
-    (video.dataset.visible === 'true' || isFullscreen(video.parentElement)) &&
-    !video.closest('[hidden]') && !document.hidden &&
-    !root.matches('.has-modal,.has-gallery,.has-menu');
-  const syncJobVideo = video => {
-    if (shouldPlayJobVideo(video)) {
-      loadJobVideo(video);
-      if (video.paused) video.play().catch(() => {});
-    } else if (!video.paused) video.pause();
+  let activeJobVideo = null;
+  const selectJobVideo = () => {
+    if (document.hidden || root.matches('.has-modal,.has-gallery,.has-menu')) return null;
+    const expanded = jobVideos.find(video => isFullscreen(video.parentElement));
+    if (expanded) return expanded;
+    const viewportHeight = window.innerHeight;
+    const viewportWidth = window.innerWidth;
+    const viewportTop = header.offsetHeight;
+    let selected = null, bestScore = -Infinity;
+    jobVideos.forEach(video => {
+      if (video.dataset.visible !== 'true' || video.closest('[hidden]')) return;
+      const rect = video.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const height = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, viewportTop));
+      const width = Math.max(0, Math.min(rect.right, viewportWidth) - Math.max(rect.left, 0));
+      const visible = (height * width) / (rect.height * rect.width);
+      if (visible < .1) return;
+      // Favor the largest visible frame, then the one nearest the screen center.
+      const distanceY = Math.abs((rect.top + rect.bottom) / 2 - (viewportTop + viewportHeight) / 2) / viewportHeight;
+      const distanceX = Math.abs((rect.left + rect.right) / 2 - viewportWidth / 2) / viewportWidth;
+      const score = visible - distanceY * .001 - distanceX * .0001;
+      if (score > bestScore) { bestScore = score; selected = video; }
+    });
+    return selected;
   };
-  const syncJobVideos = () => jobVideos.forEach(syncJobVideo);
+  const syncJobVideos = () => {
+    activeJobVideo = selectJobVideo();
+    // Stop the previous clip before starting the next, including late autoplay.
+    jobVideos.forEach(video => {
+      if (video !== activeJobVideo && !video.paused) video.pause();
+    });
+    if (activeJobVideo) {
+      loadJobVideo(activeJobVideo);
+      if (activeJobVideo.paused) activeJobVideo.play().catch(() => {});
+    }
+  };
   const jobLoad = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
     if (isIntersecting && !target.closest('[hidden]')) loadJobVideo(target);
   }), { rootMargin: '160px 0px' });
-  const jobPlay = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting, intersectionRatio }) => {
-    target.dataset.visible = String(isIntersecting && intersectionRatio >= .1);
-    syncJobVideo(target);
-  }), { threshold: .1 });
+  const jobPlay = new IntersectionObserver(entries => {
+    entries.forEach(({ target, isIntersecting, intersectionRatio }) => {
+      target.dataset.visible = String(isIntersecting && intersectionRatio >= .1);
+    });
+    syncJobVideos();
+  }, { threshold: [0, .1, .25, .5, .75, 1] });
   jobVideos.forEach(video => {
     video.muted = video.defaultMuted = true;
     video.playsInline = true;
@@ -294,11 +321,13 @@ export default function initLocalDeck(root) {
     const card = video.closest('.jobsite-clip');
     bindFullscreen(card.querySelector('[data-film-expand]'), video.parentElement, video);
     // Native autoplay may start after preloading; keep it tied to visibility.
-    listen(video, 'play', () => { if (!shouldPlayJobVideo(video)) video.pause(); });
-    listen(video, 'loadeddata', () => syncJobVideo(video));
-    listen(video, 'canplay', () => syncJobVideo(video));
-    listen(video, 'webkitbeginfullscreen', () => syncJobVideo(video));
-    listen(video, 'webkitendfullscreen', () => syncJobVideo(video));
+    listen(video, 'play', () => {
+      if (video !== activeJobVideo || document.hidden || root.matches('.has-modal,.has-gallery,.has-menu')) video.pause();
+    });
+    listen(video, 'loadeddata', syncJobVideos);
+    listen(video, 'canplay', syncJobVideos);
+    listen(video, 'webkitbeginfullscreen', syncJobVideos);
+    listen(video, 'webkitendfullscreen', syncJobVideos);
     jobLoad.observe(video);
     jobPlay.observe(video);
   });
@@ -306,6 +335,20 @@ export default function initLocalDeck(root) {
   listen(document, 'fullscreenchange', syncJobVideos);
   listen(document, 'webkitfullscreenchange', syncJobVideos);
   listen(window, 'pageshow', syncJobVideos);
+  let jobScrollFrame = null;
+  const queueJobVideos = () => {
+    if (jobScrollFrame !== null) return;
+    jobScrollFrame = requestAnimationFrame(() => {
+      jobScrollFrame = null;
+      if (active) syncJobVideos();
+    });
+  };
+  listen(window, 'scroll', queueJobVideos, { passive: true });
+  listen(window, 'resize', queueJobVideos, { passive: true });
+  disposers.push(() => {
+    if (jobScrollFrame !== null) window.cancelAnimationFrame(jobScrollFrame);
+    jobVideos.forEach(video => video.pause());
+  });
   // Retry blocked muted autoplay after a real touch or keyboard interaction.
   listen(root, 'pointerup', syncJobVideos);
   listen(root, 'touchend', syncJobVideos, { passive: true });
