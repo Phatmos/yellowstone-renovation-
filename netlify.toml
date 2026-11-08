@@ -4,6 +4,48 @@
 [functions]
   directory = "netlify/functions"
 
+# Consolidate legacy deck synonyms; keep campaign landing pages available.
+[[redirects]]
+  from = "/deck-builder"
+  to = "/decking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/deck-builder/"
+  to = "/decking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/deck-builder-near-me"
+  to = "/decking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/deck-builder-near-me/"
+  to = "/decking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/outdoor-decks/"
+  to = "/outdoor-deck/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/deck-louisville/"
+  to = "/cities/louisville-ky/deck-builder/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/siding/"
+  to = "/siding-replacement/"
+  status = 301
+
 [[redirects]]
   from = "/projects"
   to = "/projects-showcase/"

@@ -50,7 +50,7 @@ export default function Home() {
                         "name": "Yellowstone Renovation",
                         "url": "https://yellowstonerenovation.com/metal-siding/",
                         "image": "https://yellowstonerenovation.com/images/remodler2.webp",
-                        "telephone": "859-545-7020",
+                        "telephone": "859-765-7267",
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": "Lexington",

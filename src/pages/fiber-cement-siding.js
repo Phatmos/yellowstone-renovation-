@@ -71,7 +71,7 @@ export default function Home() {
                         "name": "Yellowstone Renovation",
                         "url": "https://yellowstonerenovation.com/fiber-cement-siding/",
                         "image": "https://yellowstonerenovation.com/images/remodler1.webp",
-                        "telephone": "859-545-7020",
+                        "telephone": "859-765-7267",
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": "Lexington",
@@ -178,7 +178,7 @@ export default function Home() {
                 title="Fiber Cement Siding Before & After"
                 description="See how we transform outdated exteriors with durable, fire-resistant fiber cement siding engineered to withstand Kentucky’s climate while keeping homes beautiful year-round."
                 buttonText="View Fiber Cement Projects"
-                buttonLink="/projects#fiber-cement"
+                buttonLink="/projects-showcase/"
                 accentColor="#0a923d"
                 images={[
                     {

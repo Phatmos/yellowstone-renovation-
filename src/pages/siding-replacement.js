@@ -79,7 +79,7 @@ export default function Home() {
                             "name": "Yellowstone Renovation",
                             "url": "https://yellowstonerenovation.com",
                             "logo": "/icons/logo.webp",
-                            "telephone": "859-545-7020",
+                            "telephone": "859-765-7267",
                             "address": {
                                 "@type": "PostalAddress",
                                 "addressLocality": "Lexington",
@@ -413,4 +413,3 @@ export default function Home() {
         </Layout >
     )
 }
-

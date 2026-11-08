@@ -61,7 +61,7 @@ export default function Home() {
                             "Trim & Fascia Painting"
                         ],
                         "image": "https://yellowstonerenovation.com/images/remodler3.webp",
-                        "telephone": "859-545-7020",
+                        "telephone": "859-765-7267",
                         "areaServed": [
                             "Lexington, KY",
                             "Nicholasville, KY",
@@ -344,4 +344,3 @@ export default function Home() {
         </Layout >
     )
 }
-

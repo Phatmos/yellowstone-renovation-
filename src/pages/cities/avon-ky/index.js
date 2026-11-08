@@ -72,7 +72,7 @@ export default function AvonKY() {
                         "url": "https://yellowstonerenovation.com",
                         "image": "https://yellowstonerenovation.com/images/remodler10.webp",
                         "logo": "https://yellowstonerenovation.com/icons/logo.webp",
-                        "telephone": "859-545-7020",
+                        "telephone": "859-765-7267",
                         "priceRange": "$$",
                         "address": {
                             "@type": "PostalAddress",
@@ -116,7 +116,7 @@ export default function AvonKY() {
                         "logo": "https://yellowstonerenovation.com/icons/logo.webp",
                         "contactPoint": {
                             "@type": "ContactPoint",
-                            "telephone": "859-545-7020",
+                            "telephone": "859-765-7267",
                             "contactType": "customer support",
                             "areaServed": "US"
                         },

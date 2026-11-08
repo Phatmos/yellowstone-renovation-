@@ -19,74 +19,37 @@ export default function VersaillesDeckBuilder() {
 
             {/* SEO */}
             <SEO
-                title="Deck Builder in Versailles KY — Composite & Wood Decks | Yellowstone Renovation"
-                description="Professional deck builders in Versailles, KY. Yellowstone Renovation installs composite and wood decks designed for beauty, durability, and long-term value. Free estimates across Woodford County."
-                pathname="/cities/versailles-ky/deck-builder"
-                image="https://yellowstonerenovation.com/images/deck-builder8.webp"
+                title="Deck Builder in Versailles, KY | Yellowstone Renovation"
+                description="Wood and composite deck construction in Versailles, KY. Plan a deck that suits your home, with stairs, railings and shade options. Free estimates."
+                pathname="/cities/versailles-ky/deck-builder/"
+                image="/images/deck/deck-lexington35.webp"
+                imageAlt="Deck construction by Yellowstone Renovation"
+                areaServed={["Versailles, KY"]}
+                serviceType={["Deck construction", "Deck replacement"]}
+                breadcrumbs={[{ name: "Home", path: "/" }, { name: "Deck building", path: "/decking/" }, { name: "Versailles deck builder", path: "/cities/versailles-ky/deck-builder/" }]}
             />
 
-            <Helmet>
-                <meta
-                    name="keywords"
-                    content="deck builder Versailles KY, composite deck Versailles, wood deck installation Woodford County, deck repair Versailles KY, deck replacement Versailles"
-                />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Deck Builder in Versailles KY | Yellowstone Renovation" />
-                <meta property="og:description" content="Custom-built composite and wood decks in Versailles, Kentucky. Get your free estimate from Yellowstone Renovation." />
-                <meta property="og:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-                <meta property="og:url" content="https://yellowstonerenovation.com/cities/versailles-ky/deck-builder" />
-                <meta property="og:site_name" content="Yellowstone Renovation" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Versailles KY Deck Builder | Composite & Wood Deck Construction" />
-                <meta name="twitter:description" content="Upgrade your outdoor living with Yellowstone Renovation — trusted deck builders in Versailles and Woodford County." />
-                <meta name="twitter:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-
-                {/* SCHEMA JSON-LD */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "HomeAndConstructionBusiness",
-                        name: "Yellowstone Renovation",
-                        url: "https://yellowstonerenovation.com",
-                        logo: "https://yellowstonerenovation.com/icons/logo.webp",
-                        image: "https://yellowstonerenovation.com/images/deck-builder8.webp",
-                        telephone: "859-545-7020",
-                        address: {
-                            "@type": "PostalAddress",
-                            addressLocality: "Versailles",
-                            addressRegion: "KY",
-                            postalCode: "40383",
-                            addressCountry: "US",
-                        },
-                        serviceType: [
-                            "Deck Construction",
-                            "Composite Deck Installation",
-                            "Wood Deck Builder",
-                            "Deck Repair",
-                            "Deck Replacement"
-                        ],
-                        areaServed: [
-                            "Versailles, KY",
-                            "Mortonsville, KY",
-                            "Millville, KY",
-                            "Nonesuch, KY",
-                            "Woodford County, KY"
-                        ]
-                    })}
-                </script>
-            </Helmet>
+            <Helmet><script type="application/ld+json">{JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "@id": "https://yellowstonerenovation.com/cities/versailles-ky/deck-builder/#service",
+                name: "Deck construction in Versailles, KY",
+                description: "Wood and composite deck construction in Versailles, KY. Plan a deck that suits your home, with stairs, railings and shade options. Free estimates.",
+                url: "https://yellowstonerenovation.com/cities/versailles-ky/deck-builder/",
+                serviceType: "Deck construction and replacement",
+                provider: { "@id": "https://yellowstonerenovation.com/#organization" },
+                areaServed: { "@type": "Place", name: "Versailles, Kentucky" },
+                image: "https://yellowstonerenovation.com/images/deck/deck-lexington35.webp",
+            })}</script></Helmet>
 
             {/* HERO */}
             <Hero2
-                topText="Top-Rated Deck Builder in Versailles, KY"
-                title="Deck Builder in Versailles, KY — Custom Composite & Wood Decks"
-                description="Yellowstone Renovation builds strong, stylish, and long-lasting decks for homeowners throughout Versailles and Woodford County. Whether you prefer composite or wood, our craftsmanship and design expertise bring your outdoor vision to life."
-                backgroundImage="/images/deck/deck-lexington11.webp"
+                topText="Versailles, Kentucky · Deck construction"
+                title="Deck Builder in Versailles, KY"
+                description="Your deck should look like it belongs with the house. We help Versailles homeowners balance a useful outdoor layout with decking, railings and trim that work together."
+                backgroundImage="/images/deck/deck-lexington35.webp"
                 overlayOpacity={0.65}
-                formTitle="Get a Free Deck Estimate"
+                formTitle="Plan your deck with us"
                 selectLabel="Select Deck Service"
                 selectOptions={[
                     "Custom Deck Design & Build",
@@ -107,9 +70,9 @@ export default function VersaillesDeckBuilder() {
             {/* BEFORE & AFTER */}
             <BeforeAfter
                 title="Versailles Deck Transformations"
-                description="Explore some of our recent deck upgrades in Versailles — transforming outdated, worn decks into modern, durable outdoor living spaces."
+                description="Compare the original structures with finished deck projects from our portfolio. See how layout, stairs and railing change the space."
                 buttonText="Explore More Projects"
-                buttonLink="/projects"
+                buttonLink="/projects-showcase/"
                 accentColor="#0a923d"
                 images={[
                     { before: "/images/deckafter3.webp", after: "/images/deckbefore3.webp" },
@@ -120,7 +83,7 @@ export default function VersaillesDeckBuilder() {
             {/* GALLERY */}
             <GallerySection
                 title="VERSAILLES DECK BUILDER GALLERY"
-                subtitle="Browse completed deck projects built for homeowners in Versailles and Woodford County."
+                subtitle="Deck projects from our Kentucky portfolio, with ideas for your Versailles home."
                 highlight="DECK BUILDER"
                 background="#ffffff"
                 images={[
@@ -152,177 +115,50 @@ export default function VersaillesDeckBuilder() {
             <TestimonialsSection />
 
             <MainSectionSideBar
-                title="Deck Builder in Versailles, KY — Custom Composite & Wood Decks"
+                title="Planning a deck for your Versailles home"
                 sections={[
-                    {
-                        heading: "Deck Builder Versailles KY — Strength, Style & Outdoor Comfort",
-                        text: `Yellowstone Renovation provides high-quality deck construction for homeowners across Versailles, Kentucky. We build beautiful and durable outdoor spaces using top-grade materials and proven construction methods.
-
-Our deck installations include composite and wood options, tailored designs, permit handling, strong framing, and clean, long-lasting finishes. Whether upgrading an old deck or building a new one, we deliver exceptional results.`
-                    },
-
-                    {
-                        heading: "Composite Deck Installation in Versailles, KY",
-                        text: `Composite decking is an excellent choice for Versailles homeowners seeking low maintenance and long-term performance. Composite boards resist moisture, fading, insects, and cracking — perfect for Kentucky weather.
-
-We install Trex, TimberTech, and AZEK systems using hidden fasteners and moisture-protection framing. Choose from premium color and texture options that elevate your outdoor living space.`
-                    },
-
-                    {
-                        heading: "Wood Deck Builder in Versailles, Kentucky",
-                        text: `Natural wood decks bring timeless beauty and character to any home. We build wood decks using pressure-treated lumber, cedar, and redwood — each offering charm, value, and exceptional warmth.
-
-All wood decks are properly sealed, reinforced, and finished, ensuring long-term durability against humidity and everyday use.`
-                    },
-
-                    {
-                        heading: "Deck Replacement & Repair in Versailles, KY",
-                        text: `If your deck feels unstable, worn out, or unsafe, we offer professional deck replacement and repair services throughout Versailles and Woodford County. We strengthen structures, replace damaged framing, and install modern decking materials.
-
-From failing posts to loose railings and rotted decking — we restore outdoor spaces with safe, durable, and aesthetically pleasing solutions.`
-                    },
-
-                    {
-                        heading: "Our Deck Design & Construction Process",
-                        text: `Our process begins with a design consultation where we assess your space, your needs, and your material preferences. Once approved, we handle all permits, structural framing, decking installation, and finishing details.
-
-We follow Kentucky building codes and maintain clean worksites, ensuring a smooth and stress-free experience.`
-                    },
-
-                    {
-                        heading: "Average Deck Cost in Versailles, KY",
-                        text: `Most Versailles homeowners invest in the following ranges when building a professional deck:
-
-Composite Decks: $45–$65 per sq. ft. installed  
-Wood Decks: $30–$50 per sq. ft. installed  
-Deck Repairs: typically 40–60% of full replacement cost  
-
-These prices include labor, materials, cleanup, and inspection. For an accurate quote, schedule a free evaluation.`
-                    },
-
-                    {
-                        heading: "Get a Free Deck Estimate in Versailles, KY",
-                        text: `We provide free, no-pressure estimates throughout Versailles, Mortonsville, Millville, Nonesuch, and surrounding Woodford County areas.
-
-Our team will measure your outdoor area, discuss design ideas, present material options, and give you a clear written quote.`
-                    },
-
-                    {
-                        heading: "Decking Contractor in Versailles, Kentucky",
-                        text: `Homeowners choose Yellowstone Renovation for reliable service, skilled craftsmanship, and decks built to last. We take pride in improving outdoor spaces and adding long-term value to Versailles homes.
-
-Our focus is safety, structural strength, beautiful design, and customer satisfaction.`
-                    },
-
-                    {
-                        heading: "Deck Installation Services in Versailles",
-                        text: `We install everything from small, functional wood decks to large composite entertainment spaces with lighting, upgraded railings, and custom steps.
-
-Each installation is engineered for durability and built to withstand Kentucky’s climate.`
-                    },
-
-                    {
-                        heading: "Professional Deck Construction in Versailles, KY",
-                        text: `We are a fully licensed and insured contractor handling design, permitting, structural framing, decking installation, railings, and final inspections.
-
-Our decks remain strong through daily use, moisture, and changing temperatures.`
-                    },
-
-                    {
-                        heading: "Working with a Local Versailles Deck Contractor",
-                        text: `As a Central Kentucky contractor, we understand Versailles building requirements, weather conditions, and soil types. This allows us to build safer, stronger decks for local homeowners.
-
-We maintain open communication throughout the entire project.`
-                    },
-
-                    {
-                        heading: "Choose the Best Deck Installers in Versailles, KY",
-                        text: `Yellowstone Renovation is known across Woodford County for exceptional craftsmanship, transparent pricing, and dependable project timelines.
-
-We build outdoor spaces designed for long-term comfort and aesthetic appeal.`
-                    },
-
-                    {
-                        heading: "Average Cost to Install a New Deck in Versailles",
-                        text: `Versailles homeowners typically invest between $10,000 and $45,000 depending on deck size, elevation, features, and materials.
-
-Composite installations range from $45–$65 per sq. ft., while wood options run $30–$50 per sq. ft.`
-                    },
-
-                    {
-                        heading: "Versailles Wood Decks — Warm, Natural & Beautiful",
-                        text: `Wood decks bring inviting warmth and natural appeal. We use properly treated lumber and sealant systems to protect against Kentucky’s humidity and temperature changes.`
-                    },
-
-                    {
-                        heading: "Composite Decks in Versailles, KY",
-                        text: `Composite decks provide incredible durability with very little maintenance. Our Trex, TimberTech, and AZEK installations resist fading, warping, and moisture — keeping your outdoor space looking great year after year.`
-                    },
-
-                    {
-                        heading: "Deck Builder Near Me in Versailles, KY",
-                        text: `If you're searching for “deck builder near me” in Versailles, KY, Yellowstone Renovation is your trusted local contractor. We proudly serve Versailles, Mortonsville, Millville, Nonesuch, and all of Woodford County.
-
-Expect clean work, fair pricing, and excellent craftsmanship in every deck we build.`
-                    },
-                ]}
+  {
+    "heading": "Start with the character of the house",
+    "text": "For a Versailles deck, compare the width of the railing posts, the board color and the trim against the existing exterior. A simple material palette can make a new structure feel settled rather than added as an afterthought."
+  },
+  {
+    "heading": "Keep the garden connection straightforward",
+    "text": "Think about the route from the back door to the lawn, planting beds or patio. Stair position and landing size can matter more than an extra corner of decking. Bring a sketch or a few photos showing the areas you use most."
+  },
+  {
+    "heading": "Choose the right kind of shade",
+    "text": "An open pergola and a roofed deck solve different problems. One allows more open sky; the other involves roofing and water management. Discuss what you expect from the space before deciding which structure belongs in the plan."
+  }
+]}
 
                 /* SIDEBAR CONTENT */
                 offers={[
-                    {
-                        image: "/images/deck1.webp",
-                        text: "Get $1500 OFF Your New Deck Installation — Limited Time Offer",
-                        button: "Claim Discount",
-                        link: "/contact",
-                    },
-                    {
-                        image: "/images/deck2.webp",
-                        text: "Browse Completed Deck Projects in Versailles",
-                        button: "View Gallery",
-                        link: "/projects",
-                    },
-                ]}
+  {
+    "image": "/images/deck/deck-lexington35.webp",
+    "text": "Plan your Versailles deck",
+    "button": "Request a free estimate",
+    "link": "/contact/"
+  },
+  {
+    "image": "/images/deck/deck-lexington35.webp",
+    "text": "Compare deck materials and layouts",
+    "button": "Explore deck options",
+    "link": "/decking/"
+  }
+]}
 
-                whyUs={[
-                    "Trusted local deck builders serving Versailles and Woodford County",
-                    "Trex, TimberTech, and AZEK composite experts",
-                    "Custom designs tailored to your outdoor space",
-                    "Licensed, insured, and dependable scheduling",
-                    "Clear pricing, clean job sites, and strong workmanship warranties",
-                ]}
+                whyUs={["On-site measurements and a defined scope", "Wood and composite options explained", "Stairs and railings planned with the layout", "Project questions answered before you choose"]}
 
                 projects={[
-                    { image: "/images/deck4.webp", title: "Versailles Composite Deck Build" },
+                    { image: "/images/deck4.webp", title: "Composite Deck Build" },
                     { image: "/images/deck5.webp", title: "Custom Wood Deck With Railings" },
                     { image: "/images/deck6.webp", title: "Pergola & Deck Combination" },
                     { image: "/images/deck7.webp", title: "Covered Deck & Outdoor Living Area" },
                 ]}
 
-                findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
-                    { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
-                ]}
+                findUs={[]}
 
-                blog={[
-                    {
-                        title: "How Much Does a Deck Cost in Kentucky?",
-                        date: "April 12th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck6.webp",
-                    },
-                    {
-                        title: "Choosing Between Composite & Wood Decks in Versailles",
-                        date: "May 20th, 2025",
-                        author: "Peter",
-                        image: "/images/deck7.webp",
-                    },
-                    {
-                        title: "Deck Maintenance Tips for Versailles Homeowners",
-                        date: "June 10th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck8.webp",
-                    },
-                ]}
+                blog={[]}
 
                 partners={[
                     "/icons/trex.webp",
@@ -330,6 +166,20 @@ Expect clean work, fair pricing, and excellent craftsmanship in every deck we bu
                     "/icons/Yelp.webp"
                 ]}
             />
+
+            <section className="yr-content-section" aria-labelledby="deck-service-options">
+                <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+                    <h2 id="deck-service-options">Find the right fit for your backyard</h2>
+                    <p style={{ fontSize: "18px", lineHeight: 1.7, margin: "16px 0 24px" }}>Planning in Versailles? Start with our <a href="/decking/">deck building guide</a>, then compare the material or structure that suits your project.</p>
+                    <nav aria-label="Deck materials and outdoor services" style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+                        {[
+                            ["/wood-decks/", "Wood decks"], ["/composite-decks/", "Composite decks"],
+                            ["/covered-decks/", "Covered decks"], ["/custom-decks/", "Custom deck design"],
+                            ["/outdoor-deck/", "Outdoor living spaces"], ["/patios/", "Patios"], ["/pergolas/", "Pergolas"],
+                        ].map(([href, label]) => <a key={href} href={href} style={{ color: "#194b35", background: "#fff", border: "1px solid #cddbcf", borderRadius: "999px", padding: "12px 20px", fontSize: "16px", fontWeight: 600 }}>{label}</a>)}
+                    </nav>
+                </div>
+            </section>
 
             <QuoteSection />
             <ScrollToTop />

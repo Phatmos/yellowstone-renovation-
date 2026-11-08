@@ -8,7 +8,7 @@ import '../styles/deck-local-ky.css';
 
 const phone = 'tel:+18597657267';
 const stories = [
-  { id: 'team', title: 'Meet your Yellowstone team.', poster: '/local-deck/img/hero-intro-sharp.jpg', youtube: true },
+  { id: 'team', title: 'Meet your Yellowstone team.', poster: '/local-deck/img/hero-intro-sharp.webp', youtube: true },
   { id: 'perryville', title: 'A homeowner’s experience.', poster: '/local-deck/img/story-perryville-hd.webp', source: '/local-deck/video/story-perryville-hd.mp4' },
   { id: 'lexington', title: 'A Lexington homeowner’s story.', poster: '/local-deck/img/story-lexington-hd.webp', source: '/local-deck/video/story-lexington-hd.mp4' },
 ];

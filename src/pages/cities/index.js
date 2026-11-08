@@ -74,7 +74,7 @@ export default function ServiceAreasPage() {
                         "provider": {
                             "@type": "HomeAndConstructionBusiness",
                             "name": "Yellowstone Renovation",
-                            "telephone": "859-545-7020",
+                            "telephone": "859-765-7267",
                             "url": "https://yellowstonerenovation.com"
                         }
                     })}

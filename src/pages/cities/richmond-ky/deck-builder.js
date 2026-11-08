@@ -19,74 +19,37 @@ export default function RichmondDeckBuilder() {
 
             {/* SEO */}
             <SEO
-                title="Deck Builder in Richmond KY — Composite & Wood Decks | Yellowstone Renovation"
-                description="Top-rated deck builders in Richmond, KY. Yellowstone Renovation designs and installs high-quality composite and wood decks crafted for durability, beauty, and long-term performance. Free estimates across Madison County."
-                pathname="/cities/richmond-ky/deck-builder"
-                image="https://yellowstonerenovation.com/images/deck-builder8.webp"
+                title="Deck Builder in Richmond, KY | Yellowstone Renovation"
+                description="Deck building and replacement in Richmond, KY. Compare wood and composite decking, practical layouts, stairs and railings. Free on-site estimates."
+                pathname="/cities/richmond-ky/deck-builder/"
+                image="/images/deck/deck-lexington11.webp"
+                imageAlt="Deck construction by Yellowstone Renovation"
+                areaServed={["Richmond, KY"]}
+                serviceType={["Deck construction", "Deck replacement"]}
+                breadcrumbs={[{ name: "Home", path: "/" }, { name: "Deck building", path: "/decking/" }, { name: "Richmond deck builder", path: "/cities/richmond-ky/deck-builder/" }]}
             />
 
-            <Helmet>
-                <meta
-                    name="keywords"
-                    content="deck builder Richmond KY, composite deck Richmond, wood deck installation Madison County, deck repair Richmond KY, deck replacement Richmond"
-                />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Deck Builder in Richmond KY | Yellowstone Renovation" />
-                <meta property="og:description" content="Custom-built decks in Richmond, Kentucky — from durable composite installations to beautifully crafted wood structures. Get a fast, free estimate today." />
-                <meta property="og:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-                <meta property="og:url" content="https://yellowstonerenovation.com/cities/richmond-ky/deck-builder" />
-                <meta property="og:site_name" content="Yellowstone Renovation" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Richmond KY Deck Builder | Composite & Wood Deck Construction" />
-                <meta name="twitter:description" content="Build your ideal outdoor living space with Yellowstone Renovation — the trusted deck contractor serving Richmond and Madison County." />
-                <meta name="twitter:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-
-                {/* JSON-LD */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "HomeAndConstructionBusiness",
-                        name: "Yellowstone Renovation",
-                        url: "https://yellowstonerenovation.com",
-                        logo: "https://yellowstonerenovation.com/icons/logo.webp",
-                        image: "https://yellowstonerenovation.com/images/deck-builder8.webp",
-                        telephone: "859-545-7020",
-                        address: {
-                            "@type": "PostalAddress",
-                            addressLocality: "Richmond",
-                            addressRegion: "KY",
-                            postalCode: "40475",
-                            addressCountry: "US",
-                        },
-                        serviceType: [
-                            "Deck Construction",
-                            "Composite Deck Installation",
-                            "Wood Deck Builder",
-                            "Deck Repair",
-                            "Deck Replacement"
-                        ],
-                        areaServed: [
-                            "Richmond, KY",
-                            "Waco, KY",
-                            "Kirksville, KY",
-                            "Berea, KY",
-                            "Madison County, KY"
-                        ]
-                    })}
-                </script>
-            </Helmet>
+            <Helmet><script type="application/ld+json">{JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "@id": "https://yellowstonerenovation.com/cities/richmond-ky/deck-builder/#service",
+                name: "Deck construction in Richmond, KY",
+                description: "Deck building and replacement in Richmond, KY. Compare wood and composite decking, practical layouts, stairs and railings. Free on-site estimates.",
+                url: "https://yellowstonerenovation.com/cities/richmond-ky/deck-builder/",
+                serviceType: "Deck construction and replacement",
+                provider: { "@id": "https://yellowstonerenovation.com/#organization" },
+                areaServed: { "@type": "Place", name: "Richmond, Kentucky" },
+                image: "https://yellowstonerenovation.com/images/deck/deck-lexington11.webp",
+            })}</script></Helmet>
 
             {/* HERO */}
             <Hero2
-                topText="Top-Rated Deck Builder in Richmond, KY"
-                title="Deck Builder in Richmond, KY — Custom Composite & Wood Decks"
-                description="Yellowstone Renovation builds strong, modern, and long-lasting decks for homeowners across Richmond and Madison County. From premium composite decking to beautifully finished wood structures, we deliver quality craftsmanship you can rely on."
-                backgroundImage="/images/deck/deck-lexington1.webp"
+                topText="Richmond, Kentucky · Deck construction"
+                title="Deck Builder in Richmond, KY"
+                description="A sunny deck and a shaded deck can need different choices. We help Richmond homeowners plan a comfortable layout and compare materials in the conditions outside their own back door."
+                backgroundImage="/images/deck/deck-lexington11.webp"
                 overlayOpacity={0.65}
-                formTitle="Get a Free Deck Estimate"
+                formTitle="Plan your deck with us"
                 selectLabel="Select Deck Service"
                 selectOptions={[
                     "Custom Deck Design & Build",
@@ -107,9 +70,9 @@ export default function RichmondDeckBuilder() {
             {/* BEFORE & AFTER */}
             <BeforeAfter
                 title="Richmond Deck Transformations"
-                description="Browse before-and-after images of projects completed throughout Richmond — showing how we rebuild unsafe decks into modern, durable outdoor living spaces."
+                description="Compare the original structures with finished deck projects from our portfolio. See how layout, stairs and railing change the space."
                 buttonText="Explore More Projects"
-                buttonLink="/projects"
+                buttonLink="/projects-showcase/"
                 accentColor="#0a923d"
                 images={[
                     { before: "/images/deckafter3.webp", after: "/images/deckbefore3.webp" },
@@ -120,7 +83,7 @@ export default function RichmondDeckBuilder() {
             {/* GALLERY */}
             <GallerySection
                 title="RICHMOND DECK BUILDER GALLERY"
-                subtitle="Browse completed deck projects built for homeowners across Richmond and Madison County."
+                subtitle="Deck projects from our Kentucky portfolio, with ideas for your Richmond home."
                 highlight="DECK BUILDER"
                 background="#ffffff"
                 images={[
@@ -152,175 +115,50 @@ export default function RichmondDeckBuilder() {
             <TestimonialsSection />
 
             <MainSectionSideBar
-                title="Deck Builder in Richmond, KY — Custom Composite & Wood Decks"
+                title="Planning a deck for your Richmond home"
                 sections={[
-                    {
-                        heading: "Deck Builder Richmond KY — Quality, Craftsmanship, and Outdoor Living",
-                        text: `Yellowstone Renovation provides Richmond homeowners with high-quality deck construction built for durability and long-term performance. We design and build outdoor living spaces using premium materials and proven installation methods.
-
-Our team specializes in both composite and natural wood decking, offering design guidance, permit support, and precise construction. Whether upgrading an old deck or creating a brand-new entertainment space, we deliver results you can rely on.`
-                    },
-
-                    {
-                        heading: "Composite Deck Installation in Richmond, KY",
-                        text: `Composite decking is a top choice for Richmond homeowners who want a low-maintenance, long-lasting outdoor area. Composite boards resist fading, moisture, insects, and warping — ideal for Kentucky’s changing weather.
-
-We install high-quality Trex, TimberTech, and AZEK systems using hidden fasteners and moisture-protected framing. Choose from a wide selection of modern colors and realistic wood textures.`
-                    },
-
-                    {
-                        heading: "Wood Deck Builder in Richmond, Kentucky",
-                        text: `If you love the natural beauty of wood, we build custom decks using pressure-treated lumber, cedar, and redwood. Wood decks offer excellent value and timeless appeal.
-
-Every wood deck is sealed, reinforced, and tailored to withstand humidity, sun exposure, and daily use. Our craftsmanship ensures a clean, smooth finish and strong structural integrity.`
-                    },
-
-                    {
-                        heading: "Deck Replacement & Repair in Richmond, KY",
-                        text: `If your deck is unsafe, outdated, or failing structurally, we offer complete deck replacement and repair services throughout Richmond and Madison County. From strengthening framing to full rebuilds, we restore outdoor spaces with reliable materials and workmanship.
-
-Loose railings, rotted boards, and sagging structures — we handle all phases of repair and replacement.`
-                    },
-
-                    {
-                        heading: "Our Deck Design & Construction Process",
-                        text: `Each project begins with a consultation to evaluate your space and discuss design options. After planning, our team handles all permitting, structural framing, decking installation, and finishing work.
-
-We maintain open communication, a clean job site, and strict adherence to Kentucky building codes.`
-                    },
-
-                    {
-                        heading: "Average Deck Cost in Richmond, KY",
-                        text: `Here’s what most Richmond homeowners invest in a professionally built deck:
-
-Composite Decks: $45–$65 per sq. ft. installed  
-Wood Decks: $30–$50 per sq. ft. installed  
-Repairs or Partial Rebuilds: around 40–60% of a full replacement  
-
-Pricing includes materials, labor, cleanup, and final inspection. Contact us for an exact estimate based on your home.`
-                    },
-
-                    {
-                        heading: "Get a Free Deck Estimate in Richmond, KY",
-                        text: `Ready to upgrade your backyard? We provide free, no-pressure estimates across Richmond, Waco, Kirksville, Berea, and all of Madison County.
-
-We measure your space, explain material options, and provide a detailed written quote during your appointment.`
-                    },
-
-                    {
-                        heading: "Decking Contractor in Richmond, Kentucky",
-                        text: `Choosing the right contractor matters. Yellowstone Renovation is known for dependable scheduling, high-quality craftsmanship, and clean work throughout the project.
-
-We help homeowners increase property value and create comfortable outdoor spaces built for everyday use.`
-                    },
-
-                    {
-                        heading: "Deck Installation Services in Richmond",
-                        text: `From compact wood decks to large composite installations with railings, lighting, and stairs — we build custom designs tailored to your home’s architecture and outdoor layout.
-
-Each project is engineered for structural strength and long-term durability in Kentucky’s climate.`
-                    },
-
-                    {
-                        heading: "Professional Deck Construction in Richmond, KY",
-                        text: `As a licensed and insured contractor, we manage every step of the building process — including design, permits, framing, decking, railings, and inspection.
-
-Our decks are built to withstand heat, humidity, rain, and constant use without weakening over time.`
-                    },
-
-                    {
-                        heading: "Working with a Local Richmond Deck Contractor",
-                        text: `Located in Central Kentucky, we understand local building requirements, soil conditions, and climate challenges. That allows us to build stronger and safer decks for Richmond homeowners.
-
-Clear communication and reliable service guide every project from start to finish.`    
-                    },
-
-                    {
-                        heading: "Choose the Best Deck Installers in Richmond, KY",
-                        text: `Yellowstone Renovation is recognized for quality craftsmanship, reliable timelines, and consistent 5-star customer satisfaction. We create well-built, attractive outdoor spaces designed to last for decades.`
-                    },
-
-                    {
-                        heading: "Average Cost to Install a New Deck in Richmond",
-                        text: `Most Richmond homeowners invest between $10,000 and $45,000 for a complete deck installation, depending on size, height, and materials selected.
-
-Composite decks typically cost $45–$65 per sq. ft., while wood options range from $30–$50 per sq. ft. We provide clear, accurate estimates before beginning any project.`
-                    },
-
-                    {
-                        heading: "Richmond Wood Decks — Natural Appeal & Lasting Value",
-                        text: `Wood decks bring warmth and traditional beauty to any property. We use premium lumber with proper treatment and sealing to ensure long-term durability in Kentucky’s seasonal weather patterns.`
-                    },
-
-                    {
-                        heading: "Composite Decks in Richmond, KY",
-                        text: `Composite decks offer exceptional durability with virtually no maintenance required. Our installations include Trex, TimberTech, and AZEK — proven brands known for moisture resistance and long-lasting color performance.`
-                    },
-
-                    {
-                        heading: "Deck Builder Near Me in Richmond, KY",
-                        text: `Searching for “deck builder near me” in Richmond? Yellowstone Renovation proudly serves Richmond, Waco, Berea, Kirksville, and all of Madison County.
-
-We design and build custom decks that enhance home value, outdoor functionality, and everyday comfort.`
-                    },
-                ]}
+  {
+    "heading": "Visit the space at the time you want to use it",
+    "text": "For a Richmond deck, look at the yard in the afternoon if that is when you plan to sit outside. Sun exposure affects comfort and material selection. Bring that observation to the design discussion alongside the deck dimensions."
+  },
+  {
+    "heading": "Compare samples, not just color names",
+    "text": "Wood and composite surfaces vary in texture and appearance. View samples beside your siding and trim, and ask about the cleaning and maintenance each product requires. Lighter or darker finishes can also change how the completed deck looks against the house."
+  },
+  {
+    "heading": "Make room for movement between uses",
+    "text": "A deck used for both dining and relaxing needs a clear path between those areas. Locate stairs where they support that route rather than cutting across the seating. If the plan includes a future cover, consider its structural needs during the first design conversation."
+  }
+]}
 
                 /* SIDEBAR CONTENT */
                 offers={[
-                    {
-                        image: "/images/deck1.webp",
-                        text: "Get $1500 OFF Your New Deck Installation — Limited Time Offer",
-                        button: "Claim Discount",
-                        link: "/contact",
-                    },
-                    {
-                        image: "/images/deck2.webp",
-                        text: "Browse Richmond Deck Projects",
-                        button: "View Gallery",
-                        link: "/projects",
-                    },
-                ]}
+  {
+    "image": "/images/deck/deck-lexington11.webp",
+    "text": "Plan your Richmond deck",
+    "button": "Request a free estimate",
+    "link": "/contact/"
+  },
+  {
+    "image": "/images/deck/deck-lexington11.webp",
+    "text": "Compare deck materials and layouts",
+    "button": "Explore deck options",
+    "link": "/decking/"
+  }
+]}
 
-                whyUs={[
-                    "Trusted local deck builders serving Richmond and Madison County",
-                    "Trex, TimberTech, and AZEK composite specialists",
-                    "Custom designs tailored to your home and outdoor layout",
-                    "Licensed, insured, and known for reliable scheduling",
-                    "Clear pricing, clean job sites, and long-term warranties",
-                ]}
+                whyUs={["On-site measurements and a defined scope", "Wood and composite options explained", "Stairs and railings planned with the layout", "Project questions answered before you choose"]}
 
                 projects={[
-                    { image: "/images/deck4.webp", title: "Richmond Composite Deck Build" },
+                    { image: "/images/deck4.webp", title: "Composite Deck Build" },
                     { image: "/images/deck5.webp", title: "Wood Deck With Custom Railings" },
                     { image: "/images/deck6.webp", title: "Pergola & Deck Upgrade" },
                     { image: "/images/deck7.webp", title: "Covered Deck Expansion" },
                 ]}
 
-                findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
-                    { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
-                ]}
+                findUs={[]}
 
-                blog={[
-                    {
-                        title: "How Much Does a Deck Cost in Kentucky?",
-                        date: "April 12th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck6.webp",
-                    },
-                    {
-                        title: "Composite vs Wood Decks: Which Is Best for Richmond Homes?",
-                        date: "May 20th, 2025",
-                        author: "Peter",
-                        image: "/images/deck7.webp",
-                    },
-                    {
-                        title: "Deck Maintenance Tips for Richmond Homeowners",
-                        date: "June 10th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck8.webp",
-                    },
-                ]}
+                blog={[]}
 
                 partners={[
                     "/icons/trex.webp",
@@ -328,6 +166,20 @@ We design and build custom decks that enhance home value, outdoor functionality,
                     "/icons/Yelp.webp"
                 ]}
             />
+
+            <section className="yr-content-section" aria-labelledby="deck-service-options">
+                <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+                    <h2 id="deck-service-options">Find the right fit for your backyard</h2>
+                    <p style={{ fontSize: "18px", lineHeight: 1.7, margin: "16px 0 24px" }}>Planning in Richmond? Start with our <a href="/decking/">deck building guide</a>, then compare the material or structure that suits your project.</p>
+                    <nav aria-label="Deck materials and outdoor services" style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+                        {[
+                            ["/wood-decks/", "Wood decks"], ["/composite-decks/", "Composite decks"],
+                            ["/covered-decks/", "Covered decks"], ["/custom-decks/", "Custom deck design"],
+                            ["/outdoor-deck/", "Outdoor living spaces"], ["/patios/", "Patios"], ["/pergolas/", "Pergolas"],
+                        ].map(([href, label]) => <a key={href} href={href} style={{ color: "#194b35", background: "#fff", border: "1px solid #cddbcf", borderRadius: "999px", padding: "12px 20px", fontSize: "16px", fontWeight: 600 }}>{label}</a>)}
+                    </nav>
+                </div>
+            </section>
 
             <QuoteSection />
             <ScrollToTop />

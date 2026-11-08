@@ -33,7 +33,7 @@ export default function AboutSection() {
                     </p>
                     <div className="about-highlight">
                         <span className="about-check">✔</span>
-                        <strong>65 projects completed last year</strong>
+                        <strong>Start with an on-site visit and a clear written scope.</strong>
                     </div>
                 </div>
             </div>

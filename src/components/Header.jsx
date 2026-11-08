@@ -45,11 +45,11 @@ export default function Header() {
                 <div className="header-container">
                     <Link to="/" className="logo">
                         <img
-                            src="/images/yellowstone-back-logo.png"
+                            src="/images/yellowstone-back-logo.webp"
                             alt="Yellowstone Renovation"
                         />
                         <div className="logo-text">
-                            <p className="title">Your #1 Home Improvement Experts</p>
+                            <p className="title">Decks, Siding &amp; Outdoor Living</p>
                             <p className="subtitle">Serving Lexington & Surrounding Areas</p>
                         </div>
                     </Link>
@@ -160,7 +160,13 @@ export default function Header() {
                                 <Link to="/custom-decks">Custom Decks</Link>
                             </li>
                             <li>
-                                <Link to="/outdoor-deck">Outdoor Deck</Link>
+                                <Link to="/outdoor-deck/">Outdoor Living</Link>
+                            </li>
+                            <li>
+                                <Link to="/patios/">Patios</Link>
+                            </li>
+                            <li>
+                                <Link to="/pergolas/">Pergolas</Link>
                             </li>
                         </ul>
                     </li>
@@ -204,7 +210,7 @@ export default function Header() {
                     <div className="mobile-menu-top">
                         <Link to="/" className="mobile-menu-logo" onClick={closeMenu}>
                             <img
-                                src="/images/yellowstone-back-logo.png"
+                                src="/images/yellowstone-back-logo.webp"
                                 alt="Yellowstone Renovation"
                             />
                         </Link>
@@ -358,6 +364,8 @@ export default function Header() {
                                     "/covered-decks",
                                     "/custom-decks",
                                     "/outdoor-deck",
+                                    "/patios",
+                                    "/pergolas",
                                 ])
                                         ? "active-mobile-link"
                                         : ""
@@ -418,8 +426,10 @@ export default function Header() {
                                     onClick={closeMenu}
                                     className={isActivePage("/outdoor-deck") ? "active-mobile-sublink" : ""}
                                 >
-                                    Outdoor Deck
+                                    Outdoor Living
                                 </Link>
+                                <Link to="/patios/" onClick={closeMenu} className={isActivePage('/patios') ? 'active-mobile-sublink' : ''}>Patios</Link>
+                                <Link to="/pergolas/" onClick={closeMenu} className={isActivePage('/pergolas') ? 'active-mobile-sublink' : ''}>Pergolas</Link>
                             </div>
                         </div>
 

@@ -76,7 +76,7 @@ export default function WilmoreKY() {
                         "url": "https://yellowstonerenovation.com",
                         "image": "https://yellowstonerenovation.com/images/remodler3.webp",
                         "logo": "https://yellowstonerenovation.com/icons/logo.webp",
-                        "telephone": "859-545-7020",
+                        "telephone": "859-765-7267",
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": "Wilmore",

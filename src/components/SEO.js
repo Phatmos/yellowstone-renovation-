@@ -7,6 +7,7 @@ export default function SEO({
   description,
   pathname = "",
   image,
+  imageAlt,
   keywords,
   article = false,
   publishedTime,
@@ -22,6 +23,7 @@ export default function SEO({
   areaServed = [],
   projectSchema = null,
   productSchema = null,
+  breadcrumbs = [],
 }) {
   const { site } = useStaticQuery(graphql`
     query SEOQuery {
@@ -45,40 +47,17 @@ export default function SEO({
   const cleanPath = currentPath.split(/[?#]/)[0].replace(/^\/+|\/+$/g, "");
   const normalizedPath = cleanPath ? `/${cleanPath}/` : "/";
 
-  const normalizedImage = image
-    ? image.startsWith("http")
-      ? image
-      : `${siteUrl}${image}`
-    : `${siteUrl}/images/remodler1.webp`;
+  const baseUrl = siteUrl.replace(/\/+$/, "");
+  const absoluteUrl = value => new URL(value, `${baseUrl}/`).href;
+  const normalizedImage = absoluteUrl(image || "/images/remodler1.webp");
+  // Escaping '<' keeps supplied copy inside the JSON script during HTML parsing.
+  const jsonLd = value => JSON.stringify(value).replace(/</g, "\\u003c");
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    url: `${siteUrl}${normalizedPath}`,
+    url: `${baseUrl}${normalizedPath}`,
     image: normalizedImage,
-  };
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${siteUrl}/#organization`,
-    name: "Yellowstone Renovation",
-    url: siteUrl,
-    logo: `${siteUrl}/icons/logo.webp`,
-    description:
-      "Yellowstone Renovation is a trusted exterior remodeling company serving Kentucky with deck building, siding installation, fencing, and window replacement services.",
-    sameAs: [
-      "https://www.facebook.com/p/Yellowstone-Renovation-61551123481170/",
-      "https://www.instagram.com/yellowstone_renovation/",
-      "https://www.yelp.com/biz/yellowstone-renovation-lexington",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+1-859-765-7267",
-      contactType: "customer service",
-      areaServed: "KY",
-      availableLanguage: ["English"],
-    },
   };
 
   const websiteSchema = {
@@ -114,7 +93,9 @@ export default function SEO({
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: seo.image,
+      caption: imageAlt || seo.title,
     },
+    ...(breadcrumbs.length > 0 && { breadcrumb: { "@id": `${seo.url}#breadcrumb` } }),
   };
 
   const localBusinessSchema = {
@@ -124,13 +105,29 @@ export default function SEO({
     name: "Yellowstone Renovation",
     url: siteUrl,
     image: `${siteUrl}/icons/logo.webp`,
+    logo: `${siteUrl}/icons/logo.webp`,
+    description: "Deck building, siding installation, fencing, and window replacement in Lexington and Central Kentucky.",
     telephone: "+1-859-765-7267",
+    email: "info@yellowstonerenovation.com",
+    sameAs: [
+      "https://www.facebook.com/p/Yellowstone-Renovation-61551123481170/",
+      "https://www.instagram.com/yellowstone_renovation/",
+      "https://www.yelp.com/biz/yellowstone-renovation-lexington",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-859-765-7267",
+      email: "info@yellowstonerenovation.com",
+      contactType: "customer service",
+      areaServed: "KY",
+      availableLanguage: ["English"],
+    },
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: "120 Tina Way",
       addressLocality: "Nicholasville",
-      addressRegion: state,
+      addressRegion: "KY",
       postalCode: "40356",
       addressCountry: "US",
     },
@@ -144,7 +141,7 @@ export default function SEO({
           "Georgetown, KY",
           "Richmond, KY",
         ],
-    serviceType:
+    knowsAbout:
       serviceType.length > 0
         ? serviceType
         : [
@@ -174,25 +171,39 @@ export default function SEO({
       <meta property="og:locale" content="en_US" />
       <meta property="og:image" content={seo.image} />
       <meta property="og:image:secure_url" content={seo.image} />
+      <meta property="og:image:alt" content={imageAlt || seo.title} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:image:alt" content={imageAlt || seo.title} />
 
-      {normalizedPath === "/" && <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>}
+      {normalizedPath === "/" && <script type="application/ld+json">{jsonLd(websiteSchema)}</script>}
 
       <script type="application/ld+json">
-        {JSON.stringify(webpageSchema)}
+        {jsonLd(webpageSchema)}
       </script>
 
       <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
+        {jsonLd(localBusinessSchema)}
       </script>
+
+      {breadcrumbs.length > 0 && <script type="application/ld+json">{jsonLd({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": `${seo.url}#breadcrumb`,
+        itemListElement: breadcrumbs.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          item: absoluteUrl(item.url || item.path || normalizedPath),
+        })),
+      })}</script>}
 
       {productSchema && (
         <script type="application/ld+json">
-          {JSON.stringify({
+          {jsonLd({
             "@context": "https://schema.org",
             "@type": "Product",
             brand: {
@@ -208,7 +219,7 @@ export default function SEO({
 
       {projectSchema && (
         <script type="application/ld+json">
-          {JSON.stringify({
+          {jsonLd({
             "@context": "https://schema.org",
             "@type": "CreativeWork",
             author: {

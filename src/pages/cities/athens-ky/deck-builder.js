@@ -20,74 +20,37 @@ export default function AthensDeckBuilder() {
 
             {/* SEO */}
             <SEO
-                title="Deck Builder in Athens KY — Composite & Wood Decks | Yellowstone Renovation"
-                description="Professional deck builders in Athens, KY — Yellowstone Renovation designs and installs composite and wood decks built for comfort, durability, and long-lasting performance. Free estimates across Fayette County!"
-                pathname="/cities/athens-ky/deck-builder"
-                image="https://yellowstonerenovation.com/images/deck-builder8.webp"
+                title="Deck Builder in Athens, KY | Yellowstone Renovation"
+                description="Plan a wood or composite deck in Athens, KY. Compare materials, stairs and railing layouts with Yellowstone Renovation. Free on-site estimates."
+                pathname="/cities/athens-ky/deck-builder/"
+                image="/images/deck/deck-lexington1.webp"
+                imageAlt="Deck construction by Yellowstone Renovation"
+                areaServed={["Athens, KY"]}
+                serviceType={["Deck construction", "Deck replacement"]}
+                breadcrumbs={[{ name: "Home", path: "/" }, { name: "Deck building", path: "/decking/" }, { name: "Athens deck builder", path: "/cities/athens-ky/deck-builder/" }]}
             />
 
-            <Helmet>
-                <meta
-                    name="keywords"
-                    content="deck builder Athens KY, composite deck Athens, wood deck installation Fayette County, deck repair Athens KY, deck replacement Athens"
-                />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Deck Builder in Athens KY | Yellowstone Renovation" />
-                <meta property="og:description" content="Custom-built decks in Athens, Kentucky — from Trex and TimberTech composite systems to classic wood designs. Get a free on-site deck estimate today!" />
-                <meta property="og:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-                <meta property="og:url" content="https://yellowstonerenovation.com/cities/athens-ky/deck-builder" />
-                <meta property="og:site_name" content="Yellowstone Renovation" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Athens KY Deck Builder | Composite & Wood Deck Construction" />
-                <meta name="twitter:description" content="Enhance your outdoor space with a custom deck from Yellowstone Renovation — trusted deck contractors in Athens, KY." />
-                <meta name="twitter:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-
-                {/* Schema */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "HomeAndConstructionBusiness",
-                        name: "Yellowstone Renovation",
-                        url: "https://yellowstonerenovation.com",
-                        logo: "https://yellowstonerenovation.com/icons/logo.webp",
-                        image: "https://yellowstonerenovation.com/images/deck-builder8.webp",
-                        telephone: "(859) 765-7267",
-                        address: {
-                            "@type": "PostalAddress",
-                            addressLocality: "Athens",
-                            addressRegion: "KY",
-                            postalCode: "40509",
-                            addressCountry: "US"
-                        },
-                        serviceType: [
-                            "Deck Construction",
-                            "Composite Deck Installation",
-                            "Wood Deck Builder",
-                            "Deck Repair",
-                            "Deck Replacement"
-                        ],
-                        areaServed: [
-                            "Athens, KY",
-                            "Boone Creek, KY",
-                            "Avon, KY",
-                            "Grassland, KY",
-                            "Fayette County, KY"
-                        ]
-                    })}
-                </script>
-            </Helmet>
+            <Helmet><script type="application/ld+json">{JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "@id": "https://yellowstonerenovation.com/cities/athens-ky/deck-builder/#service",
+                name: "Deck construction in Athens, KY",
+                description: "Plan a wood or composite deck in Athens, KY. Compare materials, stairs and railing layouts with Yellowstone Renovation. Free on-site estimates.",
+                url: "https://yellowstonerenovation.com/cities/athens-ky/deck-builder/",
+                serviceType: "Deck construction and replacement",
+                provider: { "@id": "https://yellowstonerenovation.com/#organization" },
+                areaServed: { "@type": "Place", name: "Athens, Kentucky" },
+                image: "https://yellowstonerenovation.com/images/deck/deck-lexington1.webp",
+            })}</script></Helmet>
 
             {/* HERO */}
             <Hero2
-                topText="Top-Rated Deck Builder in Athens, KY"
-                title="Deck Builder in Athens, KY — Custom Composite & Wood Decks"
-                description="Yellowstone Renovation builds high-quality decks designed for long-term strength, beauty, and outdoor enjoyment. Serving Athens and all of Fayette County, we specialize in composite and wood deck installations with superior craftsmanship."
+                topText="Athens, Kentucky · Deck construction"
+                title="Deck Builder in Athens, KY"
+                description="A deck should make the backyard easier to use. We help Athens homeowners plan the table, the steps and the way back indoors before choosing the boards."
                 backgroundImage="/images/deck/deck-lexington1.webp"
                 overlayOpacity={0.65}
-                formTitle="Get a Free Deck Construction Estimate"
+                formTitle="Plan your deck with us"
                 selectLabel="Select Deck Service"
                 selectOptions={[
                     "Custom Deck Design & Build",
@@ -108,9 +71,9 @@ export default function AthensDeckBuilder() {
             {/* BEFORE & AFTER */}
             <BeforeAfter
                 title="Athens Deck Before & After Transformations"
-                description="See how our team transforms outdoor spaces across Athens — from aging, weathered decks to modern, durable composite and wood builds that last for decades."
+                description="Compare the original structures with finished deck projects from our portfolio. See how layout, stairs and railing change the space."
                 buttonText="Explore More Projects"
-                buttonLink="/projects"
+                buttonLink="/projects-showcase/"
                 accentColor="#0a923d"
                 images={[
                     { before: "/images/deckafter3.webp", after: "/images/deckbefore3.webp" },
@@ -121,7 +84,7 @@ export default function AthensDeckBuilder() {
             {/* GALLERY */}
             <GallerySection
                 title="ATHENS DECK BUILDER GALLERY"
-                subtitle="View deck projects completed throughout Athens and Fayette County."
+                subtitle="Deck projects from our Kentucky portfolio, with ideas for your Athens home."
                 highlight="DECK BUILDER"
                 background="#ffffff"
                 images={[
@@ -144,176 +107,49 @@ export default function AthensDeckBuilder() {
             <TestimonialsSection />
 
             <MainSectionSideBar
-                title="Deck Builder in Athens, KY — Custom Composite & Wood Decks"
+                title="Planning a deck for your Athens home"
                 sections={[
-
-                    {
-                        heading: "Deck Builder Athens KY — Built for Strength, Style, and Everyday Living",
-                        text: `Yellowstone Renovation is a trusted deck builder serving Athens, Kentucky, creating outdoor spaces designed for comfort, beauty, and long-term durability. We use high-quality materials and expert craftsmanship to build decks that last.
-
-Whether you're replacing an older structure or planning a brand-new build, we make sure your deck enhances your home and your lifestyle.`
-                    },
-
-                    {
-                        heading: "Composite Deck Installation in Athens, KY",
-                        text: `Composite decking is a leading choice among Athens homeowners who want long-lasting performance with minimal maintenance. Composite boards resist moisture, fading, warping, and insects — perfect for Kentucky’s climate.
-
-We install top brands like Trex, TimberTech, and AZEK with hidden fasteners and moisture-protected framing for outstanding durability.`
-                    },
-
-                    {
-                        heading: "Wood Deck Builder in Athens KY",
-                        text: `Wood decks offer timeless natural beauty and warm aesthetics. We build with pressure-treated pine, cedar, and redwood, providing classic style with modern craftsmanship.
-
-Each wood deck is sealed for moisture protection, UV resistance, and long-term structural stability.`
-                    },
-
-                    {
-                        heading: "Deck Replacement and Repair in Athens, KY",
-                        text: `If your current deck is unsafe or deteriorating, we provide full deck replacement and structural repairs throughout Athens and Fayette County. From rotted support posts to damaged boards and loose railings, we restore your deck to safe, functional condition.
-
-We can rebuild with modern materials or upgrade you to a premium composite system.`
-                    },
-
-                    {
-                        heading: "Deck Design and Construction Process",
-                        text: `Every project begins with a detailed consultation to understand your backyard layout, budget, and aesthetic preferences. Once the design is finalized, our licensed team manages permitting, framing, decking, railing installation, and all finish work.
-
-Your deck is built to Kentucky building code standards for maximum safety and longevity.`
-                    },
-
-                    {
-                        heading: "Average Deck Cost in Athens, KY",
-                        text: `Most deck projects in Athens fall within these ranges:
-
-Composite Decks: $45–$65 per sq. ft. installed  
-Wood Decks: $30–$50 per sq. ft. installed  
-Repairs/Rebuilds: about 40–60% of full replacement cost  
-
-Pricing varies depending on size, height, and materials. Contact us for an accurate on-site quote.`
-                    },
-
-                    {
-                        heading: "Get a Free Deck Estimate in Athens KY",
-                        text: `We offer free, no-obligation deck estimates throughout Athens, Boone Creek, Avon, Grassland, and all of Fayette County.
-
-We take measurements, discuss materials, review design options, and provide a detailed written estimate.`
-                    },
-
-                    {
-                        heading: "Decking Contractor in Athens, Kentucky",
-                        text: `As a trusted Athens deck contractor, we prioritize strength, quality craftsmanship, and clear communication. Our goal is to enhance your home’s value and your outdoor living experience.`
-                    },
-
-                    {
-                        heading: "Deck Installation Services in Athens",
-                        text: `From ground-level platforms to elevated composite decks with stairs, lighting, and upgraded railings — we build decks tailored to your home and lifestyle.
-
-Every structure is engineered for safety, longevity, and beauty.`
-                    },
-
-                    {
-                        heading: "Professional Deck Construction in Athens, KY",
-                        text: `We handle the entire construction process, including permits, framing, decking, railing systems, and final inspections.
-
-Your new deck is built to withstand Athens’ weather conditions and provide years of reliable performance.`
-                    },
-
-                    {
-                        heading: "Working with a Local Deck Contractor Near You",
-                        text: `As a Central Kentucky contractor, we understand the soil, climate, and structural requirements of the region. That experience ensures every deck we build is strong, stable, and built to last.
-
-We keep communication clear and simple from start to finish.`
-                    },
-
-                    {
-                        heading: "Choose the Best Deck Installers in Athens, KY",
-                        text: `With hundreds of completed projects and exceptional customer reviews, Yellowstone Renovation is one of the top-rated deck contractors in the Athens area.
-
-We combine expert craftsmanship, strong materials, and fair pricing to deliver outstanding results.`
-                    },
-
-                    {
-                        heading: "Average Cost to Install a New Deck in Athens",
-                        text: `Most deck installations in Athens range from $10,000 to $45,000 depending on height, size, and material choice. Composite decks usually run $45–$65 per sq. ft., while wood decks cost $30–$50 per sq. ft.
-
-Every estimate includes a clear, itemized breakdown.`
-                    },
-
-                    {
-                        heading: "Athens Wood Decks — Natural Warmth and Beauty",
-                        text: `Many Athens homeowners love the natural texture and traditional appearance of wood decks. We install premium lumber with professional sealing and reinforcement for long-term beauty and performance.`
-                    },
-
-                    {
-                        heading: "Composite Decks in Athens, KY",
-                        text: `Composite decks offer unmatched longevity with very little maintenance. We install waterproof framing, hidden fasteners, and top-quality boards from Trex, TimberTech, and AZEK.`
-                    },
-
-                    {
-                        heading: "Deck Builder Near Me in Athens, KY",
-                        text: `Searching for “deck builder near me” in Athens? Yellowstone Renovation proudly serves Athens, Boone Creek, Avon, Grassland, and all of Fayette County.
-
-We build long-lasting decks with clean workmanship and fair pricing.`
-                    },
-
-                ]}
+  {
+    "heading": "Start with the space you will actually use",
+    "text": "For an Athens deck, the first measurement is not just the outside edge. Leave room to pull out dining chairs, walk past the grill and open the back door. If trees shade the site, discuss leaf buildup and access for cleaning before the layout is fixed."
+  },
+  {
+    "heading": "Choose a surface you want to look after",
+    "text": "Pressure-treated wood brings natural grain and a lower initial material cost, with cleaning and finish maintenance to plan for. Composite reduces the need for staining, but still needs washing. Compare samples in the light at your home rather than choosing from a small screen."
+  },
+  {
+    "heading": "Make the estimate specific to your backyard",
+    "text": "Share a few photos of the back door, the existing deck and the route into the yard. An on-site visit lets us discuss height, support conditions, stairs and railing before putting a scope together. A cover or pergola is a separate structural decision to include early."
+  }
+]}
 
                 offers={[
-                    {
-                        image: "/images/deck1.webp",
-                        text: "Get $1500 OFF Your New Deck Installation — Limited Time Offer",
-                        button: "Claim Discount",
-                        link: "/contact",
-                    },
-                    {
-                        image: "/images/deck2.webp",
-                        text: "See Over 20 Completed Deck Projects in Athens",
-                        button: "View Gallery",
-                        link: "/projects",
-                    },
-                ]}
+  {
+    "image": "/images/deck/deck-lexington1.webp",
+    "text": "Plan your Athens deck",
+    "button": "Request a free estimate",
+    "link": "/contact/"
+  },
+  {
+    "image": "/images/deck/deck-lexington1.webp",
+    "text": "Compare deck materials and layouts",
+    "button": "Explore deck options",
+    "link": "/decking/"
+  }
+]}
 
-                whyUs={[
-                    "Trusted local deck builders serving Athens and Fayette County",
-                    "Certified Trex, TimberTech, and AZEK installers",
-                    "Custom deck designs tailored to each home",
-                    "Licensed, insured, and known for quality workmanship",
-                    "Clear pricing, reliable timelines, and strong warranties",
-                ]}
+                whyUs={["On-site measurements and a defined scope", "Wood and composite options explained", "Stairs and railings planned with the layout", "Project questions answered before you choose"]}
 
                 projects={[
-                    { image: "/images/deck4.webp", title: "Athens Composite Deck Project" },
-                    { image: "/images/deck5.webp", title: "Wood Deck Installation in Athens" },
+                    { image: "/images/deck4.webp", title: "Composite Deck Project" },
+                    { image: "/images/deck5.webp", title: "Wood Deck Installation" },
                     { image: "/images/deck6.webp", title: "Pergola + Deck Upgrade" },
                     { image: "/images/deck7.webp", title: "Covered Back Deck Extension" },
                 ]}
 
-                findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
-                    { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
-                ]}
+                findUs={[]}
 
-                blog={[
-                    {
-                        title: "How Much Does a Deck Cost in Kentucky?",
-                        date: "April 12th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck6.webp",
-                    },
-                    {
-                        title: "Choosing Between Composite and Wood Decks",
-                        date: "May 20th, 2025",
-                        author: "Peter",
-                        image: "/images/deck7.webp",
-                    },
-                    {
-                        title: "Deck Maintenance Tips for Athens Homeowners",
-                        date: "June 10th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck8.webp",
-                    },
-                ]}
+                blog={[]}
 
                 partners={[
                     "/icons/trex.webp",
@@ -321,6 +157,20 @@ We build long-lasting decks with clean workmanship and fair pricing.`
                     "/icons/Yelp.webp",
                 ]}
             />
+
+            <section className="yr-content-section" aria-labelledby="deck-service-options">
+                <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+                    <h2 id="deck-service-options">Find the right fit for your backyard</h2>
+                    <p style={{ fontSize: "18px", lineHeight: 1.7, margin: "16px 0 24px" }}>Planning in Athens? Start with our <a href="/decking/">deck building guide</a>, then compare the material or structure that suits your project.</p>
+                    <nav aria-label="Deck materials and outdoor services" style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+                        {[
+                            ["/wood-decks/", "Wood decks"], ["/composite-decks/", "Composite decks"],
+                            ["/covered-decks/", "Covered decks"], ["/custom-decks/", "Custom deck design"],
+                            ["/outdoor-deck/", "Outdoor living spaces"], ["/patios/", "Patios"], ["/pergolas/", "Pergolas"],
+                        ].map(([href, label]) => <a key={href} href={href} style={{ color: "#194b35", background: "#fff", border: "1px solid #cddbcf", borderRadius: "999px", padding: "12px 20px", fontSize: "16px", fontWeight: 600 }}>{label}</a>)}
+                    </nav>
+                </div>
+            </section>
 
             <QuoteSection />
             <ScrollToTop />

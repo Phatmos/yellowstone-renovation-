@@ -1,0 +1,178 @@
+{
+  "decking": {
+    "hero": {
+      "src": "/deck-services/decking-hero.webp",
+      "width": 1800,
+      "height": 1350
+    },
+    "mobile": {
+      "src": "/deck-services/decking-mobile.webp",
+      "width": 768,
+      "height": 576
+    },
+    "card": {
+      "src": "/deck-services/decking-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/decking-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "wood-decks": {
+    "hero": {
+      "src": "/deck-services/wood-decks-hero.webp",
+      "width": 1050,
+      "height": 1400
+    },
+    "mobile": {
+      "src": "/deck-services/wood-decks-mobile.webp",
+      "width": 768,
+      "height": 1024
+    },
+    "card": {
+      "src": "/deck-services/wood-decks-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/wood-decks-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "composite-decks": {
+    "hero": {
+      "src": "/deck-services/composite-decks-hero.webp",
+      "width": 1800,
+      "height": 1350
+    },
+    "mobile": {
+      "src": "/deck-services/composite-decks-mobile.webp",
+      "width": 768,
+      "height": 576
+    },
+    "card": {
+      "src": "/deck-services/composite-decks-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/composite-decks-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "covered-decks": {
+    "hero": {
+      "src": "/deck-services/covered-decks-hero.webp",
+      "width": 1800,
+      "height": 1350
+    },
+    "mobile": {
+      "src": "/deck-services/covered-decks-mobile.webp",
+      "width": 768,
+      "height": 576
+    },
+    "card": {
+      "src": "/deck-services/covered-decks-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/covered-decks-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "custom-decks": {
+    "hero": {
+      "src": "/deck-services/custom-decks-hero.webp",
+      "width": 1024,
+      "height": 682
+    },
+    "mobile": {
+      "src": "/deck-services/custom-decks-mobile.webp",
+      "width": 768,
+      "height": 512
+    },
+    "card": {
+      "src": "/deck-services/custom-decks-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/custom-decks-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "outdoor-deck": {
+    "hero": {
+      "src": "/deck-services/outdoor-deck-hero.webp",
+      "width": 1050,
+      "height": 1400
+    },
+    "mobile": {
+      "src": "/deck-services/outdoor-deck-mobile.webp",
+      "width": 768,
+      "height": 1024
+    },
+    "card": {
+      "src": "/deck-services/outdoor-deck-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/outdoor-deck-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "patios": {
+    "hero": {
+      "src": "/deck-services/patios-hero.webp",
+      "width": 1050,
+      "height": 1400
+    },
+    "mobile": {
+      "src": "/deck-services/patios-mobile.webp",
+      "width": 768,
+      "height": 1024
+    },
+    "card": {
+      "src": "/deck-services/patios-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/patios-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  },
+  "pergolas": {
+    "hero": {
+      "src": "/deck-services/pergolas-hero.webp",
+      "width": 788,
+      "height": 1400
+    },
+    "mobile": {
+      "src": "/deck-services/pergolas-mobile.webp",
+      "width": 619,
+      "height": 1100
+    },
+    "card": {
+      "src": "/deck-services/pergolas-card.webp",
+      "width": 800,
+      "height": 600
+    },
+    "social": {
+      "src": "/deck-services/pergolas-social.jpg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+}

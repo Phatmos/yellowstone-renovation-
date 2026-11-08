@@ -1,0 +1,1257 @@
+{
+  "generated": "2026-11-08T22:09:52.558Z",
+  "assets": [
+    {
+      "src": "/local-deck/img/catalog-books-2026.webp",
+      "before": 468050,
+      "after": 359158
+    },
+    {
+      "src": "/local-deck/img/gallery/60457ffb-4bb3-4065-817a-a35cb54f0c73.webp",
+      "before": 238066,
+      "after": 202656
+    },
+    {
+      "src": "/local-deck/img/gallery/backyard-deck-after.webp",
+      "before": 647322,
+      "after": 459608
+    },
+    {
+      "src": "/local-deck/img/gallery/full/60457ffb-4bb3-4065-817a-a35cb54f0c73.webp",
+      "before": 370082,
+      "after": 254310
+    },
+    {
+      "src": "/local-deck/img/gallery/backyard-stairs-before.webp",
+      "before": 515662,
+      "after": 360886
+    },
+    {
+      "src": "/local-deck/img/gallery/backyard-deck-before.webp",
+      "before": 535374,
+      "after": 397466
+    },
+    {
+      "src": "/local-deck/img/gallery/backyard-stairs-after.webp",
+      "before": 611828,
+      "after": 443554
+    },
+    {
+      "src": "/local-deck/img/gallery/full/backyard-stairs-before.webp",
+      "before": 599002,
+      "after": 360578
+    },
+    {
+      "src": "/local-deck/img/gallery/full/backyard-deck-before.webp",
+      "before": 638720,
+      "after": 394452
+    },
+    {
+      "src": "/local-deck/img/gallery/full/backyard-stairs-after.webp",
+      "before": 1186362,
+      "after": 580430
+    },
+    {
+      "src": "/local-deck/img/gallery/full/backyard-deck-after.webp",
+      "before": 1257768,
+      "after": 591138
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_0981.webp",
+      "before": 1184842,
+      "after": 441458
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_0983.webp",
+      "before": 1227850,
+      "after": 473238
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_0979.webp",
+      "before": 1422710,
+      "after": 580718
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_1016.webp",
+      "before": 1449922,
+      "after": 544830
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_1024.webp",
+      "before": 996110,
+      "after": 347878
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_1020.webp",
+      "before": 1283084,
+      "after": 459020
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_1019.webp",
+      "before": 1220530,
+      "after": 457390
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_1022.webp",
+      "before": 1314480,
+      "after": 460792
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_1347.webp",
+      "before": 264846,
+      "after": 173038
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9396.webp",
+      "before": 484982,
+      "after": 246038
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_1025.webp",
+      "before": 1015756,
+      "after": 352438
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9498.webp",
+      "before": 1467792,
+      "after": 550950
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9607.webp",
+      "before": 596492,
+      "after": 191552
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9606.webp",
+      "before": 1114152,
+      "after": 406210
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9603.webp",
+      "before": 1365258,
+      "after": 504946
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9605.webp",
+      "before": 1437354,
+      "after": 553862
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9609.webp",
+      "before": 1081696,
+      "after": 393044
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_11_2026-11-06_09-32-37.webp",
+      "before": 1195514,
+      "after": 506436
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_11_2026-10-23_13-33-17.webp",
+      "before": 1194514,
+      "after": 520964
+    },
+    {
+      "src": "/local-deck/img/gallery/full/img_9608.webp",
+      "before": 1717034,
+      "after": 634084
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_13_2026-11-06_09-32-37.webp",
+      "before": 850718,
+      "after": 346456
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_17_2026-10-23_13-33-17.webp",
+      "before": 900460,
+      "after": 378790
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_14_2026-10-23_13-33-17.webp",
+      "before": 1021676,
+      "after": 437540
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_18_2026-10-23_13-33-17.webp",
+      "before": 1180792,
+      "after": 512512
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_1_2026-11-06_09-32-37.webp",
+      "before": 704728,
+      "after": 285924
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_19_2026-11-06_09-32-37.webp",
+      "before": 1079932,
+      "after": 467352
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_19_2026-10-23_13-33-17.webp",
+      "before": 1073224,
+      "after": 451466
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_1_2026-11-06_09-32-22.webp",
+      "before": 1594956,
+      "after": 606192
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_2026-10-19_08-49-49.webp",
+      "before": 476096,
+      "after": 360074
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_22_2026-10-23_13-33-17.webp",
+      "before": 977892,
+      "after": 397068
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_24_2026-10-23_13-33-17.webp",
+      "before": 1000890,
+      "after": 404766
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_20_2026-10-23_13-33-17.webp",
+      "before": 1094694,
+      "after": 453110
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_29_2026-10-23_13-33-17.webp",
+      "before": 494256,
+      "after": 178748
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_28_2026-10-23_13-33-17.webp",
+      "before": 963860,
+      "after": 394502
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_27_2026-10-23_13-33-17.webp",
+      "before": 1183532,
+      "after": 517272
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_2_2026-11-06_09-32-22.webp",
+      "before": 1434234,
+      "after": 588106
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_35_2026-10-23_13-33-17.webp",
+      "before": 742042,
+      "after": 270596
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_38_2026-10-23_13-33-17.webp",
+      "before": 834312,
+      "after": 307482
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_2_2026-11-06_09-32-37.webp",
+      "before": 1319022,
+      "after": 561144
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_33_2026-10-23_13-33-17.webp",
+      "before": 1428188,
+      "after": 580890
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_3_2026-11-06_09-32-37.webp",
+      "before": 589074,
+      "after": 227344
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_42_2026-10-23_13-33-17.webp",
+      "before": 1052078,
+      "after": 453156
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_43_2026-10-23_13-33-17.webp",
+      "before": 1371484,
+      "after": 593276
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_3_2026-11-06_09-32-22.webp",
+      "before": 1929656,
+      "after": 702628
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_6_2026-10-23_13-33-17.webp",
+      "before": 692954,
+      "after": 292456
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_48_2026-10-23_13-33-17.webp",
+      "before": 734334,
+      "after": 297012
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_45_2026-10-23_13-33-17.webp",
+      "before": 1034706,
+      "after": 456714
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_44_2026-10-23_13-33-17.webp",
+      "before": 1387480,
+      "after": 597992
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_8_2026-10-23_13-33-17.webp",
+      "before": 705876,
+      "after": 302216
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_8_2026-11-06_09-32-37.webp",
+      "before": 1123026,
+      "after": 519680
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_9_2026-10-23_13-33-17.webp",
+      "before": 1036616,
+      "after": 433948
+    },
+    {
+      "src": "/local-deck/img/gallery/full/photo_7_2026-11-06_09-32-37.webp",
+      "before": 1180576,
+      "after": 533332
+    },
+    {
+      "src": "/local-deck/img/gallery/full/woodland-composite-stairs.webp",
+      "before": 1124286,
+      "after": 513178
+    },
+    {
+      "src": "/local-deck/img/gallery/full/woodland-composite-deck.webp",
+      "before": 1179730,
+      "after": 548846
+    },
+    {
+      "src": "/local-deck/img/gallery/full/woodland-railing-detail.webp",
+      "before": 1413504,
+      "after": 612000
+    },
+    {
+      "src": "/local-deck/img/gallery/full/woodland-elevated-deck.webp",
+      "before": 1545184,
+      "after": 676272
+    },
+    {
+      "src": "/local-deck/img/gallery/img_0981.webp",
+      "before": 278882,
+      "after": 234030
+    },
+    {
+      "src": "/local-deck/img/gallery/img_0983.webp",
+      "before": 297386,
+      "after": 249834
+    },
+    {
+      "src": "/local-deck/img/gallery/img_0979.webp",
+      "before": 342252,
+      "after": 293196
+    },
+    {
+      "src": "/local-deck/img/gallery/full/woodland-stairs-from-deck.webp",
+      "before": 1136234,
+      "after": 552168
+    },
+    {
+      "src": "/local-deck/img/gallery/img_1020.webp",
+      "before": 269570,
+      "after": 225900
+    },
+    {
+      "src": "/local-deck/img/gallery/img_1019.webp",
+      "before": 279660,
+      "after": 229612
+    },
+    {
+      "src": "/local-deck/img/gallery/img_1022.webp",
+      "before": 273520,
+      "after": 221672
+    },
+    {
+      "src": "/local-deck/img/gallery/img_1016.webp",
+      "before": 312996,
+      "after": 259536
+    },
+    {
+      "src": "/local-deck/img/gallery/img_1024.webp",
+      "before": 228146,
+      "after": 184590
+    },
+    {
+      "src": "/local-deck/img/gallery/img_1025.webp",
+      "before": 224680,
+      "after": 179864
+    },
+    {
+      "src": "/local-deck/img/gallery/img_9606.webp",
+      "before": 228428,
+      "after": 192528
+    },
+    {
+      "src": "/local-deck/img/gallery/img_9605.webp",
+      "before": 291260,
+      "after": 245850
+    },
+    {
+      "src": "/local-deck/img/gallery/img_9498.webp",
+      "before": 296734,
+      "after": 250660
+    },
+    {
+      "src": "/local-deck/img/gallery/img_9603.webp",
+      "before": 299060,
+      "after": 250722
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_11_2026-10-23_13-33-17.webp",
+      "before": 233676,
+      "after": 193820
+    },
+    {
+      "src": "/local-deck/img/gallery/img_9609.webp",
+      "before": 237492,
+      "after": 194782
+    },
+    {
+      "src": "/local-deck/img/gallery/img_9608.webp",
+      "before": 346826,
+      "after": 291826
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_11_2026-11-06_09-32-37.webp",
+      "before": 241132,
+      "after": 203188
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_13_2026-11-06_09-32-37.webp",
+      "before": 239660,
+      "after": 202022
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_1_2026-11-06_09-32-22.webp",
+      "before": 257062,
+      "after": 221978
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_19_2026-10-23_13-33-17.webp",
+      "before": 275684,
+      "after": 230238
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_2026-10-19_08-49-49.webp",
+      "before": 287180,
+      "after": 246736
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_28_2026-10-23_13-33-17.webp",
+      "before": 259764,
+      "after": 210546
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_24_2026-10-23_13-33-17.webp",
+      "before": 256942,
+      "after": 209340
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_27_2026-10-23_13-33-17.webp",
+      "before": 313232,
+      "after": 265238
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_2_2026-11-06_09-32-22.webp",
+      "before": 226656,
+      "after": 188594
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_2_2026-11-06_09-32-37.webp",
+      "before": 245156,
+      "after": 208872
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_33_2026-10-23_13-33-17.webp",
+      "before": 312504,
+      "after": 268840
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_42_2026-10-23_13-33-17.webp",
+      "before": 251832,
+      "after": 216184
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_3_2026-11-06_09-32-22.webp",
+      "before": 410840,
+      "after": 352074
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_43_2026-10-23_13-33-17.webp",
+      "before": 234844,
+      "after": 199646
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_44_2026-10-23_13-33-17.webp",
+      "before": 237322,
+      "after": 201946
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_45_2026-10-23_13-33-17.webp",
+      "before": 291570,
+      "after": 243226
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_8_2026-11-06_09-32-37.webp",
+      "before": 305388,
+      "after": 263972
+    },
+    {
+      "src": "/local-deck/img/gallery/photo_7_2026-11-06_09-32-37.webp",
+      "before": 360942,
+      "after": 304716
+    },
+    {
+      "src": "/local-deck/img/gallery/woodland-elevated-deck.webp",
+      "before": 526950,
+      "after": 380336
+    },
+    {
+      "src": "/local-deck/img/gallery/woodland-composite-stairs.webp",
+      "before": 579866,
+      "after": 398940
+    },
+    {
+      "src": "/local-deck/img/gallery/woodland-composite-deck.webp",
+      "before": 637154,
+      "after": 444430
+    },
+    {
+      "src": "/local-deck/img/gallery/woodland-stairs-from-deck.webp",
+      "before": 633462,
+      "after": 443278
+    },
+    {
+      "src": "/local-deck/img/gallery/woodland-railing-detail.webp",
+      "before": 743978,
+      "after": 540800
+    },
+    {
+      "src": "/local-deck/img/owners.webp",
+      "before": 225136,
+      "after": 176206
+    },
+    {
+      "src": "/local-deck/img/r/backyard-composite-tour-original-poster.webp",
+      "before": 318662,
+      "after": 86612
+    },
+    {
+      "src": "/local-deck/img/r/composite-stairway-original-poster.webp",
+      "before": 230178,
+      "after": 49442
+    },
+    {
+      "src": "/local-deck/img/r/covered-deck-in-progress-original-poster.webp",
+      "before": 422278,
+      "after": 117940
+    },
+    {
+      "src": "/local-deck/img/r/deck-boards-in-progress-original-poster.webp",
+      "before": 327930,
+      "after": 76448
+    },
+    {
+      "src": "/local-deck/img/r/deck-stairs-hq-poster-sharp.webp",
+      "before": 225080,
+      "after": 117698
+    },
+    {
+      "src": "/local-deck/img/r/deck-to-stair-walkthrough-original-poster.webp",
+      "before": 235818,
+      "after": 58132
+    },
+    {
+      "src": "/local-deck/img/r/deck-walk1-hq-poster-sharp.webp",
+      "before": 249970,
+      "after": 157392
+    },
+    {
+      "src": "/local-deck/img/r/deck-walk1-hq-poster.webp",
+      "before": 225774,
+      "after": 158384
+    },
+    {
+      "src": "/local-deck/img/r/deck-walk2-hq-poster-sharp.webp",
+      "before": 281898,
+      "after": 179150
+    },
+    {
+      "src": "/local-deck/img/r/deck-walk2-hq-poster.webp",
+      "before": 251994,
+      "after": 179956
+    },
+    {
+      "src": "/local-deck/img/r/elevated-deck-exterior-original-poster.webp",
+      "before": 409554,
+      "after": 115062
+    },
+    {
+      "src": "/local-deck/img/r/garden-deck-framing-hd-poster.webp",
+      "before": 326204,
+      "after": 188218
+    },
+    {
+      "src": "/local-deck/img/r/garden-deck-framing-natural-hd-poster-sharp.webp",
+      "before": 590006,
+      "after": 224832
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-boards-natural-hd-poster.webp",
+      "before": 244850,
+      "after": 123794
+    },
+    {
+      "src": "/local-deck/img/r/garden-deck-framing-natural-hd-poster.webp",
+      "before": 332152,
+      "after": 191702
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-boards-natural-hd-poster-sharp.webp",
+      "before": 391014,
+      "after": 145092
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-border-hd-poster.webp",
+      "before": 251696,
+      "after": 131994
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-border-natural-hd-poster.webp",
+      "before": 318452,
+      "after": 168120
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-border-natural-hd-poster-sharp.webp",
+      "before": 626670,
+      "after": 234882
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-joists-hd-poster.webp",
+      "before": 257676,
+      "after": 135116
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-exterior-hq-poster.webp",
+      "before": 251558,
+      "after": 166718
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-exterior-hq-poster-sharp.webp",
+      "before": 291930,
+      "after": 167254
+    },
+    {
+      "src": "/local-deck/img/r/materials-on-site-hd-poster.webp",
+      "before": 229900,
+      "after": 122030
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-joists-natural-hd-poster.webp",
+      "before": 311862,
+      "after": 161302
+    },
+    {
+      "src": "/local-deck/img/r/gray-deck-joists-natural-hd-poster-sharp.webp",
+      "before": 568242,
+      "after": 198444
+    },
+    {
+      "src": "/local-deck/img/r/pergola-frame-close-hd-poster.webp",
+      "before": 236442,
+      "after": 135040
+    },
+    {
+      "src": "/local-deck/img/r/materials-on-site-natural-hd-poster.webp",
+      "before": 247776,
+      "after": 131126
+    },
+    {
+      "src": "/local-deck/img/r/pergola-frame-close-natural-hd-poster-sharp.webp",
+      "before": 333400,
+      "after": 123094
+    },
+    {
+      "src": "/local-deck/img/r/materials-on-site-natural-hd-poster-sharp.webp",
+      "before": 459424,
+      "after": 167698
+    },
+    {
+      "src": "/local-deck/img/r/pergola-frame-wide-natural-hd-poster.webp",
+      "before": 284546,
+      "after": 167086
+    },
+    {
+      "src": "/local-deck/img/r/pergola-frame-wide-hd-poster.webp",
+      "before": 322636,
+      "after": 199320
+    },
+    {
+      "src": "/local-deck/img/r/pergola-frame-wide-natural-hd-poster-sharp.webp",
+      "before": 420048,
+      "after": 157604
+    },
+    {
+      "src": "/local-deck/img/r/stairs-white-rail-natural-hd-poster-sharp.webp",
+      "before": 257786,
+      "after": 101090
+    },
+    {
+      "src": "/local-deck/img/r/sunset-deck-treads-natural-hd-poster-sharp.webp",
+      "before": 259756,
+      "after": 87794
+    },
+    {
+      "src": "/local-deck/img/r/white-rail-corner-original-poster.webp",
+      "before": 394420,
+      "after": 114268
+    },
+    {
+      "src": "/local-deck/img/story-lexington-hd.webp",
+      "before": 533886,
+      "after": 220384
+    },
+    {
+      "src": "/local-deck/img/story-perryville-hd.webp",
+      "before": 388486,
+      "after": 132576
+    },
+    {
+      "src": "/images/deck/11-creative-deck-railing-ideas-hero.webp",
+      "before": 520486,
+      "after": 311716
+    },
+    {
+      "src": "/images/deck/clay-banks-jxr6sCglU9s-unsplash.webp",
+      "before": 3487228,
+      "after": 585984
+    },
+    {
+      "src": "/images/deck/deck-lexington01.webp",
+      "before": 287468,
+      "after": 200644
+    },
+    {
+      "src": "/images/deck/deck-lexington02.webp",
+      "before": 355594,
+      "after": 262656
+    },
+    {
+      "src": "/images/deck/deck-lexington07.webp",
+      "before": 426744,
+      "after": 230508
+    },
+    {
+      "src": "/images/deck/deck-lexington04.webp",
+      "before": 558880,
+      "after": 354760
+    },
+    {
+      "src": "/images/deck/deck-lexington10.webp",
+      "before": 283424,
+      "after": 143676
+    },
+    {
+      "src": "/images/deck/deck-lexington100.webp",
+      "before": 301228,
+      "after": 153692
+    },
+    {
+      "src": "/images/deck/deck-lexington101.webp",
+      "before": 336334,
+      "after": 168660
+    },
+    {
+      "src": "/images/deck/deck-lexington1.webp",
+      "before": 350492,
+      "after": 193230
+    },
+    {
+      "src": "/images/deck/deck-lexington102.webp",
+      "before": 269932,
+      "after": 140490
+    },
+    {
+      "src": "/images/deck/deck-lexington104.webp",
+      "before": 287440,
+      "after": 161548
+    },
+    {
+      "src": "/images/deck/deck-lexington103.webp",
+      "before": 272292,
+      "after": 151406
+    },
+    {
+      "src": "/images/deck/deck-lexington105.webp",
+      "before": 365594,
+      "after": 208924
+    },
+    {
+      "src": "/images/deck/deck-lexington13.webp",
+      "before": 277376,
+      "after": 142112
+    },
+    {
+      "src": "/images/deck/deck-lexington11.webp",
+      "before": 310640,
+      "after": 169152
+    },
+    {
+      "src": "/images/deck/deck-lexington12.webp",
+      "before": 319520,
+      "after": 172734
+    },
+    {
+      "src": "/images/deck/deck-lexington14.webp",
+      "before": 369312,
+      "after": 214362
+    },
+    {
+      "src": "/images/deck/deck-lexington17.webp",
+      "before": 315646,
+      "after": 171938
+    },
+    {
+      "src": "/images/deck/deck-lexington16.webp",
+      "before": 370520,
+      "after": 209890
+    },
+    {
+      "src": "/images/deck/deck-lexington18.webp",
+      "before": 388052,
+      "after": 226392
+    },
+    {
+      "src": "/images/deck/deck-lexington15.webp",
+      "before": 388052,
+      "after": 226392
+    },
+    {
+      "src": "/images/deck/deck-lexington20.webp",
+      "before": 315646,
+      "after": 171938
+    },
+    {
+      "src": "/images/deck/deck-lexington19.webp",
+      "before": 370520,
+      "after": 209890
+    },
+    {
+      "src": "/images/deck/deck-lexington21.webp",
+      "before": 369312,
+      "after": 214362
+    },
+    {
+      "src": "/images/deck/deck-lexington2.webp",
+      "before": 367824,
+      "after": 211848
+    },
+    {
+      "src": "/images/deck/deck-lexington25.webp",
+      "before": 288548,
+      "after": 151826
+    },
+    {
+      "src": "/images/deck/deck-lexington22.webp",
+      "before": 287648,
+      "after": 149064
+    },
+    {
+      "src": "/images/deck/deck-lexington23.webp",
+      "before": 323242,
+      "after": 179636
+    },
+    {
+      "src": "/images/deck/deck-lexington24.webp",
+      "before": 344236,
+      "after": 189932
+    },
+    {
+      "src": "/images/deck/deck-lexington28.webp",
+      "before": 287648,
+      "after": 149064
+    },
+    {
+      "src": "/images/deck/deck-lexington26.webp",
+      "before": 323242,
+      "after": 179636
+    },
+    {
+      "src": "/images/deck/deck-lexington29.webp",
+      "before": 323242,
+      "after": 179636
+    },
+    {
+      "src": "/images/deck/deck-lexington27.webp",
+      "before": 344236,
+      "after": 189932
+    },
+    {
+      "src": "/images/deck/deck-lexington33.webp",
+      "before": 297186,
+      "after": 163654
+    },
+    {
+      "src": "/images/deck/deck-lexington34.webp",
+      "before": 305002,
+      "after": 165564
+    },
+    {
+      "src": "/images/deck/deck-lexington30.webp",
+      "before": 344236,
+      "after": 189932
+    },
+    {
+      "src": "/images/deck/deck-lexington3.webp",
+      "before": 369438,
+      "after": 209892
+    },
+    {
+      "src": "/images/deck/deck-lexington35.webp",
+      "before": 260542,
+      "after": 131780
+    },
+    {
+      "src": "/images/deck/deck-lexington36.webp",
+      "before": 280138,
+      "after": 149470
+    },
+    {
+      "src": "/images/deck/deck-lexington37.webp",
+      "before": 323758,
+      "after": 171656
+    },
+    {
+      "src": "/images/deck/deck-lexington38.webp",
+      "before": 276362,
+      "after": 146650
+    },
+    {
+      "src": "/images/deck/deck-lexington4.webp",
+      "before": 301530,
+      "after": 163028
+    },
+    {
+      "src": "/images/deck/deck-lexington39.webp",
+      "before": 315368,
+      "after": 174374
+    },
+    {
+      "src": "/images/deck/deck-lexington40.webp",
+      "before": 328930,
+      "after": 181010
+    },
+    {
+      "src": "/images/deck/deck-lexington44.webp",
+      "before": 306332,
+      "after": 156452
+    },
+    {
+      "src": "/images/deck/deck-lexington46.webp",
+      "before": 262204,
+      "after": 139262
+    },
+    {
+      "src": "/images/deck/deck-lexington41.webp",
+      "before": 372286,
+      "after": 215058
+    },
+    {
+      "src": "/images/deck/deck-lexington45.webp",
+      "before": 372286,
+      "after": 215058
+    },
+    {
+      "src": "/images/deck/deck-lexington47.webp",
+      "before": 300312,
+      "after": 164864
+    },
+    {
+      "src": "/images/deck/deck-lexington49.webp",
+      "before": 262204,
+      "after": 139262
+    },
+    {
+      "src": "/images/deck/deck-lexington48.webp",
+      "before": 300600,
+      "after": 161752
+    },
+    {
+      "src": "/images/deck/deck-lexington5.webp",
+      "before": 365594,
+      "after": 208924
+    },
+    {
+      "src": "/images/deck/deck-lexington50.webp",
+      "before": 269888,
+      "after": 139262
+    },
+    {
+      "src": "/images/deck/deck-lexington53.webp",
+      "before": 269888,
+      "after": 139262
+    },
+    {
+      "src": "/images/deck/deck-lexington51.webp",
+      "before": 352856,
+      "after": 205096
+    },
+    {
+      "src": "/images/deck/deck-lexington52.webp",
+      "before": 574646,
+      "after": 301286
+    },
+    {
+      "src": "/images/deck/deck-lexington56.webp",
+      "before": 260952,
+      "after": 127296
+    },
+    {
+      "src": "/images/deck/deck-lexington55.webp",
+      "before": 315616,
+      "after": 171782
+    },
+    {
+      "src": "/images/deck/deck-lexington57.webp",
+      "before": 325860,
+      "after": 180808
+    },
+    {
+      "src": "/images/deck/deck-lexington54.webp",
+      "before": 352856,
+      "after": 205096
+    },
+    {
+      "src": "/images/deck/deck-lexington60.webp",
+      "before": 254786,
+      "after": 142524
+    },
+    {
+      "src": "/images/deck/deck-lexington58.webp",
+      "before": 289906,
+      "after": 156488
+    },
+    {
+      "src": "/images/deck/deck-lexington6.webp",
+      "before": 350492,
+      "after": 193230
+    },
+    {
+      "src": "/images/deck/deck-lexington59.webp",
+      "before": 315616,
+      "after": 171782
+    },
+    {
+      "src": "/images/deck/deck-lexington63.webp",
+      "before": 252902,
+      "after": 144372
+    },
+    {
+      "src": "/images/deck/deck-lexington61.webp",
+      "before": 279706,
+      "after": 157438
+    },
+    {
+      "src": "/images/deck/deck-lexington65.webp",
+      "before": 710776,
+      "after": 333988
+    },
+    {
+      "src": "/images/deck/deck-lexington66.webp",
+      "before": 463418,
+      "after": 232642
+    },
+    {
+      "src": "/images/deck/deck-lexington68.webp",
+      "before": 448142,
+      "after": 232548
+    },
+    {
+      "src": "/images/deck/deck-lexington69.webp",
+      "before": 547852,
+      "after": 277212
+    },
+    {
+      "src": "/images/deck/deck-lexington67.webp",
+      "before": 698694,
+      "after": 402716
+    },
+    {
+      "src": "/images/deck/deck-lexington81.webp",
+      "before": 245450,
+      "after": 112918
+    },
+    {
+      "src": "/images/deck/deck-lexington8.webp",
+      "before": 319520,
+      "after": 172734
+    },
+    {
+      "src": "/images/deck/deck-lexington7.webp",
+      "before": 367824,
+      "after": 211848
+    },
+    {
+      "src": "/images/deck/deck-lexington84.webp",
+      "before": 265068,
+      "after": 120706
+    },
+    {
+      "src": "/images/deck/deck-lexington82.webp",
+      "before": 300042,
+      "after": 150464
+    },
+    {
+      "src": "/images/deck/deck-lexington85.webp",
+      "before": 311926,
+      "after": 173612
+    },
+    {
+      "src": "/images/deck/deck-lexington89.webp",
+      "before": 311926,
+      "after": 173612
+    },
+    {
+      "src": "/images/deck/deck-lexington87.webp",
+      "before": 364096,
+      "after": 219908
+    },
+    {
+      "src": "/images/deck/deck-lexington88.webp",
+      "before": 372550,
+      "after": 227810
+    },
+    {
+      "src": "/images/deck/deck-lexington86.webp",
+      "before": 379150,
+      "after": 230442
+    },
+    {
+      "src": "/images/deck/deck-lexington91.webp",
+      "before": 262910,
+      "after": 127164
+    },
+    {
+      "src": "/images/deck/deck-lexington90.webp",
+      "before": 269672,
+      "after": 132474
+    },
+    {
+      "src": "/images/deck/deck-lexington9.webp",
+      "before": 278244,
+      "after": 146194
+    },
+    {
+      "src": "/images/deck/deck-lexington93.webp",
+      "before": 245484,
+      "after": 110164
+    },
+    {
+      "src": "/images/deck/deck-lexington96.webp",
+      "before": 274694,
+      "after": 135420
+    },
+    {
+      "src": "/images/deck/deck-lexington95.webp",
+      "before": 296446,
+      "after": 151054
+    },
+    {
+      "src": "/images/deck/deck-lexington94.webp",
+      "before": 347610,
+      "after": 161024
+    },
+    {
+      "src": "/images/deck/deck-lexington97.webp",
+      "before": 245484,
+      "after": 110164
+    },
+    {
+      "src": "/images/deck/deck-lexington99.webp",
+      "before": 309034,
+      "after": 158274
+    },
+    {
+      "src": "/images/deck/deck-lexington98.webp",
+      "before": 347610,
+      "after": 161024
+    },
+    {
+      "src": "/images/deck/deck-rot-2.webp",
+      "before": 301634,
+      "after": 138142
+    },
+    {
+      "src": "/images/deck/deck-value.webp",
+      "before": 378210,
+      "after": 200470
+    },
+    {
+      "src": "/images/deck/deckorators-voyage-decking-tundra-sierra-contemporary-rail-textured-white_de049d6e-14ff-49ff-8182-1d569c0c0526_1600x.webp",
+      "before": 504620,
+      "after": 384842
+    },
+    {
+      "src": "/images/deck/Inspiring-Horizontal-Deck-Railing-Ideas-to-Transform-Your-Outdoor-Space-.webp",
+      "before": 426744,
+      "after": 230508
+    },
+    {
+      "src": "/images/deck/fbp-blog-aremetaldeckrailingseasytomaintain-1mb-6-0.webp",
+      "before": 773090,
+      "after": 208360
+    },
+    {
+      "src": "/images/deck/Lucid_Origin_A_stunning_ultrarealistic_photo_of_a_newly_built__0.webp",
+      "before": 676000,
+      "after": 352432
+    },
+    {
+      "src": "/images/deck/metal-deck-railings-1080x675.webp",
+      "before": 304734,
+      "after": 162046
+    },
+    {
+      "src": "/images/deck/Lucid_Origin_A_stunning_ultrarealistic_photo_of_a_newly_built__2.webp",
+      "before": 693968,
+      "after": 377308
+    },
+    {
+      "src": "/images/deck/Lucid_Origin_Ultrarealistic_landscape_photograph_of_a_modern_b_1.webp",
+      "before": 657262,
+      "after": 359234
+    },
+    {
+      "src": "/images/deck/point3d-commercial-imaging-ltd-adTeb8MrQZs-unsplash.webp",
+      "before": 4284552,
+      "after": 396248
+    },
+    {
+      "src": "/images/deck/point3d-commercial-imaging-ltd-90Y7tjHJbFo-unsplash.webp",
+      "before": 4206678,
+      "after": 447862
+    },
+    {
+      "src": "/images/deck/trex-review-2.webp",
+      "before": 409574,
+      "after": 208060
+    },
+    {
+      "src": "/images/deck/TREX_Riser_lights.webp",
+      "before": 453928,
+      "after": 190292
+    }
+  ],
+  "beforeBytes": 143052726,
+  "afterBytes": 66710806
+}

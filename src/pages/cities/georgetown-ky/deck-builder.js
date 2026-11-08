@@ -19,73 +19,37 @@ export default function GeorgetownDeckBuilder() {
 
             {/* SEO */}
             <SEO
-                title="Deck Builder in Georgetown KY — Composite & Wood Decks | Yellowstone Renovation"
-                description="Top-rated deck builders in Georgetown, KY. Yellowstone Renovation designs and installs high-quality composite and wood decks built for durability, beauty, and long-term outdoor living. Free estimates across Scott County."
-                pathname="/cities/georgetown-ky/deck-builder"
-                image="https://yellowstonerenovation.com/images/deck-builder8.webp"
+                title="Deck Builder in Georgetown, KY | Yellowstone Renovation"
+                description="Custom deck building in Georgetown, KY. Plan dining space, wood or composite decking, stairs and railings. Get a free on-site Yellowstone Renovation estimate."
+                pathname="/cities/georgetown-ky/deck-builder/"
+                image="/images/deck/deck-lexington67.webp"
+                imageAlt="Deck construction by Yellowstone Renovation"
+                areaServed={["Georgetown, KY"]}
+                serviceType={["Deck construction", "Deck replacement"]}
+                breadcrumbs={[{ name: "Home", path: "/" }, { name: "Deck building", path: "/decking/" }, { name: "Georgetown deck builder", path: "/cities/georgetown-ky/deck-builder/" }]}
             />
 
-            <Helmet>
-                <meta
-                    name="keywords"
-                    content="deck builder Georgetown KY, composite deck Georgetown, wood deck installation Scott County, deck repair Georgetown KY, deck replacement Georgetown"
-                />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Deck Builder in Georgetown KY | Yellowstone Renovation" />
-                <meta property="og:description" content="Custom-built decks in Georgetown, Kentucky — from modern composite designs to premium wood structures. Get a fast, free estimate from Yellowstone Renovation." />
-                <meta property="og:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-                <meta property="og:url" content="https://yellowstonerenovation.com/cities/georgetown-ky/deck-builder" />
-                <meta property="og:site_name" content="Yellowstone Renovation" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Georgetown KY Deck Builder | Composite & Wood Deck Construction" />
-                <meta name="twitter:description" content="Build your dream outdoor space with Yellowstone Renovation — the trusted deck contractor serving Georgetown and Scott County." />
-                <meta name="twitter:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-
-                {/* JSON-LD */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "HomeAndConstructionBusiness",
-                        name: "Yellowstone Renovation",
-                        url: "https://yellowstonerenovation.com",
-                        logo: "https://yellowstonerenovation.com/icons/logo.webp",
-                        image: "https://yellowstonerenovation.com/images/deck-builder8.webp",
-                        telephone: "859-545-7020",
-                        address: {
-                            "@type": "PostalAddress",
-                            addressLocality: "Georgetown",
-                            addressRegion: "KY",
-                            postalCode: "40324",
-                            addressCountry: "US",
-                        },
-                        serviceType: [
-                            "Deck Construction",
-                            "Composite Deck Installation",
-                            "Wood Deck Builder",
-                            "Deck Repair",
-                            "Deck Replacement"
-                        ],
-                        areaServed: [
-                            "Georgetown, KY",
-                            "Stamping Ground, KY",
-                            "Sadieville, KY",
-                            "Scott County, KY"
-                        ]
-                    })}
-                </script>
-            </Helmet>
+            <Helmet><script type="application/ld+json">{JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "@id": "https://yellowstonerenovation.com/cities/georgetown-ky/deck-builder/#service",
+                name: "Deck construction in Georgetown, KY",
+                description: "Custom deck building in Georgetown, KY. Plan dining space, wood or composite decking, stairs and railings. Get a free on-site Yellowstone Renovation estimate.",
+                url: "https://yellowstonerenovation.com/cities/georgetown-ky/deck-builder/",
+                serviceType: "Deck construction and replacement",
+                provider: { "@id": "https://yellowstonerenovation.com/#organization" },
+                areaServed: { "@type": "Place", name: "Georgetown, Kentucky" },
+                image: "https://yellowstonerenovation.com/images/deck/deck-lexington67.webp",
+            })}</script></Helmet>
 
             {/* HERO */}
             <Hero2
-                topText="Top-Rated Deck Builder in Georgetown, KY"
-                title="Deck Builder in Georgetown, KY — Custom Composite & Wood Decks"
-                description="Yellowstone Renovation builds premium-quality decks for homeowners across Georgetown and Scott County. From modern composite materials to warm natural wood, we deliver strong craftsmanship and long-lasting outdoor spaces."
-                backgroundImage="/images/deck/deck-lexington1.webp"
+                topText="Georgetown, Kentucky · Deck construction"
+                title="Deck Builder in Georgetown, KY"
+                description="Make room for the way your household uses the backyard now. We plan Georgetown decks around everyday meals, clear walkways and an easy connection between house and lawn."
+                backgroundImage="/images/deck/deck-lexington67.webp"
                 overlayOpacity={0.65}
-                formTitle="Get a Free Deck Estimate"
+                formTitle="Plan your deck with us"
                 selectLabel="Select Deck Service"
                 selectOptions={[
                     "Custom Deck Design & Build",
@@ -106,9 +70,9 @@ export default function GeorgetownDeckBuilder() {
             {/* BEFORE & AFTER */}
             <BeforeAfter
                 title="Georgetown Deck Transformations"
-                description="See how we upgrade outdoor living across Georgetown — replacing aging structures with beautiful, long-lasting composite and wood decks."
+                description="Compare the original structures with finished deck projects from our portfolio. See how layout, stairs and railing change the space."
                 buttonText="Explore More Projects"
-                buttonLink="/projects"
+                buttonLink="/projects-showcase/"
                 accentColor="#0a923d"
                 images={[
                     { before: "/images/deckafter3.webp", after: "/images/deckbefore3.webp" },
@@ -119,7 +83,7 @@ export default function GeorgetownDeckBuilder() {
             {/* GALLERY */}
             <GallerySection
                 title="GEORGETOWN DECK BUILDER GALLERY"
-                subtitle="Browse completed deck projects crafted for homeowners across Georgetown and Scott County."
+                subtitle="Deck projects from our Kentucky portfolio, with ideas for your Georgetown home."
                 highlight="DECK BUILDER"
                 background="#ffffff"
                 images={[
@@ -151,175 +115,50 @@ export default function GeorgetownDeckBuilder() {
             <TestimonialsSection />
 
             <MainSectionSideBar
-                title="Deck Builder in Georgetown, KY — Custom Composite & Wood Decks"
+                title="Planning a deck for your Georgetown home"
                 sections={[
-                    {
-                        heading: "Deck Builder Georgetown KY — Reliable Craftsmanship & Long-Lasting Results",
-                        text: `Yellowstone Renovation provides high-quality deck construction services throughout Georgetown, Kentucky. We focus on durability, clean design, and professional installation to transform outdoor areas into functional, beautiful living spaces.
-
-We work with both composite and wood decking systems, delivering expert planning, precise framing, and smooth finishing. Whether you're replacing an older structure or building a new entertainment space, we ensure your deck stands the test of time.`
-                    },
-
-                    {
-                        heading: "Composite Deck Installation in Georgetown, KY",
-                        text: `Composite decking is one of the most popular choices for Georgetown homeowners thanks to its durability and minimal maintenance. Composite boards resist moisture, rot, fading, and insect damage — ideal for Kentucky’s humid summers and cold winters.
-
-We install premium Trex, TimberTech, and AZEK decking with hidden fasteners and moisture-resistant framing. Choose your style from a wide range of colors and wood-like textures.`
-                    },
-
-                    {
-                        heading: "Wood Deck Builder in Georgetown, Kentucky",
-                        text: `For homeowners who appreciate the natural warmth of wood, we build custom decks using pressure-treated pine, cedar, and redwood. Wood decks offer timeless charm and excellent value.
-
-Each wood structure is sealed and reinforced to withstand weather exposure and maintain long-term stability. Our team ensures a strong foundation and a polished, clean appearance.`
-                    },
-
-                    {
-                        heading: "Deck Replacement & Repair in Georgetown, KY",
-                        text: `If your current deck is worn, unstable, or outdated, we provide complete deck replacement and repair services across Georgetown and Scott County. From structural reinforcement to full rebuilds, we upgrade your space with safe, long-lasting materials.
-
-Damaged boards, sagging framing, unsafe railings — we fix it all with professional attention to detail.`
-                    },
-
-                    {
-                        heading: "Our Deck Design & Construction Process",
-                        text: `Every project begins with a consultation where we evaluate your space, discuss design options, and help you choose the best materials. We handle permits, framing, decking installation, and precise finishing.
-
-Our construction process emphasizes communication, cleanliness, and adherence to Kentucky building codes.`
-                    },
-
-                    {
-                        heading: "Average Deck Cost in Georgetown, KY",
-                        text: `Here’s what most Georgetown homeowners spend on a professionally built deck:
-
-Composite Decks: $45–$65 per sq. ft. installed  
-Wood Decks: $30–$50 per sq. ft. installed  
-Repairs & Partial Rebuilds: around 40–60% of full replacement cost  
-
-Pricing includes materials, labor, demolition (if needed), cleanup, and final inspection. Contact us for an accurate custom estimate.`
-                    },
-
-                    {
-                        heading: "Get a Free Deck Estimate in Georgetown, KY",
-                        text: `We offer free, no-obligation deck estimates for homeowners in Georgetown, Stamping Ground, Sadieville, and nearby Scott County communities.
-
-Our team measures your space, reviews design options, and provides a clear, detailed quote.`
-                    },
-
-                    {
-                        heading: "Decking Contractor in Georgetown, Kentucky",
-                        text: `A trusted contractor makes all the difference. We prioritize clear communication, dependable scheduling, and professional workmanship — all backed by long-lasting materials and strong warranties.
-
-Our mission is to build outdoor spaces your family can enjoy for years.`
-                    },
-
-                    {
-                        heading: "Deck Installation Services in Georgetown",
-                        text: `From small single-level decks to large composite systems with stairs, railings, and lighting — we design and build structures tailored to your property and style preferences.
-
-Each project is engineered for strength and long-term durability in Kentucky’s climate.`
-                    },
-
-                    {
-                        heading: "Professional Deck Construction in Georgetown, KY",
-                        text: `We are a licensed and insured contractor offering complete deck construction, including planning, permitting, framing, decking installation, railings, and finishing.
-
-Our decks withstand heat, humidity, rain, and daily use without compromising safety or aesthetics.`
-                    },
-
-                    {
-                        heading: "Working with a Local Georgetown Deck Contractor",
-                        text: `As a Central Kentucky contractor, we understand local building requirements, soil conditions, and climate challenges. This allows us to build safer and stronger decks that hold up year after year.
-
-Transparency and communication guide each step of our process.`
-                    },
-
-                    {
-                        heading: "Choose the Best Deck Installers in Georgetown, KY",
-                        text: `Yellowstone Renovation is known for top-tier craftsmanship, honest pricing, and consistent 5-star customer feedback. We take pride in designing and building decks that boost home value and improve outdoor living.`
-                    },
-
-                    {
-                        heading: "Average Cost to Install a New Deck in Georgetown",
-                        text: `Most Georgetown homeowners invest between $10,000 and $45,000 for full installation depending on size, elevation, and material selection.
-
-Composite decks generally cost $45–$65 per sq. ft., while wood decks range from $30–$50 per sq. ft. We provide accurate quotes tailored to your project.`
-                    },
-
-                    {
-                        heading: "Georgetown Wood Decks — Timeless Look & Lasting Value",
-                        text: `Wood decks remain a favorite for their natural feel and versatility. We use high-quality lumber with proper sealing and reinforcement to ensure long-term reliability in Kentucky’s shifting climate.`
-                    },
-
-                    {
-                        heading: "Composite Decks in Georgetown, KY",
-                        text: `Composite decking provides the longest lifespan with virtually no maintenance. Our installations feature Trex, TimberTech, and AZEK systems known for resistance to fading, mold, and moisture.`
-                    },
-
-                    {
-                        heading: "Deck Builder Near Me in Georgetown, KY",
-                        text: `Searching for a “deck builder near me” in Georgetown? We proudly serve homeowners in Georgetown, Sadieville, Stamping Ground, and all across Scott County.
-
-We build custom decks that upgrade outdoor living with dependable craftsmanship and transparent pricing.`
-                    },
-                ]}
+  {
+    "heading": "Leave room beyond the table",
+    "text": "A Georgetown deck planned only around the tabletop can feel small once people sit down. Include pulled-out chairs, a route to the steps and clearance around cooking equipment. Bring the furniture dimensions to the first conversation."
+  },
+  {
+    "heading": "Choose between open space and a covered corner",
+    "text": "A roof can make a seating area more useful in light rain, while an open deck keeps the sky above the rest of the space. Plan any cover with the support structure and water management in mind. A pergola offers a different kind of shade and should be compared separately."
+  },
+  {
+    "heading": "Account for the work you want to avoid later",
+    "text": "If staining is the job you no longer want, compare composite decking with a wood option. Look at actual samples, the maintenance instructions and the full railing-and-trim combination. There is still routine cleaning to consider whichever surface you choose."
+  }
+]}
 
                 /* SIDEBAR */
                 offers={[
-                    {
-                        image: "/images/deck1.webp",
-                        text: "Get $1500 OFF Your New Deck Installation — Limited Time Offer",
-                        button: "Claim Discount",
-                        link: "/contact",
-                    },
-                    {
-                        image: "/images/deck2.webp",
-                        text: "Browse Georgetown Deck Projects",
-                        button: "View Gallery",
-                        link: "/projects",
-                    },
-                ]}
+  {
+    "image": "/images/deck/deck-lexington67.webp",
+    "text": "Plan your Georgetown deck",
+    "button": "Request a free estimate",
+    "link": "/contact/"
+  },
+  {
+    "image": "/images/deck/deck-lexington67.webp",
+    "text": "Compare deck materials and layouts",
+    "button": "Explore deck options",
+    "link": "/decking/"
+  }
+]}
 
-                whyUs={[
-                    "Trusted local deck builders serving Georgetown and Scott County",
-                    "Trex, TimberTech, and AZEK composite specialists",
-                    "Custom designs for every home and outdoor layout",
-                    "Licensed, insured, and known for clean, efficient installations",
-                    "Clear pricing, reliable scheduling, and long-term warranties",
-                ]}
+                whyUs={["On-site measurements and a defined scope", "Wood and composite options explained", "Stairs and railings planned with the layout", "Project questions answered before you choose"]}
 
                 projects={[
-                    { image: "/images/deck4.webp", title: "Georgetown Composite Deck Build" },
+                    { image: "/images/deck4.webp", title: "Composite Deck Build" },
                     { image: "/images/deck5.webp", title: "Wood Deck With Premium Railings" },
                     { image: "/images/deck6.webp", title: "Pergola & Composite Deck Combination" },
                     { image: "/images/deck7.webp", title: "Covered Deck Expansion" },
                 ]}
 
-                findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
-                    { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
-                ]}
+                findUs={[]}
 
-                blog={[
-                    {
-                        title: "How Much Does a Deck Cost in Kentucky?",
-                        date: "April 12th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck6.webp",
-                    },
-                    {
-                        title: "Composite vs Wood Decks for Georgetown Homes",
-                        date: "May 20th, 2025",
-                        author: "Peter",
-                        image: "/images/deck7.webp",
-                    },
-                    {
-                        title: "Deck Maintenance Tips for Georgetown Homeowners",
-                        date: "June 10th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck8.webp",
-                    },
-                ]}
+                blog={[]}
 
                 partners={[
                     "/icons/trex.webp",
@@ -327,6 +166,20 @@ We build custom decks that upgrade outdoor living with dependable craftsmanship 
                     "/icons/Yelp.webp"
                 ]}
             />
+
+            <section className="yr-content-section" aria-labelledby="deck-service-options">
+                <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+                    <h2 id="deck-service-options">Find the right fit for your backyard</h2>
+                    <p style={{ fontSize: "18px", lineHeight: 1.7, margin: "16px 0 24px" }}>Planning in Georgetown? Start with our <a href="/decking/">deck building guide</a>, then compare the material or structure that suits your project.</p>
+                    <nav aria-label="Deck materials and outdoor services" style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+                        {[
+                            ["/wood-decks/", "Wood decks"], ["/composite-decks/", "Composite decks"],
+                            ["/covered-decks/", "Covered decks"], ["/custom-decks/", "Custom deck design"],
+                            ["/outdoor-deck/", "Outdoor living spaces"], ["/patios/", "Patios"], ["/pergolas/", "Pergolas"],
+                        ].map(([href, label]) => <a key={href} href={href} style={{ color: "#194b35", background: "#fff", border: "1px solid #cddbcf", borderRadius: "999px", padding: "12px 20px", fontSize: "16px", fontWeight: 600 }}>{label}</a>)}
+                    </nav>
+                </div>
+            </section>
 
             <QuoteSection />
             <ScrollToTop />

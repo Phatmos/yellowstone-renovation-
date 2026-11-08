@@ -9,14 +9,14 @@ export default function Footer() {
                 <div className="footer-col">
                     <a href="/" className="footer-logo-link">
                         <img
-                            src="/images/logo.png"
+                            src="/images/logo.webp"
                             alt="Yellowstone Renovation"
                             className="footer-logo"
                         />
                     </a>
                     <p className="footer-about">
                         <strong>Licensed & Insured</strong><br />
-                        Contractor License<br /><br />
+                        Local exterior remodeling<br /><br />
 
                         <strong>Contact Us</strong><br />
                         <a href="tel:8597657267">(859) 765-7267</a><br />
@@ -51,6 +51,12 @@ export default function Footer() {
                         <li><a href="/painting">Painting </a></li>
                         <li><a href="/decking">Deck Builder</a></li>
                         <li><a href="/custom-decks">Custom Decks</a></li>
+                        <li><a href="/wood-decks/">Wood Decks</a></li>
+                        <li><a href="/composite-decks/">Composite Decks</a></li>
+                        <li><a href="/covered-decks/">Covered Decks</a></li>
+                        <li><a href="/outdoor-deck/">Outdoor Living</a></li>
+                        <li><a href="/patios/">Patios</a></li>
+                        <li><a href="/pergolas/">Pergolas</a></li>
                     </ul>
                 </div>
 
@@ -93,7 +99,7 @@ export default function Footer() {
                     <a href="/terms-of-service">Terms of Service</a> |{" "}
                     <a href="/affiliate-program/">Affiliate & Referral Program</a>
                 </p>
-                
+
             </div>
         </footer>
     );

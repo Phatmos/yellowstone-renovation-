@@ -1,0 +1,735 @@
+{
+  "decking": {
+    "pathname": "/decking/",
+    "title": "Deck Builders in Lexington, KY | Yellowstone Renovation",
+    "description": "Plan a wood, composite or covered deck with Yellowstone Renovation. See real projects and request a free on-site deck design and estimate in Lexington, KY.",
+    "eyebrow": "Lexington & Central Kentucky",
+    "navLabel": "Deck building",
+    "linkText": "Compare materials, layouts and real projects before choosing the right deck for your Lexington backyard.",
+    "formTitle": "Let's plan your deck.",
+    "formText": "Tell us what needs to change. We'll arrange a free on-site design and estimate.",
+    "videoHeading": "See the work take shape.",
+    "videoText": "Explore our project archive: wood, composite, framing, stairs and covered outdoor spaces.",
+    "galleryHeading": "Real decks. Different ways to live outside.",
+    "galleryText": "Start with these selected projects, then explore the full photo archive below, including different materials and outdoor spaces.",
+    "h1": "Deck builders in Lexington, KY. A better way outside.",
+    "h1Lead": "Deck builders in Lexington, KY.",
+    "h1Accent": "A better way outside.",
+    "heroText": "A worn-out deck, awkward stairs or too little room? Let's plan a deck that fits your home and the way you use your backyard.",
+    "heroImage": "/local-deck/img/gallery/full/woodland-elevated-deck.webp",
+    "heroAlt": "Completed elevated deck with stairs and a patio beneath it beside a brick home",
+    "heroPosition": "center 58%",
+    "primaryCta": "Plan My Deck",
+    "introTitle": "Start with what your current deck gets wrong.",
+    "introText": "Maybe the grill blocks the door. Maybe the boards are tired, but you cannot tell what is happening underneath. We look at the whole job: the frame, the way water leaves the house, the stairs and the space you need. Then we help you choose a practical layout and material.",
+    "sections": [
+      {
+        "heading": "Choose the deck for the way you live.",
+        "text": "Wood brings natural grain and a finish you can change. Composite reduces the refinishing routine. A roof adds reliable shade and rain protection. These choices affect the structure and the budget, so we work through them before the build.",
+        "link": {
+          "href": "/composite-decks/",
+          "label": "Explore composite decking"
+        },
+        "image": "/local-deck/img/gallery/full/photo_19_2026-11-06_09-32-37.webp",
+        "alt": "Brown composite deck with black railing and stairs leading into the yard"
+      },
+      {
+        "heading": "The work underneath matters just as much.",
+        "text": "A good-looking surface cannot fix a weak frame. For a replacement, we assess what can stay and what needs to be rebuilt. For a new deck, we plan the supports, house connection, railing and stairs as one system.",
+        "image": "/local-deck/img/gallery/full/img_0983.webp",
+        "alt": "Wood deck support framing viewed from below"
+      },
+      {
+        "heading": "See the plan before choosing the build.",
+        "text": "Our free on-site visit is the place to compare options, talk through access and see how the layout fits. You receive a project-specific estimate that accounts for the stairs, demolition, railing and other work at your home.",
+        "link": {
+          "href": "/custom-decks/",
+          "label": "Plan a custom deck layout"
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you build both wood and composite decks?",
+        "answer": "Yes. We plan wood and composite decks, along with custom layouts, stairs, railings and covered spaces. We will compare the material choices with your budget and upkeep preferences during the on-site visit."
+      },
+      {
+        "question": "Can my existing deck be resurfaced?",
+        "answer": "Sometimes. The existing frame, footings, connections and joist spacing need to be suitable for the proposed decking. If they are not, a rebuild may make more sense than covering the old structure with new boards."
+      },
+      {
+        "question": "What affects the price of a new deck?",
+        "answer": "Size is only part of it. Height above the ground, demolition, access, footings, material, stairs, railing and a roof can all change the scope. We measure the site and include those decisions in the estimate."
+      },
+      {
+        "question": "Where do you build decks?",
+        "answer": "We serve Lexington and nearby Central Kentucky communities, including Nicholasville, Georgetown, Versailles, Winchester and Richmond. Send your address so we can confirm service for your project."
+      }
+    ],
+    "related": [
+      "wood-decks",
+      "composite-decks",
+      "covered-decks",
+      "custom-decks",
+      "patios",
+      "pergolas",
+      "outdoor-deck"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/gallery/full/woodland-elevated-deck.webp",
+        "alt": "Elevated deck and stair layout beside a brick home"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/img_9609.webp",
+        "alt": "New wood decking with black railing overlooking the backyard"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_2_2026-11-06_09-32-22.webp",
+        "alt": "Brown composite deck and black railing beside a sunroom"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_14_2026-10-23_13-33-17.webp",
+        "alt": "Screened porch connected to an elevated deck"
+      }
+    ]
+  },
+  "wood-decks": {
+    "pathname": "/wood-decks/",
+    "title": "Wood Deck Builder in Lexington, KY | Yellowstone Renovation",
+    "description": "Build a wood deck that fits your Lexington backyard. Explore pressure-treated decking, thoughtful stair layouts and real projects. Get a free on-site estimate.",
+    "eyebrow": "Natural wood. Practical details.",
+    "navLabel": "Wood decks",
+    "linkText": "Explore natural wood decking, practical stair layouts and the care that keeps your deck looking good.",
+    "formTitle": "Plan a wood deck for your home.",
+    "formText": "Share your address and ideas. We'll talk through the layout, lumber and finish care on site.",
+    "videoHeading": "Woodwork and more, from our project archive.",
+    "videoText": "These project clips include wood decks, composite installations, framing and other outdoor work.",
+    "galleryHeading": "A closer look at our wood deck work.",
+    "galleryText": "These selected images show wood decking and stairs. The full archive below also includes composite decks and other outdoor projects.",
+    "h1": "Wood decks in Lexington, KY. Natural from the start.",
+    "h1Lead": "Wood decks in Lexington, KY.",
+    "h1Accent": "Natural from the start.",
+    "heroText": "Real grain, a comfortable gathering space and a layout that makes sense. We build wood decks with the structure and upkeep planned from day one.",
+    "heroImage": "/local-deck/img/gallery/full/img_9609.webp",
+    "heroAlt": "Fresh wood deck boards and dark railing overlooking a Central Kentucky backyard",
+    "heroPosition": "center 25%",
+    "primaryCta": "Plan My Wood Deck",
+    "introTitle": "Love real wood? Start with an honest maintenance plan.",
+    "introText": "Wood suits homeowners who like natural variation and are comfortable looking after a finish. Pressure-treated decking is a practical starting point. The right board choice, drainage and detailing help the deck work well; cleaning and future finish care keep its appearance in your hands.",
+    "sections": [
+      {
+        "heading": "Pressure-treated decking, with the details worked out.",
+        "text": "We plan board direction, edges, stair treads and railing together, so the finished deck feels considered. A simple rectangular layout can leave more of the budget for useful space, while a larger landing or a different stair position can make the backyard easier to reach.",
+        "link": {
+          "href": "/custom-decks/",
+          "label": "Explore custom deck layouts"
+        },
+        "image": "/local-deck/img/gallery/full/img_9606.webp",
+        "alt": "New wood stair treads with dark metal railing beside a brick home"
+      },
+      {
+        "heading": "Give water a way out.",
+        "text": "Outdoor wood gets wet. We pay attention to the house connection, flashing, fasteners and places where leaves and moisture can collect. If we are replacing an old deck, we check the framing before deciding that new boards are enough.",
+        "image": "/local-deck/img/gallery/full/img_9605.webp",
+        "alt": "Raised wood deck showing the posts, framing and stair arrangement"
+      },
+      {
+        "heading": "Choose the finish after checking the wood.",
+        "text": "New treated lumber may still hold moisture. Finish timing depends on the wood's condition and the coating instructions. We discuss the look you want and the care it will need. If you prefer less refinishing, we can compare a composite option for the same layout.",
+        "link": {
+          "href": "/composite-decks/",
+          "label": "Compare composite decking"
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is pressure-treated wood a good deck material?",
+        "answer": "It can be a good fit when you want natural wood and can plan for periodic care. The final choice also depends on the site, your finish preferences and the complete installed cost, including stairs and railing."
+      },
+      {
+        "question": "Can I stain a new wood deck immediately?",
+        "answer": "Not always. The wood needs to meet the coating manufacturer's moisture and preparation requirements. Recent treatment, shade and weather affect drying, so we discuss finishing as part of the project instead of promising one date for every deck."
+      },
+      {
+        "question": "What about cedar or Ipe wood decking?",
+        "answer": "Tell us if you have a specific wood species in mind. We can discuss sourcing, upkeep and whether it suits the design before including it in a proposal. We do not treat cedar, pressure-treated lumber and dense hardwoods such as Ipe as interchangeable materials."
+      },
+      {
+        "question": "Should I choose wood or composite decking?",
+        "answer": "Choose wood when natural grain and the ability to refinish are priorities. Consider composite when reducing sanding and refinishing matters more. We can compare both options for the same layout, so the decision includes the full project rather than board price alone."
+      }
+    ],
+    "related": [
+      "decking",
+      "composite-decks",
+      "custom-decks",
+      "covered-decks",
+      "pergolas"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/gallery/full/img_9609.webp",
+        "alt": "New wood deck boards and black railing overlooking the yard"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/img_9605.webp",
+        "alt": "Elevated wood deck with exposed support posts and stairs"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/img_9606.webp",
+        "alt": "Wood stairs with dark railing and contrasting post sleeves"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/img_9603.webp",
+        "alt": "Wood deck and stair framing beside a brick and siding home"
+      }
+    ]
+  },
+  "composite-decks": {
+    "pathname": "/composite-decks/",
+    "title": "Composite Deck Builder Lexington, KY | Trex & TimberTech",
+    "description": "Compare Trex, TimberTech and composite decking for your Lexington home. Plan boards, railing and stairs with Yellowstone Renovation. Free on-site estimate.",
+    "eyebrow": "Less refinishing. More time outside.",
+    "navLabel": "Composite decks",
+    "linkText": "Compare composite and PVC options, colors and installation details for a deck with less refinishing work.",
+    "formTitle": "Find the right composite deck for you.",
+    "formText": "Tell us about your project. We'll compare materials and measure the space during your free visit.",
+    "videoHeading": "Composite details and the work behind them.",
+    "videoText": "Our project archive includes composite decks alongside wood, framing, stairs and covered spaces.",
+    "galleryHeading": "Composite decking, up close.",
+    "galleryText": "Start with these selected composite projects. The full archive below includes wood decks, framing and other outdoor work too.",
+    "h1": "Composite decks in Lexington, KY. Leave the staining behind.",
+    "h1Lead": "Composite decks in Lexington, KY.",
+    "h1Accent": "Leave the staining behind.",
+    "heroText": "Ready to spend less time refinishing your deck? Compare composite boards, colors and railing with a plan built around your home.",
+    "heroImage": "/local-deck/img/gallery/full/photo_2_2026-11-06_09-32-22.webp",
+    "heroAlt": "Finished brown composite deck with black railing beside a sunroom",
+    "heroPosition": "center 58%",
+    "primaryCta": "Plan My Composite Deck",
+    "introTitle": "Pick the board for your backyard, not just the sample rack.",
+    "introText": "Color, direct sun, furniture and maintenance expectations all matter. We help you compare Trex and TimberTech options alongside the railing, border and stair details. The aim is a deck that looks right at your house and asks less of your weekends.",
+    "sections": [
+      {
+        "heading": "Composite and PVC are different choices.",
+        "text": "Trex offers composite decking. TimberTech has both composite and Advanced PVC collections. If you have been searching for plastic decking, we can help narrow down which material you mean and compare the exact product, care instructions and warranty before you choose.",
+        "link": {
+          "href": "/wood-decks/",
+          "label": "Compare natural wood decking"
+        },
+        "image": "/local-deck/img/gallery/full/photo_48_2026-10-23_13-33-17.webp",
+        "alt": "Gray composite decking with black railing and an open backyard view"
+      },
+      {
+        "heading": "New boards need the right support.",
+        "text": "Resurfacing starts with the old frame. We review its condition, joist spacing and connections for the selected decking. Picture-frame borders, stairs and rail posts also need the right backing and fastening details; they are part of the installation, not an afterthought.",
+        "image": "/local-deck/img/gallery/full/photo_18_2026-10-23_13-33-17.webp",
+        "alt": "Composite decking with a picture-frame border beside a stone chimney"
+      },
+      {
+        "heading": "Low maintenance still means some care.",
+        "text": "Composite removes the routine of sanding and staining the deck boards, but it still needs cleaning. We also talk about sun exposure: every decking material can get hot. Comparing colors and samples in your yard helps you decide whether to include shade in the plan.",
+        "link": {
+          "href": "/covered-decks/",
+          "label": "Plan shade with a covered deck"
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I compare Trex and TimberTech for my project?",
+        "answer": "Yes. Tell us which boards or colors interest you. We can compare specific composite and PVC options for the same layout, including railing, stairs and installation details. Product availability and the chosen collection are confirmed in the proposal."
+      },
+      {
+        "question": "Is composite decking maintenance-free?",
+        "answer": "No. It reduces refinishing work, but the boards still need cleaning according to their manufacturer's instructions. Framing, fasteners, railing and drainage also need periodic attention."
+      },
+      {
+        "question": "Will composite decking get hot in the sun?",
+        "answer": "It can. Surface temperature depends on the product, color and exposure, and wood can warm up too. We recommend comparing samples where the deck will sit and planning shade when direct afternoon sun is a concern."
+      },
+      {
+        "question": "Can composite boards go on my existing wood frame?",
+        "answer": "Only if the frame is suitable. Its condition, support spacing and connections must work with the new decking and project requirements. We assess that before recommending a surface-only replacement."
+      }
+    ],
+    "related": [
+      "decking",
+      "wood-decks",
+      "custom-decks",
+      "covered-decks",
+      "outdoor-deck"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/gallery/full/photo_2_2026-11-06_09-32-22.webp",
+        "alt": "Brown composite deck beside a sunroom"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_44_2026-10-23_13-33-17.webp",
+        "alt": "Gray composite deck with black railing and stairs"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/woodland-composite-deck.webp",
+        "alt": "Brown composite deck with outdoor dining furniture"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_18_2026-10-23_13-33-17.webp",
+        "alt": "Composite board and border detail with white and black railing"
+      }
+    ]
+  },
+  "covered-decks": {
+    "pathname": "/covered-decks/",
+    "title": "Covered Deck Builder in Lexington, KY | Yellowstone",
+    "description": "Too much sun or a deck you cannot use in the rain? Plan a covered deck or roofed outdoor space in Lexington with a free on-site design and estimate.",
+    "eyebrow": "Plan the shade. Keep the backyard.",
+    "navLabel": "Covered decks",
+    "linkText": "Plan roofed outdoor space around your seating, nearby windows and the support needed beneath the cover.",
+    "formTitle": "Let's find the right cover.",
+    "formText": "Show us where you want shade and shelter. We'll review the space and structure during your free visit.",
+    "videoHeading": "Outdoor structures, from the frame up.",
+    "videoText": "This is our wider project archive, including deck framing, open pergolas, composite decks and other outdoor work.",
+    "galleryHeading": "Covered spaces in real backyards.",
+    "galleryText": "These selected examples show roofed and sheltered spaces. The full archive below also includes open decks and other outdoor projects.",
+    "h1": "Covered decks in Lexington, KY. Stay outside a little longer.",
+    "h1Lead": "Covered decks in Lexington, KY.",
+    "h1Accent": "Stay outside a little longer.",
+    "heroText": "If afternoon sun clears the table or rain ends every visit, a well-planned roof can change how you use your deck.",
+    "heroImage": "/local-deck/img/gallery/full/photo_14_2026-10-23_13-33-17.webp",
+    "heroAlt": "Roofed and screened outdoor porch connected to an elevated deck beside a brick home",
+    "heroPosition": "center 56%",
+    "primaryCta": "Plan My Covered Deck",
+    "introTitle": "A roof changes more than the view overhead.",
+    "introText": "Shade is the goal, but daylight inside the house, the roof connection and where rainwater goes all deserve attention. We plan the covered area around your doors, windows and seating, then look at the support it needs below.",
+    "sections": [
+      {
+        "heading": "Cover the part you actually use.",
+        "text": "A dining table, lounge chairs and a clear route to the steps need different amounts of room. You may want a full roof or a smaller covered zone with open deck space alongside it. We work through that balance before setting post locations.",
+        "link": {
+          "href": "/outdoor-deck/",
+          "label": "Plan a connected outdoor living space"
+        },
+        "image": "/local-deck/img/gallery/full/photo_20_2026-10-23_13-33-17.webp",
+        "alt": "Furnished screened outdoor living room beneath a roof"
+      },
+      {
+        "heading": "Check the structure before adding the roof.",
+        "text": "An existing deck was not necessarily designed to support a cover. Posts, footings, beams and the house connection need to suit the added structure. We review the proposed work and the applicable approval requirements before treating a roof as a simple add-on."
+      },
+      {
+        "heading": "Decide how enclosed you want to feel.",
+        "text": "An open covered deck keeps the breeze and yard connection. Screens can help with insects. A pergola creates a more open overhead pattern, while a solid roof is the choice to discuss when keeping rain off the table is your priority.",
+        "link": {
+          "href": "/pergolas/",
+          "label": "Explore open pergola designs"
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can you add a roof to an existing deck?",
+        "answer": "Potentially. We first review the deck structure, foundations, house connection and proposed roof. Some projects need new support or a deck rebuild. The on-site visit is where we establish which approach fits."
+      },
+      {
+        "question": "What is the difference between a covered deck and a pergola?",
+        "answer": "A covered deck has a roof intended to shelter the area below. An open-slat pergola provides an overhead framework and partial shade, but does not provide the same rain protection. The right choice starts with how you want to use the space."
+      },
+      {
+        "question": "Will a deck cover make the rooms inside darker?",
+        "answer": "It can change the light through nearby windows. Roof size, height, location and the home's orientation all matter. We discuss those tradeoffs while planning the cover, rather than treating shade outside as the only consideration."
+      },
+      {
+        "question": "Can a covered deck include screens?",
+        "answer": "Screens can be part of the design when the structure and layout suit them. We plan the doors, views and access along with the roof and deck so the enclosure works with the way you move outside."
+      }
+    ],
+    "related": [
+      "decking",
+      "pergolas",
+      "patios",
+      "composite-decks",
+      "outdoor-deck"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/gallery/full/photo_14_2026-10-23_13-33-17.webp",
+        "alt": "Screened porch exterior connected to the deck"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_20_2026-10-23_13-33-17.webp",
+        "alt": "Dining and seating area inside a roofed screened porch"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_22_2026-10-23_13-33-17.webp",
+        "alt": "Screened porch door opening onto composite decking"
+      },
+      {
+        "src": "/local-deck/img/r/under-deck-patio.webp",
+        "alt": "Sheltered patio dining area beneath an elevated deck"
+      }
+    ]
+  },
+  "custom-decks": {
+    "pathname": "/custom-decks/",
+    "title": "Custom Deck Design & Build in Lexington, KY | Yellowstone",
+    "description": "A better layout for your doors, yard and gatherings. Plan a custom or multi-level deck in Lexington with Yellowstone Renovation. Free on-site design and estimate.",
+    "eyebrow": "Your doors. Your yard. Your way outside.",
+    "navLabel": "Custom decks",
+    "linkText": "Solve awkward stairs, crowded seating and changes in elevation with a layout planned around your backyard.",
+    "formTitle": "Tell us how you want to use your deck.",
+    "formText": "Start with your address and ideas. We'll work through the layout together during a free on-site visit.",
+    "videoHeading": "Different layouts. Real work in progress.",
+    "videoText": "Browse our broader project archive, including custom layouts, wood and composite decks, stairs and overhead structures.",
+    "galleryHeading": "Deck layouts with room for everyday life.",
+    "galleryText": "These selected projects show how levels and stairs connect. The full archive below includes a wider range of materials and outdoor spaces.",
+    "h1": "Custom decks in Lexington, KY. Every level has a purpose.",
+    "h1Lead": "Custom decks in Lexington, KY.",
+    "h1Accent": "Every level has a purpose.",
+    "heroText": "The best layout starts with how you move: out the door, around the table and down to the yard. Let's make those parts work together.",
+    "heroImage": "/local-deck/img/g/d39.webp",
+    "heroAlt": "Large custom deck with separate dining and seating areas and stairs to the patio",
+    "heroPosition": "center 56%",
+    "primaryCta": "Design My Deck",
+    "introTitle": "More square footage is not always the answer.",
+    "introText": "A table can fill a deck and still leave no comfortable route past it. Stairs can land in the wrong part of the yard. Custom deck design starts with these everyday problems, then puts the usable space where you need it.",
+    "sections": [
+      {
+        "heading": "Lay out the furniture before the framing.",
+        "text": "We plan dining, lounging and circulation together. The grill needs a sensible location, doors need clearance and chairs need space when people are sitting in them. That thinking gives each part of the deck a job without filling the yard with unnecessary structure.",
+        "image": "/local-deck/img/gallery/full/photo_11_2026-11-06_09-32-37.webp",
+        "alt": "Composite deck arranged with a seating area and open walking space"
+      },
+      {
+        "heading": "Use levels to solve the site.",
+        "text": "A sloping yard or a high back door may call for an elevated deck, a larger stair landing or a second gathering area below. We compare the options with the supports and access they require. Extra levels should make the backyard easier to use, not just add complexity.",
+        "link": {
+          "href": "/patios/",
+          "label": "Connect a deck to a patio"
+        },
+        "image": "/local-deck/img/gallery/full/photo_27_2026-10-23_13-33-17.webp",
+        "alt": "Elevated deck, lower patio and garden seating connected across the backyard"
+      },
+      {
+        "heading": "Finish with the right edges and railing.",
+        "text": "Board borders, stair proportions and rail lines can make a large layout feel calm and connected. We coordinate those details with your choice of wood or composite, the view you want to keep and the maintenance you are willing to take on.",
+        "link": {
+          "href": "/composite-decks/",
+          "label": "Explore composite colors and details"
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can you design a deck for a sloping yard?",
+        "answer": "Yes, we can evaluate layouts for changes in elevation. The right approach depends on the door height, yard access, soil and support requirements. We may compare an elevated platform, revised stairs or a combination of deck and patio."
+      },
+      {
+        "question": "Do custom decks have to be large?",
+        "answer": "No. A compact deck can be custom-designed around a back door, a small dining area or a better stair route. The point is to use the available space well, not to make every project bigger."
+      },
+      {
+        "question": "Can you redesign the stairs when replacing a deck?",
+        "answer": "Often, yes. Stair position affects the layout above and the landing below, so we include it early. We look at the route into the yard, nearby doors and the support needed for the revised design."
+      },
+      {
+        "question": "When do I choose wood or composite?",
+        "answer": "We discuss materials while developing the layout. That keeps the design, support requirements and budget connected. You can compare wood and composite versions before settling on the final scope."
+      }
+    ],
+    "related": [
+      "decking",
+      "wood-decks",
+      "composite-decks",
+      "covered-decks",
+      "patios",
+      "outdoor-deck"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/g/d39.webp",
+        "alt": "Custom elevated deck with separate dining and seating areas"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/woodland-elevated-deck.webp",
+        "alt": "Elevated deck and stair layout beside a brick home"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_27_2026-10-23_13-33-17.webp",
+        "alt": "Deck, lower patio and garden seating planned across different levels"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_9_2026-10-23_13-33-17.webp",
+        "alt": "Wide composite staircase with white and black railing"
+      }
+    ]
+  },
+  "outdoor-deck": {
+    "pathname": "/outdoor-deck/",
+    "title": "Outdoor Living Spaces in Lexington, KY | Yellowstone",
+    "description": "Plan your deck, patio and shade together. Yellowstone Renovation designs connected outdoor living spaces for Lexington homes. Start with a free on-site visit.",
+    "eyebrow": "A place to eat. A place to unwind.",
+    "navLabel": "Outdoor living",
+    "linkText": "Bring your deck, patio and shade together with clear routes and a purpose for each gathering space.",
+    "formTitle": "What would make your backyard work better?",
+    "formText": "Tell us what you have in mind. We'll review the layout and options during a free on-site visit.",
+    "videoHeading": "See the different parts come together.",
+    "videoText": "Our project archive covers wood and composite decks, stairs, framing and overhead structures across different homes.",
+    "galleryHeading": "Real backyards, connected spaces.",
+    "galleryText": "Start with these selected outdoor living examples. The full archive below includes detail photos and other deck materials and layouts.",
+    "h1": "Outdoor living spaces in Lexington, KY. One backyard. A better plan.",
+    "h1Lead": "Outdoor living spaces in Lexington, KY.",
+    "h1Accent": "One backyard. A better plan.",
+    "heroText": "A deck, a patio and a little shade work better when they are planned together. Start with the way your family wants to spend time outside.",
+    "heroImage": "/local-deck/img/gallery/full/photo_27_2026-10-23_13-33-17.webp",
+    "heroAlt": "Connected elevated deck, lower patio and garden seating beside a brick home",
+    "heroPosition": "center 66%",
+    "primaryCta": "Plan My Outdoor Space",
+    "introTitle": "Connect the spaces instead of adding another corner.",
+    "introText": "A backyard can have plenty of features and still feel awkward. We start with the path from the house to the table, the lawn and the places you want to sit. Then we decide where a deck, ground-level patio or shade structure will do the most useful work.",
+    "sections": [
+      {
+        "heading": "Put each gathering space where it belongs.",
+        "text": "A dining area near the kitchen can make everyday meals easier. A lower patio can create a second place to sit without enlarging the deck. We plan the relationship between those areas, with clear walking routes and practical access to the yard.",
+        "link": {
+          "href": "/patios/",
+          "label": "Explore patio layouts"
+        },
+        "image": "/local-deck/img/gallery/full/woodland-elevated-deck.webp",
+        "alt": "Deck stairs connecting an upper deck to a lower patio"
+      },
+      {
+        "heading": "Plan sun, rain and the view together.",
+        "text": "A pergola keeps the overhead space open. A solid cover offers a different kind of shelter. We help you choose where shade belongs while considering nearby windows, the view from the house and where water needs to go.",
+        "link": {
+          "href": "/covered-decks/",
+          "label": "Compare roofed outdoor spaces"
+        },
+        "image": "/local-deck/img/gallery/full/photo_20_2026-10-23_13-33-17.webp",
+        "alt": "Outdoor dining and lounge seating inside a screened porch"
+      },
+      {
+        "heading": "Build in stages without losing the whole plan.",
+        "text": "You do not have to complete every part at once. If a patio or cover is a later phase, we can discuss that early so today's deck and stairs leave sensible options for the next project. The estimate identifies the work included now."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is included in an outdoor living project?",
+        "answer": "The scope can combine a deck, stairs, patio and overhead shade. We define the parts during the visit and show what is included in the proposal. Outdoor kitchens, utilities and other specialist work are discussed separately rather than assumed."
+      },
+      {
+        "question": "Should I build a deck or a patio?",
+        "answer": "A deck often suits a raised back door or a yard with a change in level. A patio can work well at ground level. Access, drainage, the layout and your maintenance preferences help determine the better choice; some backyards benefit from both."
+      },
+      {
+        "question": "Can you plan a deck and patio together?",
+        "answer": "Yes. We can consider the upper deck, stairs and ground-level space as one layout. That helps avoid stairs landing in the middle of a future seating area or a patio that feels disconnected from the house."
+      },
+      {
+        "question": "Can I start with one part of the project?",
+        "answer": "Yes. Tell us what you want to do now and what may come later. We can discuss how the first phase affects future layout and structure, with the current work clearly defined in the estimate."
+      }
+    ],
+    "related": [
+      "decking",
+      "custom-decks",
+      "covered-decks",
+      "patios",
+      "pergolas"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/gallery/full/photo_27_2026-10-23_13-33-17.webp",
+        "alt": "Connected deck, patio and garden seating areas"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_20_2026-10-23_13-33-17.webp",
+        "alt": "Outdoor dining and lounging beneath a screened roof"
+      },
+      {
+        "src": "/local-deck/img/r/under-deck-patio.webp",
+        "alt": "Dining area on a sheltered lower patio"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_19_2026-11-06_09-32-37.webp",
+        "alt": "Deck stairs leading to an open backyard"
+      }
+    ]
+  },
+  "patios": {
+    "pathname": "/patios/",
+    "title": "Patio Builders in Lexington, KY | Yellowstone Renovation",
+    "description": "Make better use of the space beside or beneath your deck. Plan a concrete patio, seating layout and backyard access in Lexington. Free on-site estimate.",
+    "eyebrow": "Good outdoor space starts at ground level.",
+    "navLabel": "Patios",
+    "linkText": "Make space for outdoor dining or lounging with a patio planned around access, furniture and drainage.",
+    "formTitle": "Plan a patio you will use.",
+    "formText": "Share the location and your ideas. We'll look at the ground levels and layout during your free visit.",
+    "videoHeading": "More work from our outdoor project archive.",
+    "videoText": "These clips include deck construction, framing, stairs and overhead structures; they are a wider archive of our outdoor work.",
+    "galleryHeading": "Patios and the spaces around them.",
+    "galleryText": "These selected photos show ground-level and under-deck areas. The full archive below also includes deck surfaces, stairs and other outdoor projects.",
+    "h1": "Patio builders in Lexington, KY. Make room at ground level.",
+    "h1Lead": "Patio builders in Lexington, KY.",
+    "h1Accent": "Make room at ground level.",
+    "heroText": "Turn the space outside your back door or beneath your deck into a practical place to gather, with the layout and drainage considered from the start.",
+    "heroImage": "/local-deck/img/r/under-deck-patio.webp",
+    "heroAlt": "Concrete patio with a dining table and seating beneath an elevated deck",
+    "heroPosition": "center 68%",
+    "primaryCta": "Plan My Patio",
+    "introTitle": "A useful patio begins before the surface.",
+    "introText": "The table needs room, the doors need clearance and water needs a sensible route away. We look at the ground level and how the space connects to your house, stairs and yard before agreeing on the patio layout.",
+    "sections": [
+      {
+        "heading": "Give the furniture space to work.",
+        "text": "A patio that fits a table on paper may feel tight once the chairs are pulled out. We plan the dining or lounge area around real use, including the route to the lawn and any deck stairs. The goal is usable space rather than paving every available corner."
+      },
+      {
+        "heading": "Use the area beneath your deck.",
+        "text": "A lower patio can make a second gathering area without expanding the platform above. We review headroom, posts, stair landings and runoff from the deck. If you want a dry space below, a planned water-management system is a separate part of that discussion.",
+        "link": {
+          "href": "/custom-decks/",
+          "label": "Coordinate your patio and deck stairs"
+        },
+        "image": "/local-deck/img/gallery/full/img_9396.webp",
+        "alt": "Furnished patio dining area beneath an elevated deck at dusk"
+      },
+      {
+        "heading": "Coordinate concrete, access and drainage.",
+        "text": "A concrete patio is more than the visible finish. Site preparation, levels, joints and the connection to existing paths all affect the result. We identify those project-specific details during the site visit and define the proposed surface and work in the estimate.",
+        "link": {
+          "href": "/outdoor-deck/",
+          "label": "Plan the whole outdoor space"
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can you add a patio under an existing deck?",
+        "answer": "We can assess the space, including headroom, support posts, the stair landing and how water moves through it. A patio below an open deck will not automatically stay dry; rain protection needs to be addressed as part of the design."
+      },
+      {
+        "question": "Is a patio better than a ground-level deck?",
+        "answer": "It depends on door height, grading, drainage and how you want the surface to feel and look. We compare the fit for the site instead of assuming one option is right for every backyard."
+      },
+      {
+        "question": "Do you build concrete patios?",
+        "answer": "Concrete patio work can be part of an outdoor project. Tell us the size, location and finish you have in mind so we can confirm the scope after reviewing the site. Any other paving materials are confirmed before they are included in a proposal."
+      },
+      {
+        "question": "Can a patio connect to a new deck?",
+        "answer": "Yes. Planning them together lets us coordinate the stair landing, walking route and seating areas. It also makes it easier to discuss a later cover or other future changes before the layout is fixed."
+      }
+    ],
+    "related": [
+      "outdoor-deck",
+      "decking",
+      "custom-decks",
+      "covered-decks",
+      "pergolas"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/r/under-deck-patio.webp",
+        "alt": "Concrete patio dining area beneath a deck"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/img_9396.webp",
+        "alt": "Lower patio with seating and a finished overhead ceiling"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/woodland-elevated-deck.webp",
+        "alt": "Patio beneath a deck with stairs at one side"
+      },
+      {
+        "src": "/local-deck/img/gallery/full/photo_27_2026-10-23_13-33-17.webp",
+        "alt": "Backyard patio and seating area beside an elevated deck"
+      }
+    ]
+  },
+  "pergolas": {
+    "pathname": "/pergolas/",
+    "title": "Pergola Builders in Lexington, KY | Yellowstone Renovation",
+    "description": "Add an open overhead structure to your deck or patio. Plan a wood pergola, seating layout and support details in Lexington with a free on-site estimate.",
+    "eyebrow": "Keep it open. Give it a purpose.",
+    "navLabel": "Pergolas",
+    "linkText": "Define a dining or lounge area with an open overhead frame and a practical plan for shade.",
+    "formTitle": "Let's plan your pergola.",
+    "formText": "Tell us where you want to gather. We'll review the sun, layout and support during your free visit.",
+    "videoHeading": "Pergola framing and more outdoor work.",
+    "videoText": "Our project archive includes pergola framing in progress, alongside wood decks, composite installations and other structures.",
+    "galleryHeading": "A look at the frame taking shape.",
+    "galleryText": "These selected images show pergola framing in progress. The full archive below includes finished decks and other outdoor projects.",
+    "h1": "Pergola builders in Lexington, KY. An open frame for outdoor life.",
+    "h1Lead": "Pergola builders in Lexington, KY.",
+    "h1Accent": "An open frame for outdoor life.",
+    "heroText": "Define a dining or lounge area without closing off the sky. We plan pergolas around the space below and the support they need.",
+    "heroImage": "/local-deck/img/r/pergola-frame-wide-natural-hd-poster-sharp.webp",
+    "heroAlt": "Wood pergola framing in progress above a deck beside a brick home",
+    "heroPosition": "center 64%",
+    "primaryCta": "Plan My Pergola",
+    "introTitle": "Shade starts with where the sun actually falls.",
+    "introText": "An overhead frame can give a seating area a sense of place, but its shade changes with the sun. We look at the location, the table or chairs below and how open you want the space to feel before choosing the size and direction of the structure.",
+    "sections": [
+      {
+        "heading": "Put the posts where they help the space.",
+        "text": "The pergola should frame your gathering area without blocking a door, narrowing a stair route or crowding the table. We plan the overhead layout and the space beneath it together, whether it sits on a patio or alongside a deck.",
+        "link": {
+          "href": "/patios/",
+          "label": "Plan the patio beneath your pergola"
+        },
+        "image": "/local-deck/img/r/pergola-frame-close-natural-hd-poster-sharp.webp",
+        "alt": "Close view of wood pergola posts and overhead framing during construction"
+      },
+      {
+        "heading": "Plan the support before adding the frame.",
+        "text": "A pergola needs suitable foundations and connections. Existing deck boards or patio concrete alone do not establish that the support is adequate. We review the proposed structure, site conditions and applicable approval requirements before confirming the build."
+      },
+      {
+        "heading": "Choose open shade or a solid cover.",
+        "text": "A conventional open-slat pergola offers partial shade and an open-air feel. If staying dry in the rain is the main reason for the project, a covered deck or patio roof may be the better starting point. We will help you compare the two and choose the shelter that fits your plans.",
+        "link": {
+          "href": "/covered-decks/",
+          "label": "Explore solid roof covers"
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does a pergola keep the rain out?",
+        "answer": "A conventional open-slat pergola does not provide the rain protection of a solid roof. If you want dependable shelter for a dining or lounge area, we can discuss a covered deck or roofed patio instead."
+      },
+      {
+        "question": "Can a pergola be added to a deck?",
+        "answer": "It may be possible, but the frame and foundations need to support the proposed structure and connections. We review the deck and the design before recommending how the pergola should be supported."
+      },
+      {
+        "question": "How much shade will a pergola create?",
+        "answer": "Shade depends on the sun's path, orientation and the spacing and depth of the overhead members. We discuss where and when you want shade, rather than promising full coverage from an open structure."
+      },
+      {
+        "question": "Does a wood pergola need upkeep?",
+        "answer": "Yes. Exposed wood and its finish need inspection and care over time. We discuss the material and finish with the proposed design so you know what you will be looking after."
+      }
+    ],
+    "related": [
+      "covered-decks",
+      "patios",
+      "outdoor-deck",
+      "wood-decks",
+      "decking"
+    ],
+    "galleryImages": [
+      {
+        "src": "/local-deck/img/r/pergola-frame-wide-natural-hd-poster-sharp.webp",
+        "alt": "Wood pergola framework in progress above a deck"
+      },
+      {
+        "src": "/local-deck/img/r/pergola-frame-close-natural-hd-poster-sharp.webp",
+        "alt": "Pergola beam and post connections during construction"
+      }
+    ]
+  }
+}

@@ -61,7 +61,7 @@ export default function ServiceAreasPage() {
                             "New Construction Windows"
                         ],
                         "image": "https://yellowstonerenovation.com/images/window3.webp",
-                        "telephone": "859-545-7020",
+                        "telephone": "859-765-7267",
                         "areaServed": [
                             "Lexington, KY",
                             "Nicholasville, KY",

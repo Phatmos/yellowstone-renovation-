@@ -674,7 +674,7 @@ export default function initLocalDeck(root) {
   const DK = [{
     k: 'Ground-level',
     t: 'Ground-level decks',
-    d: 'A low, step-out deck that turns a plain backyard into an outdoor room. Fewer stairs, faster builds and a clean fascia all around.',
+    d: 'A low, step-out deck that turns a plain backyard into an outdoor room. Fewer stairs, a lower profile and a clean fascia all around.',
     imgs: ['/local-deck/img/g/d15.webp', '/local-deck/img/g/d4.webp', '/local-deck/img/r/sunroom-deck-wide.webp', '/local-deck/img/r/white-rail-lattice.webp'],
     f: [['Best for', 'Flat yards, patios, sunrooms'], ['Height', '1–3 steps from the door'], ['Materials', 'Composite or pressure-treated'], ['Railing', 'Aluminum or composite']],
     t2: ['Footings & framing built to code', 'Picture-frame border & fascia', 'Skirting or lattice to finish the base']

@@ -86,7 +86,7 @@ export default function MainSectionSideBar({
                             style={{ backgroundImage: `url(${mainOffer.image})` }}
                         >
                             <div>
-                                <span>Limited Offer</span>
+                                <span>Your next step</span>
                                 <h3>{mainOffer.text}</h3>
                                 <p>{mainOffer.button || "Get Started"} →</p>
                             </div>

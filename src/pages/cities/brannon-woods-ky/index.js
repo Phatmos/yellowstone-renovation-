@@ -71,7 +71,7 @@ export default function BrannonWoodsKY() {
                         url: "https://yellowstonerenovation.com",
                         image: "https://yellowstonerenovation.com/images/remodler1.webp",
                         logo: "/icons/logo.webp",
-                        telephone: "859-545-7020",
+                        telephone: "859-765-7267",
                         address: {
                             "@type": "PostalAddress",
                             addressLocality: "Brannon Woods",

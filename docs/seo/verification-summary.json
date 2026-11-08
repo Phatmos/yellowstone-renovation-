@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-11-08T22:28:16.100Z",
+  "checks": {
+    "servicePages": 8,
+    "homepage": true,
+    "htmlFiles": 136,
+    "internalReferences": 15391,
+    "uniqueInternalPaths": 701,
+    "fragmentLinks": 187,
+    "redirectedReferences": 69,
+    "externalReferencesSkipped": 603,
+    "projectClips": 24,
+    "photoDataEntries": 80,
+    "sitemapFiles": 2
+  },
+  "pages": [
+    {
+      "pathname": "/",
+      "title": "Yellowstone Renovation | Home Exteriors in Lexington, KY",
+      "h1": "Exterior Remodeling in Lexington, KY",
+      "canonical": "https://yellowstonerenovation.com/",
+      "projectVideos": 0,
+      "initialPhotos": 0
+    },
+    {
+      "pathname": "/decking/",
+      "title": "Deck Builders in Lexington, KY | Yellowstone Renovation",
+      "h1": "Deck builders in Lexington, KY. A better way outside.",
+      "canonical": "https://yellowstonerenovation.com/decking/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    },
+    {
+      "pathname": "/wood-decks/",
+      "title": "Wood Deck Builder in Lexington, KY | Yellowstone Renovation",
+      "h1": "Wood decks in Lexington, KY. Natural from the start.",
+      "canonical": "https://yellowstonerenovation.com/wood-decks/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    },
+    {
+      "pathname": "/composite-decks/",
+      "title": "Composite Deck Builder Lexington, KY | Trex & TimberTech",
+      "h1": "Composite decks in Lexington, KY. Leave the staining behind.",
+      "canonical": "https://yellowstonerenovation.com/composite-decks/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    },
+    {
+      "pathname": "/covered-decks/",
+      "title": "Covered Deck Builder in Lexington, KY | Yellowstone",
+      "h1": "Covered decks in Lexington, KY. Stay outside a little longer.",
+      "canonical": "https://yellowstonerenovation.com/covered-decks/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    },
+    {
+      "pathname": "/custom-decks/",
+      "title": "Custom Deck Design & Build in Lexington, KY | Yellowstone",
+      "h1": "Custom decks in Lexington, KY. Every level has a purpose.",
+      "canonical": "https://yellowstonerenovation.com/custom-decks/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    },
+    {
+      "pathname": "/outdoor-deck/",
+      "title": "Outdoor Living Spaces in Lexington, KY | Yellowstone",
+      "h1": "Outdoor living spaces in Lexington, KY. One backyard. A better plan.",
+      "canonical": "https://yellowstonerenovation.com/outdoor-deck/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    },
+    {
+      "pathname": "/patios/",
+      "title": "Patio Builders in Lexington, KY | Yellowstone Renovation",
+      "h1": "Patio builders in Lexington, KY. Make room at ground level.",
+      "canonical": "https://yellowstonerenovation.com/patios/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    },
+    {
+      "pathname": "/pergolas/",
+      "title": "Pergola Builders in Lexington, KY | Yellowstone Renovation",
+      "h1": "Pergola builders in Lexington, KY. An open frame for outdoor life.",
+      "canonical": "https://yellowstonerenovation.com/pergolas/",
+      "projectVideos": 24,
+      "initialPhotos": 20
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "limits": [
+    "Static build-output audit; no physical-device playback, external-link network check, Google indexing or rich-result guarantee.",
+    "public/404/index.html and public/404.html are expected Gatsby error artifacts; links to these routes are rejected."
+  ]
+}

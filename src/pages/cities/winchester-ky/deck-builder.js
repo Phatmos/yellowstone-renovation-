@@ -19,74 +19,37 @@ export default function WinchesterDeckBuilder() {
 
             {/* SEO */}
             <SEO
-                title="Deck Builder in Winchester KY — Composite & Wood Decks | Yellowstone Renovation"
-                description="Top-quality deck builders in Winchester, KY. Yellowstone Renovation designs and builds composite and wood decks built for strength, beauty, and long-term value. Free estimates throughout Clark County."
-                pathname="/cities/winchester-ky/deck-builder"
-                image="https://yellowstonerenovation.com/images/deck-builder8.webp"
+                title="Deck Builder in Winchester, KY | Yellowstone Renovation"
+                description="Deck builder serving Winchester, KY. Plan a new deck or replacement with wood, composite, stair and railing options. Free Yellowstone Renovation estimates."
+                pathname="/cities/winchester-ky/deck-builder/"
+                image="/images/deck/deck-lexington65.webp"
+                imageAlt="Deck construction by Yellowstone Renovation"
+                areaServed={["Winchester, KY"]}
+                serviceType={["Deck construction", "Deck replacement"]}
+                breadcrumbs={[{ name: "Home", path: "/" }, { name: "Deck building", path: "/decking/" }, { name: "Winchester deck builder", path: "/cities/winchester-ky/deck-builder/" }]}
             />
 
-            <Helmet>
-                <meta
-                    name="keywords"
-                    content="deck builder Winchester KY, composite deck Winchester, wood deck installation Clark County, deck repair Winchester KY, deck replacement Winchester"
-                />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Deck Builder in Winchester KY | Yellowstone Renovation" />
-                <meta property="og:description" content="Custom-built decks in Winchester, Kentucky — from composite systems to beautiful wood structures. Get your free deck estimate today." />
-                <meta property="og:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-                <meta property="og:url" content="https://yellowstonerenovation.com/cities/winchester-ky/deck-builder" />
-                <meta property="og:site_name" content="Yellowstone Renovation" />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Winchester KY Deck Builder | Composite & Wood Deck Construction" />
-                <meta name="twitter:description" content="Upgrade your outdoor living with Yellowstone Renovation — reliable deck builders serving Winchester and Clark County." />
-                <meta name="twitter:image" content="https://yellowstonerenovation.com/images/deck-builder8.webp" />
-
-                {/* JSON-LD */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "HomeAndConstructionBusiness",
-                        name: "Yellowstone Renovation",
-                        url: "https://yellowstonerenovation.com",
-                        logo: "https://yellowstonerenovation.com/icons/logo.webp",
-                        image: "https://yellowstonerenovation.com/images/deck-builder8.webp",
-                        telephone: "859-545-7020",
-                        address: {
-                            "@type": "PostalAddress",
-                            addressLocality: "Winchester",
-                            addressRegion: "KY",
-                            postalCode: "40391",
-                            addressCountry: "US",
-                        },
-                        serviceType: [
-                            "Deck Construction",
-                            "Composite Deck Installation",
-                            "Wood Deck Builder",
-                            "Deck Repair",
-                            "Deck Replacement"
-                        ],
-                        areaServed: [
-                            "Winchester, KY",
-                            "Trapp, KY",
-                            "Pilot View, KY",
-                            "Colby, KY",
-                            "Clark County, KY"
-                        ]
-                    })}
-                </script>
-            </Helmet>
+            <Helmet><script type="application/ld+json">{JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "@id": "https://yellowstonerenovation.com/cities/winchester-ky/deck-builder/#service",
+                name: "Deck construction in Winchester, KY",
+                description: "Deck builder serving Winchester, KY. Plan a new deck or replacement with wood, composite, stair and railing options. Free Yellowstone Renovation estimates.",
+                url: "https://yellowstonerenovation.com/cities/winchester-ky/deck-builder/",
+                serviceType: "Deck construction and replacement",
+                provider: { "@id": "https://yellowstonerenovation.com/#organization" },
+                areaServed: { "@type": "Place", name: "Winchester, Kentucky" },
+                image: "https://yellowstonerenovation.com/images/deck/deck-lexington65.webp",
+            })}</script></Helmet>
 
             {/* HERO */}
             <Hero2
-                topText="Top-Rated Deck Builder in Winchester, KY"
-                title="Deck Builder in Winchester, KY — Custom Composite & Wood Decks"
-                description="Yellowstone Renovation builds durable, beautiful, and long-lasting decks for homeowners throughout Winchester and Clark County. Whether you're upgrading an old deck or designing a brand-new outdoor space, we deliver professional craftsmanship and dependable service."
-                backgroundImage="/images/deck/deck-lexington1.webp"
+                topText="Winchester, Kentucky · Deck construction"
+                title="Deck Builder in Winchester, KY"
+                description="If the boards feel uneven or the railing moves, start with the structure. We help Winchester homeowners plan a replacement that feels easier to use and makes sense for the whole backyard."
+                backgroundImage="/images/deck/deck-lexington65.webp"
                 overlayOpacity={0.65}
-                formTitle="Get a Free Deck Estimate"
+                formTitle="Plan your deck with us"
                 selectLabel="Select Deck Service"
                 selectOptions={[
                     "Custom Deck Design & Build",
@@ -107,9 +70,9 @@ export default function WinchesterDeckBuilder() {
             {/* BEFORE & AFTER */}
             <BeforeAfter
                 title="Winchester Deck Transformations"
-                description="See how we upgrade decks in Winchester — replacing old, unsafe structures with modern, long-lasting composite and wood designs."
+                description="Compare the original structures with finished deck projects from our portfolio. See how layout, stairs and railing change the space."
                 buttonText="Explore More Projects"
-                buttonLink="/projects"
+                buttonLink="/projects-showcase/"
                 accentColor="#0a923d"
                 images={[
                     { before: "/images/deckafter3.webp", after: "/images/deckbefore3.webp" },
@@ -120,7 +83,7 @@ export default function WinchesterDeckBuilder() {
             {/* GALLERY */}
             <GallerySection
                 title="WINCHESTER DECK BUILDER GALLERY"
-                subtitle="Browse completed deck projects built for homeowners across Winchester and Clark County."
+                subtitle="Deck projects from our Kentucky portfolio, with ideas for your Winchester home."
                 highlight="DECK BUILDER"
                 background="#ffffff"
                 images={[
@@ -152,167 +115,50 @@ export default function WinchesterDeckBuilder() {
             <TestimonialsSection />
 
             <MainSectionSideBar
-                title="Deck Builder in Winchester, KY — Custom Composite & Wood Decks"
+                title="Planning a deck for your Winchester home"
                 sections={[
-                    {
-                        heading: "Deck Builder Winchester KY — Craftsmanship, Quality & Value",
-                        text: `Yellowstone Renovation is a trusted deck contractor serving Winchester, Kentucky. We design and build decks that combine strength, functionality, and modern outdoor style.
-
-From premium composite systems to natural wood installations, we create outdoor spaces built to last. Our process includes design, permits, strong framing, professional installation, and clean finishing.`
-                    },
-
-                    {
-                        heading: "Composite Deck Installation in Winchester, KY",
-                        text: `Composite decking is ideal for Winchester homeowners who want a long-lasting, low-maintenance outdoor space. Composite boards resist rot, insects, fading, and moisture — all while maintaining their color for decades.
-
-We install Trex, TimberTech, and AZEK decking using hidden fasteners and reinforced framing. Enjoy a modern deck without annual staining or repairs.`
-                    },
-
-                    {
-                        heading: "Wood Deck Builder in Winchester, Kentucky",
-                        text: `Natural wood decks offer warmth, charm, and traditional beauty. We install wood decks using pressure-treated lumber, cedar, and redwood to match your budget and style.
-
-Every wood deck is reinforced, sealed, and built with proper spacing and drainage to withstand Kentucky’s climate.`
-                    },
-
-                    {
-                        heading: "Deck Replacement & Repair in Winchester, KY",
-                        text: `If your existing deck is rotted, unstable, or outdated, our team provides complete deck replacement and structural repairs. We rebuild decks using modern materials, safer framing, and updated building practices.
-
-Loose boards, failed footings, or deteriorating railings — we repair and restore outdoor spaces throughout Winchester and Clark County.`
-                    },
-
-                    {
-                        heading: "Our Deck Design & Construction Process",
-                        text: `Our process begins with an on-site consultation where we measure your space, evaluate existing structures, and discuss materials.
-
-From permits to framing to decking installation, we manage every stage with communication and attention to detail. All decks are built to Kentucky residential building standards.`
-                    },
-
-                    {
-                        heading: "Average Deck Cost in Winchester, KY",
-                        text: `Here’s what most Winchester homeowners invest in professional deck construction:
-
-Composite Decks: $45–$65 per sq. ft.  
-Wood Decks: $30–$50 per sq. ft.  
-Deck Repairs: 40–60% of full replacement cost  
-
-Prices include materials, labor, cleanup, and final inspection.`
-                    },
-
-                    {
-                        heading: "Get a Free Deck Estimate in Winchester, KY",
-                        text: `We offer free, no-pressure estimates across Winchester, Trapp, Pilot View, Colby, and all surrounding areas in Clark County.
-
-During your appointment, we measure your project, review material options, discuss design ideas, and provide a clear written quote.`
-                    },
-
-                    {
-                        heading: "Decking Contractor in Winchester, Kentucky",
-                        text: `Homeowners choose Yellowstone Renovation for dependable communication, strong workmanship, and a commitment to building long-lasting decks.
-
-We create outdoor spaces that maximize property value, comfort, and daily enjoyment.`
-                    },
-
-                    {
-                        heading: "Deck Installation Services in Winchester",
-                        text: `Whether you want a compact wood deck or a modern composite system with custom railings, lighting, or covered structures — we design and build decks that match your property and lifestyle.`
-                    },
-
-                    {
-                        heading: "Professional Deck Construction in Winchester, KY",
-                        text: `We handle all design, measurements, engineering, permitting, framing, decking installation, railing systems, and final inspection. Our installations are clean, durable, and built to code.`
-                    },
-
-                    {
-                        heading: "Working with a Local Winchester Deck Contractor",
-                        text: `Being based in Central Kentucky, we understand local building codes, weather patterns, and soil conditions. This local expertise allows us to build stronger, safer decks for Winchester homeowners.`
-                    },
-
-                    {
-                        heading: "Choose the Best Deck Installers in Winchester, KY",
-                        text: `Yellowstone Renovation is known for reliable service, excellent craftsmanship, and fair pricing. With consistent 5-star reviews, we’re one of the top deck builders serving Winchester.`
-                    },
-
-                    {
-                        heading: "Average Cost to Install a New Deck in Winchester",
-                        text: `Winchester homeowners typically invest between $10,000 and $45,000 depending on material selection, elevation, size, and added features like stairs or lighting.`
-                    },
-
-                    {
-                        heading: "Winchester Wood Decks — Classic Beauty & Warmth",
-                        text: `We build natural wood decks that bring charm and warmth to your backyard. Proper sealing, ventilation, and construction techniques ensure longevity despite Kentucky’s seasonal weather.`
-                    },
-
-                    {
-                        heading: "Composite Decks in Winchester, KY",
-                        text: `Composite decks provide outstanding durability with almost no maintenance. Our Trex, TimberTech, and AZEK installs resist fading, moisture, and cracking while maintaining a premium appearance.`
-                    },
-
-                    {
-                        heading: "Deck Builder Near Me in Winchester, KY",
-                        text: `Searching for “deck builder near me” in Winchester? Yellowstone Renovation proudly serves Winchester, Trapp, Pilot View, Colby, and the wider Clark County area.
-
-We deliver clean work, fair pricing, and dependable project timelines.`
-                    },
-                ]}
+  {
+    "heading": "Find out what is causing the problem",
+    "text": "For an existing Winchester deck, worn boards and loose railings should lead to a closer look at the frame and connections. A surface upgrade is useful only when the structure below is suitable. Share photos of both the top and underside before the visit."
+  },
+  {
+    "heading": "Use the rebuild to simplify the steps",
+    "text": "Stairs should land where you want to walk, with a route that works around doors and the yard. A replacement gives you an opportunity to reconsider an awkward stair position or a cramped landing before rebuilding it in the same place."
+  },
+  {
+    "heading": "Choose a manageable finish plan",
+    "text": "Compare a wood deck with the cleaning and finish maintenance it will need against a composite option with routine washing. Include railings, stair treads and fascia in that comparison. The result should suit the upkeep you want to take on, not just the first-day appearance."
+  }
+]}
 
                 /* SIDEBAR CONTENT */
                 offers={[
-                    {
-                        image: "/images/deck1.webp",
-                        text: "Get $1500 OFF Your New Deck Installation — Limited Time Offer",
-                        button: "Claim Discount",
-                        link: "/contact",
-                    },
-                    {
-                        image: "/images/deck2.webp",
-                        text: "Browse Completed Deck Projects in Winchester",
-                        button: "View Gallery",
-                        link: "/projects",
-                    },
-                ]}
+  {
+    "image": "/images/deck/deck-lexington65.webp",
+    "text": "Plan your Winchester deck",
+    "button": "Request a free estimate",
+    "link": "/contact/"
+  },
+  {
+    "image": "/images/deck/deck-lexington65.webp",
+    "text": "Compare deck materials and layouts",
+    "button": "Explore deck options",
+    "link": "/decking/"
+  }
+]}
 
-                whyUs={[
-                    "Trusted local deck builders serving Winchester & Clark County",
-                    "Trex, TimberTech, and AZEK composite experts",
-                    "Custom designs to fit your home and yard",
-                    "Licensed, insured, and known for on-time scheduling",
-                    "Transparent pricing and strong workmanship warranties",
-                ]}
+                whyUs={["On-site measurements and a defined scope", "Wood and composite options explained", "Stairs and railings planned with the layout", "Project questions answered before you choose"]}
 
                 projects={[
-                    { image: "/images/deck4.webp", title: "Winchester Composite Deck Build" },
+                    { image: "/images/deck4.webp", title: "Composite Deck Build" },
                     { image: "/images/deck5.webp", title: "Custom Wood Deck With Railings" },
                     { image: "/images/deck6.webp", title: "Deck & Pergola Combination" },
                     { image: "/images/deck7.webp", title: "Covered Deck & Outdoor Upgrade" },
                 ]}
 
-                findUs={[
-                    { name: "Yelp", rating: "4.6/5", logo: "/icons/Yelp.webp" },
-                    { name: "Google", rating: "4.9/5", logo: "/icons/google-reviews.webp" },
-                ]}
+                findUs={[]}
 
-                blog={[
-                    {
-                        title: "How Much Does a Deck Cost in Kentucky?",
-                        date: "April 12th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck6.webp",
-                    },
-                    {
-                        title: "Composite vs Wood Decks — What Winchester Homeowners Should Know",
-                        date: "May 20th, 2025",
-                        author: "Peter",
-                        image: "/images/deck7.webp",
-                    },
-                    {
-                        title: "Deck Maintenance Tips for Winchester Homes",
-                        date: "June 10th, 2025",
-                        author: "Mark Ellison",
-                        image: "/images/deck8.webp",
-                    },
-                ]}
+                blog={[]}
 
                 partners={[
                     "/icons/trex.webp",
@@ -320,6 +166,20 @@ We deliver clean work, fair pricing, and dependable project timelines.`
                     "/icons/Yelp.webp"
                 ]}
             />
+
+            <section className="yr-content-section" aria-labelledby="deck-service-options">
+                <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+                    <h2 id="deck-service-options">Find the right fit for your backyard</h2>
+                    <p style={{ fontSize: "18px", lineHeight: 1.7, margin: "16px 0 24px" }}>Planning in Winchester? Start with our <a href="/decking/">deck building guide</a>, then compare the material or structure that suits your project.</p>
+                    <nav aria-label="Deck materials and outdoor services" style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+                        {[
+                            ["/wood-decks/", "Wood decks"], ["/composite-decks/", "Composite decks"],
+                            ["/covered-decks/", "Covered decks"], ["/custom-decks/", "Custom deck design"],
+                            ["/outdoor-deck/", "Outdoor living spaces"], ["/patios/", "Patios"], ["/pergolas/", "Pergolas"],
+                        ].map(([href, label]) => <a key={href} href={href} style={{ color: "#194b35", background: "#fff", border: "1px solid #cddbcf", borderRadius: "999px", padding: "12px 20px", fontSize: "16px", fontWeight: 600 }}>{label}</a>)}
+                    </nav>
+                </div>
+            </section>
 
             <QuoteSection />
             <ScrollToTop />

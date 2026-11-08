@@ -7,6 +7,8 @@ export default function Hero2({
   description,
   backgroundImage,
   overlayOpacity = 0.55,
+  ratingText = "Locally owned. Serving Central Kentucky.",
+  formBadge = "Free on-site estimate",
 
   // ✅ Dynamic form values
   formTitle = "Free Wood Siding Estimate",
@@ -23,12 +25,6 @@ export default function Hero2({
   emailTo = "info@yellowstonerenovation.com",
 }) {
   const formRef = useRef(null);
-
-  // 🧠 Auto-generate expiration date (last day of current month)
-  const currentDate = new Date();
-  const monthName = currentDate.toLocaleString("default", { month: "long" });
-  const year = currentDate.getFullYear();
-  const lastDay = new Date(year, currentDate.getMonth() + 1, 0).getDate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -87,7 +83,7 @@ export default function Hero2({
           <h1 className="hero2-title">{title}</h1>
           <p className="hero2-desc">{description}</p>
 
-          <div className="hero2-rating">⭐⭐⭐⭐⭐ Rated #1 Local Exterior Experts</div>
+          <div className="hero2-rating">{ratingText}</div>
 
           <div className="hero2-logos">
             <img src="/icons/bbb-logo.webp" alt="BBB" />
@@ -99,7 +95,7 @@ export default function Hero2({
         {/* ==== RIGHT FORM CARD ==== */}
         <div className="hero2-form-card">
           <div className="hero2-offer-tag">
-            {monthName.toUpperCase()} {year} SPECIAL
+            {formBadge}
           </div>
 
           <h3 className="hero2-form-title">{formTitle}</h3>
@@ -158,7 +154,7 @@ export default function Hero2({
 
             {/* 🕓 Expiration Date */}
             <p className="hero2-expire-text">
-              Offer expires {monthName} {lastDay}, {year}.
+              A clear scope and estimate before work begins.
             </p>
           </form>
         </div>

@@ -18,7 +18,14 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/`,
-        excludes: [`/404/`, `/projects/`, `/thank-you/`, `/success/`, `/success-offer/`, `/sales-tools/`, `/fence-estimator/`, `/fence-estimator1/`, `/black-friday/`, `/local-ky/`, `/local-ky/thank-you/`, `/deck-local-ky/`],
+        excludes: [
+          `/404/`, `/404.html`, `/dev-404-page/`,
+          `/projects/`, `/thank-you/`, `/success/`, `/success-offer/`,
+          `/sales-tools/`, `/fence-estimator/`, `/fence-estimator1/`, `/black-friday/`,
+          `/local/`, `/local-builder/`, `/local-deck/`, `/deck-local/`,
+          `/local-ky/`, `/local-ky/thank-you/`, `/deck-local-ky/`,
+          `/deck-builder/`, `/deck-builder-near-me/`, `/deck-louisville/`,
+        ],
         serialize: ({ path }) => ({
           url: path,
           changefreq: "weekly",
