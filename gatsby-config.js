@@ -38,7 +38,13 @@ module.exports = {
       options: {
         host: `https://yellowstonerenovation.com`,
         sitemap: `https://yellowstonerenovation.com/sitemap-index.xml`,
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [
+          { userAgent: "*", allow: "/" },
+          // Explicit AI-search and Bing crawler access; the wildcard already
+          // permits these, but named policies make the intent auditable.
+          { userAgent: "OAI-SearchBot", allow: "/" },
+          { userAgent: "Bingbot", allow: "/" },
+        ],
       },
     },
 
