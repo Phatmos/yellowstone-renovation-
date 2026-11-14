@@ -156,6 +156,7 @@ export default function SEO({
   return (
     <Helmet htmlAttributes={{ lang: "en" }}>
       <title>{seo.title}</title>
+      {normalizedPath === "/" && <meta name="msvalidate.01" content="DCAB509CA35401271D7D492717D01D20" />}
       <meta name="description" content={seo.description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
