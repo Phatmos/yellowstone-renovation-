@@ -23,7 +23,7 @@ export default function Home() {
 
       <SEO pathname="/"
         title="Yellowstone Renovation | Home Exteriors in Lexington, KY"
-        description="Yellowstone Renovation is a top-rated deck builder and siding contractor serving Lexington, KY. Custom composite & wood decks, James Hardie® and vinyl siding, clean installs, clear estimates, and reliable project management."
+        description="Yellowstone Renovation builds custom wood and composite decks, installs siding and windows in Lexington, Nicholasville, and Central Kentucky. Get an estimate."
       />
 
 
